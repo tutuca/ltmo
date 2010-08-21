@@ -87,8 +87,14 @@ def uptime():
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    server, path = args[0].remote_server.split("/")
 
+    remote = args[0].remote_server.split("/")
+    server = remote[0]
+    if len(remote) > 1: 
+        path = "/".join(remote[1:])
+    else:
+        path = ""
+            
     if args[0].message:
         description = args[0].message
     else:
