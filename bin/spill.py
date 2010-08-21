@@ -5,8 +5,9 @@ import httplib, urllib
 import simplejson
 import sys
 import os
+import getpass
 
-URI_DEFAULT = "127.0.0.1:8000"
+URI_DEFAULT = "127.0.0.1:8000/derramo"
 
 parser = optparse.OptionParser(
     prog='./spill.py',
@@ -36,6 +37,7 @@ parser.add_option(
    '--tags',
    metavar='TAG,[TAG,...]', 
    type="string",
+   default="",
    help='tags associated to the sites'
 )
 
@@ -44,17 +46,17 @@ parser.add_option(
    '--author',
    metavar='NAME', 
    type="string",
-   default="Anonymous",
+   default=getpass.getuser(),
    help='tags associated to the sites'
 )
 
 parser.add_option(
-   '-u',
-   '--uri',
-   metavar='URI', 
+   '-r',
+   '--remote-server',
+   metavar='HOST:PORT[/PATH]', 
    type="string",
    default=URI_DEFAULT,
-   help='send to this URI'
+   help='destination HOST, PORT and PATH of server'
 )
 
 def uptime():
@@ -78,30 +80,25 @@ def uptime():
    minutes = int( ( total_seconds % HOUR ) / MINUTE )
    seconds = int( total_seconds % MINUTE )
 
-   string = "%d %d:%d:%d" % (days,hours,minutes,seconds)
+   string = "%d %s, %d:%d:%d" % (days,
+            days > 1 and 'days' or 'day', hours, minutes, seconds)
    
    return string
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    uri = args[0].uri
+    server, path = args[0].remote_server.split("/")
 
     if args[0].message:
         description = args[0].message
     else:
         description = "".join(sys.stdin.readlines())
-    
-    if args[0].tags:
-        tags = args[0].tags.split(",")
-    else:
-        tags = ""
 
     values = dict(
         author = args[0].author,
         description = description,    
-        tags = tags,
-        metadata = {
-        }
+        tags =  args[0].tags,
+        metadata = {},
     )
 
     # Metadata
@@ -109,15 +106,11 @@ if __name__ == "__main__":
     if uptime:
         values['metadata']['uptime'] = uptime
 
+    print "Connecting to %s/%s ..." % (server, path)
 
-    print "Connecting to %s ..." % uri
-
-    params = urllib.urlencode(values)
-    headers = {
-    "Content-Type": "application/json"
-    }
-    conn = httplib.HTTPConnection(uri)
-    conn.request("POST", "/derramo/", simplejson.dumps(values), headers)
+    headers = {"Content-Type": "application/json"}
+    conn = httplib.HTTPConnection(server)
+    conn.request("POST","/"+path, simplejson.dumps(values), headers)
     response = conn.getresponse()
 
     print response.status, response.reason
