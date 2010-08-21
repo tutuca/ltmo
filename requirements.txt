@@ -3,5 +3,6 @@ svn+http://code.djangoproject.com/svn/django/trunk/#egg=django
 django-tagging
 markdown2
 django-markdown2
+django-pagination
 psycopg2
 
