@@ -6,7 +6,7 @@ import simplejson
 import sys
 import os
 
-URI_DEFAULT = "192.168.1.104:8000"
+URI_DEFAULT = "127.0.0.1:8000"
 
 parser = optparse.OptionParser(
     prog='./spill.py',
@@ -22,7 +22,6 @@ parser = optparse.OptionParser(
     epilog='''
         Las cucarachas lograron con exito su plan, echando a los pestilentes sangre caliente de sus cajas de cemento. 
 Ahora el hombre es una especie errante en el espacio, un vagabundo errante en las estrellas.''')
-
 
 parser.add_option(
    '-m',
@@ -49,6 +48,31 @@ parser.add_option(
    help='send to this URI'
 )
 
+def uptime():
+   try:
+       f = open( "/proc/uptime" )
+       contents = f.read().split()
+       f.close()
+   except:
+      return None
+
+   total_seconds = float(contents[0])
+   
+   # Helper vars:
+   MINUTE  = 60
+   HOUR    = MINUTE * 60
+   DAY     = HOUR * 24
+
+   # Get the days, hours, etc:
+   days    = int( total_seconds / DAY )
+   hours   = int( ( total_seconds % DAY ) / HOUR )
+   minutes = int( ( total_seconds % HOUR ) / MINUTE )
+   seconds = int( total_seconds % MINUTE )
+
+   string = "%d %d:%d:%d" % (days,hours,minutes,seconds)
+   
+   return string
+
 if __name__ == "__main__":
     args = parser.parse_args()
     uri = args[0].uri
@@ -57,19 +81,32 @@ if __name__ == "__main__":
         description = args[0].message
     else:
         description = "".join(sys.stdin.readlines())
+    
+    if args[0].tags:
+        tags = args[0].tags.split(",")
+    else:
+        tags = ""
 
     values = dict(
-        author = "pinchila",
+        author = os.getlogin(),
         description = description,    
-        tags = args[0].tags.split(","),
-        metadata = {}
+        tags = tags,
+        metadata = {
+        }
     )
+
+    # Metadata
+    uptime = uptime()
+    if uptime:
+        values['metadata']['uptime'] = uptime
+
 
     print "Connecting to %s ..." % uri
 
     params = urllib.urlencode(values)
     headers = {
-    "Content-Type": "application/json"}
+    "Content-Type": "application/json"
+    }
     conn = httplib.HTTPConnection(uri)
     conn.request("POST", "/derramo/", simplejson.dumps(values), headers)
     response = conn.getresponse()
