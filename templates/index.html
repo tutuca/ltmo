@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset=utf-8" />
+    <title>{% block title %}Watch out for the jabberwocky{% endblock %}</title>
+</head>
+<body>
+    <header></header>
+    <section>
+    {% block content %}
+    {% for object in object_list %}
+        {{object}}
+    {% empty %}
+        Nadie derramó nada aún
+    {% endfor %}
+    {% endblock %}
+    </section>
+    <footer></footer>
+</body>
+</html>

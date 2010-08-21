@@ -40,7 +40,11 @@ ADMIN_MEDIA_PREFIX = 'admin_media/'
 SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 
 
-MIDDLEWARE_CLASSES = ('django.middleware.common.CommonMiddleware',)
+MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+)
 
 ROOT_URLCONF = 'ltmo.urls'
 
