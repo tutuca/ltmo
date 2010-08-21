@@ -4,13 +4,15 @@
 <head>
     <meta charset=utf-8" />
     <title>{% block title %}Watch out for the jabberwocky{% endblock %}</title>
+    
     <style type="text/css" media="screen">
+
     body {
         font: 100% sans;
     }
     section {
         width: 40em;
-        margin: 0 auto;
+        margin: 0 2em;
         display: block;
         padding: 1em;
         background: #EBEBEB;
@@ -44,7 +46,7 @@
         display:block;
     }
     </style>
-    
+    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 </head>
 <body>
     <aside>
@@ -57,6 +59,41 @@
             <li><a href="/?tag={{tag}}">{{tag}}</a> ({{tag.count}})</li>
         {% endfor %}
         </ul>
+        <div >
+        <script>
+        new TWTR.Widget({
+          version: 2,
+          type: 'profile',
+          rpp: 4,
+          interval: 6000,
+          width: 'auto',
+          height: 500,
+          theme: {
+            shell: {
+              background: '#ffffff',
+              color: '#333333'
+            },
+            tweets: {
+              background: '#facd1b',
+              color: '#333333',
+              links: '#4aed05'
+            }
+          },
+          features: {
+            scrollbar: false,
+            loop: false,
+            live: false,
+            hashtags: true,
+            timestamp: true,
+            avatars: false,
+            behavior: 'all'
+          }
+        }).render().setUser('lossingoil').start();            
+        </script>
+        </div>
+        
+
+
     </aside>
     <section>
     {% autopaginate object_list 5 %}
