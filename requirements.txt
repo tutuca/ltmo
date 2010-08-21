@@ -3,3 +3,4 @@ svn+http://code.djangoproject.com/svn/django/trunk/#egg=django
 django-tagging
 
 
+psycopg2
