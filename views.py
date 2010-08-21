@@ -8,26 +8,20 @@ class LeakForm(forms.ModelForm):
         model = Leak
 
 def index(request):
+    ordering = request.GET.get('order','-created')
     return list_detail.object_list(
         request,
-        Leak.objects.all(),
+        Leak.objects.all().order_by(ordering),
         template_name='index.html',
 
     )
 
 def new_post(request):
-    
     if request.method == 'POST':
         post = json.loads(request.POST.keys()[0])
         form = LeakForm(request)
-        import ipdb; ipdb.set_trace()        
         if form.is_valid():
-            leak = form.save(commit=False)
-            admins = settings.ADMINS
-            
-            author = [author for author in admins if leak.author==author[0]]
-            leak.author = author
-            leak.save()
+            leak = form.save()
     else:
         form = LeakForm()
         
