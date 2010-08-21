@@ -40,6 +40,15 @@ parser.add_option(
 )
 
 parser.add_option(
+   '-a',
+   '--author',
+   metavar='NAME', 
+   type="string",
+   default="Anonymous",
+   help='tags associated to the sites'
+)
+
+parser.add_option(
    '-u',
    '--uri',
    metavar='URI', 
@@ -88,7 +97,7 @@ if __name__ == "__main__":
         tags = ""
 
     values = dict(
-        author = os.getlogin(),
+        author = args[0].author,
         description = description,    
         tags = tags,
         metadata = {
