@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%  load md2 tagging_tags %}
+{%  load md2 tagging_tags pagination_tags %}
 <html lang='es'>
 <head>
     <meta charset=utf-8" />
@@ -9,12 +9,17 @@
         font: 100% sans;
     }
     section {
-        width: 50em;
+        width: 40em;
         margin: 0 auto;
         display: block;
         padding: 1em;
         background: #EBEBEB;
+        float: left;
         
+    }
+    aside {
+        width: 15em;
+        float: left;
     }
     pre, code {
         font: monospace;
@@ -25,7 +30,6 @@
         display:block;
     } 
     details {
-    
         text-align: right;
     }
     h1 {
@@ -35,29 +39,41 @@
     h2 {
         font-weight: normal;
     }
+    footer {
+        clear:both;
+        display:block;
+    }
     </style>
     
 </head>
 <body>
-    <header></header>
-
-    {% block content %}
-    {% for object in object_list %}
+    <aside>
+        <h3>Wassup with this shit</h3>    
+        <p>This is only premium shit bro, you can publish using a über 1337 script that will let you post while you post</p>
+        {% tags_for_model ltmo.Leak as leak_tags with counts %}
+        <h3>Tags</h3>    
+        <ul>
+        {% for tag in leak_tags %}
+            <li><a href="/?tag={{tag}}">{{tag}}</a> ({{tag.count}})</li>
+        {% endfor %}
+        </ul>
+    </aside>
     <section>
+    {% autopaginate object_list 5 %}
+    {% for object in object_list %}
         <article>
         {{object.description|urlize|markdown2}}
         </article>
         {% tags_for_object object as tag_list %}
-        <details>{{object.author}}, {{object.created|date}}, {% for tag in tag_list %}<a href="/tags/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}</detail>
-    </section>
+        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}</detail>
     {% empty %}
-    <section>
         <h2>Nadie derramó nada aún</h2>
-    </section>
     {% endfor %}
+    </section>
 
-    {% endblock %}
-
-    <footer></footer>
+    <footer>
+        {% paginate %}
+        <p>Credit goes to the freaks authors of this thing. Made with <a href="http://django-project.com">django</a>. Grab the long and stiff piece of source code at <a href="http://github.com/tutuca/ltmo">github</a></p>
+    </footer>
 </body>
 </html>

@@ -8,10 +8,17 @@ class LeakForm(forms.ModelForm):
         model = Leak
 
 def index(request):
-    ordering = request.GET.get('order','-created')
+    author = request.GET.get('author',None)
+    tag = request.GET.get('tag',None)
+    queryset = Leak.objects.all().order_by('-created')
+    if author:
+        queryset = queryset.filter(author = author)
+    if tag:
+        queryset = queryset.filter(tags__icontains=tag)
+
     return list_detail.object_list(
         request,
-        Leak.objects.all().order_by(ordering),
+        queryset,
         template_name='index.html',
 
     )

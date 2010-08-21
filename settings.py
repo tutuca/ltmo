@@ -37,14 +37,20 @@ MEDIA_ROOT = ''
 MEDIA_URL = '/media/'
 
 ADMIN_MEDIA_PREFIX = 'admin_media/'
-SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 
+SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'pagination.middleware.PaginationMiddleware',
 )
+TEMPLATE_CONTEXT_PROCESSORS = ('django.core.context_processors.request',)
+
+PAGINATION_DEFAULT_WINDOW = 2
+
+FORCE_LOWERCASE_TAGS = True
 
 ROOT_URLCONF = 'ltmo.urls'
 
@@ -58,6 +64,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django_markdown2',
+    'pagination',
     'tagging',
     'ltmo'    
 )
