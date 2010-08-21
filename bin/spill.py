@@ -7,7 +7,7 @@ import sys
 import os
 import getpass
 
-URI_DEFAULT = "127.0.0.1:8000/derramo"
+URI_DEFAULT = "127.0.0.1:8000/derramo/"
 
 parser = optparse.OptionParser(
     prog='./spill.py',

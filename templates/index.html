@@ -17,7 +17,8 @@
         
     }
     pre, code {
-        font: 1.5em monospace;
+        font: monospace;
+        white-space: pre-wrap;
     }
     article {
         margin: 1em;
@@ -47,7 +48,7 @@
         {{object.description|urlize|markdown2}}
         </article>
         {% tags_for_object object as tag_list %}
-        <details>{{object.created|date}}, {{object.author}} {% for tag in tag_list %}<a href="/tags/{{tag|slugify}}" class="tags">{{tag}}</a>{%endfor%}</detail>
+        <details>{{object.author}}, {{object.created|date}}, {% for tag in tag_list %}<a href="/tags/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}</detail>
     </section>
     {% empty %}
     <section>
