@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%  load md2 tagging_tags %}
 <html lang='es'>
 <head>
     <meta charset=utf-8" />
@@ -17,13 +18,21 @@
     }
     pre, code {
         font: 1.5em monospace;
+    }
+    article {
         margin: 1em;
-        padding: 2em;
-        background: #FC0;
-        white-space: pre-wrap;
+        display:block;
     } 
-    p {
+    details {
+    
         text-align: right;
+    }
+    h1 {
+        font-weight: normal;
+        font-size: 2.5em;
+    }
+    h2 {
+        font-weight: normal;
     }
     </style>
     
@@ -34,8 +43,11 @@
     {% block content %}
     {% for object in object_list %}
     <section>
-        <pre>{{object|urlizetrunc:15}}</pre>
-        <p>{{object.created|date}}, {{object.author}} <span></p>
+        <article>
+        {{object.description|urlize|markdown2}}
+        </article>
+        {% tags_for_object object as tag_list %}
+        <details>{{object.created|date}}, {{object.author}} {% for tag in tag_list %}<a href="/tags/{{tag|slugify}}" class="tags">{{tag}}</a>{%endfor%}</detail>
     </section>
     {% empty %}
     <section>

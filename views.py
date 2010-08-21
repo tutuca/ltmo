@@ -17,9 +17,12 @@ def index(request):
     )
 
 def new_post(request):
+
     if request.method == 'POST':
-        post = json.loads(request.POST.keys()[0])
-        form = LeakForm(request)
+
+        post = json.loads(request.raw_post_data)
+        form = LeakForm(post)
+
         if form.is_valid():
             leak = form.save()
     else:

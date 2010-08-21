@@ -32,7 +32,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
+MEDIA_ROOT = ''
 
 MEDIA_URL = '/media/'
 
@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django_markdown2',
     'tagging',
     'ltmo'    
 )
