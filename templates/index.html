@@ -3,18 +3,44 @@
 <head>
     <meta charset=utf-8" />
     <title>{% block title %}Watch out for the jabberwocky{% endblock %}</title>
+    <style type="text/css" media="screen">
+    body{
+        font:100% sans;
+    }
+    section{
+        width:50em;
+        margin:0 auto;
+        display:block;
+        padding:1em;
+        background:#EBEBEB;
+    }
+    pre, code {
+        font:1.5em monospace;
+        margin:1em;
+        padding: 2em;
+        background:#FC0;
+        white-space:pre-wrap;
+    } 
+    </style>
+    
 </head>
 <body>
     <header></header>
-    <section>
+
     {% block content %}
     {% for object in object_list %}
-        {{object}}
-    {% empty %}
-        Nadie derramó nada aún
-    {% endfor %}
-    {% endblock %}
+    <section>
+        <pre>{{object|urlizetrunc:15}}</pre>
+        <p>{{object.created|date}}, {{object.author}} <span></p>
     </section>
+    {% empty %}
+    <section>
+        <h2>Nadie derramó nada aún</h2>
+    </section>
+    {% endfor %}
+
+    {% endblock %}
+
     <footer></footer>
 </body>
 </html>
