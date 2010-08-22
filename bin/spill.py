@@ -2,7 +2,10 @@
 # -*- coding: utf-8 -*-
 import optparse
 import httplib, urllib
-import simplejson
+try:
+    import simplejson as json
+except ImportError:
+    import json
 import sys
 import os
 import getpass
@@ -11,14 +14,14 @@ URI_DEFAULT = "127.0.0.1:8000/derramo/"
 
 parser = optparse.OptionParser(
     prog='./spill.py',
-    description='''\n
-  /     \                           \t
-  vvvvvvv  /|__/|                   \n
-      I   /O,O   |
-      I /_____   |      /|/|
-     J|/^ ^ ^ \  |    /00  |    _//|
-      |^ ^ ^ ^ |W|   |/^^\ |   /oo |
-       \m___m__|_|    \m_m_|   \mm_|
+    description=u'''
+  /     \                                     
+  vvvvvvv  /|__/|                             
+      I   /O,O   |                            
+      I /_____   |      /|/|                 
+     J|/^ ^ ^ \  |    /00  |    _//|          
+      |^ ^ ^ ^ |W|   |/^^\ |   /oo |         
+       \m___m__|_|    \m_m_|   \mm_|         
 ''',
     epilog='''
         Las cucarachas lograron con exito su plan, echando a los pestilentes sangre caliente de sus cajas de cemento. 
@@ -29,7 +32,7 @@ parser.add_option(
    '--message', 
    metavar='TEXT',
    default=None,
-   help='the message to send to the site'
+   help='the message to send to the site, reads from stdin if None'
 )
 
 parser.add_option(
@@ -38,16 +41,23 @@ parser.add_option(
    metavar='TAG,[TAG,...]', 
    type="string",
    default="",
-   help='tags associated to the sites'
+   help='tags associated to the message'
 )
-
 parser.add_option(
    '-a',
    '--author',
    metavar='NAME', 
    type="string",
    default=getpass.getuser(),
-   help='tags associated to the sites'
+   help='author associated to the message, not to be confused with source'
+)
+parser.add_option(
+   '-s',
+   '--source',
+   metavar='NAME', 
+   type="string",
+   default=getpass.getuser(),
+   help='source associated to the message, not to be confused with author'
 )
 
 parser.add_option(
@@ -56,10 +66,10 @@ parser.add_option(
    metavar='HOST:PORT[/PATH]', 
    type="string",
    default=URI_DEFAULT,
-   help='destination HOST, PORT and PATH of server'
+   help='destination HOST, PORT and PATH of server, useful for debugging'
 )
 
-def uptime():
+def get_uptime():
    try:
        f = open( "/proc/uptime" )
        contents = f.read().split()
@@ -104,11 +114,12 @@ if __name__ == "__main__":
         author = args[0].author,
         description = description,    
         tags =  args[0].tags,
-        metadata = {},
+        metadata = {
+        },
     )
 
     # Metadata
-    uptime = uptime()
+    uptime = get_uptime()
     if uptime:
         values['metadata']['uptime'] = uptime
 
@@ -116,7 +127,7 @@ if __name__ == "__main__":
 
     headers = {"Content-Type": "application/json"}
     conn = httplib.HTTPConnection(server)
-    conn.request("POST","/"+path, simplejson.dumps(values), headers)
+    conn.request("POST","/"+path, json.dumps(values), headers)
     response = conn.getresponse()
 
     print response.status, response.reason
