@@ -32,7 +32,7 @@
               color: '#333333'
             },
             tweets: {
-              background: '#fFEECC',
+              background: '#FFCC00',
               color: '#333333',
               links: '#000000'
             }
@@ -67,10 +67,13 @@
     {% empty %}
         <h2>Nadie derramó nada aún</h2>
     {% endfor %}
+    {% paginate %}
     </section>
 
     <footer>
-        {% paginate %}
+
+        <h3><a href="{{repository.url}}">{{repository.name}}</a> {{repository.description}}</h3>
+        <p>issues: {{repository.openi_ssues}}, watchers: {{repository.watchers}}</p>
         <p>Credit goes to the freaks authors of this thing. Made with <a href="http://django-project.com">django</a>. Grab the long and stiff piece of source code at <a href="http://github.com/tutuca/ltmo">github</a></p>
     </footer>
 </body>

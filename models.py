@@ -30,7 +30,7 @@ class Leak(models.Model):
     created = models.DateTimeField(auto_now_add=True, editable = False)
     changed = models.DateTimeField(auto_now=True, editable = False)
     tags = TagField(default='random')
-    metadata = JSONField(default='')
+    metadata = JSONField(blank=True, null= True)
     def __unicode__(self):
         return self.slug
         

@@ -1,5 +1,6 @@
 body {
     font: 100% sans-serif;
+    padding:0 5em;
 }
 section {
     width: 40em;
@@ -10,9 +11,16 @@ section {
     float: left;
 }
 aside {
-    width: 15em;
-    float: right;
-    margin:0 4em;
+    width: 20em;
+    float: left;
+    margin:0;
+    font-size:80%;
+}
+aside h1{
+    font-size:2em;
+    background:#FC0;
+    display:inline;
+    line-height:1.5em;
 }
 pre, code {
     font: monospace;
@@ -37,6 +45,8 @@ h2 {
     font-weight: normal;
 }
 footer {
-    clear:both;
-    display:block;
+    clear: both;
+    display: block;
+    padding: 5em 0 0;
+    font-size: 80%;
 }
