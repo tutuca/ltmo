@@ -1,18 +1,15 @@
 import os
-from urllib2 import urlopen
 
 from django.conf import settings
 from django.utils import simplejson as json
+from github2.client import Github
 
 
 
 def about(request):
-    
+    github = Github(username=settings.GITHUB_USER, api_token=settings.GITHUB_API_TOKEN)
     f = open('README.markdown', 'r')
-    github_json = urlopen('http://github.com/api/v2/json/repos/show/tutuca/ltmo')
-    repository = json.loads(github_json.read())
-    import ipdb; ipdb.set_trace()    
     return {
         'about':str(f.read()),
-        'repository':repository
+        'repository':github.repos.show("tutuca/ltmo")
     }
