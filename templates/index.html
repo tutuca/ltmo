@@ -3,55 +3,13 @@
 <html lang='es'>
 <head>
     <meta charset=utf-8" />
-    <title>{% block title %}Watch out for the jabberwocky{% endblock %}</title>
-    
-    <style type="text/css" media="screen">
-
-    body {
-        font: 100% sans;
-    }
-    section {
-        width: 40em;
-        margin: 0 2em;
-        display: block;
-        padding: 1em;
-        background: #EBEBEB;
-        float: left;
-        
-    }
-    aside {
-        width: 15em;
-        float: left;
-    }
-    pre, code {
-        font: monospace;
-        white-space: pre-wrap;
-    }
-    article {
-        margin: 1em;
-        display:block;
-    } 
-    details {
-        text-align: right;
-    }
-    h1 {
-        font-weight: normal;
-        font-size: 2.5em;
-    }
-    h2 {
-        font-weight: normal;
-    }
-    footer {
-        clear:both;
-        display:block;
-    }
-    </style>
+    <title>{% block title %}Que se creen los ingleses? que son los únicos que pueden hacer derrames???{% endblock %}</title>
+    <link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen" />    
     <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 </head>
 <body>
     <aside>
-        <h3>Wassup with this shit</h3>    
-        <p>This is only premium shit bro, you can publish using a über 1337 script that will let you post while you post</p>
+        {{about|markdown2}}
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
         <h3>Tags</h3>    
         <ul>
@@ -100,6 +58,9 @@
     {% for object in object_list %}
         <article>
         {{object.description|urlize|markdown2}}
+        <code>
+        {{object.metadata|safe}}
+        </code>
         </article>
         {% tags_for_object object as tag_list %}
         <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}</detail>
