@@ -8,15 +8,19 @@ section {
     padding: 1em;
     background: #EBEBEB;
     float: left;
-    
 }
 aside {
     width: 15em;
-    float: left;
+    float: right;
+    margin:0 4em;
 }
 pre, code {
     font: monospace;
     white-space: pre-wrap;
+}
+
+blockquote{
+    font: serif;
 }
 article {
     margin: 1em;

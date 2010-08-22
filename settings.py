@@ -57,7 +57,10 @@ MIDDLEWARE_CLASSES = (
 
 TEMPLATE_LOADERS = ('django.template.loaders.filesystem.Loader',)
 
-TEMPLATE_CONTEXT_PROCESSORS = ('django.core.context_processors.request',)
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'ltmo.context_processors.about',
+)
 
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'))
 

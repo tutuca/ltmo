@@ -1,11 +1,7 @@
 from django.views.generic import list_detail, simple
 from ltmo.models import Leak
 from django.conf import settings
-from django import forms
-import json
-class LeakForm(forms.ModelForm):
-    class Meta:
-        model = Leak
+from django.utils import simplejson as json
 
 def index(request):
     author = request.GET.get('author',None)
