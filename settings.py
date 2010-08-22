@@ -10,17 +10,17 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'ltmo',                      # Or path to database file if using sqlite3.
-        'USER': 'ltmo',                      # Not used with sqlite3.
-        'PASSWORD': 'lossiswin',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': '',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
+
 
 TIME_ZONE = 'America/Chicago'
 
@@ -32,7 +32,9 @@ USE_I18N = True
 
 USE_L10N = True
 
-MEDIA_ROOT = ''
+ROOT_URLCONF = 'ltmo.urls'
+
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
 
 MEDIA_URL = '/media/'
 
@@ -40,21 +42,22 @@ ADMIN_MEDIA_PREFIX = 'admin_media/'
 
 SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 
+PAGINATION_DEFAULT_WINDOW = 2
+
+FORCE_LOWERCASE_TAGS = True
+
+
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'pagination.middleware.PaginationMiddleware',
 )
-TEMPLATE_CONTEXT_PROCESSORS = ('django.core.context_processors.request',)
-
-PAGINATION_DEFAULT_WINDOW = 2
-
-FORCE_LOWERCASE_TAGS = True
-
-ROOT_URLCONF = 'ltmo.urls'
 
 TEMPLATE_LOADERS = ('django.template.loaders.filesystem.Loader',)
+
+TEMPLATE_CONTEXT_PROCESSORS = ('django.core.context_processors.request',)
 
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'))
 
@@ -68,3 +71,4 @@ INSTALLED_APPS = (
     'tagging',
     'ltmo'    
 )
+from local_settings import *
