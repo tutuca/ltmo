@@ -115,25 +115,22 @@ if __name__ == "__main__":
         description = description,    
         tags =  args[0].tags,
         metadata = {
+            'uptime' : get_uptime()
         },
     )
 
     # Metadata
-    uptime = get_uptime()
-    if uptime:
-        values['metadata']['uptime'] = uptime
-
     print "Connecting to %s/%s ..." % (server, path)
 
     headers = {"Content-Type": "application/json"}
     conn = httplib.HTTPConnection(server)
     conn.request("POST","/"+path, json.dumps(values), headers)
     response = conn.getresponse()
-
+    
     print response.status, response.reason
-    print "Result:\n\n"
-    print response.read()
-
+    if 'json' in response.getheader('content-type'):
+        print "Result:\n\n"
+        print response.read()
     conn.close()
 
 

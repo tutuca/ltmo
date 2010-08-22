@@ -1,8 +1,8 @@
 {% if form.errors %}
 {'form':[
-    'errors': [{% for error in form.errors %}'{{error}}', {%empty%}'No errors'{% endfor %}],
+    'errors': [{% for error in form.errors %}'{{error|safe}}', {%empty%}'No errors'{% endfor %}],
     {% for field in form %}
-    {'{{field}}':[{% for error in field.errors %}'{{error}}', {%empty%}'No errors'{% endfor %}}
+    {'{{field}}':[{% for error in field.errors %}'{{error|safe}}', {%empty%}'No errors'{% endfor %}}
     {% endfor %}        
     ]
 }

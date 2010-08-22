@@ -2,6 +2,7 @@ from django.views.generic import list_detail, simple
 from ltmo.models import Leak
 from django.conf import settings
 from django.utils import simplejson as json
+from ltmo.forms import LeakForm
 
 def index(request):
     author = request.GET.get('author',None)
@@ -25,7 +26,6 @@ def new_post(request):
 
         post = json.loads(request.raw_post_data)
         form = LeakForm(post)
-
         if form.is_valid():
             leak = form.save()
     else:
