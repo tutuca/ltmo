@@ -43,9 +43,16 @@ Options:
                         destination HOST, PORT and PATH of server, useful for
                         debugging
 
-         Las cucarachas lograron con exito su plan, echando a los pestilentes
+Las cucarachas lograron con exito su plan, echando a los pestilentes
 sangre caliente de sus cajas de cemento.  Ahora el hombre es una especie
 errante en el espacio, un vagabundo errante en las estrellas.
+
+¿Y qué pasa con el resto?
+================
+
+Todo lo que envíes con spill se manda a ltmo.com.ar ahí vamos a ir agregando 
+cosas a medida que tengamos más tiempo para perder aceite
+
                         
                         
 
