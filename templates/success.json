@@ -6,6 +6,4 @@
     {% endfor %}        
     ]
 }
-{% else %}
-{'message':'No hubo errores, no hubo excesos, son todos asesinos los milocos del proceso'}
-{% endif %}
+{% else %}{'message':'No hubo errores, no hubo excesos, son todos asesinos los milicos del proceso'}{% endif %}
