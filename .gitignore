@@ -1,5 +1,6 @@
 *.pyc
 *~
 *.db
+*.tar.gz
 local_settings.py
 

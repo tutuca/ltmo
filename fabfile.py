@@ -95,8 +95,8 @@ def release():
     require("hosts", provided_by=[development, staging, production])
     
     tmpdir = tempfile.mkdtemp()
-    tar = "%s-%s.tar.bz2" % (env.project_name ,datetime.datetime.now().strftime("%Y%m%d%H%M%S"),)
-    local("git archive | gzip > %s" %tar)
+    tar = "%s-%s.tar.gz % (env.project_name ,datetime.datetime.now().strftime("%Y%m%d%H%M%S"),)
+    local("git archive HEAD| gzip > %s" %tar)
     local("cd %s/%s; /bin/tar cfj %s/%s *" % (tmpdir, env.project_name, tmpdir, tar,))
     put("%s/%s" % (tmpdir, tar), tar)
     # warning: contents in destination directory will be lost.
