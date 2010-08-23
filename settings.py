@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
 DEBUG = True
+
 TEMPLATE_DEBUG = DEBUG
+
+BASE_DIR = os.path.dirname(__file__)
 
 ADMINS = (
     ('etnalubma', 'francisco.herrero@gmail.com'),
@@ -34,7 +37,9 @@ USE_L10N = True
 
 ROOT_URLCONF = 'ltmo.urls'
 
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
@@ -62,7 +67,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'ltmo.context_processors.about',
 )
 
-TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'))
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'))
 
 INSTALLED_APPS = (
     'django.contrib.auth',
