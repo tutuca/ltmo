@@ -12,7 +12,6 @@ El código es libre y se explica solo.
 
 una vez después de clonar el repo, pueden probar de enviar un post 
 
-
 $ bin/spill.py -h
 Usage: ./spill.py [options]
 

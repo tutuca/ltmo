@@ -23,7 +23,6 @@ def index(request):
 def new_post(request):
 
     if request.method == 'POST':
-        import ipdb; ipdb.set_trace()
         post = json.loads(request.raw_post_data)
         form = LeakForm(post)
 
