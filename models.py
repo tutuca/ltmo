@@ -13,12 +13,17 @@ class Leak(models.Model):
     changed = models.DateTimeField(auto_now=True, editable = False)
     tags = TagField(default='random')
     metadata = models.TextField()
+    
     def __unicode__(self):
         return self.slug
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('leak_detail', [self.id])
         
     def save(self):
         date = datetime.now().strftime("%d%H%M%S")
-        self.slug = slugify(' '.join(self.description.split(' ')[:4]))
+        self.slug = slugify(' '.join(self.description.split(' ')[:6]))
         self.slug = self.slug + date
         super(Leak, self).save()
 

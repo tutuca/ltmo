@@ -1,9 +1,12 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
+from ltmo.feeds import LeakFeed
 
-urlpatterns = patterns('views',
-    (r'^$','index',{},'index'),
-    (r'^derramo/','new_post',{},' new_post'),
+urlpatterns = patterns('',
+    (r'^$','views.index',{},'index'),
+    (r'^leak/(?P<object_id>\d+)$','views.leak_detail',{},'leak_detail'),
+    (r'^derramo/','views.new_post',{},' new_post'),
+    (r'^feed/$',LeakFeed())
 )
 
 if settings.DEBUG:

@@ -19,7 +19,14 @@ def index(request):
         template_name='index.html',
 
     )
-
+def leak_detail(request, object_id):
+    queryset = Leak.objects.all()
+    return list_detail.object_detail(
+        request,
+        queryset,
+        object_id,
+        template_name = 'detail.html'
+    )
 def new_post(request):
 
     if request.method == 'POST':

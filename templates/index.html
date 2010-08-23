@@ -3,7 +3,9 @@
 <html lang='es'>
 <head>
     <meta charset=utf-8" />
-    <title>{% block title %}Que se creen los ingleses? que son los únicos que pueden hacer derrames???{% endblock %}</title>
+    <title>{% block title %}Que se creen los ingleses? que son los únicos que pueden hacer derrames???{% endblock %} . ltmo</title>
+    <meta name="description" content="LTMO, un sitio para procastinar en todos los niveles que sea imaginable." />
+    <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
     <link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen" />    
     <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 </head>
@@ -54,6 +56,9 @@
 
     </aside>
     <section>
+    {% block content %}
+    
+
     {% autopaginate object_list 5 %}
     {% for object in object_list %}
         <article>
@@ -68,6 +73,7 @@
         <h2>Nadie derramó nada aún</h2>
     {% endfor %}
     {% paginate %}
+    {% endblock %}
     </section>
 
     <footer>
