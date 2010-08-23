@@ -92,18 +92,15 @@ def apache_config():
 
 def release():
     """Creates a tarball, uploads it and decompresses it in the rigth path."""
-    require("hosts", provided_by=[development, staging, production])
     
-    tmpdir = tempfile.mkdtemp()
     tar = "%s-%s.tar.gz" % (env.project_name ,datetime.datetime.now().strftime("%Y%m%d%H%M%S"),)
     local("git archive HEAD| gzip > %s" %tar)
-    local("cd %s/%s; /bin/tar cfj %s/%s *" % (tmpdir, env.project_name, tmpdir, tar,))
-    put("%s/%s" % (tmpdir, tar), tar)
+    put(tar, tar)
     # warning: contents in destination directory will be lost.
     run("tar xfz %s -C %s" % (tar, env.deploy_dir))
     
-    run("rm -rf %s %s" % (tmpdir, tar))
-    local("rm -rf %s %s" % (tmpdir, tar))
+    run("rm %s" %tar)
+    local("rm %s" %tar)
 
 def apache_restart():
     """Restarts the program in the servers."""
