@@ -10,10 +10,27 @@ import sys
 import os
 import getpass
 
-URI_DEFAULT = "127.0.0.1:8000/derramo/"
+URI_DEFAULT = "ltmo.com.ar/derramo/"
+
+
+class PlainHelpFormatter(optparse.IndentedHelpFormatter):
+    def __init__(self,
+                 indent_increment=2,
+                 max_help_position=24,
+                 width=None,
+                 short_first=1):
+        optparse.IndentedHelpFormatter.__init__ (
+            self, indent_increment, max_help_position, width, short_first)
+
+    def format_description(self, description):
+        if description:
+            return description + "\n"
+        else:
+            return ""
 
 parser = optparse.OptionParser(
     prog='./spill.py',
+    formatter=PlainHelpFormatter(),
     description=u'''
   /     \                                     
   vvvvvvv  /|__/|                             
@@ -128,9 +145,8 @@ if __name__ == "__main__":
     response = conn.getresponse()
     
     print response.status, response.reason
-    if 'json' in response.getheader('content-type'):
-        print "Result:\n\n"
-        print response.read()
+    print "Result:\n\n"
+    print response.read()
     conn.close()
 
 
