@@ -70,3 +70,10 @@ a:hover {
     text-decoration: underline;
 }
 
+a img{
+    border: 0;
+}
+img {
+    display:block;
+    margin: 1em auto;
+}

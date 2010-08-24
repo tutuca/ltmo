@@ -10,7 +10,7 @@ class LeakFeed(Feed):
         return Leak.objects.order_by("-created")[:5]
         
     def item_title(self, item):
-        return ' '.join(item.description.split(' ')[:4])
+        return ' '.join(item.description.split(' ')[:10])
         
     def item_description(self, item):
         return item.description    
