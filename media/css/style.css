@@ -4,17 +4,15 @@ body {
 }
 section {
     width: 40em;
-    margin: 0 2em;
     display: block;
-    padding: 1em;
-    background: #EBEBEB;
     float: left;
+    margin: 1em;
 }
 aside {
     width: 20em;
     float: left;
-    margin:0;
     font-size:80%;
+    margin: 1em
 }
 aside h1{
     font-size:2em;
@@ -31,11 +29,19 @@ blockquote{
     font: serif;
 }
 article {
-    margin: 1em;
     display:block;
+    background: #EEE;
+    padding: 0.1em 1em ;
+    margin-bottom:1em;
+    
 } 
 details {
     text-align: right;
+    font-size:80%;
+    display:block;
+    padding:0.5em;
+    color: #555;
+    margin: 0 -1em;
 }
 h1 {
     font-weight: normal;

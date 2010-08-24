@@ -10,6 +10,24 @@
     <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 </head>
 <body>
+
+    <section>
+    {% block content %}
+    
+
+    {% autopaginate object_list 10 %}
+    {% for object in object_list %}
+        <article>
+        {{object.description|urlize|markdown2}}
+        {% tags_for_object object as tag_list %}
+        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
+        </article>
+    {% empty %}
+        <h2>Nadie derramó nada aún</h2>
+    {% endfor %}
+    {% paginate %}
+    {% endblock %}
+    </section>
     <aside>
         {{about|markdown2}}
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
@@ -51,31 +69,7 @@
         }).render().setUser('lossingoil').start();            
         </script>
         </div>
-        
-
-
     </aside>
-    <section>
-    {% block content %}
-    
-
-    {% autopaginate object_list 5 %}
-    {% for object in object_list %}
-        <article>
-        {{object.description|urlize|markdown2}}
-        <code>
-        {{object.metadata|safe}}
-        </code>
-        </article>
-        {% tags_for_object object as tag_list %}
-        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}</details>
-    {% empty %}
-        <h2>Nadie derramó nada aún</h2>
-    {% endfor %}
-    {% paginate %}
-    {% endblock %}
-    </section>
-
     <footer>
         <h3><a href="{{repository.url}}">Código fuente</a></h3>
         <p>issues: {{repository.open_issues}}, watchers: {{repository.watchers}}</p>

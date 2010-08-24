@@ -23,8 +23,7 @@ class Leak(models.Model):
         
     def save(self):
         date = datetime.now().strftime("%d%H%M%S")
-        self.slug = slugify(' '.join(self.description.split(' ')[:6]))
-        self.slug = self.slug + date
+        self.slug = slugify(self.description[:42]+date)
         super(Leak, self).save()
 
 

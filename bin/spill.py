@@ -10,7 +10,7 @@ import sys
 import os
 import getpass
 
-URI_DEFAULT = "ltmo.com.ar/derramo/"
+URI_DEFAULT = "ltmo.com.ar/"
 
 
 class PlainHelpFormatter(optparse.IndentedHelpFormatter):
@@ -57,7 +57,7 @@ parser.add_option(
    '--tags',
    metavar='TAG,[TAG,...]', 
    type="string",
-   default="",
+   default="r",
    help='tags associated to the message'
 )
 parser.add_option(
@@ -65,7 +65,7 @@ parser.add_option(
    '--author',
    metavar='NAME', 
    type="string",
-   default=getpass.getuser(),
+   default='anonymous',
    help='author associated to the message, not to be confused with source'
 )
 parser.add_option(
@@ -73,7 +73,7 @@ parser.add_option(
    '--source',
    metavar='NAME', 
    type="string",
-   default=getpass.getuser(),
+   default='ROBADO',
    help='source associated to the message, not to be confused with author'
 )
 
