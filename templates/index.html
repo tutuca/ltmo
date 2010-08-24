@@ -2,7 +2,7 @@
 {%  load md2 tagging_tags pagination_tags %}
 <html lang='es'>
 <head>
-    <meta charset=utf-8" />
+    <meta charset="utf-8" />
     <title>{% block title %}Que se creen los ingleses? que son los únicos que pueden hacer derrames???{% endblock %} . ltmo</title>
     <meta name="description" content="LTMO, un sitio para procastinar en todos los niveles que sea imaginable." />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
@@ -68,7 +68,7 @@
         </code>
         </article>
         {% tags_for_object object as tag_list %}
-        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}</detail>
+        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}</details>
     {% empty %}
         <h2>Nadie derramó nada aún</h2>
     {% endfor %}
