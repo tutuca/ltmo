@@ -143,9 +143,7 @@ if __name__ == "__main__":
     conn = httplib.HTTPConnection(server)
     conn.request("POST","/"+path, json.dumps(values), headers)
     response = conn.getresponse()
-    
     print response.status, response.reason
-    print "Result:\n\n"
     print response.read()
     conn.close()
 

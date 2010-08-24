@@ -92,13 +92,11 @@ def apache_config():
 
 def release():
     """Creates a tarball, uploads it and decompresses it in the rigth path."""
-    
+    require("hosts", provided_by=[development, staging, production])    
     tar = "%s-%s.tar.gz" % (env.project_name ,datetime.datetime.now().strftime("%Y%m%d%H%M%S"),)
     local("git archive HEAD| gzip > %s" %tar)
     put(tar, tar)
-    # warning: contents in destination directory will be lost.
     run("tar xfz %s -C %s" % (tar, env.deploy_dir))
-    
     run("rm %s" %tar)
     local("rm %s" %tar)
 
