@@ -10,4 +10,6 @@ Hay un script que publica lo que le pases por stdin y lo trata de mandar, junto
 con todo lo que podamos juntar.
 El código es libre y se explica solo.
 
-una vez después de clonar el repo, pueden probar de enviar un post 
+Una vez después de clonar el repo, pueden probar de enviar un post 
+
+Si son muy perezosos pueden [bajar sólo el script](http://github.com/tutuca/ltmo/raw/master/bin/spill.py)
