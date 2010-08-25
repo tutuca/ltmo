@@ -1,9 +1,8 @@
 from django.db import models
-from tagging.fields import TagField
 from django.template.defaultfilters import slugify
+from django.contrib.sitemaps import Sitemap
 from datetime import datetime
-from django.utils import simplejson as json
-from django import forms
+from tagging.fields import TagField
 
 class Leak(models.Model):
     slug = models.SlugField(editable=False, unique=True)
@@ -25,5 +24,16 @@ class Leak(models.Model):
         date = datetime.now().strftime("%d%H%M%S")
         self.slug = slugify(self.description[:42]+date)
         super(Leak, self).save()
+
+class LTMOSitemap(Sitemap):
+    changefreq = "weekly"
+    priority = 0.5
+
+    def items(self):
+        return Leak.objects.all()
+
+    def lastmod(self, obj):
+        return obj.changed or obj.created
+
 
 
