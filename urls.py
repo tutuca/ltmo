@@ -19,7 +19,7 @@ sitemaps = {
 urlpatterns = patterns('',
     (r'^$','views.index',{},'index'),
     (r'^leak/(?P<object_id>\d+)$','views.leak_detail',{},'leak_detail'),
-    (r'^derramo/','views.new_post',{},' new_post'),
+    (r'^derramo[/]{0,1}','views.new_post',{},' new_post'),
     (r'^feed/$',LeakFeed()),
     (r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /media/*", mimetype="text/plain")),
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', 
