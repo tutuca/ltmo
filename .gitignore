@@ -2,5 +2,6 @@
 *~
 *.db
 *.tar.gz
+etc/*
 local_settings.py
 
