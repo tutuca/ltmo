@@ -1,6 +1,5 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-from django.contrib.sitemaps import Sitemap
 from datetime import datetime
 from tagging.fields import TagField
 

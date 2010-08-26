@@ -34,6 +34,16 @@ def index(request):
     )
 
 def leak_detail(request, object_id):
+    if request.method == 'POST':
+        post = json.loads(request.raw_post_data)
+        form = LeakForm(post, instance=Leak.objects.get(id=object_id))
+
+        if form.is_valid():
+            leak = form.save()
+    else:
+        form = LeakForm()
+
+
     queryset = Leak.objects.all()
     return list_detail.object_detail(
         request,
@@ -41,16 +51,8 @@ def leak_detail(request, object_id):
         object_id,
         template_name = 'detail.html'
     )
+
 def new_post(request):
-
-    if request.method == 'POST':
-        post = json.loads(request.raw_post_data)
-        form = LeakForm(post)
-
-        if form.is_valid():
-            leak = form.save()
-    else:
-        form = LeakForm()
         
     return simple.direct_to_template(
         request,

@@ -5,12 +5,14 @@ class LeakFeed(Feed):
     title = "Derrames publicados recientemente"
     link = "/"
     description = "Derrames nuevos o actualizados"
-    
+    title_template = 'feeds/title.html'
+    description_template = 'feeds/description.html'
+
     def items(self):
         return Leak.objects.order_by("-created")[:15]
         
     def item_title(self, item):
-        return ' '.join(item.description.split(' ')[:10])
+        return '%s %s' %(item.author, item.created)
 
     def item_description(self, item):
         return item.description    

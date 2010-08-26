@@ -1,15 +1,8 @@
 ¿Qué es lo que observa?
 =============
-Nunca hay suficiente redundancia para garantizar la continuidad de la información
+Nunca hay suficiente redundancia para garantizar la continuidad de la información.
 
-Sumamos una herramienta. 
+Este es un experimento, una herramienta para evitar perder cosas que en algún momento nos resultaron interesantes.
+Hay un [script de linea de comandos](http://github.com/tutuca/ltmo/raw/master/bin/spill.py) que te deja entrar un mensaje y enviarlo a esta web.
 
-Simple, ante todo. usamos $less  y esas cosas.
-
-Hay un script que publica lo que le pases por stdin y lo trata de mandar, junto 
-con todo lo que podamos juntar.
-El código es libre y se explica solo.
-
-Una vez después de clonar el repo, pueden probar de enviar un post 
-
-Si son muy perezosos pueden [bajar sólo el script](http://github.com/tutuca/ltmo/raw/master/bin/spill.py)
+El código es libre y se explica solo. Así que no preguntes por ayuda o explicaciones, nosotros tampoco sabemos de que se trata

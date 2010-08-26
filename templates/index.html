@@ -13,7 +13,24 @@
     <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 </head>
 <body>
+<header>
+    <div id="content-banner">
+        <script type="text/javascript"><!--
+            google_ad_client = "pub-3539830246651089";
+            /* 728x90 listado */
+            google_ad_slot = "4135291841";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+            </script>
+            <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>  
 
+    <h1>LTMO</h1>
+    <p>un rincón para los amigos</p>
+</header>
     <section>
     {% block content %}
     
@@ -21,9 +38,12 @@
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         <article>
+        
         {{object.description|urlize|markdown2}}
         {% tags_for_object object as tag_list %}
         <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
+
+
         </article>
     {% empty %}
         <h2>Nadie derramó nada aún</h2>
@@ -40,15 +60,28 @@
             <li><a href="/?tag={{tag}}">{{tag}}</a> ({{tag.count}})</li>
         {% endfor %}
         </ul>
+        <div id="banner-aside">
+            <script type="text/javascript"><!--
+            google_ad_client = "pub-3539830246651089";
+            /* 300x250, creado 26/08/10 */
+            google_ad_slot = "2985450362";
+            google_ad_width = 300;
+            google_ad_height = 250;
+            //-->
+            </script>
+            <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+        </div>
         <div >
         <script>
         new TWTR.Widget({
           version: 2,
           type: 'profile',
-          rpp: 4,
+          rpp: 3,
           interval: 6000,
           width: 'auto',
-          height: 500,
+          height: 400,
           theme: {
             shell: {
               background: '#ffffff',

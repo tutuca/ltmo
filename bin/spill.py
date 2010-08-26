@@ -185,8 +185,10 @@ if __name__ == "__main__":
         author = args[0].author,
         description = description,    
         tags =  args[0].tags,
+        import ipdb; ipdb.set_trace()
         metadata = {
-            'uptime' : get_uptime()
+            'uptime' : get_uptime(),
+            'editor' : _get_editor()
         },
     )
 
