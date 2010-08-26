@@ -14,7 +14,7 @@
 </head>
 <body>
 <header>
-    <div id="content-banner">
+    <div id="banner-header">
         <script type="text/javascript"><!--
             google_ad_client = "pub-3539830246651089";
             /* 728x90 listado */
@@ -28,7 +28,7 @@
         </script>
     </div>  
 
-    <h1>LTMO</h1>
+    <h1><a href="http://ltmo.com.ar/">LTMO</a></h1>
     <p>un rincón para los amigos</p>
 </header>
     <section>
@@ -38,13 +38,25 @@
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         <article>
-        
         {{object.description|urlize|markdown2}}
         {% tags_for_object object as tag_list %}
         <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
-
-
         </article>
+        {% if forloop.counter == 5 %}
+        <div id="banner-content">
+            <script type="text/javascript"><!--
+                google_ad_client = "pub-3539830246651089";
+                /* 468x60, creado 26/08/10 */
+                google_ad_slot = "7764155477";
+                google_ad_width = 468;
+                google_ad_height = 60;
+                //-->
+                </script>
+                <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+        </div>
+        {% endif %}
     {% empty %}
         <h2>Nadie derramó nada aún</h2>
     {% endfor %}

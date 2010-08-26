@@ -1,13 +1,12 @@
 body {
     font: 100% sans-serif;
-    padding:0 5em;
+    padding: 0 5em;
+    width: 70em;
 }
 header {
     display:block;
 }
-#content-banner {
-    float:right;
-}
+
 footer {
     width: 60em;
     clear: both;
@@ -80,4 +79,11 @@ a img{
 img {
     display:block;
     margin: 1em auto;
+}
+
+#banner-header {
+    float:right;
+}
+#banner-content {
+    text-align:center;
 }
