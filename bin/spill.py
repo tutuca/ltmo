@@ -2,23 +2,73 @@
 # -*- coding: utf-8 -*-
 import optparse
 import httplib, urllib
+from subprocess import call
 try:
     import simplejson as json
 except ImportError:
     import json
-import sys
-import os
+import sys, os, signal
 import getpass
 
 URI_DEFAULT = "ltmo.com.ar/"
 
+def _get_editor():
+    """Return a sequence of possible editor binaries for the current platform"""
+    # kindly taken from bzr
+
+    for varname in 'VISUAL', 'EDITOR':
+        if varname in os.environ:
+            yield os.environ[varname], '$' + varname
+
+    if sys.platform == 'win32':
+        for editor in 'wordpad.exe', 'notepad.exe':
+            yield editor, None
+    else:
+        for editor in ['/usr/bin/editor', 'vi', 'pico', 'nano', 'joe']:
+            yield editor, None
+            
+def _run_editor(filename):
+    """Try to execute an editor to edit the commit message."""
+    # kindly taken from bzr
+    for candidate, candidate_source in _get_editor():
+        edargs = candidate.split(' ')
+        try:
+            ## mutter("trying editor: %r", (edargs +[filename]))
+            x = call(edargs + [filename])
+
+        except OSError, e:
+            if candidate_source is not None:
+                # We tried this editor because some user configuration (an
+                # environment variable or config file) said to try it.  Let
+                # the user know their configuration is broken.
+                trace.warning(
+                    'Could not start editor "%s" (specified by %s): %s\n'
+                    % (candidate, candidate_source, str(e)))
+            continue
+            raise
+
+        if x == 0:
+            return open(filename).read()
+        elif x == 127:
+            continue
+        else:
+            break
+    print """Could not start any editor."""
+
+def signal_handler(signal, frame):
+        print '\n Cobarde!'
+        sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
 
 class PlainHelpFormatter(optparse.IndentedHelpFormatter):
+
     def __init__(self,
                  indent_increment=2,
                  max_help_position=24,
                  width=None,
                  short_first=1):
+                 
         optparse.IndentedHelpFormatter.__init__ (
             self, indent_increment, max_help_position, width, short_first)
 
@@ -32,14 +82,14 @@ parser = optparse.OptionParser(
     prog='./spill.py',
     formatter=PlainHelpFormatter(),
     description=u'''
-  /     \                                     
-  vvvvvvv  /|__/|                             
-      I   /O,O   |                            
-      I /_____   |      /|/|                 
-     J|/^ ^ ^ \  |    /00  |    _//|          
-      |^ ^ ^ ^ |W|   |/^^\ |   /oo |         
-       \m___m__|_|    \m_m_|   \mm_|         
-''',
+    /     \                                     
+    vvvvvvv  /|__/|                             
+       I   /O,O   |                            
+       I /_____   |      /|/|                 
+      J|/^ ^ ^ \  |    /00  |    _//|          
+       |^ ^ ^ ^ |W|   |/^^\ |   /oo |         
+        \m___m__|_|    \m_m_|   \mm_|         
+    ''',
     epilog='''
         Las cucarachas lograron con exito su plan, echando a los pestilentes sangre caliente de sus cajas de cemento. 
 Ahora el hombre es una especie errante en el espacio, un vagabundo errante en las estrellas.''')
@@ -125,8 +175,12 @@ if __name__ == "__main__":
     if args[0].message:
         description = args[0].message
     else:
-        description = "".join(sys.stdin.readlines())
-
+        message =  _run_editor('spilled_message.txt')
+        if message == '' or message == '\n': 
+            print('Message is blank, so is your mind, Press ^C to exit')
+            description = "".join(sys.stdin.readlines()) 
+        else:
+            description = message
     values = dict(
         author = args[0].author,
         description = description,    
