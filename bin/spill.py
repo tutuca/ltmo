@@ -115,7 +115,7 @@ parser.add_option(
    '--author',
    metavar='NAME', 
    type="string",
-   default='anonymous',
+   default=os.getlogin(),
    help='author associated to the message, not to be confused with source'
 )
 parser.add_option(
