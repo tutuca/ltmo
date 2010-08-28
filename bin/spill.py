@@ -7,7 +7,7 @@ try:
     import simplejson as json
 except ImportError:
     import json
-import sys, os, signal
+import sys, os, signal, tempfile
 import getpass
 
 URI_DEFAULT = "ltmo.com.ar/"
@@ -175,7 +175,9 @@ if __name__ == "__main__":
     if args[0].message:
         description = args[0].message
     else:
-        message =  _run_editor('spilled_message.txt')
+        tempfile = tempfile.NamedTemporaryFile()
+        message =  _run_editor(tempfile.name)
+
         if message == '' or message == '\n': 
             print('Message is blank, so is your mind, Press ^C to exit')
             description = "".join(sys.stdin.readlines()) 
