@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-{%  load md2 tagging_tags pagination_tags %}
+{%  load md2 tagging_tags pagination_tags gravatar %}
 <html lang='es'>
 <head>
     <meta charset="utf-8" />
-    <title>{% block title %}Está amarillo porque le ponemos huevo{% endblock %} . ltmo</title>
+    <title>{% block title %}Le damos a la pacha mama{% endblock %} . ltmo</title>
     <meta name="description" content="LTMO, un sitio para procastinar en todos los niveles que sea imaginable." />
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
 
@@ -28,19 +28,23 @@
         </script>
     </div>  
 
-    <h1><a href="http://ltmo.com.ar/">LTMO</a></h1>
-    <p>un rincón para los amigos</p>
+    <h1 id="logo"><a href="http://{{request.get_host}}">LTMO</a></h1>
+    <p id="tagline">un rincón para los amigos</p>
 </header>
     <section>
     {% block content %}
+    {% if author %}
+       <h1 id="author">{% gravatar author.email %} Derrames de {{author}} </h1>
+    {% else %}
+        <h3>Últimos derrames</h3>
+    {% endif %}
     
-
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         <article>
         {{object.description|urlize|markdown2}}
         {% tags_for_object object as tag_list %}
-        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
+        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata|escapejs}}</details>
         </article>
         {% if forloop.counter == 5 %}
         <div id="banner-content">

@@ -80,10 +80,24 @@ img {
     display:block;
     margin: 1em auto;
 }
-
+#logo {
+    background:#FFF;
+    font-weight:bold;
+    margin-bottom:0;
+}
+#tagline {
+    margin-top:0;
+}
+#logo a {
+    color: #333;
+}
 #banner-header {
     float:right;
 }
 #banner-content {
     text-align:center;
+}
+#author img {
+    float:right;
+    margin:0;
 }

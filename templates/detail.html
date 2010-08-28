@@ -4,11 +4,31 @@
 {% block content %}
         <article>
         {{object.description|urlize|markdown2}}
-        <code>
-        {{object.metadata|safe}}
-        </code>
-        </article>
         {% tags_for_object object as tag_list %}
-        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}</detail>
+        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
+        </article>
+
+        <div id="banner-content">
+            <script type="text/javascript"><!--
+                google_ad_client = "pub-3539830246651089";
+                /* 468x60, creado 26/08/10 */
+                google_ad_slot = "7764155477";
+                google_ad_width = 468;
+                google_ad_height = 60;
+                //-->
+                </script>
+                <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+        </div>    
+        <div class="pagination">
+            {% if object.get_previous_by_changed.get_absolute_url %}
+                <a href="{{object.get_previous_by_changed.get_absolute_url}}">Prev</a>
+            {% endif %}
+            {% if object.get_next_by_changed.get_absolute_url %}
+                <a href="{{object.get_next_by_changed.get_absolute_url}}">Next</a>
+            {% endif %}
+        </div>
 
 {% endblock %}
+

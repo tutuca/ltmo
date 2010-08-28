@@ -16,10 +16,12 @@ sitemaps = {
     'leaks': GenericSitemap(info_dict, priority=0.6),
 }
 
-urlpatterns = patterns('',
-    (r'^$','views.index',{},'index'),
-    (r'^leak/(?P<object_id>\d+)$','views.leak_detail',{},'leak_detail'),
-    (r'^derramo[/]{0,1}','views.new_post',{},' new_post'),
+urlpatterns = patterns('views',
+    (r'^$','index',{},'index'),
+    (r'^leak/(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
+)
+
+urlpatterns += patterns('',
     (r'^feed/$',LeakFeed()),
     (r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /media/*", mimetype="text/plain")),
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', 
