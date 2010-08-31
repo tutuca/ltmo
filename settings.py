@@ -24,7 +24,6 @@ DATABASES = {
     }
 }
 
-
 TIME_ZONE = 'America/Chicago'
 
 LANGUAGE_CODE = 'gn' # Using Guarani, Of Course
@@ -37,13 +36,11 @@ USE_L10N = True
 
 ROOT_URLCONF = 'ltmo.urls'
 
-
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-ADMIN_MEDIA_PREFIX = 'admin_media/'
+ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 
@@ -67,6 +64,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
     'ltmo.context_processors.about',
 )
 
@@ -74,6 +72,7 @@ TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'))
 
 INSTALLED_APPS = (
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',

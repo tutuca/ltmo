@@ -2,6 +2,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from datetime import datetime
 from tagging.fields import TagField
+from django.contrib import admin
 
 class Leak(models.Model):
     slug = models.SlugField(editable=False, unique=True)
@@ -23,3 +24,9 @@ class Leak(models.Model):
         date = datetime.now().strftime("%d%H%M%S")
         self.slug = slugify(self.description[:42]+date)
         super(Leak, self).save()
+        
+class LeakAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'tags','author', 'created')
+    list_filter = ('author', 'created')
+
+admin.site.register(Leak, LeakAdmin)
