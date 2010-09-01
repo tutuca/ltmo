@@ -44,7 +44,7 @@
         <article>
         {{object.description|urlize|markdown2}}
         {% tags_for_object object as tag_list %}
-        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata|escapejs}}</details>
+        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
         </article>
         {% if forloop.counter == 5 %}
         <div id="banner-content">
