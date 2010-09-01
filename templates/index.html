@@ -69,13 +69,16 @@
     </section>
     <aside>
         {{about|markdown2}}
-        {% tags_for_model ltmo.Leak as leak_tags with counts %}
-        <h3>Tags</h3>    
-        <ul>
-        {% for tag in leak_tags %}
-            <li><a href="/?tag={{tag}}">{{tag}}</a> ({{tag.count}})</li>
+        
+        
+        <h3>Nube</h3>    
+        {% tag_cloud_for_model ltmo.Leak as cloud %}
+        {% for tag in cloud %}
+        <a href="/?tag={{tag}}"><span style="font-size:{{tag.font_size|add:'7'}}pt">{{tag}}</span></a>
         {% endfor %}
-        </ul>
+        {% tags_for_model ltmo.Leak as leak_tags with counts %}
+        
+        
         <div id="banner-aside">
             <script type="text/javascript"><!--
             google_ad_client = "pub-3539830246651089";
@@ -89,6 +92,12 @@
             src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
             </script>
         </div>
+        <h3>Tags</h3>    
+        <ul>
+        {% for tag in leak_tags %}
+            <li><a href="/?tag={{tag}}">{{tag}}</a> ({{tag.count}})</li>
+        {% endfor %}
+        </ul>        
         <div >
         <script>
         new TWTR.Widget({
@@ -123,6 +132,7 @@
         </div>
     </aside>
     <footer><p><a href="http://twitter.com/lossingoil">Seguinos en twitter</a> o <a href="mailto://loosingoil@gmail.com">mandanos a trabajar</a>, pero igual revisá el <a href="{{repository.url}}">Código fuente</a> que todavía tenemos {{repository.open_issues}} issues, y de los {{repository.watchers}} culiados que miran el repositorio ninguno nos da una mano</p></footer>
+<!-- VP -->
 </body>
 <script type="text/javascript">
 
