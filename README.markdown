@@ -16,7 +16,9 @@ Si no tenés pip y virtualenv (por qué no???):
         $ sudo easy_install pip
         $ sudo easy_install virtualenv
 
+Ahora podés correr el script así:
 
+        $ cd ltmo/
         $ ./bin/spill.py -h
         Usage: ./spill.py [options]
 
