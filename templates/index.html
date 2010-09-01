@@ -72,9 +72,11 @@
         
         
         <h3>Nube</h3>    
-        {% tag_cloud_for_model ltmo.Leak as cloud %}
+        {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
-        <a href="/?tag={{tag}}"><span style="font-size:{{tag.font_size|add:'7'}}pt">{{tag}}</span></a>
+        <a href="/?tag={{tag}}" 
+           style="font-size:{{tag.font_size|add:'8'}}pt"
+           title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
         
