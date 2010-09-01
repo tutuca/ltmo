@@ -1,16 +1,21 @@
 ¿Qué es lo que observa?
 =============
-Nunca hay suficiente redundancia para garantizar la continuidad de la información
+Nunca hay suficiente redundancia para garantizar la continuidad de la información.
 
-Sumamos una herramienta. 
+Este es un experimento, una herramienta para evitar perder cosas que en algún momento nos resultaron interesantes.
+Hay un [script de linea de comandos](http://github.com/tutuca/ltmo/raw/master/bin/spill.py) con el que envías cosas a algo que se parece a un blog y está hosteado en http://ltmo.com.ar/
 
-Simple, ante todo. usamos $less  y esas cosas.
+Este repositorio contiene tanto el código del sitio como el script.
 
-Hay un script que publica lo que le pases por stdin y lo trata de mandar, junto 
-con todo lo que podamos juntar.
-El código es libre y se explica solo.
+El sitio está hecho en django y tiene muy pocas dependencias que mantenermos con con pip:
 
-una vez después de clonar el repo, pueden probar de enviar un post:
+        $ pip install -r requirements.txt -E /algun/path/para/un/virtualenv/
+        
+Si no tenés pip y virtualenv (por qué no???):
+
+        $ sudo easy_install pip
+        $ sudo easy_install virtualenv
+
 
         $ ./bin/spill.py -h
         Usage: ./spill.py [options]
@@ -48,11 +53,9 @@ una vez después de clonar el repo, pueden probar de enviar un post:
 
 
 ¿Y qué pasa con el resto?
-================
+---------------
 
 Todo lo que envíes con spill se manda a ltmo.com.ar ahí vamos a ir agregando 
 cosas a medida que tengamos más tiempo para perder aceite
 
-                        
-                        
-
+El código es libre y se explica solo. Así que no preguntes por ayuda o explicaciones, nosotros tampoco sabemos de que se trata
