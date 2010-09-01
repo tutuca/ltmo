@@ -1,1 +1,2 @@
-{{obj.author}}: {{obj.description|truncatewords:6}}
+{% load md2 %}
+{{obj.author}}: {{obj.description|markdown2|removetags:'h1 p pre b i strong'|truncatewords:6}}

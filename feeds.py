@@ -11,9 +11,6 @@ class LeakFeed(Feed):
     def items(self):
         return Leak.objects.order_by("-created")[:15]
         
-    def item_title(self, item):
-        return '%s %s' %(item.author, item.created)
-
     def item_description(self, item):
         return item.description    
 
