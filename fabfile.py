@@ -52,12 +52,11 @@ def write_template(file_name, template_name):
 
     return rendered_file
 
-def release():
+def release(rev='HEAD'):
     """Creates a tarball, uploads it and decompresses it in the rigth path."""
-
     require("hosts", provided_by=[development, staging, production])    
     tar = "%s-%s.tar.gz" % (env.project_name ,datetime.datetime.now().strftime("%Y%m%d%H%M%S"),)
-    local("git archive HEAD| gzip > %s" %tar)
+    local("git archive %s| gzip > %s" %(rev,tar))
     put(tar, tar)
     run("tar xfz %s -C %s" % (tar, env.deploy_dir))
     run("rm %s" %tar)
