@@ -1,45 +1,50 @@
 body {
     font: 100% sans-serif;
     padding: 0 5em;
-    width: 70em;
+    margin: 0;
+    min-width:70em;
+    text-align:center;    
 }
 header {
     display:block;
+    margin: 0 auto;
+    width: 64em;
+    text-align:left;
+    padding:0.5em;
 }
 
 footer {
-    width: 60em;
+    width: 64em;
     clear: both;
     display: block;
     padding: 5em 0 0;
+    margin: 0 auto;
+    text-align:left;
 }
 footer p{ 
     font-size: 80%;
 }
+
+#main{
+    text-align:left;
+    margin:0 auto;
+    width: 64em;
+}
+
 section {
     width: 40em;
     display: block;
     float: left;
-    margin: 1em;
-}
-aside {
-    width: 24em;
-    float: left;
-    font-size:80%;
-    margin: 1em
-}
-pre, code {
-    font: monospace;
-    white-space: pre-wrap;
+    padding: 1em;
+    
+    
 }
 
-blockquote{
-    font: serif;
-}
 article {
     display:block;
     background: #EEE;
     padding: 0.1em 1em ;
+    margin: 0.1em -1em ;
     margin-bottom:1em;
     
 } 
@@ -50,21 +55,24 @@ details {
     display:block;
     padding:0.5em;
     color: #555;
-    margin: 0 -1em;
+}
+aside {
+    text-align: left;
+    width: 24em;
+    float: right;
+    font-size:80%;
+    margin: 1em
+}
+pre, code {
+    font: 110% monospace;
+    white-space: pre-wrap;
 }
 
-h1 {
-    font-weight: normal;
-    font-size: 2.5em;
-    background:#FC0;
-    display:inline;
-    line-height:1.5em;
+blockquote{
+    font: 100% italic "Georgia-MS", Georgia, serif;
+    
 }
 
-}
-h2 {
-    font-weight: normal;
-}
 a {
    color:#06C;
    text-decoration:none;
@@ -76,24 +84,40 @@ a:hover {
 a img{
     border: 0;
 }
-img {
+em {
+    font: italic 100% "Georgia-MS", Georgia, serif;
+}
+article img {
     display:block;
     margin: 1em auto;
     max-width: 35em;
 }
+
+h1, h2, h3, h1 a, h2 a, h3 a {
+    font-weight: normal;
+    font-family: 'Garamond','Georgia',serif;
+     color:#06C;
+    margin: 30px 0 10px;
+}
+h1 {
+    font-weight: normal;
+    font-size: 240%;
+    line-height:1.5em;
+}
+h2 {
+    font-size:180%;
+}
+
 #logo {
     background:#FFF;
-    font-weight:bold;
-    margin-bottom:0;
+    margin:0;
 }
 #tagline {
-    margin-top:0;
-}
-#logo a {
-    color: #333;
+    margin:0;
 }
 #banner-header {
     float:right;
+    margin: 0.5em 0;
 }
 #banner-content {
     text-align:center;
@@ -105,3 +129,4 @@ img {
 #banner-aside {
     margin-top:15px;
 }
+

@@ -29,8 +29,9 @@
     </div>  
 
     <h1 id="logo"><a href="http://{{request.get_host}}">LTMO</a></h1>
-    <p id="tagline">un rincón para los amigos</p>
+    <p id="tagline"><em>un rincón para los amigos</em></p>
 </header>
+    <div id="main">
     <section>
     {% block content %}
     {% if author %}
@@ -80,7 +81,6 @@
         {% endfor %}
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
         
-        
         <div id="banner-aside">
             <script type="text/javascript"><!--
             google_ad_client = "pub-3539830246651089";
@@ -100,7 +100,8 @@
             <li><a href="/?tag={{tag}}">{{tag}}</a> ({{tag.count}})</li>
         {% endfor %}
         </ul>        
-        <div >
+        <h3>Publicidad</h3>
+        <div>
         <script>
         new TWTR.Widget({
           version: 2,
