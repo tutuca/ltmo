@@ -72,7 +72,7 @@
         {{about|markdown2}}
         
         
-        <h3>Nube</h3>    
+        <h2>Nube</h2>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
         <a href="/?tag={{tag}}" 
@@ -94,13 +94,7 @@
             src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
             </script>
         </div>
-        <h3>Tags</h3>    
-        <ul>
-        {% for tag in leak_tags %}
-            <li><a href="/?tag={{tag}}">{{tag}}</a> ({{tag.count}})</li>
-        {% endfor %}
-        </ul>        
-        <h3>Publicidad</h3>
+        <h2>Publicidad</h2>
         <div>
         <script>
         new TWTR.Widget({
