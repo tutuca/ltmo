@@ -5,5 +5,3 @@ markdown2
 django-markdown2
 django-pagination
 psycopg2
-github2
-
