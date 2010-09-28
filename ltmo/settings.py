@@ -15,8 +15,8 @@ ADMINS = (
 MANAGERS = ADMINS
 DATABASES = {
     'default': {
-        'ENGINE': '',
-        'NAME': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'ltmo.db',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
