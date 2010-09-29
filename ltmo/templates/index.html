@@ -31,6 +31,7 @@
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         <article>
+        <h1>{{object.title}}</h1>    
         {{object.description|safe|markdown:'code_hilite'|truncatewords_html:'150'}}
         {% tags_for_object object as tag_list %}
         <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>

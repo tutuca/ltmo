@@ -1,5 +1,5 @@
-{%  load md2 tagging_tags %}
-{{obj.description|urlize|markdown2}}
+{%  load markup tagging_tags %}
+{{obj.description|safe|markdown:'code_hilite'|truncatewords_html:'150'}}
 {% tags_for_object obj as tag_list %}
 <details><a href="/?author={{object.author}}">{{obj.author}}</a>, 
 {{obj.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}

@@ -6,6 +6,7 @@ from django.contrib import admin
 
 class Leak(models.Model):
     slug = models.SlugField(editable=False, unique=True)
+    title = models.CharField(max_length=126, null=True, blank=True)
     description = models.TextField()
     author = models.CharField(max_length=20, default='Anonymous')
     created = models.DateTimeField(auto_now_add=True, editable = False)
@@ -14,19 +15,18 @@ class Leak(models.Model):
     metadata = models.TextField()
     
     def __unicode__(self):
-        return self.slug
+        return self.title
 
     @models.permalink
     def get_absolute_url(self):
         return ('leak_detail', [self.id])
         
     def save(self):
-        date = datetime.now().strftime("%d%H%M%S")
-        self.slug = slugify(self.description[:42]+date)
+        self.slug = slugify(self.title)
         super(Leak, self).save()
         
 class LeakAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'tags','author', 'created')
+    list_display = ('title', 'tags','author', 'created')
     list_filter = ('author', 'created')
 
 admin.site.register(Leak, LeakAdmin)

@@ -1,9 +1,10 @@
 {% extends 'index.html' %}
-{%  load md2 tagging_tags pagination_tags %}
+{%  load markup tagging_tags pagination_tags %}
 
 {% block content %}
         <article>
-        {{object.description|urlize|markdown2}}
+        <h1>{{object.title}}</h1>    
+        {{object.description|safe|markdown:'code_hilite'|truncatewords_html:'150'}}
         {% tags_for_object object as tag_list %}
         <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
         </article>
