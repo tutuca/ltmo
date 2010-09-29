@@ -48,8 +48,6 @@ PAGINATION_DEFAULT_WINDOW = 2
 
 FORCE_LOWERCASE_TAGS = True
 
-
-
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -65,7 +63,6 @@ TEMPLATE_LOADERS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.contrib.auth.context_processors.auth',
-    'ltmo.context_processors.about',
 )
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'))
@@ -77,7 +74,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'django_markdown2',
+    'django.contrib.markup',
     'pagination',
     'tagging',
     'ltmo'    

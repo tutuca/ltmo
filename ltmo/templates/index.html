@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-{%  load md2 tagging_tags pagination_tags gravatar %}
+{%  load markup tagging_tags pagination_tags macros gravatar %}
+{% loadmacros "banners.html" %}
 <html lang='es'>
 <head>
     <meta charset="utf-8" />
@@ -8,26 +9,13 @@
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
 
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
-    <link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen" />    
+    <link rel="stylesheet" href="/media/style.css" type="text/css" media="screen" />    
 
-    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<!--    <script src="http://widgets.twimg.com/j/2/widget.js"></script>-->
 </head>
 <body>
 <header>
-    <div id="banner-header">
-        <script type="text/javascript"><!--
-            google_ad_client = "pub-3539830246651089";
-            /* 728x90 listado */
-            google_ad_slot = "4135291841";
-            google_ad_width = 728;
-            google_ad_height = 90;
-            //-->
-            </script>
-            <script type="text/javascript"
-            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-        </script>
-    </div>  
-
+    {% usemacro head %}
     <h1 id="logo"><a href="http://{{request.get_host}}">LTMO</a></h1>
     <p id="tagline"><em>un rincón para los amigos</em></p>
 </header>
@@ -39,28 +27,15 @@
     {% else %}
         <h3>Últimos derrames</h3>
     {% endif %}
-    
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         <article>
-        {{object.description|urlize|markdown2}}
+        {{object.description|urlize|markdown:'safe, codehilite'}}
         {% tags_for_object object as tag_list %}
         <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
         </article>
         {% if forloop.counter == 5 %}
-        <div id="banner-content">
-            <script type="text/javascript"><!--
-                google_ad_client = "pub-3539830246651089";
-                /* 468x60, creado 26/08/10 */
-                google_ad_slot = "7764155477";
-                google_ad_width = 468;
-                google_ad_height = 60;
-                //-->
-                </script>
-                <script type="text/javascript"
-                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-            </script>
-        </div>
+        {% usemacro content %}
         {% endif %}
     {% empty %}
         <h2>Nadie derramó nada aún</h2>
@@ -69,9 +44,14 @@
     {% endblock %}
     </section>
     <aside>
-        {{about|markdown2}}
-        
-        
+<h2> ¿Qué es lo que observa? </h2>
+
+<p>Nunca hay suficiente redundancia para garantizar la continuidad de la información.</p>
+
+<p>Este es un experimento, una herramienta para evitar perder cosas que en algún momento nos resultaron interesantes.
+Hay un <a href="http://github.com/tutuca/ltmo/raw/master/bin/spill.py">script de linea de comandos</a> que te deja entrar un mensaje y enviarlo a esta web.</p>
+
+<p>El código es libre y se explica solo. Así que no preguntes por ayuda o explicaciones, nosotros tampoco sabemos de que se trata.</p>
         <h2>Nube</h2>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
@@ -80,68 +60,13 @@
            title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
-        
-        <div id="banner-aside">
-            <script type="text/javascript"><!--
-            google_ad_client = "pub-3539830246651089";
-            /* 300x250, creado 26/08/10 */
-            google_ad_slot = "2985450362";
-            google_ad_width = 300;
-            google_ad_height = 250;
-            //-->
-            </script>
-            <script type="text/javascript"
-            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-            </script>
-        </div>
+
         <h2>Publicidad</h2>
-        <div>
-        <script>
-        new TWTR.Widget({
-          version: 2,
-          type: 'profile',
-          rpp: 3,
-          interval: 6000,
-          width: 'auto',
-          height: 400,
-          theme: {
-            shell: {
-              background: '#ffffff',
-              color: '#333333'
-            },
-            tweets: {
-              background: '#FFCC00',
-              color: '#333333',
-              links: '#000000'
-            }
-          },
-          features: {
-            scrollbar: false,
-            loop: false,
-            live: false,
-            hashtags: true,
-            timestamp: true,
-            avatars: false,
-            behavior: 'all'
-          }
-        }).render().setUser('losingoil').start();            
-        </script>
-        </div>
+        {% usemacro aside %}
+        {% usemacro twitter %}
     </aside>
     <footer><p><a href="http://twitter.com/lossingoil">Seguinos en twitter</a> o <a href="mailto://loosingoil@gmail.com">mandanos a trabajar</a>, pero igual revisá el <a href="{{repository.url}}">Código fuente</a> que todavía tenemos {{repository.open_issues}} issues, y de los {{repository.watchers}} culiados que miran el repositorio ninguno nos da una mano</p></footer>
 <!-- VP -->
 </body>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-18147848-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+    {% usemacro head %}
 </html>
