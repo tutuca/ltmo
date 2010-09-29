@@ -19,7 +19,6 @@ footer {
     text-align:left;
 }
 footer p{ 
-    font-size: 80%;
 }
 
 #main{
@@ -89,7 +88,6 @@ article img {
 
 h1, h2, h3, h1 a, h2 a, h3 a {
     font-weight: normal;
-    color:#06C;
 }
 h1 {
     font-weight: normal;
