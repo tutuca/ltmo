@@ -116,12 +116,14 @@ h2 {
 #banner-content {
     text-align:center;
 }
-#author img {
-    float:right;
-    margin:0;
-}
 #banner-aside {
     margin-top:15px;
+}
+#author {
+}
+#author details {
+    font-size:50%;
+    display:inline;
 }
 .clear {
     display:block;

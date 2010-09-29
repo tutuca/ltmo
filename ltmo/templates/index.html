@@ -24,7 +24,8 @@
     <section>
     {% block content %}
     {% if author %}
-       <h1 id="author">{% gravatar author.email %} Derrames de {{author}} </h1>
+       <h1 id="author">{% gravatar author.email %} {{author}}, <details>viene perdiendo aceite desde: {{author.date_joined|date}}</details></h1>
+
     {% else %}
         <h3>Últimos derrames</h3>
     {% endif %}
