@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='ltmo',
-    version='0.11dev',
+    version='0.11',
     author=u'Matías Iturburu, Francisco Herrero',
     author_email='maturburu@gmail.com, francisco.herrero@gmail.com',
     url='http://github.com/tutuca/ltmo',
