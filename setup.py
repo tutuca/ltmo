@@ -12,14 +12,17 @@ setup(
     description = 'Un sitio para los amigos',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=[
-        'PIL',
-        'markdown',
-        'psycopg2',
-        'django',
-        'django-tagging',
-        'django-pagination'
-    ]
-
-
+    entry_points = {
+        'console_scripts': [
+            'ltmo_manage = ltmo.manage:manage',
+        ],
+    },
+#    install_requires=[
+#        'PIL',
+#        'markdown',
+#        'psycopg2',
+#        'django',
+#        'django-tagging',
+#        'django-pagination'
+#    ]
 )

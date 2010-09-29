@@ -16,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'ltmo.db',
+        'NAME': os.path.join(BASE_DIR, 'ltmo.db'),
         'USER': '',
         'PASSWORD': '',
         'HOST': '',

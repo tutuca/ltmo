@@ -18,7 +18,7 @@ sitemaps = {
     'leaks': GenericSitemap(info_dict, priority=0.6),
 }
 
-urlpatterns = patterns('views',
+urlpatterns = patterns('ltmo.views',
     (r'^$','index',{},'index'),
     (r'^leak/(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
 )
