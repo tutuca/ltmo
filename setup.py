@@ -17,12 +17,12 @@ setup(
             'ltmo_manage = ltmo.manage:manage',
         ],
     },
-#    install_requires=[
-#        'PIL',
-#        'markdown',
-#        'psycopg2',
-#        'django',
-#        'django-tagging',
-#        'django-pagination'
-#    ]
+    install_requires=[
+        'PIL',
+        'markdown',
+        'psycopg2',
+        'django',
+        'django-tagging',
+        'django-pagination'
+    ]
 )
