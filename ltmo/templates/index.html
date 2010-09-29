@@ -14,12 +14,13 @@
 <!--    <script src="http://widgets.twimg.com/j/2/widget.js"></script>-->
 </head>
 <body>
+<div id="wrapper">
 <header>
     {% usemacro head %}
-    <h1 id="logo"><a href="http://{{request.get_host}}">LTMO</a></h1>
-    <p id="tagline"><em>un rincón para los amigos</em></p>
+    <h1 id="logo"><a href="http://{{request.get_host}}">ltmo</a></h1>
+    <p id="tagline">un rincón para los amigos</p>
 </header>
-    <div id="main">
+<div id="main">
     <section>
     {% block content %}
     {% if author %}
@@ -30,29 +31,24 @@
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         <article>
-        {{object.description|urlize|markdown:'safe, codehilite'}}
+        {{object.description|safe|markdown:'code_hilite'|truncatewords_html:'150'}}
         {% tags_for_object object as tag_list %}
         <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
         </article>
-        {% if forloop.counter == 5 %}
-        {% usemacro content %}
-        {% endif %}
-    {% empty %}
-        <h2>Nadie derramó nada aún</h2>
+        {% if forloop.counter == 5 %}{% usemacro content %}{% endif %}
+    {% empty %}<h2>Nadie derramó nada aún</h2>
     {% endfor %}
     {% paginate %}
     {% endblock %}
     </section>
     <aside>
-<h2> ¿Qué es lo que observa? </h2>
+        <h3> ¿Qué es lo que observa? </h3>
+        <p>Nunca hay suficiente redundancia para garantizar la continuidad de la información.</p>
+        <p>Este es un experimento, una herramienta para evitar perder cosas que en algún momento nos resultaron interesantes.
+        Hay un <a href="http://github.com/tutuca/ltmo/raw/master/bin/spill.py">script de linea de comandos</a> que te deja entrar un mensaje y enviarlo a esta web.</p>
 
-<p>Nunca hay suficiente redundancia para garantizar la continuidad de la información.</p>
-
-<p>Este es un experimento, una herramienta para evitar perder cosas que en algún momento nos resultaron interesantes.
-Hay un <a href="http://github.com/tutuca/ltmo/raw/master/bin/spill.py">script de linea de comandos</a> que te deja entrar un mensaje y enviarlo a esta web.</p>
-
-<p>El código es libre y se explica solo. Así que no preguntes por ayuda o explicaciones, nosotros tampoco sabemos de que se trata.</p>
-        <h2>Nube</h2>    
+        <p>El código es libre y se explica solo. Así que no preguntes por ayuda o explicaciones, nosotros tampoco sabemos de que se trata.</p>
+        <h3>Nube</h3>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
         <a href="/?tag={{tag}}" 
@@ -61,12 +57,17 @@ Hay un <a href="http://github.com/tutuca/ltmo/raw/master/bin/spill.py">script de
         {% endfor %}
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
 
-        <h2>Publicidad</h2>
+        <h3>Publicidad</h3>
         {% usemacro aside %}
         {% usemacro twitter %}
     </aside>
-    <footer><p><a href="http://twitter.com/lossingoil">Seguinos en twitter</a> o <a href="mailto://loosingoil@gmail.com">mandanos a trabajar</a>, pero igual revisá el <a href="{{repository.url}}">Código fuente</a> que todavía tenemos {{repository.open_issues}} issues, y de los {{repository.watchers}} culiados que miran el repositorio ninguno nos da una mano</p></footer>
+    <br class="clear"/>
+</div>
+<footer>
+        <p><a href="http://twitter.com/lossingoil">Seguinos en twitter</a> o <a href="mailto://loosingoil@gmail.com">mandanos a trabajar</a>, pero igual revisá el <a href="{{repository.url}}">Código fuente</a> que todavía tenemos {{repository.open_issues}} issues, y de los {{repository.watchers}} culiados que miran el repositorio ninguno nos da una mano</p>
+</footer>
+</div>
 <!-- VP -->
 </body>
-    {% usemacro head %}
+    {% usemacro google_analytics %}
 </html>
