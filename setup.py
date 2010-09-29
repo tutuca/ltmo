@@ -17,7 +17,7 @@ setup(
         'markdown',
         'psycopg2',
         'django',
-        'django-tagging'
+        'django-tagging',
         'django-pagination'
     ]
 
