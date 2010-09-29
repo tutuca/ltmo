@@ -1,0 +1,45 @@
+templatetags/macros.py - Support for macros in Django templates
+
+Author: Michal Ludvig <michal@logix.cz> http://www.logix.cz/michal
+
+Tag library that provides support for "macros" in
+Django templates.
+
+Usage example:
+
+1) In your template load the library:
+        {% load macros %}
+
+2) Define a new macro called 'my_macro' with
+   parameter 'arg1':
+        {% macro my_macro arg1 %}
+        Parameter: {{ arg1 }} <br/>
+        {% endmacro %}
+
+3) Use the macro with a String parameter:
+        {% usemacro my_macro "String parameter" %}
+
+   or with a variable parameter (provided the 
+   context defines 'somearg' variable, e.g. with
+   value "Variable parameter"):
+        {% usemacro my_macro somearg %}
+
+   The output of the above code would be:
+        Parameter: String parameter <br/>
+        Parameter: Variable parameter <br/>
+
+4) Alternatively save your macros in a separate
+   file, e.g. "mymacros.html" and load it to the 
+   current template with:
+        {% loadmacros "mymacros.html" %}
+   Then use these loaded macros in {% usemacro %} 
+   as described above.
+
+Macros can take zero or more arguments and both
+context variables and macro arguments are resolved
+in macro body when used in {% usemacro ... %} tag.
+
+Bear in mind that defined and loaded Macros are local 
+to each template file and are not inherited 
+through {% extends ... %} tags.
+

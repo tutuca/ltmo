@@ -2,6 +2,10 @@
 *~
 *.db
 *.tar.gz
-etc/*
+*.log
+*egg-info
 local_settings.py
+pip-log.txt
+etc/*
+
 

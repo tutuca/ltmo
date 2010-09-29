@@ -1,0 +1,5 @@
+recursive-include ltmo/templates *
+recursive-include media/*
+exclude fabfile.py
+exclude local_settings.py
+
