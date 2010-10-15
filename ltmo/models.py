@@ -3,6 +3,8 @@ from django.template.defaultfilters import slugify
 from datetime import datetime
 from tagging.fields import TagField
 from django.contrib import admin
+from markdown import markdown
+from django.template.defaultfilters import striptags
 
 class Leak(models.Model):
     slug = models.SlugField(editable=False, unique=True)
@@ -22,7 +24,8 @@ class Leak(models.Model):
         return ('leak_detail', [self.id])
         
     def save(self):
-        self.slug = slugify(self.title)
+        now = datetime.now().strftime("%Y%R%N")
+        self.slug = slugify('%s-%s' % (self.title[:30], now))
         super(Leak, self).save()
         
 class LeakAdmin(admin.ModelAdmin):
