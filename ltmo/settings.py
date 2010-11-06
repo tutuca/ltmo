@@ -75,6 +75,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.markup',
+    'south',
     'pagination',
     'tagging',
     'ltmo'    
