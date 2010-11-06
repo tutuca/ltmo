@@ -10,6 +10,7 @@ class Leak(models.Model):
     slug = models.SlugField(editable=False, unique=True)
     title = models.CharField(max_length=126, null=True, blank=True)
     description = models.TextField()
+    rendered = models.TextField(null=True, blank=True, editable = False)
     author = models.CharField(max_length=20, default='Anonymous')
     created = models.DateTimeField(auto_now_add=True, editable = False)
     changed = models.DateTimeField(auto_now=True, editable = False)
@@ -25,6 +26,7 @@ class Leak(models.Model):
         
     def save(self):
         now = datetime.now().strftime("%Y%R%N")
+        self.rendered = markdown(self.description)
         self.slug = slugify('%s-%s' % (self.title[:30], now))
         super(Leak, self).save()
         
