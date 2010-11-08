@@ -25,6 +25,8 @@ class Leak(models.Model):
         return ('leak_detail', [self.id])
         
     def save(self):
+        if self.title == '':
+            self.title = self.description[:70]
         now = datetime.now().strftime("%Y%R%N")
         self.rendered = markdown(self.description)
         self.slug = slugify('%s-%s' % (self.title[:30], now))
