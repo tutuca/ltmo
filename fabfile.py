@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# $Id$
 """Deployment script.
 
 This script is coded so it can make the deployments automagically in the 
@@ -9,10 +8,6 @@ designed servers.
 USE: fab <hosts>:<username> <action>
 EX: fab staging:admin release
 """
-
-__author__ = "$Author$"
-__version__ = "$Revision$"
-__date__ = "$Date$"
 
 import os
 import sys
@@ -66,5 +61,3 @@ def apache_restart():
     """Restarts the program in the servers."""
     require("hosts", provided_by=[development, staging, production])
     run(env.apache_command)
-
-# vim: set fenc=utf-8 tw=79 sw=4 ts=4 sts=4 ai et:
