@@ -1,0 +1,5 @@
+markdown
+pygments
+django-tagging
+django-pagination
+psycopg2
