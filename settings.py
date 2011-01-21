@@ -81,4 +81,8 @@ INSTALLED_APPS = (
     'tagging',
     'ltmo'    
 )
-from local_settings import *
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
