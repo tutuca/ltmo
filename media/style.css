@@ -40,8 +40,10 @@ article {
     padding: 0.1em 1em ;
     margin: 0.1em -1em ;
     margin-bottom:1em;
-    
 } 
+article h1 {
+    text-shadow: 1px 1px 1px #999, 0 -1px 1px #EBEBEB;
+}
 
 details {
     text-align: right;
@@ -104,6 +106,7 @@ h2 {
 #logo {
     background:#FFF;
     margin:0;
+    font-size: 3.5em;
 }
 #tagline {
     margin:0;
@@ -129,5 +132,12 @@ h2 {
     display:block;
     clear:both;
 }
+#pagination {}
+.prev {
+    float:left;
+}
+.next { 
+    float:right;
+} 
 /*DEBUG*/
 

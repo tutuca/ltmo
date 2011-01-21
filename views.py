@@ -65,5 +65,5 @@ def leak_detail(request, object_id):
         request,
         queryset,
         object_id,
-        template_name='detail.html'
+        template_name='detail.html',
     )
