@@ -32,7 +32,7 @@ def production(username="mherrero", hosts=["mherrero.webfactional.com"]):
     env.user = username
     env.hosts = hosts
     env.project_name = BASE_DIR.split('/')[-1:].pop()
-    env.deploy_dir = '/home/mherrero/webapps/ltmo/ltmo'
+    env.deploy_dir = '/home/mherrero/webapps/ltmo/src/ltmo'
     env.virtual_env = '/home/mherrero/webapps/ltmo/venv'
     env.apache_command = '/home/mherrero/webapps/ltmo/apache2/bin/restart'
     
