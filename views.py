@@ -5,14 +5,16 @@ from django.views.generic import list_detail, simple
 
 from ltmo.forms import LeakForm
 from ltmo.models import Leak
+
+
 def index(request):
-    author = request.GET.get('author',None)
-    tag = request.GET.get('tag',None)
+    author = request.GET.get('author', None)
+    tag = request.GET.get('tag', None)
     queryset = Leak.objects.all().order_by('-created')
     if author:
-        queryset = queryset.filter(author__icontains = author)
+        queryset = queryset.filter(author__icontains=author)
         try:
-            author = User.objects.get(username__icontains = author)
+            author = User.objects.get(username__icontains=author)
         except User.DoesNotExist:
             author = None
     if tag:
@@ -25,10 +27,10 @@ def index(request):
             leak = form.save()
         return simple.direct_to_template(
             request,
-            'success.json', 
+            'success.json',
             mimetype='application/json',
             extra_context={
-                'form':form,
+                'form': form,
             }
         )
     return list_detail.object_list(
@@ -36,10 +38,11 @@ def index(request):
         queryset,
         template_name='index.html',
         extra_context={
-            'author':author,
-            'tag':tag,
+            'author': author,
+            'tag': tag,
         }
     )
+
 
 def leak_detail(request, object_id):
     if request.method == 'POST':
@@ -50,10 +53,10 @@ def leak_detail(request, object_id):
             leak = form.save()
         return simple.direct_to_template(
             request,
-            'success.json', 
+            'success.json',
             mimetype='application/json',
             extra_context={
-                'form':form,
+                'form': form,
             }
         )
 
@@ -62,6 +65,5 @@ def leak_detail(request, object_id):
         request,
         queryset,
         object_id,
-        template_name = 'detail.html'
+        template_name='detail.html'
     )
-

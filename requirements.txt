@@ -1,7 +1,8 @@
 PIL
 django
 django-tagging
-markdown2
+markdown
+pygments
 django-markdown2
 django-pagination
 psycopg2
