@@ -7,7 +7,7 @@ from markdown import markdown
 from django.template.defaultfilters import striptags, slugify
 
 class Leak(models.Model):
-    slug = models.SlugField(editable=False)
+    slug = models.SlugField(editable=False, blank=True, null=True)
     title = models.CharField(max_length=126, null=True, blank=True)
     description = models.TextField()
     rendered = models.TextField(null=True, blank=True, editable = False)
@@ -27,9 +27,9 @@ class Leak(models.Model):
     def save(self):
         self.rendered = markdown(self.description)
         if self.title == '':
-            self.title = striptags(self.rendered)[:70] or u'sin título'
-        now = datetime.now().strftime("%Y%R%N")
-        self.slug = slugify('%s-%s' % (self.title[:30], now))
+            self.title = striptags(self.rendered)[:70] or u''
+        slug_text = self.title[:30] or u'sin título'
+        self.slug = slugify(slug_text)
         super(Leak, self).save()
         
 class LeakAdmin(admin.ModelAdmin):

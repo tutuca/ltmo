@@ -9,6 +9,7 @@ a = Leak.objects.all()
 def reload_ltmo():
     for x in a:
          x.rendered = markdown(x.description)
-         x.title = striptags(x.rendered)[:70] or u'sin título'
+         x.title = u''
+         x.title = striptags(x.rendered)[:70] or u''
          x.save()
     
