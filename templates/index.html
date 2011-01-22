@@ -9,6 +9,15 @@
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
     <link rel="stylesheet" href="/media/style.css" type="text/css" media="screen" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+    $(document).ready(function(){
+            $('#new-leak').click(function(){
+            $('#leak-form').toggle();
+            return false;
+        })
+    })
+    </script>
     <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 </head>
 <body>
@@ -20,14 +29,16 @@
     <br class="clear"/>
 </header>
 <div id="main">
+{% block main %}
     <section>
     {% block content %}
+        <a href="#leak-form" id="new-leak" title="Nunca sobra un poco de aceite">Nuevo</a>
     {% if author %}
        <h1 id="author">{% gravatar author.email %} {{author}}, <details>viene perdiendo aceite desde: {{author.date_joined|date}}</details></h1>
-
     {% else %}
         <h3 class="caption">Últimos derrames</h3>
     {% endif %}
+    {% include 'leak_form.html' %}
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         <article>
@@ -36,7 +47,13 @@
         {% endif %}
         {{object.rendered|safe|truncatewords_html:'150'}}
         {% tags_for_object object as tag_list %}
-        <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
+        <details>
+            <a href="/?author={{object.author}}">@{{object.author}}</a>, 
+            {{object.created|date}}, 
+            {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+            <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>
+            {{object.metadata}}
+        </details>
         </article>
         {% if forloop.counter == 5 %}{% usemacro content %}{% endif %}
     {% empty %}<h2>Nadie derramó nada aún</h2>
@@ -65,7 +82,9 @@
         {% usemacro twitter %}
     </aside>
     <br class="clear"/>
+{% endblock %}
 </div>
+
 <footer>
         <p><a href="http://twitter.com/lossingoil">Seguinos en twitter</a> o <a href="mailto://loosingoil@gmail.com">mandanos a trabajar</a>, pero igual revisá el <a href="{{repository.url}}">Código fuente</a> que todavía tenemos {{repository.open_issues}} issues, y de los {{repository.watchers}} culiados que miran el repositorio ninguno nos da una mano</p>
 </footer>

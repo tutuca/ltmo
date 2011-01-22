@@ -1,0 +1,31 @@
+<form action="{% url index %}" method="post" id="leak-form" class="hide">
+    <blockquote id="format-help">
+        <h3>Ayuda de formato</h3>
+
+        <pre>  
+Podés usar un **poco ** de [markdown](http://daringfireball.net/projects/markdown/syntax).
+
+![Para tirarle una onda](http://ltmo.com.ar/media/trollface.png)
+        </pre>
+        <div class="preview">
+        <p>Podés usar un <strong>poco</strong> de <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a></p>
+        <p><img alt="Para tirarle una onda" src="http://ltmo.com.ar/media/trollface.png" /></p>
+        </div>
+
+    </blockquote>
+    <input type="hidden" name="{{form.author.name}}" value="{{user}}" />
+    <div class="field" id="field_{{form.title.name}}"> 
+        <label for="{{form.title.name}}">Título</label> 
+        {{form.title}}
+    </div>
+
+    <div class="field" id="field_{{form.description.name}}"> 
+        <label for="{{form.description.name}}">Derrame</label>
+        {{form.description}}
+    </div>
+        <div class="field" id="field_{{form.tags.name}}"> 
+        <label for="{{form.tags.name}}">Tags separados por coma</label> 
+        {{form.tags}}
+    </div>
+    <p><input type="submit" value="Guardar" /></p>
+</form>

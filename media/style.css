@@ -187,5 +187,36 @@ h2 {
     min-width:30px;
     white-space: nowrap;
 }
-/*DEBUG*/
 
+/* forms */
+.hide {
+    display:none;
+}
+#new-leak {
+    float: right;
+    padding: 1.25em 1em;
+    border-radius: 0px 3px 0px 0px;
+    -moz-border-radius: 0px 3px 0px 0px;
+    -webkit-border-radius: 0px 3px 0px 0px;
+}
+#new-leak:hover {
+    background:#E2EDFA;
+
+}
+form {
+    padding: 1em;
+    border: 1px solid #EEE;
+    border-color: #FFF transparent #EEE;
+    border-width: 1px 0px
+}
+#format-help {
+    float: right;
+    width: 25em;
+    margin: 0;
+}
+#format-help h3 {
+    margin-top: 0;
+}
+label {
+    display: block;
+}

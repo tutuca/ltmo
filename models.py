@@ -15,7 +15,7 @@ class Leak(models.Model):
     created = models.DateTimeField(auto_now_add=True, editable = False)
     changed = models.DateTimeField(auto_now=True, editable = False)
     tags = TagField(default='random')
-    metadata = models.TextField()
+    metadata = models.TextField(default='', null=True, blank=True)
     
     def __unicode__(self):
         return self.title or u'sin título'

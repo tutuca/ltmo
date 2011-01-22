@@ -11,6 +11,7 @@ def index(request):
     author = request.GET.get('author', None)
     tag = request.GET.get('tag', None)
     queryset = Leak.objects.all().order_by('-created')
+    form = LeakForm()
     if author:
         queryset = queryset.filter(author__icontains=author)
         try:
@@ -40,8 +41,10 @@ def index(request):
         extra_context={
             'author': author,
             'tag': tag,
+            'form': form,
         }
     )
+
 
 
 def leak_detail(request, object_id):
