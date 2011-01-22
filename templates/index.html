@@ -7,10 +7,8 @@
     <title>ltmo . {% block title %}La pucha con el verano{% endblock %}</title>
     <meta name="description" content="LTMO, un sitio para procastinar en todos los niveles que sea imaginable." />
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
-
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
     <link rel="stylesheet" href="/media/style.css" type="text/css" media="screen" />    
-
     <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 </head>
 <body>
@@ -28,7 +26,7 @@
        <h1 id="author">{% gravatar author.email %} {{author}}, <details>viene perdiendo aceite desde: {{author.date_joined|date}}</details></h1>
 
     {% else %}
-        <h3>Últimos derrames</h3>
+        <h3 class="caption">Últimos derrames</h3>
     {% endif %}
     {% autopaginate object_list 10 %}
     {% for object in object_list %}

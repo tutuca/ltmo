@@ -24,25 +24,37 @@ footer p{
 #main{
     text-align:left;
     margin:0 auto;
-    overflow: hidden;
 }
 
 section {
-    width: 50em;
-    display: block;
-    float: left;
-    padding: 1em;
-}
-
-article {
     display:block;
-    background: #EEE;
-    padding: 0.1em 1em ;
+    width: 53em;
+    float: left;
+    background: #FCFCFC;
+    padding:0;
     margin: 0.1em -1em ;
     margin-bottom:1em;
+    box-shadow: 0px 2px 4px #CCC;
+    -moz-box-shadow: 0px 2px 4px #CCC;
+    -webkit-box-shadow: 0px 2px 4px #CCC;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+
 } 
-article h1 {
-    text-shadow: 1px 1px 1px #999, 0 -1px 1px #EBEBEB;
+article {
+    display:block;
+    margin: 0;
+    border: 1px solid #EEE;
+    border-color: #FFF transparent #EEE;
+    border-width: 1px 0;
+    padding: 0 1em;    
+}
+article h1, article h1 a {
+    text-shadow: 1px 1px 1px #FFFFFF, 0 -1px 1px #EBEBEB;
+    font-family: 'Georgia',serif;
+    font-style: italic; 
+    color: #900;
 }
 
 details {
@@ -73,7 +85,7 @@ a {
    text-decoration:none;
 }
 a:hover {
-    text-decoration: underline;
+    text-shadow: 1px 1px 1px #CCC, 0 -1px 1px #EBEBEB;
 }
 
 a img{
@@ -123,21 +135,57 @@ h2 {
     margin-top:15px;
 }
 #author {
+    padding: 0.5em;
+    margin:0;
+    border-color: transparent transparent #EEEEEE;
+    border-style: solid;
+    border-width: 0 0 1px;
+
 }
 #author details {
     font-size:50%;
-    display:inline;
+    margin: -1.5em 0;
+    text-align:left;
+}
+.gravatar {
+    float:right;
+}
+
+.caption {
+    margin:0;
+    padding: 1em;
+    border-color: transparent transparent #EEEEEE;
+    border-style: solid;
+    border-width: 0 0 1px;
 }
 .clear {
     display:block;
     clear:both;
 }
-#pagination {}
+
 .prev {
     float:left;
+    padding: 1em;
 }
 .next { 
     float:right;
+    padding: 1em;
 } 
+
+.tags {
+    background-image: url("bg-tags.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #666666;
+    font-family: Arial,sans-serif;
+    font-size: 11px;
+    line-height: 32px;
+    margin: 2px 2px 2px 0;
+    overflow: visible;
+    padding: 4px 4px 4px 16px;
+    text-decoration: none;
+    min-width:30px;
+    white-space: nowrap;
+}
 /*DEBUG*/
 
