@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from datetime import datetime
 from tagging.fields import TagField
@@ -6,7 +7,7 @@ from markdown import markdown
 from django.template.defaultfilters import striptags, slugify
 
 class Leak(models.Model):
-    slug = models.SlugField(editable=False, unique=True)
+    slug = models.SlugField(editable=False)
     title = models.CharField(max_length=126, null=True, blank=True)
     description = models.TextField()
     rendered = models.TextField(null=True, blank=True, editable = False)
@@ -17,17 +18,17 @@ class Leak(models.Model):
     metadata = models.TextField()
     
     def __unicode__(self):
-        return self.title
+        return self.title or u'sin título'
 
     @models.permalink
     def get_absolute_url(self):
         return ('leak_detail', [self.id])
         
     def save(self):
-        if self.title == '':
-            self.title = self.description[:70]
-        now = datetime.now().strftime("%Y%R%N")
         self.rendered = markdown(self.description)
+        if self.title == '':
+            self.title = striptags(self.rendered)[:70] or u'sin título'
+        now = datetime.now().strftime("%Y%R%N")
         self.slug = slugify('%s-%s' % (self.title[:30], now))
         super(Leak, self).save()
         
