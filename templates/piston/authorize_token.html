@@ -1,9 +1,0 @@
-{% extends 'index.html' %}
-{% block main %}
-<div id="login">
-    <form action=""{% url piston.authentication.oauth_user_auth %}" method="POST">
-        {{form.as_p}}
-        <p><input type="submit" value="Ingresar" /></p>
-    </form>
-</div>
-{% endblock %}
