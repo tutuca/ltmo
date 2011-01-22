@@ -4,7 +4,7 @@
 {% block content %}
         <article>
         <h1>{{object.title}}</h1>    
-        {{object.rendered|safe}}
+        {{object.rendered|safe|urlize}}
         {% tags_for_object object as tag_list %}
         <details><a href="/?author={{object.author}}">{{object.author}}</a>, {{object.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}{{object.metadata}}</details>
         </article>

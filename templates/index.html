@@ -44,7 +44,7 @@
         {% if object.title %}
         <h1> <a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>    
         {% endif %}
-        {{object.rendered|safe|truncatewords_html:'150'}}
+        {{object.rendered|safe|urlize|truncatewords_html:'150'}}
         {% tags_for_object object as tag_list %}
         <details>
             <a href="/?author={{object.author}}">@{{object.author}}</a>, 
