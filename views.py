@@ -22,8 +22,8 @@ def index(request):
         queryset = queryset.filter(tags__icontains=tag)
 
     if request.method == 'POST':
-        post = json.loads(request.raw_post_data)
-        form = LeakForm(post)
+        #post = json.loads(request.raw_post_data)
+        form = LeakForm(request.POST)
         if form.is_valid():
             leak = form.save()
         return simple.direct_to_template(
@@ -32,6 +32,7 @@ def index(request):
             mimetype='application/json',
             extra_context={
                 'form': form,
+                'object_id': leak.pk,
             }
         )
     return list_detail.object_list(
@@ -45,6 +46,15 @@ def index(request):
         }
     )
 
+def render_leak(request, object_id=None):
+    leak = Leak.objects.get(pk=object_id)
+    return simple.direct_to_template(
+        request,
+        'leak.html',
+        extra_context={
+            'object': leak,
+        }
+    )
 
 
 def leak_detail(request, object_id):

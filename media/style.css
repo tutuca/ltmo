@@ -45,6 +45,7 @@ section {
 article {
     display:block;
     margin: 0;
+    background: #FCFCFC;
     border: 1px solid #EEE;
     border-color: #FFF transparent #EEE;
     border-width: 1px 0;

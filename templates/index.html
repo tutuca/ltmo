@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%  load markup tagging_tags pagination_tags macros gravatar %}
+{%  load tagging_tags pagination_tags macros gravatar %}
 {% loadmacros "banners.html" %}
 <html lang='es'>
 <head>
@@ -10,10 +10,23 @@
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
     <link rel="stylesheet" href="/media/style.css" type="text/css" media="screen" />    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script src="/media/ui.js"></script>
     <script type="text/javascript" language="javascript">
+
     $(document).ready(function(){
-            $('#new-leak').click(function(){
+        $('#new-leak').click(function(){
             $('#leak-form').toggle();
+            return false;
+        })
+        $('#leak-form').submit(function(){
+            target = $('#leak-form').attr('action');
+            $.post(target, $('#leak-form').serialize(), function(data){
+                a = $('<article>');
+                $(a).load('/raw_leak/'+data['object_id']);
+                $('#leak-list').prepend(a)
+                $(a).effect("highlight", {}, 3000);
+                $('#leak-form').toggle()
+            });
             return false;
         })
     })
@@ -38,27 +51,19 @@
         <h3 class="caption">Últimos derrames</h3>
     {% endif %}
     {% include 'leak_form.html' %}
+    <div id="leak-list">
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         <article>
-        {% if object.title %}
-        <h1> <a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>    
-        {% endif %}
-        {{object.rendered|safe|urlize|truncatewords_html:'150'}}
-        {% tags_for_object object as tag_list %}
-        <details>
-            <a href="/?author={{object.author}}">@{{object.author}}</a>, 
-            {{object.created|date}}, 
-            {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
-            <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>
-            {{object.metadata}}
-        </details>
+        {% include 'leak.html' %}
         </article>
         {% if forloop.counter == 5 %}{% usemacro content %}{% endif %}
     {% empty %}<h2>Nadie derramó nada aún</h2>
     {% endfor %}
+    </div>
     {% paginate %}
     {% endblock %}
+
     </section>
     <aside>
         <h3> ¿Qué es lo que observa? </h3>

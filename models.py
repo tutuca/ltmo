@@ -26,8 +26,6 @@ class Leak(models.Model):
         
     def save(self):
         self.rendered = markdown(self.description)
-        if self.title == '':
-            self.title = striptags(self.rendered)[:70] or u''
         slug_text = self.title[:30] or u'sin título'
         self.slug = slugify(slug_text)
         super(Leak, self).save()
