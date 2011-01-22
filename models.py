@@ -1,10 +1,9 @@
 from django.db import models
-from django.template.defaultfilters import slugify
 from datetime import datetime
 from tagging.fields import TagField
 from django.contrib import admin
 from markdown import markdown
-from django.template.defaultfilters import striptags
+from django.template.defaultfilters import striptags, slugify
 
 class Leak(models.Model):
     slug = models.SlugField(editable=False, unique=True)
