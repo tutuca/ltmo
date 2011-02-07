@@ -1,0 +1,14 @@
+{%  load tagging_tags %}
+{% if object.title %}
+<h1> <a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>    
+{% endif %}
+{{object.rendered|safe|urlize|truncatewords_html:'150'}}
+{% tags_for_object object as tag_list %}
+<details>
+    <a href="/?author={{object.author}}">@{{object.author}}</a>, 
+    {{object.created|date}}, 
+    <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>,
+    {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+
+    {{object.metadata}}
+</details>

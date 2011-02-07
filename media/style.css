@@ -1,8 +1,9 @@
 body {
     font: 80% "Lucida Grande", Arial, Helvetica, sans-serif;
-    padding: 0 5em;
+    padding: 0;
     margin: 0;
     text-align: center;    
+    background: #FFF url(background.png);
 }
 header {
     display:block;
@@ -115,9 +116,12 @@ h2 {
     width: 75em;
     margin: 0 auto;
     text-align:left;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px 15px 0 0;
+    -moz-border-radius: 15px 15px 0 0;
+    -webkit-border-radius: 15px 15px 0 0;
 }
 #logo {
-    background:#FFF;
     margin:0;
     font-size: 3.5em;
 }
