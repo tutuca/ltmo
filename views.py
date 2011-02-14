@@ -2,6 +2,7 @@ from django.conf import settings
 from django.utils import simplejson as json
 from django.contrib.auth.models import User
 from django.views.generic import list_detail, simple
+from django.http import HttpResponseNotModified, HttpResponseRedirect
 
 from ltmo.forms import LeakForm
 from ltmo.models import Leak
@@ -22,19 +23,9 @@ def index(request):
         queryset = queryset.filter(tags__icontains=tag)
 
     if request.method == 'POST':
-        #post = json.loads(request.raw_post_data)
-        form = LeakForm(request.POST)
-        if form.is_valid():
-            leak = form.save()
-        return simple.direct_to_template(
-            request,
-            'success.json',
-            mimetype='application/json',
-            extra_context={
-                'form': form,
-                'object_id': leak.pk,
-            }
-        )
+        post = json.loads(request.raw_post_data)
+        return leak_new(request, post)
+        
     return list_detail.object_list(
         request,
         queryset,
@@ -45,6 +36,15 @@ def index(request):
             'form': form,
         }
     )
+
+def leak_new(request, data=None):
+    data = data or request.POST
+    form = LeakForm(data)
+    
+    if form.is_valid():
+        leak = form.save()
+        return HttpResponseRedirect('/')           
+    return HttpResponseNotModified('/')
 
 def render_leak(request, object_id=None):
     leak = Leak.objects.get(pk=object_id)

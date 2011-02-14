@@ -18,17 +18,6 @@
             $('#leak-form').toggle('slow');
             return false;
         })
-        $('#leak-form').submit(function(){
-            target = $('#leak-form').attr('action');
-            $.post(target, $('#leak-form').serialize(), function(data){
-                a = $('<article>');
-                $(a).load('/raw_leak/'+data['object_id']);
-                $('#leak-list').prepend(a)
-                $(a).effect("highlight", {}, 3000);
-                $('#leak-form').toggle()
-            });
-            return false;
-        })
     })
     </script>
 </head>
