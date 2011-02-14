@@ -4,7 +4,7 @@
 <html lang='es'>
 <head>
     <meta charset="utf-8" />
-    <title>ltmo . {% block title %}La pucha con el verano{% endblock %}</title>
+    <title>ltmo . {% block title %}Igual que a Scioli, a veces se nos va la mano{% endblock %}</title>
     <meta name="description" content="LTMO, un sitio para procastinar en todos los niveles que sea imaginable." />
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
@@ -13,7 +13,7 @@
     <script type="text/javascript" language="javascript">
     $(document).ready(function(){
             $('#new-leak').click(function(){
-            $('#leak-form').toggle();
+            $('#leak-form').toggle('slow');
             return false;
         })
     })
@@ -22,22 +22,20 @@
 <body>
 <div id="wrapper">
 <header>
-    {% usemacro head %}
+
+    {% if author %}
+       <h1 id="author">{% gravatar author.email %} {{author}}, <details>viene perdiendo aceite desde: {{author.date_joined|date}}</details></h1>
+    {% else %}
+    <a href="#leak-form" id="new-leak" title="Nunca sobra un poco de aceite">derramá que el aire es gratis</a>
     <h1 id="logo"><a href="http://{{request.get_host}}">ltmo</a></h1>
-    <p id="tagline">un rincón para los amigos</p>
+    {% endif %}
+    {% include 'leak_form.html' %}
     <br class="clear"/>
 </header>
 <div id="main">
 {% block main %}
     <section>
     {% block content %}
-        <a href="#leak-form" id="new-leak" title="Nunca sobra un poco de aceite">Nuevo</a>
-    {% if author %}
-       <h1 id="author">{% gravatar author.email %} {{author}}, <details>viene perdiendo aceite desde: {{author.date_joined|date}}</details></h1>
-    {% else %}
-        <h3 class="caption">Últimos derrames</h3>
-    {% endif %}
-    {% include 'leak_form.html' %}
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         <article>
@@ -52,6 +50,7 @@
             {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
             <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>
             {{object.metadata}}
+            {% if user.is_staff %}<a href="{{object.get_absolute_url}}/flag">!</a>{% endif %}
         </details>
         </article>
         {% if forloop.counter == 5 %}{% usemacro content %}{% endif %}

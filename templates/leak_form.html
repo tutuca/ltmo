@@ -1,5 +1,5 @@
 <form action="{% url index %}" method="post" id="leak-form" class="hide">
-    <blockquote id="format-help">
+    <aside>
         <h3>Ayuda de formato</h3>
 
         <pre>  
@@ -12,7 +12,8 @@ Podés usar un **poco ** de [markdown](http://daringfireball.net/projects/markdo
         <p><img alt="Para tirarle una onda" src="http://ltmo.com.ar/media/trollface.png" /></p>
         </div>
 
-    </blockquote>
+    </aside>
+    <section>
     <input type="hidden" name="{{form.author.name}}" value="{{user}}" />
     <div class="field" id="field_{{form.title.name}}"> 
         <label for="{{form.title.name}}">Título</label> 
@@ -24,8 +25,9 @@ Podés usar un **poco ** de [markdown](http://daringfireball.net/projects/markdo
         {{form.description}}
     </div>
         <div class="field" id="field_{{form.tags.name}}"> 
-        <label for="{{form.tags.name}}">Tags separados por coma</label> 
+        <label for="{{form.tags.name}}">Tags</label> 
         {{form.tags}}
     </div>
-    <p><input type="submit" value="Guardar" /></p>
+    </section>
+    <div class="clear field"><input name="save" type="submit" value="listo" /></div>
 </form>
