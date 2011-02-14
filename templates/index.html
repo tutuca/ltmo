@@ -24,13 +24,8 @@
 <body>
 <div id="wrapper">
 <header>
-
-    {% if author %}
-       <h1 id="author">{% gravatar author.email %} {{author}}, <details>viene perdiendo aceite desde: {{author.date_joined|date}}</details></h1>
-    {% else %}
     <a href="#leak-form" id="new-leak" title="Nunca sobra un poco de aceite">derramá que el aire es gratis</a>
     <h1 id="logo"><a href="http://{{request.get_host}}">ltmo</a></h1>
-    {% endif %}
     {% include 'leak_form.html' %}
     <br class="clear"/>
 </header>
@@ -63,6 +58,9 @@
 
     </section>
     <aside>
+        {% if author %}
+         <h1 id="author">{% gravatar author.email %} {{author}}, <details>chorrea desde: {{author.date_joined|date}}</details></h1>
+        {% endif %}
         <h3> ¿Qué es lo que observa? </h3>
         <p>Nunca hay suficiente redundancia para garantizar la continuidad de la información.</p>
         <p>Este es un experimento, una herramienta para evitar perder cosas que en algún momento nos resultaron interesantes.
