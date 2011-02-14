@@ -1,76 +1,45 @@
 body {
-    font: 80% "Lucida Grande", Arial, Helvetica, sans-serif;
-    padding: 0;
-    margin: 0;
-    text-align: center;    
-    background: #FFF url(background.png);
+    font: 100% sans-serif;
+}
+header, section, footer, article, aside {
+    display: block;
+    padding: 0 1em;
+    margin-bottom: 2em;
 }
 header {
-    display:block;
-    margin: 0 auto;
-    text-align:left;
-    padding:1em;
+    border-bottom: 1px solid #EEE;
+    padding:0;
+    margin: 0 1em;
 }
 
 footer {
     clear: both;
-    display: block;
     padding: 5em 1em 1em;
-    margin: 0 auto;
-    text-align:left;
 }
 footer p{ 
 }
 
 #main{
-    text-align:left;
     margin:0 auto;
 }
 
 section {
     display:block;
-    width: 53em;
     float: left;
-    background: #FCFCFC;
-    padding:0;
-    margin: 0.1em -1em ;
-    margin-bottom:1em;
-    box-shadow: 0px 2px 4px #CCC;
-    -moz-box-shadow: 0px 2px 4px #CCC;
-    -webkit-box-shadow: 0px 2px 4px #CCC;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-
+    width: 70%
 } 
-article {
-    display:block;
-    margin: 0;
-    background: #FCFCFC;
-    border: 1px solid #EEE;
-    border-color: #FFF transparent #EEE;
-    border-width: 1px 0;
-    padding: 0 1em;    
-}
-article h1, article h1 a {
-    text-shadow: 1px 1px 1px #FFFFFF, 0 -1px 1px #EBEBEB;
-    font-family: 'Georgia',serif;
-    font-style: italic; 
-    color: #900;
-}
 
 details {
     text-align: right;
     font-size:80%;
     display:block;
-    padding:0.5em;
     color: #555;
 }
 aside {
     text-align: left;
-    width: 20em;
+    width: 25%;
     float: right;
-    padding: 1em;
+    font-size: 80%;
 }
 pre, code {
     font: 110% monospace;
@@ -78,7 +47,7 @@ pre, code {
 }
 
 blockquote{
-    font: 100% italic "Georgia-MS", Georgia, serif;
+    font: italic 100% "Georgia-MS", Georgia, serif;
     
 }
 
@@ -113,7 +82,6 @@ h2 {
     font-size:180%;
 }
 #wrapper {
-    width: 75em;
     margin: 0 auto;
     text-align:left;
     background: rgba(255, 255, 255, 0.8);
@@ -123,11 +91,6 @@ h2 {
 }
 #logo {
     margin:0;
-    font-size: 3.5em;
-}
-#tagline {
-    margin:0;
-    color: #555;
 }
 #banner-header {
     float:right;
@@ -151,6 +114,20 @@ h2 {
     font-size:50%;
     margin: -1.5em 0;
     text-align:left;
+}
+.rewind {
+    position: absolute;
+    bottom: 5em;
+    right: 10em;
+    
+}
+.banner {
+    clear: both;
+    background: #EEE;
+    padding: 1em;
+    border-radius: 0.25em;
+    -webkit-border-radius: 0.25em;
+    -moz-border-radius: 0.25em;
 }
 .gravatar {
     float:left;
@@ -199,10 +176,7 @@ h2 {
 }
 #new-leak {
     float: right;
-    padding: 1.25em 1em;
-    border-radius: 0px 3px 0px 0px;
-    -moz-border-radius: 0px 3px 0px 0px;
-    -webkit-border-radius: 0px 3px 0px 0px;
+    padding: 1em;
 }
 #new-leak:hover {
     background:#E2EDFA;
@@ -210,18 +184,19 @@ h2 {
 }
 form {
     padding: 1em;
-    border: 1px solid #EEE;
-    border-color: #FFF transparent #EEE;
-    border-width: 1px 0px
+    margin: 0 auto;
 }
-#format-help {
-    float: right;
-    width: 25em;
-    margin: 0;
-}
-#format-help h3 {
-    margin-top: 0;
-}
+
 label {
-    display: block;
+    float:left;
+    width: 8em;
+    font-size:80%;
+    margin: 0.5em 1em;
+    text-align:right;
+}
+input[type='text'], textarea {
+    font-size: 1.5em;
+}
+input[type='submit'] {
+    margin-left: 10em;
 }

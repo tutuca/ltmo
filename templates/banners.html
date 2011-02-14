@@ -1,6 +1,6 @@
 {% load macros %}
 {% macro head %}
-<div id="banner-header">
+<div id="banner-header" class="banner">
     <script type="text/javascript"><!--
         google_ad_client = "pub-3539830246651089";
         /* 728x90 listado */
@@ -15,7 +15,7 @@
 </div>  
 {% endmacro %}
 {% macro content %}
-<div id="banner-content">
+<div id="banner-content" class="banner">
     <script type="text/javascript"><!--
         google_ad_client = "pub-3539830246651089";
         /* 468x60, creado 26/08/10 */
@@ -30,7 +30,7 @@
 </div>
 {% endmacro %}
 {% macro aside %}
-<div id="banner-aside">
+<div id="banner-aside" class="banner">
     <script type="text/javascript"><!--
         google_ad_client = "pub-3539830246651089";
         /* 300x250, creado 26/08/10 */
@@ -46,7 +46,7 @@
 {% endmacro %}
 
 {% macro twitter %} 
-<div id="twitter">
+<div id="twitter" class="banner">
     <script>
         new TWTR.Widget({
             version: 2,
