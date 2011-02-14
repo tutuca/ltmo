@@ -58,7 +58,6 @@
         {% if forloop.counter == 5 %}{% usemacro content %}{% endif %}
     {% empty %}<h2>Nadie derramó nada aún</h2>
     {% endfor %}
-    </div>
     {% paginate %}
     {% endblock %}
 
@@ -78,8 +77,6 @@
            title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
-
-        <h3>Publicidad</h3>
         {% usemacro aside %}
     </aside>
     <br class="clear"/>

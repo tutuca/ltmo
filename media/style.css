@@ -124,6 +124,7 @@ h2 {
 .banner {
     clear: both;
     background: #EEE;
+    position:relative;
     padding: 1em;
     border-radius: 0.25em;
     -webkit-border-radius: 0.25em;
