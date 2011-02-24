@@ -25,7 +25,7 @@ class Leak(models.Model):
         return ('leak_detail', [self.id])
         
     def save(self):
-        self.rendered = markdown(self.description)
+        self.rendered = markdown(self.description, 'codehilite')
         slug_text = self.title[:30] or u'sin título'
         self.slug = slugify(slug_text)
         super(Leak, self).save()

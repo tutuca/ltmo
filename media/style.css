@@ -110,6 +110,29 @@ h2 {
     margin: -1.5em 0;
     text-align:left;
 }
+#messages {
+    text-align:left;
+    background: #FE9;
+    border: 1px solid #FC0;
+    font-size:80%;
+    margin:0;
+    padding:0 1em;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    z-index:100;
+    list-style:none;
+}
+#messages li {
+    padding: 0.25em 2em;
+    position: relative;
+}
+#messages .control {
+    position: absolute;
+    right: 4em;
+}
+
 .rewind {
     position: absolute;
     bottom: 5em;
@@ -182,8 +205,14 @@ h2 {
 form {
     padding: 1em;
     margin: 0 auto;
+    width: 70em;
 }
-
+form section {
+    width: 40em;
+}
+form aside {
+    width: 25em;
+}
 label {
     float:left;
     width: 8em;

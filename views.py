@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.utils import simplejson as json
 from django.contrib.auth.models import User
+from django.contrib import messages
 from django.views.generic import list_detail, simple
 from django.http import HttpResponseNotModified, HttpResponseRedirect
 
@@ -22,10 +23,6 @@ def index(request):
     if tag:
         queryset = queryset.filter(tags__icontains=tag)
 
-    if request.method == 'POST':
-        post = json.loads(request.raw_post_data)
-        return leak_new(request, post)
-        
     return list_detail.object_list(
         request,
         queryset,
@@ -36,26 +33,17 @@ def index(request):
             'form': form,
         }
     )
-
-def leak_new(request, data=None):
-    data = data or request.POST
-    form = LeakForm(data)
-    
-    if form.is_valid():
-        leak = form.save()
-        return HttpResponseRedirect('/')           
-    return HttpResponseNotModified('/')
-
-def render_leak(request, object_id=None):
-    leak = Leak.objects.get(pk=object_id)
-    return simple.direct_to_template(
-        request,
-        'leak.html',
-        extra_context={
-            'object': leak,
-        }
-    )
-
+def leak_new(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.raw_post_data) 
+        except ValueError:
+            data = request.POST
+        form = LeakForm(data)
+        if form.is_valid():
+            leak = form.save()
+            messages.success(request, 'Ha derramado correctamente chamigo.')
+            return HttpResponseRedirect('/')
 
 def leak_detail(request, object_id):
     if request.method == 'POST':
