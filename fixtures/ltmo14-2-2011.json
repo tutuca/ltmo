@@ -1,0 +1,1427 @@
+[
+  {
+    "pk": 95, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>We are shaped by faith, just as we shape it</p>", 
+      "description": "We are shaped by faith, just as we shape it", 
+      "author": "tutuca", 
+      "created": "2011-01-22 11:14:23", 
+      "changed": "2011-01-22 11:14:23", 
+      "title": "We are shaped by faith, just as we shape it", 
+      "slug": "we-are-shaped-by-faith-just-a", 
+      "tags": "frase,", 
+      "metadata": "{u'uptime': u'0 day, 12:47:52'}"
+    }
+  }, 
+  {
+    "pk": 96, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"caesa e pecera\" src=\"http://cheezpictureisunrelated.files.wordpress.com/2011/01/2364ddf5-da86-4457-ad8c-e1eb37ae0761.jpg\" /></p>", 
+      "description": "![caesa e pecera](http://cheezpictureisunrelated.files.wordpress.com/2011/01/2364ddf5-da86-4457-ad8c-e1eb37ae0761.jpg)", 
+      "author": "etnalubma", 
+      "created": "2011-01-25 10:54:36", 
+      "changed": "2011-01-25 10:56:03", 
+      "title": "caesa e pecera", 
+      "slug": "caesa-e-pecera", 
+      "tags": "wtf", 
+      "metadata": "{u'uptime': u'0 day, 2:23:21'}"
+    }
+  }, 
+  {
+    "pk": 97, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"see forever\" src=\"http://icanhascheezburger.files.wordpress.com/2011/01/funny-pictures-cat-can-see-forever.jpg\" /></p>", 
+      "description": "![see forever](http://icanhascheezburger.files.wordpress.com/2011/01/funny-pictures-cat-can-see-forever.jpg)", 
+      "author": "Anonymous", 
+      "created": "2011-02-01 20:37:28", 
+      "changed": "2011-02-01 20:37:28", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gato, imagen", 
+      "metadata": "{'ups':True}"
+    }
+  }, 
+  {
+    "pk": 98, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"vendoalquilo\" src=\"http://www.vendo-alquilo.com.ar/images/bord030.gif\" /></p>", 
+      "description": "![vendoalquilo](http://www.vendo-alquilo.com.ar/images/bord030.gif)\n", 
+      "author": "tutuca", 
+      "created": "2011-02-07 16:29:47", 
+      "changed": "2011-02-07 16:29:47", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'1 day, 2:48:57'}"
+    }
+  }, 
+  {
+    "pk": 99, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Dance dance\" src=\"http://28.media.tumblr.com/tumblr_lg5717kzNq1qdvraco1_500.gif\" /></p>", 
+      "description": "![Dance dance](http://28.media.tumblr.com/tumblr_lg5717kzNq1qdvraco1_500.gif)\n", 
+      "author": "tutuca", 
+      "created": "2011-02-08 13:41:09", 
+      "changed": "2011-02-08 13:41:09", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'2 days, 0:0:17'}"
+    }
+  }, 
+  {
+    "pk": 85, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"AMIGAAAAA\" src=\"http://i.imgur.com/vlBaR.jpg\" /></p>", 
+      "description": "![AMIGAAAAA](http://i.imgur.com/vlBaR.jpg)\n", 
+      "author": "tutuca", 
+      "created": "2010-10-12 12:12:12", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 0:35:53'}"
+    }
+  }, 
+  {
+    "pk": 100, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Propaganda de ateos\" src=\"http://www.funnytimes.com/archives/files/art/20081126.jpg\" /></p>", 
+      "description": "![Propaganda de ateos](http://www.funnytimes.com/archives/files/art/20081126.jpg)\n", 
+      "author": "tutuca", 
+      "created": "2011-02-09 19:39:17", 
+      "changed": "2011-02-09 19:39:17", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "comic", 
+      "metadata": "{u'uptime': u'0 day, 13:12:0'}"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>No</p>", 
+      "description": "No", 
+      "author": "sancho", 
+      "created": "2010-08-24 11:53:08", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "No", 
+      "slug": "no", 
+      "tags": "test", 
+      "metadata": "{u'uptime': u'0 day, 0:49:55'}"
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>http://www.youtube.com/watch?v=uPVHjkMS5vU</p>", 
+      "description": "http://www.youtube.com/watch?v=uPVHjkMS5vU\n", 
+      "author": "sancho", 
+      "created": "2010-08-24 13:37:25", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "http://www.youtube.com/watch?v=uPVHjkMS5vU", 
+      "slug": "httpwwwyoutubecomwatchv", 
+      "tags": "gorilas", 
+      "metadata": "{u'uptime': u'0 day, 2:34:15'}"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Probando como anda este coso. Tratando de hacerlo mejor, que deje deser una suma de azar, m\u00e1s bien resultado de los azahares</p>", 
+      "description": "Probando como anda este coso. Tratando de hacerlo mejor, que deje deser una suma de azar, m\u00e1s bien resultado de los azahares\r\n", 
+      "author": "tutuca", 
+      "created": "2010-09-28 20:11:38", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Probando como anda este coso. Tratando de hacerlo mejor, que deje dese", 
+      "slug": "probando-como-anda-este-coso", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 2:10:28'}"
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h1>You took too much man</h1>\n<h1>You took too much, too much</h1>", 
+      "description": "You took too much man\n====================\n\nYou took too much, too much\n===================\n", 
+      "author": "tutuca", 
+      "created": "2010-09-02 18:52:50", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "You took too much man\nYou took too much, too much", 
+      "slug": "you-took-too-much-man-you-took", 
+      "tags": "frases", 
+      "metadata": "{u'uptime': u'0 day, 10:20:14'}"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Aparentemente no tan jodida como el parser de markdown2</p>", 
+      "description": "Aparentemente no tan jodida como el parser de markdown2\n", 
+      "author": "tutuca", 
+      "created": "2010-08-26 13:20:23", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Aparentemente no tan jodida como el parser de markdown2", 
+      "slug": "aparentemente-no-tan-jodida-co", 
+      "tags": "giladas", 
+      "metadata": "{u'uptime': u'0 day, 4:15:39'}"
+    }
+  }, 
+  {
+    "pk": 60, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"entrada secreta\" src=\"http://i.imgur.com/0FaNK.gif\" /></p>", 
+      "description": "![entrada secreta](http://i.imgur.com/0FaNK.gif)\n", 
+      "author": "etnalubma", 
+      "created": "2010-09-10 10:02:04", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif,humor", 
+      "metadata": "{u'uptime': u'1 day, 1:48:14'}"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"hola mundo\" src=\"http://ltmo.com.ar\" /></p>", 
+      "description": "![hola mundo](http://ltmo.com.ar)", 
+      "author": "anonymous", 
+      "created": "2010-08-24 10:07:20", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 2:25:39'}"
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><strong><a href=\"http://www.youtube.com/watch?v=_d8C4AIFgUg\">War. What is it good for? Absolutly nothing</a></strong> (War - Edwin Starr)</p>", 
+      "description": "**[War. What is it good for? Absolutly nothing](http://www.youtube.com/watch?v=_d8C4AIFgUg)** (War - Edwin Starr)\n\n", 
+      "author": "etnalubma", 
+      "created": "2010-08-27 12:33:38", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "War. What is it good for? Absolutly nothing (War - Edwin Starr)", 
+      "slug": "war-what-is-it-good-for-abso", 
+      "tags": "video,edwin", 
+      "metadata": "{u'uptime': u'0 day, 4:30:22'}"
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Dos links sobre bash:</p>\n<p>http://sial.org/howto/shell/useless-cat/</p>\n<p>http://sial.org/howto/shell/</p>\n<p>Por supuesto pueden llegar al segundo desde el primero, pero me parecieron tan buenos que quer\u00eda ponerlos explicitamente</p>", 
+      "description": "Dos links sobre bash:\n\nhttp://sial.org/howto/shell/useless-cat/\n\nhttp://sial.org/howto/shell/\n\nPor supuesto pueden llegar al segundo desde el primero, pero me parecieron tan buenos que quer\u00eda ponerlos explicitamente\n", 
+      "author": "tutuca", 
+      "created": "2010-08-28 18:42:13", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Dos links sobre bash:\nhttp://sial.org/howto/shell/useless-cat/\nhttp://", 
+      "slug": "dos-links-sobre-bash-https", 
+      "tags": "bash,", 
+      "metadata": "{u'uptime': u'0 day, 3:20:15'}"
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://nachxs.wordpress.com/2010/08/29/impresionante-comercial-realizado-con-blender/\">Impresionante comercial realizado con Blender</a></p>", 
+      "description": "[Impresionante comercial realizado con Blender](http://nachxs.wordpress.com/2010/08/29/impresionante-comercial-realizado-con-blender/)\n\n", 
+      "author": "mherrero", 
+      "created": "2010-08-29 09:18:34", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Impresionante comercial realizado con Blender", 
+      "slug": "impresionante-comercial-realiz", 
+      "tags": "blender", 
+      "metadata": "{u'uptime': u'0 day, 0:48:41'}"
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Alien Life Force\" src=\"http://images.cheezburger.com/completestore/2010/8/27/ae3eae50-21a5-45f8-8af7-9eddc75caf73.gif\" /></p>", 
+      "description": "![Alien Life Force](http://images.cheezburger.com/completestore/2010/8/27/ae3eae50-21a5-45f8-8af7-9eddc75caf73.gif)", 
+      "author": "etnalubma", 
+      "created": "2010-08-30 10:09:36", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif,animacion", 
+      "metadata": "{u'uptime': u'0 day, 1:34:14'}"
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Esto es lo que pasa cuando film\u00e1s las aspas de una avi\u00f3n con un celular\nhttp://www.youtube.com/watch?v=LVwmtw</p>", 
+      "description": "Esto es lo que pasa cuando film\u00e1s las aspas de una avi\u00f3n con un celular\nhttp://www.youtube.com/watch?v=LVwmtw\n", 
+      "author": "tutuca", 
+      "created": "2010-08-30 15:54:03", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Esto es lo que pasa cuando film\u00e1s las aspas de una avi\u00f3n con un celula", 
+      "slug": "esto-es-lo-que-pasa-cuando-fil", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 7:46:8'}"
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://www.youtube.com/watch?v=rL2EbVqgEyE\">Ya-Asaltan Subestimer</a></p>", 
+      "description": "[Ya-Asaltan Subestimer](http://www.youtube.com/watch?v=rL2EbVqgEyE)\n", 
+      "author": "fran", 
+      "created": "2010-08-31 12:58:19", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Ya-Asaltan Subestimer", 
+      "slug": "ya-asaltan-subestimer", 
+      "tags": "video,chachacha", 
+      "metadata": "{u'uptime': u'0 day, 4:49:22'}"
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://web22.twitpic.com/img/154547713-bfec0d30d938a008ebe3bfd61eae182c.4c7d4320-full.jpg\">El almuerzo</a></p>", 
+      "description": "[El almuerzo](http://web22.twitpic.com/img/154547713-bfec0d30d938a008ebe3bfd61eae182c.4c7d4320-full.jpg)\n", 
+      "author": "tutuca", 
+      "created": "2010-08-31 12:58:37", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "El almuerzo", 
+      "slug": "el-almuerzo", 
+      "tags": "comida", 
+      "metadata": "{u'uptime': u'0 day, 0:8:27'}"
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"el almuerzo, corregido\" src=\"http://imgur.com/HOf5A.jpg\" /></p>\n<p>Matar\u00eda poder editar los derrames</p>", 
+      "description": "![el almuerzo, corregido](http://imgur.com/HOf5A.jpg)\n\n\n\n\n\nMatar\u00eda poder editar los derrames\n", 
+      "author": "tutuca", 
+      "created": "2010-08-31 14:19:02", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "\nMatar\u00eda poder editar los derrames", 
+      "slug": "mataria-poder-editar-los-derr", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 1:28:54'}"
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>bash: <a href=\"http://lavidalinux.com.ar/2010/06/bash-15-interesantes-comandos-de-una-sola-linea.html\">15 interesantes comandos en una sola linea</a></p>", 
+      "description": "bash: [15 interesantes comandos en una sola linea](http://lavidalinux.com.ar/2010/06/bash-15-interesantes-comandos-de-una-sola-linea.html)", 
+      "author": "fran", 
+      "created": "2010-09-01 10:09:24", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "bash: 15 interesantes comandos en una sola linea", 
+      "slug": "bash-15-interesantes-comandos", 
+      "tags": "bash,trucos", 
+      "metadata": "{u'uptime': u'1 day, 2:0:27'}"
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://www.youtube.com/watch?v=H70w_d9tuu0\">Espera siempre lo inesperado</a></p>", 
+      "description": "[Espera siempre lo inesperado](http://www.youtube.com/watch?v=H70w_d9tuu0)", 
+      "author": "etnalubma", 
+      "created": "2010-09-01 22:47:04", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Espera siempre lo inesperado", 
+      "slug": "espera-siempre-lo-inesperado", 
+      "tags": "video", 
+      "metadata": "{u'uptime': u'1 day, 14:38:7'}"
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Never gonna give him out\" src=\"http://i.imgur.com/ceCQw.jpg\" /></p>", 
+      "description": "![Never gonna give him out](http://i.imgur.com/ceCQw.jpg)\n", 
+      "author": "tutuca", 
+      "created": "2010-09-02 13:16:41", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 4:44:5'}"
+    }
+  }, 
+  {
+    "pk": 54, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h2>El inmortal</h2>\n<p><img alt=\"imagen\" src=\"http://27.media.tumblr.com/tumblr_l2qn2vYfBG1qbk29ho1_500.jpg\" /></p>", 
+      "description": "El inmortal\n-----------\n![imagen](http://27.media.tumblr.com/tumblr_l2qn2vYfBG1qbk29ho1_500.jpg)", 
+      "author": "etnalubma", 
+      "created": "2010-09-04 00:46:51", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "El inmortal\n", 
+      "slug": "el-inmortal", 
+      "tags": "foto,tiempo", 
+      "metadata": "{u'uptime': u'1 day, 14:13:42'}"
+    }
+  }, 
+  {
+    "pk": 55, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://www.youtube.com/watch?v=iiXdzjdh6KA\">Que sublimes son los fractales</a></p>", 
+      "description": "[Que sublimes son los fractales](http://www.youtube.com/watch?v=iiXdzjdh6KA)\n", 
+      "author": "etnalubma", 
+      "created": "2010-09-04 12:21:58", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Que sublimes son los fractales", 
+      "slug": "que-sublimes-son-los-fractales", 
+      "tags": "video,fractales", 
+      "metadata": "{u'uptime': u'2 days, 1:48:22'}"
+    }
+  }, 
+  {
+    "pk": 57, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Perd\u00ed mucho aceite, cuando quise hacer algo con los flu\u00eddos en Blender 2.5. No sab\u00eda que utilizar como modelo, entonces vino a mi auxilio LTMO. Este es el resultado <a href=\"http://www.youtube.com/watch?v=3ewBwiQ8GQ0\">LTMO -01</a> un peque\u00f1o video, anticipo de varios como homenaje a mi musa inspiradora.</p>", 
+      "description": "Perd\u00ed mucho aceite, cuando quise hacer algo con los flu\u00eddos en Blender 2.5. No sab\u00eda que utilizar como modelo, entonces vino a mi auxilio LTMO. Este es el resultado [LTMO -01](http://www.youtube.com/watch?v=3ewBwiQ8GQ0) un peque\u00f1o video, anticipo de varios como homenaje a mi musa inspiradora.\n\n", 
+      "author": "mherrero", 
+      "created": "2010-09-06 11:31:01", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Perd\u00ed mucho aceite, cuando quise hacer algo con los flu\u00eddos en Blender", 
+      "slug": "perdi-mucho-aceite-cuando-qui", 
+      "tags": "blender,animacion,fluidos", 
+      "metadata": "{u'uptime': u'0 day, 3:16:20'}"
+    }
+  }, 
+  {
+    "pk": 58, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Que poronga que es git en windows</p>", 
+      "description": "Que poronga que es git en windows", 
+      "author": "tutuca", 
+      "created": "2010-09-07 11:54:00", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Que poronga que es git en windows", 
+      "slug": "que-poronga-que-es-git-en-wind", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'1 day, 3:22:41'}"
+    }
+  }, 
+  {
+    "pk": 61, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Fireworks\" src=\"http://fc03.deviantart.net/fs70/f/2010/136/9/6/Fire_Works____by_MattTheSamurai.gif\" /></p>", 
+      "description": "![Fireworks](http://fc03.deviantart.net/fs70/f/2010/136/9/6/Fire_Works____by_MattTheSamurai.gif)\n", 
+      "author": "etnalubma", 
+      "created": "2010-09-11 14:57:25", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'2 days, 6:43:15'}"
+    }
+  }, 
+  {
+    "pk": 63, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h1>AAAAAA AAA A AH ACHUUUSSSSS</h1>\n<p><img alt=\"Mierda con el resfr\u00edo\" src=\"http://i.imgur.com/sJKY1.gif\" /></p>", 
+      "description": "AAAAAA AAA A AH ACHUUUSSSSS\n==========================\n\n\n![Mierda con el resfr\u00edo](http://i.imgur.com/sJKY1.gif)\n", 
+      "author": "tutuca", 
+      "created": "2010-09-22 20:35:27", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "AAAAAA AAA A AH ACHUUUSSSSS\n", 
+      "slug": "aaaaaa-aaa-a-ah-achuuusssss", 
+      "tags": "mierda", 
+      "metadata": "{u'uptime': u'0 day, 3:14:30'}"
+    }
+  }, 
+  {
+    "pk": 64, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><strong><a href=\"http://www.youtube.com/watch?v=ou6JNQwPWE0\">oh, Dios mio... esta lleno de estrellas</a></strong></p>", 
+      "description": "**[oh, Dios mio... esta lleno de estrellas](http://www.youtube.com/watch?v=ou6JNQwPWE0)**\n", 
+      "author": "etnalubma", 
+      "created": "2010-09-22 22:48:04", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "oh, Dios mio... esta lleno de estrellas", 
+      "slug": "oh-dios-mio-esta-lleno-de", 
+      "tags": "video,kurbic,2001", 
+      "metadata": "{u'uptime': u'0 day, 0:32:25'}"
+    }
+  }, 
+  {
+    "pk": 66, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>\"Nothing travels faster than light, with the possible exception of bad news, which follows its own rules.\" -Douglas Adams</p>", 
+      "description": "\"Nothing travels faster than light, with the possible exception of bad news, which follows its own rules.\" -Douglas Adams\n", 
+      "author": "tutuca", 
+      "created": "2010-09-23 08:29:33", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "\"Nothing travels faster than light, with the possible exception of bad", 
+      "slug": "nothing-travels-faster-than-l", 
+      "tags": "frases", 
+      "metadata": "{u'uptime': u'0 day, 1:8:35'}"
+    }
+  }, 
+  {
+    "pk": 67, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"fresh air\" src=\"http://cheezpictureisunrelated.files.wordpress.com/2010/09/6c615fc4-fe4e-48dc-ad8d-a192ce2c5850.jpg\" /></p>", 
+      "description": "![fresh air](http://cheezpictureisunrelated.files.wordpress.com/2010/09/6c615fc4-fe4e-48dc-ad8d-a192ce2c5850.jpg)\n", 
+      "author": "etnalubma", 
+      "created": "2010-09-23 09:29:40", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "foto,unrelated", 
+      "metadata": "{u'uptime': u'0 day, 0:52:7'}"
+    }
+  }, 
+  {
+    "pk": 68, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"deja vu\" src=\"http://bucket.lanacion.com.ar/anexos/fotos/15/1263715w590.JPG\" /></p>", 
+      "description": "![deja vu](http://bucket.lanacion.com.ar/anexos/fotos/15/1263715w590.JPG)\n", 
+      "author": "etnalubma", 
+      "created": "2010-09-23 12:12:15", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "liniers,historieta", 
+      "metadata": "{u'uptime': u'0 day, 3:35:1'}"
+    }
+  }, 
+  {
+    "pk": 69, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h1>Queremos movernos</h1>\n<p>Este sitio actualmente est\u00e1 corriendo sobre django. Lo cual nos permiti\u00f3 tenerlo andando bastante r\u00e1pido considerando que:</p>\n<ul>\n<li>Tenemos dos modelos muy simples y usamos la maquinaria built-in the autorizaciones.</li>\n<li>Usamos los modelforms para validar los leaks, lo que nos permite evitar repetir el c\u00f3digo de los modelos y los formularios, es especialmente \u00fatil para mantener los ForeignKeys (authors, tags).</li>\n<li>Los RSS son una gilada, los mapas del sitio se hacen autom\u00e1ticos.</li>\n<li>Los template tags de django son de las mejores cosas que hay.</li>\n<li>Integrar comentarios al sitio es casi trivial.</li>\n<li>El admin es zarpado. No lo usamos demasiado y podemos administrar todo desde la consola de python. Pero el admin es muy potente y viene gratis.</li>\n</ul>\n<p>Hace un tiempo empec\u00e9 a provar <a href=\"http://flask.pocoo.org/\">flask</a>, el bichito viene bastante bonito. Es mucho m\u00e1s simple que django y en general parece m\u00e1s pythonico. Tengo listo un subset de prestaciones andando, en particular la lista de leaks y la publicaci\u00f3n mediante spill. Sin embargo hay demasiadas cosas que quedan sin resolver:</p>\n<ul>\n<li>No hay RSS, atom parece ser la posta entre la gente de pocoo, pero tampoco es taan simple ni tan potente como la soluci\u00f3n que presta django.</li>\n<li>No hay templatetags, aparentemente porque no las necesito. Ellos son m\u00e1s inteligentes que yo, as\u00ed que deben estar en lo correcto.</li>\n<li>No hay modelforms, ni formularios para el caso, as\u00ed que si quiero validaciones autom\u00e1ticas o algo m\u00e1s o menos pr\u00e1ctico tengo que intalar un paquete de terceras partes para esto (Casi todas son soluciones feas, como WTForms o FormAlchemy).</li>\n<li>Tendr\u00eda que implementar alguna soluci\u00f3n para los comentarios (probablemente un proyecto en si mismo).</li>\n<li>Tengo que implementar tags y alguna maquinaria parecida a <a href=\"http://code.google.com/p/django-tagging/\">django-tagging</a> por la m\u00edo. Probablemente tambi\u00e9n un proyecto en si mismo. Cosa que a su vez se hace m\u00e1s complejo por al cuesti\u00f3n de que no hay foreign keys autom\u00e1gicos.</li>\n</ul>\n<p>As\u00ed que b\u00e1sicamente estoy llorando porque flask no es django, ya s\u00e9. No tengo apuro por migrar. Sin embargo trabajar con flask ha sido muy divertido hasta el momento y est\u00e1 tentador encarar los problemas m\u00e1s gruesos (tags, comentarios, forms). La comunidad es chica pero s\u00f3lida y con ganas de que haya gente nueva, como siempre pasa en las comunidades chicas, pero con un poco de soberbia innecesaria. Parece siempre que si quer\u00e9s algo que el framework no provea (como querer agregarle funcionalidad al engine de templates sin tener que manosear la configuraci\u00f3n del framework) en realidad est\u00e1s haciendo las cosas mal y no necesit\u00e1s lo que quer\u00e9s.</p>\n<p>Eso me da un poco por las pelotas.</p>\n<p>Anyway. Estoy pensando en encarar esto sin apuro, pero con ganas. El c\u00f3digo de ltmo est\u00e1 en el lugar habitual de github y <a href=\"http://github.com/tutuca/ltmo/tree/flask-sql\">hay un branch</a> que tiene las cosas que uso en flask. Voy a subir todo lo que haga a mi github y le ofrezco acceso como colaborador a cualquier interesado en encarar el desarrollo.</p>\n<p>Tambi\u00e9n hay <a href=\"http://github.com/tutuca/ltmo/issues\">algunos issues</a> en general, que si nos dan una mano, ser\u00eda groso.</p>\n<p>Vamos a ver que nos depara el futuro. A derramar.</p>", 
+      "description": "Queremos movernos\n================\n\nEste sitio actualmente est\u00e1 corriendo sobre django. Lo cual nos permiti\u00f3 tenerlo andando bastante r\u00e1pido considerando que:\n\n- Tenemos dos modelos muy simples y usamos la maquinaria built-in the autorizaciones.\n- Usamos los modelforms para validar los leaks, lo que nos permite evitar repetir el c\u00f3digo de los modelos y los formularios, es especialmente \u00fatil para mantener los ForeignKeys (authors, tags).\n- Los RSS son una gilada, los mapas del sitio se hacen autom\u00e1ticos.\n- Los template tags de django son de las mejores cosas que hay.\n- Integrar comentarios al sitio es casi trivial.\n- El admin es zarpado. No lo usamos demasiado y podemos administrar todo desde la consola de python. Pero el admin es muy potente y viene gratis.\n\nHace un tiempo empec\u00e9 a provar [flask](http://flask.pocoo.org/), el bichito viene bastante bonito. Es mucho m\u00e1s simple que django y en general parece m\u00e1s pythonico. Tengo listo un subset de prestaciones andando, en particular la lista de leaks y la publicaci\u00f3n mediante spill. Sin embargo hay demasiadas cosas que quedan sin resolver:\n\n- No hay RSS, atom parece ser la posta entre la gente de pocoo, pero tampoco es taan simple ni tan potente como la soluci\u00f3n que presta django.\n- No hay templatetags, aparentemente porque no las necesito. Ellos son m\u00e1s inteligentes que yo, as\u00ed que deben estar en lo correcto.\n- No hay modelforms, ni formularios para el caso, as\u00ed que si quiero validaciones autom\u00e1ticas o algo m\u00e1s o menos pr\u00e1ctico tengo que intalar un paquete de terceras partes para esto (Casi todas son soluciones feas, como WTForms o FormAlchemy).\n- Tendr\u00eda que implementar alguna soluci\u00f3n para los comentarios (probablemente un proyecto en si mismo).\n- Tengo que implementar tags y alguna maquinaria parecida a [django-tagging](http://code.google.com/p/django-tagging/) por la m\u00edo. Probablemente tambi\u00e9n un proyecto en si mismo. Cosa que a su vez se hace m\u00e1s complejo por al cuesti\u00f3n de que no hay foreign keys autom\u00e1gicos.\n\nAs\u00ed que b\u00e1sicamente estoy llorando porque flask no es django, ya s\u00e9. No tengo apuro por migrar. Sin embargo trabajar con flask ha sido muy divertido hasta el momento y est\u00e1 tentador encarar los problemas m\u00e1s gruesos (tags, comentarios, forms). La comunidad es chica pero s\u00f3lida y con ganas de que haya gente nueva, como siempre pasa en las comunidades chicas, pero con un poco de soberbia innecesaria. Parece siempre que si quer\u00e9s algo que el framework no provea (como querer agregarle funcionalidad al engine de templates sin tener que manosear la configuraci\u00f3n del framework) en realidad est\u00e1s haciendo las cosas mal y no necesit\u00e1s lo que quer\u00e9s.\n\nEso me da un poco por las pelotas.\n\nAnyway. Estoy pensando en encarar esto sin apuro, pero con ganas. El c\u00f3digo de ltmo est\u00e1 en el lugar habitual de github y [hay un branch](http://github.com/tutuca/ltmo/tree/flask-sql) que tiene las cosas que uso en flask. Voy a subir todo lo que haga a mi github y le ofrezco acceso como colaborador a cualquier interesado en encarar el desarrollo.\n\nTambi\u00e9n hay [algunos issues](http://github.com/tutuca/ltmo/issues) en general, que si nos dan una mano, ser\u00eda groso.\n\nVamos a ver que nos depara el futuro. A derramar.\n\n", 
+      "author": "tutuca", 
+      "created": "2010-09-23 13:18:10", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "Queremos movernos\nEste sitio actualmente est\u00e1 corriendo sobre django. ", 
+      "slug": "queremos-movernos-este-sitio-a", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 5:57:11'}"
+    }
+  }, 
+  {
+    "pk": 70, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>lo que es visto, no puede ser des-visto</p>\n<p><img alt=\"Can&apos;t be unseen\" src=\"http://www.dailyhaha.com/_pics/cannot_be_unseen.jpg\" /></p>\n<p><img alt=\"KOALA\" src=\"http://cdn1.knowyourmeme.com/i/000/042/045/original/1267641750554.jpg?1267642632\" /></p>", 
+      "description": "lo que es visto, no puede ser des-visto\n\n![Can't be unseen](http://www.dailyhaha.com/_pics/cannot_be_unseen.jpg)\n\n![KOALA](http://cdn1.knowyourmeme.com/i/000/042/045/original/1267641750554.jpg?1267642632)\n\n\n", 
+      "author": "tutuca", 
+      "created": "2010-09-24 09:58:27", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "lo que es visto, no puede ser des-visto\n\n", 
+      "slug": "lo-que-es-visto-no-puede-ser", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 3:36:5'}"
+    }
+  }, 
+  {
+    "pk": 72, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"fail text\" src=\"http://failblog.files.wordpress.com/2010/09/13e52482-82ff-4cdb-bba4-4396e5dab837.jpg\" /></p>", 
+      "description": "![fail text](http://failblog.files.wordpress.com/2010/09/13e52482-82ff-4cdb-bba4-4396e5dab837.jpg)\n", 
+      "author": "etnalubma", 
+      "created": "2010-09-24 13:23:01", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "foto,fail", 
+      "metadata": "{u'uptime': u'0 day, 5:24:37'}"
+    }
+  }, 
+  {
+    "pk": 73, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"el barril del chavo\" src=\"http://24.media.tumblr.com/tumblr_l99j8tBFIl1qbyk1so1_500.jpg\" /></p>", 
+      "description": "![el barril del chavo](http://24.media.tumblr.com/tumblr_l99j8tBFIl1qbyk1so1_500.jpg)\n", 
+      "author": "etnalubma", 
+      "created": "2010-09-24 14:18:17", 
+      "changed": "2011-01-21 22:43:03", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "chavo,imagen", 
+      "metadata": "{u'uptime': u'0 day, 6:19:53'}"
+    }
+  }, 
+  {
+    "pk": 76, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"panda punch\" src=\"http://i.imgur.com/qURtX.gif\" /></p>", 
+      "description": "![panda punch](http://i.imgur.com/qURtX.gif\n)", 
+      "author": "etnalubma", 
+      "created": "2010-09-26 17:26:02", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif,panda,cafe", 
+      "metadata": "{u'uptime': u'1 day, 0:18:31'}"
+    }
+  }, 
+  {
+    "pk": 77, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"look_of_disaproval\" src=\"http://i.imgur.com/go6IP.jpg\" /></p>", 
+      "description": "![look_of_disaproval](http://i.imgur.com/go6IP.jpg)\n", 
+      "author": "tutuca", 
+      "created": "2010-09-27 15:30:40", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif,", 
+      "metadata": "{u'uptime': u'0 day, 12:15:52'}"
+    }
+  }, 
+  {
+    "pk": 78, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"car crash\" src=\"http://images.cheezburger.com/completestore/2010/9/27/865d64ed-e9b2-4ad2-974c-e9c0164bd0d8.gif\" /></p>", 
+      "description": "![car crash](http://images.cheezburger.com/completestore/2010/9/27/865d64ed-e9b2-4ad2-974c-e9c0164bd0d8.gif)", 
+      "author": "etnalubma", 
+      "created": "2010-09-28 11:33:01", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'0 day, 14:3:4'}"
+    }
+  }, 
+  {
+    "pk": 79, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://www.anasomnia.com/\">Cuando la luz se apaga, los sue\u00f1os se apoderan.</a></p>", 
+      "description": "[Cuando la luz se apaga, los sue\u00f1os se apoderan.](http://www.anasomnia.com/)", 
+      "author": "etnalubma", 
+      "created": "2010-09-28 22:29:57", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Cuando la luz se apaga, los sue\u00f1os se apoderan.", 
+      "slug": "cuando-la-luz-se-apaga-los-su", 
+      "tags": "sue\u00f1os,flash,animacion", 
+      "metadata": "{u'uptime': u'0 day, 0:30:43'}"
+    }
+  }, 
+  {
+    "pk": 81, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Disculpen las molestias. Estamos teniendo inconvenientes\n<img alt=\"baby\" src=\"http://images.cheezburger.com/completestore/2010/9/3/9ea6708b-ab61-4bcd-8780-02d23ed8a446.gif\" /></p>", 
+      "description": "Disculpen las molestias. Estamos teniendo inconvenientes\n![baby](http://images.cheezburger.com/completestore/2010/9/3/9ea6708b-ab61-4bcd-8780-02d23ed8a446.gif)", 
+      "author": "etnalubma", 
+      "created": "2010-10-01 15:34:59", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Disculpen las molestias. Estamos teniendo inconvenientes\n", 
+      "slug": "disculpen-las-molestias-estam", 
+      "tags": "sorry", 
+      "metadata": "{u'uptime': u'2 days, 6:45:19'}"
+    }
+  }, 
+  {
+    "pk": 82, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://www.youtube.com/watch?v=jbZnGk-q9kU\">no es Jackie Chan</a></p>", 
+      "description": "[no es Jackie Chan](http://www.youtube.com/watch?v=jbZnGk-q9kU)\n", 
+      "author": "etnalubma", 
+      "created": "2010-10-05 23:08:35", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "no es Jackie Chan", 
+      "slug": "no-es-jackie-chan", 
+      "tags": "videos", 
+      "metadata": "{u'uptime': u'0 day, 0:41:25'}"
+    }
+  }, 
+  {
+    "pk": 83, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Escribis cualquier cosa ac\u00e1</p>", 
+      "description": "Escribis cualquier cosa ac\u00e1\n", 
+      "author": "tutuca", 
+      "created": "2010-10-06 20:43:34", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Escribis cualquier cosa ac\u00e1", 
+      "slug": "escribis-cualquier-cosa-aca", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 0:3:48'}"
+    }
+  }, 
+  {
+    "pk": 84, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><em>Sigo perdiendo aceite !!!!</em> Cuando uso blender me aparece aceite en la pantalla, ver video  <a href=\"http://xkcd.com/556/\">Alternative Energy Revolution</a> <img alt=\"malla_plana_01\" src=\"\" />\n![http://i111.photobucket.com/albums/n149/mherrero/Varios/0001.png]</p>", 
+      "description": "*Sigo perdiendo aceite !!!!* Cuando uso blender me aparece aceite en la pantalla, ver video  [Alternative Energy Revolution](http://xkcd.com/556/) ![malla_plana_01]()\n![http://i111.photobucket.com/albums/n149/mherrero/Varios/0001.png]\n", 
+      "author": "anonymous", 
+      "created": "2010-10-07 22:21:06", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Sigo perdiendo aceite !!!! Cuando uso blender me aparece aceite en la ", 
+      "slug": "sigo-perdiendo-aceite-cua", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 17:43:13'}"
+    }
+  }, 
+  {
+    "pk": 80, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"vader country\" src=\"http://www.b3tards.com/u/6c40fd723c102fa9fc71/thac.jpg\" />\nSTAR WARS VII\n=============\nVaderetro</p>\n<hr />", 
+      "description": "![vader country](http://www.b3tards.com/u/6c40fd723c102fa9fc71/thac.jpg)\r\nSTAR WARS VII\r\n=============\r\nVaderetro\r\n---------", 
+      "author": "etnalubma", 
+      "created": "2010-09-28 22:48:31", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "\nSTAR WARS VII\n=============\nVaderetro\n", 
+      "slug": "star-wars-vii-v", 
+      "tags": "vader,foto", 
+      "metadata": "{u'uptime': u'0 day, 0:49:14'}"
+    }
+  }, 
+  {
+    "pk": 86, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Los gatos son una masa\" src=\"http://i.imgur.com/Wz3e9.gif\" /></p>", 
+      "description": "![Los gatos son una masa](http://i.imgur.com/Wz3e9.gif)\n\n", 
+      "author": "tutuca", 
+      "created": "2010-10-12 12:22:24", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 0:46:10'}"
+    }
+  }, 
+  {
+    "pk": 89, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Dance baby dance\" src=\"http://i.imgur.com/uKFYb.gif\" /></p>", 
+      "description": "![Dance baby dance](http://i.imgur.com/uKFYb.gif)\n", 
+      "author": "tutuca", 
+      "created": "2010-11-09 05:49:00", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'0 day, 12:46:8'}"
+    }
+  }, 
+  {
+    "pk": 90, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Nothing to see here, move along\" src=\"http://scienceblogs.com/startswithabang/upload/2010/07/dear_asteroid_hunters_stop_tel/nothing_to_see_here.jpg\" /></p>", 
+      "description": "![Nothing to see here, move along](http://scienceblogs.com/startswithabang/upload/2010/07/dear_asteroid_hunters_stop_tel/nothing_to_see_here.jpg)\n", 
+      "author": "tutuca", 
+      "created": "2010-11-10 07:48:32", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 0:8:18'}"
+    }
+  }, 
+  {
+    "pk": 88, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Algunas cositas de Jericoacoara. Van a venir m\u00e1s :)</p>\n<p><img alt=\"Ellos\" src=\"http://farm5.static.flickr.com/4022/5142885312_e3909272ac.jpg\" /></p>\n<p><img alt=\"Estrella Star\" src=\"http://farm5.static.flickr.com/4126/5142888402_7a5e802d49.jpg\" /></p>\n<p><img alt=\"Visitante\" src=\"http://farm2.static.flickr.com/1355/5142893918_fe9096bff5.jpg\" /></p>\n<p><img alt=\"Botin\" src=\"http://farm2.static.flickr.com/1094/5142291051_5384f2f27a.jpg\" /></p>", 
+      "description": "Algunas cositas de Jericoacoara. Van a venir m\u00e1s :)\r\n\r\n![Ellos](http://farm5.static.flickr.com/4022/5142885312_e3909272ac.jpg)\r\n\r\n![Estrella Star](http://farm5.static.flickr.com/4126/5142888402_7a5e802d49.jpg)\r\n\r\n![Visitante](http://farm2.static.flickr.com/1355/5142893918_fe9096bff5.jpg)\r\n\r\n![Botin](http://farm2.static.flickr.com/1094/5142291051_5384f2f27a.jpg)\r\n\r\n\r\n", 
+      "author": "tutuca", 
+      "created": "2010-11-03 08:24:32", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Algunas cositas de Jericoacoara. Van a venir m\u00e1s :)\n\n\n\n", 
+      "slug": "algunas-cositas-de-jericoacoar", 
+      "tags": "read", 
+      "metadata": "{u'uptime': u'0 day, 0:33:23'}"
+    }
+  }, 
+  {
+    "pk": 92, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Videla y Menedez desfilando en tanga por el pared\u00f3n\" src=\"http://www.pagina12.com.ar/fotos/20101224/rudypaz/na01di01.gif\" /></p>", 
+      "description": "![Videla y Menedez desfilando en tanga por el pared\u00f3n](http://www.pagina12.com.ar/fotos/20101224/rudypaz/na01di01.gif)\n", 
+      "author": "tutuca", 
+      "created": "2010-12-25 21:58:11", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "videla,", 
+      "metadata": "{u'uptime': u'0 day, 1:6:27'}"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Firefox has crashed into jaws\" src=\"http://images.cheezburger.com/completestore/2010/8/21/d4f9115d-7677-4819-aa18-b847484b1cdd.gif\" /></p>", 
+      "description": "![Firefox has crashed into jaws](http://images.cheezburger.com/completestore/2010/8/21/d4f9115d-7677-4819-aa18-b847484b1cdd.gif)", 
+      "author": "anonymous", 
+      "created": "2010-08-24 10:08:52", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'0 day, 2:27:12'}"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"EWOCK is friendly\" src=\"http://gallery.wimetal.org/d/555-2/ewok.gif\" /></p>", 
+      "description": "![EWOCK is friendly](http://gallery.wimetal.org/d/555-2/ewok.gif)", 
+      "author": "anonymous", 
+      "created": "2010-08-24 10:24:27", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'0 day, 2:42:46'}"
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"happy house\" src=\"http://images.cheezburger.com/completestore/2010/8/17/2ea3d277-e6a2-477e-bacf-06a267d9b265.gif\" /></p>", 
+      "description": "![happy house](http://images.cheezburger.com/completestore/2010/8/17/2ea3d277-e6a2-477e-bacf-06a267d9b265.gif)", 
+      "author": "etnalubma", 
+      "created": "2010-08-24 13:16:49", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'0 day, 5:35:8'}"
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"\u00bfDonde esta Oesterheld?\" src=\"http://i111.photobucket.com/albums/n149/mherrero/varios/aficheOesterheld.jpg\" /></p>", 
+      "description": "![\u00bfDonde esta Oesterheld?](http://i111.photobucket.com/albums/n149/mherrero/varios/aficheOesterheld.jpg)\n", 
+      "author": "mherrero", 
+      "created": "2010-08-26 20:28:32", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "oesterheld", 
+      "metadata": "{u'uptime': u'0 day, 13:12:30'}"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><em>Si tuviera un fin, \u00bfdonde esta el misterio?</em></p>", 
+      "description": "*Si tuviera un fin, \u00bfdonde esta el misterio?*", 
+      "author": "anonymous", 
+      "created": "2010-08-24 10:59:15", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Si tuviera un fin, \u00bfdonde esta el misterio?", 
+      "slug": "si-tuviera-un-fin-donde-esta", 
+      "tags": "frase", 
+      "metadata": "{u'uptime': u'0 day, 3:40:31'}"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><em>Por favor, sea amable.</em> <img alt=\"trollface\" src=\"http://images.whatport80.com/images/thumb/c/cf/Trollface.jpg/400px-Trollface.jpg\" /></p>", 
+      "description": "*Por favor, sea amable.* ![trollface](http://images.whatport80.com/images/thumb/c/cf/Trollface.jpg/400px-Trollface.jpg)", 
+      "author": "anonymous", 
+      "created": "2010-08-24 11:03:26", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Por favor, sea amable. ", 
+      "slug": "por-favor-sea-amable", 
+      "tags": "frase", 
+      "metadata": "{u'uptime': u'0 day, 3:44:35'}"
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>No sabia que decir hasta que me di cuenta que estaba perdiendo aceite pensando que mandar solo para probar que esto anda.</p>", 
+      "description": "No sabia que decir hasta que me di cuenta que estaba perdiendo aceite pensando que mandar solo para probar que esto anda.\n", 
+      "author": "sancho", 
+      "created": "2010-08-24 11:54:26", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "No sabia que decir hasta que me di cuenta que estaba perdiendo aceite ", 
+      "slug": "no-sabia-que-decir-hasta-que-m", 
+      "tags": "test", 
+      "metadata": "{u'uptime': u'0 day, 0:51:6'}"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<blockquote>\n<p>Que no te hayamos dicho las razones no quiere decir que no las haya</p>\n</blockquote>", 
+      "description": "> Que no te hayamos dicho las razones no quiere decir que no las haya", 
+      "author": "pandres", 
+      "created": "2010-08-24 12:14:52", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "\nQue no te hayamos dicho las razones no quiere decir que no las haya\n", 
+      "slug": "que-no-te-hayamos-dicho-las-r", 
+      "tags": "frases", 
+      "metadata": "{u'uptime': u'0 day, 4:33:11'}"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://zebert.blogspot.com/2009/05/installing-django-solr-varnish-and.html\">instalando Django, Solr, Varnish y Supervisord en un buildout</a></p>", 
+      "description": "[instalando Django, Solr, Varnish y Supervisord en un buildout](http://zebert.blogspot.com/2009/05/installing-django-solr-varnish-and.html)", 
+      "author": "etnalubma", 
+      "created": "2010-08-24 12:38:57", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "instalando Django, Solr, Varnish y Supervisord en un buildout", 
+      "slug": "instalando-django-solr-varni", 
+      "tags": "solr,python,buildout,django,varnish,supervisord", 
+      "metadata": "{u'uptime': u'0 day, 5:20:14'}"
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>!<a href=\"http://images.cheezburger.com/completestore/2010/8/22/06582b04-ec10-46a6-930e-11aa5798ad5a.gif\">silent bob dancing</a></p>", 
+      "description": "\\![silent bob dancing](http://images.cheezburger.com/completestore/2010/8/22/06582b04-ec10-46a6-930e-11aa5798ad5a.gif)", 
+      "author": "etnalubma", 
+      "created": "2010-08-24 13:00:47", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "!silent bob dancing", 
+      "slug": "silent-bob-dancing", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'0 day, 5:42:4'}"
+    }
+  }, 
+  {
+    "pk": 91, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"Troll dance\" src=\"[http://i.imgur.com/Emi0l.gif\" /></p>", 
+      "description": "![Troll dance]([http://i.imgur.com/Emi0l.gif)\r\n", 
+      "author": "tutuca", 
+      "created": "2010-12-08 15:50:53", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'0 day, 3:33:49'}"
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>House era re groso como rapero....... Para ser ingl\u00e9s, http://www.youtube.com/watch?v=XdRfhARwGoI</p>", 
+      "description": "House era re groso como rapero....... Para ser ingl\u00e9s, http://www.youtube.com/watch?v=XdRfhARwGoI", 
+      "author": "anonymous", 
+      "created": "2010-08-24 18:10:03", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "House era re groso como rapero....... Para ser ingl\u00e9s, http://www.yout", 
+      "slug": "house-era-re-groso-como-rapero", 
+      "tags": "videito,", 
+      "metadata": "{u'uptime': u'0 day, 10:28:22'}"
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://www.youtube.com/watch?v=zSgiXGELjbc\">Una ma\u00f1ana iluminada con 400 billones de soles</a></p>", 
+      "description": "[Una ma\u00f1ana iluminada con 400 billones de soles](http://www.youtube.com/watch?v=zSgiXGELjbc)", 
+      "author": "etnalubma", 
+      "created": "2010-08-24 23:06:30", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Una ma\u00f1ana iluminada con 400 billones de soles", 
+      "slug": "una-manana-iluminada-con-400-b", 
+      "tags": "sagan,video", 
+      "metadata": "{u'uptime': u'0 day, 0:41:2'}"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><em>Somos un medio para el Cosmos de conocerse a s\u00ed mismo</em> (Carl Sagan)</p>", 
+      "description": "*Somos un medio para el Cosmos de conocerse a s\u00ed mismo* (Carl Sagan)", 
+      "author": "etnalubma", 
+      "created": "2010-08-25 12:14:03", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Somos un medio para el Cosmos de conocerse a s\u00ed mismo (Carl Sagan)", 
+      "slug": "somos-un-medio-para-el-cosmos", 
+      "tags": "frase,sagan", 
+      "metadata": "{u'uptime': u'0 day, 3:52:11'}"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h1>Probando nuevamente</h1>\n<p>Le agregu\u00e9 la capacidad de usar un editor de texto a spill y no se que onda.</p>\n<p>Espero que ande bien</p>", 
+      "description": "Probando nuevamente\n==============\n\nLe agregu\u00e9 la capacidad de usar un editor de texto a spill y no se que onda.\n\nEspero que ande bien\n", 
+      "author": "tutuca", 
+      "created": "2010-08-26 10:45:59", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Probando nuevamente\nLe agregu\u00e9 la capacidad de usar un editor de texto", 
+      "slug": "probando-nuevamente-le-agregue", 
+      "tags": "pruebas", 
+      "metadata": "{u'uptime': u'0 day, 1:41:15'}"
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h1>WEEEE, anda de lujo</h1>\n<p><img alt=\"Aguante \" src=\"http://chzgifs.files.wordpress.com/2010/06/rickroll.gif\" /></p>\n<p>Esto se va para arriba. Me sorprende todo lo que se puede avanzar en los ratos libres.</p>", 
+      "description": "WEEEE, anda de lujo\n============\n\n![Aguante ](http://chzgifs.files.wordpress.com/2010/06/rickroll.gif)\n\nEsto se va para arriba. Me sorprende todo lo que se puede avanzar en los ratos libres.\n\n", 
+      "author": "tutuca", 
+      "created": "2010-08-26 11:03:35", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "WEEEE, anda de lujo\n\nEsto se va para arriba. Me sorprende todo lo que ", 
+      "slug": "weeee-anda-de-lujo-esto-se-v", 
+      "tags": "pruebas,", 
+      "metadata": "{u'uptime': u'0 day, 1:58:50'}"
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>asdfasdf\nsadfasdfas\ndf</p>", 
+      "description": "asdfasdf\nsadfasdfas\ndf\n\n\n", 
+      "author": "etnalubma", 
+      "created": "2010-08-26 11:06:24", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "asdfasdf\nsadfasdfas\ndf", 
+      "slug": "asdfasdf-sadfasdfas-df", 
+      "tags": "prueba", 
+      "metadata": "{u'uptime': u'0 day, 3:5:59'}"
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://howfuckedismydatabase.com\">Que tan jodida es mi base de datos</a></p>\n<p>Ac\u00e1 usamos postgres para producci\u00f3n y sqlite para desarrollo as\u00ed que andamos bien ;-)</p>", 
+      "description": "[Que tan jodida es mi base de datos](http://howfuckedismydatabase.com)\n\nAc\u00e1 usamos postgres para producci\u00f3n y sqlite para desarrollo as\u00ed que andamos bien ;-)\n", 
+      "author": "anonymous", 
+      "created": "2010-08-26 13:01:39", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Que tan jodida es mi base de datos\nAc\u00e1 usamos postgres para producci\u00f3n", 
+      "slug": "que-tan-jodida-es-mi-base-de-d", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 3:56:54'}"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>No entiendo esta parte del editor de texto?</p>", 
+      "description": "No entiendo esta parte del editor de texto?\n", 
+      "author": "mherrero", 
+      "created": "2010-08-26 19:41:27", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "No entiendo esta parte del editor de texto?", 
+      "slug": "no-entiendo-esta-parte-del-edi", 
+      "tags": "test", 
+      "metadata": "{u'uptime': u'0 day, 12:25:24'}"
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>En el test anterior estaba perdiendo aceite, ahora entiendo. Solo se pone as\u00ed python spill -t test -a mherrero enter al procesador de texto, luego control X y aleluya ya esta en pantalla en el fabuloso <em>LTMO</em></p>", 
+      "description": "En el test anterior estaba perdiendo aceite, ahora entiendo. Solo se pone as\u00ed python spill -t test -a mherrero enter al procesador de texto, luego control X y aleluya ya esta en pantalla en el fabuloso *LTMO*\n", 
+      "author": "mherrero", 
+      "created": "2010-08-26 19:49:59", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "En el test anterior estaba perdiendo aceite, ahora entiendo. Solo se p", 
+      "slug": "en-el-test-anterior-estaba-per", 
+      "tags": "test", 
+      "metadata": "{u'uptime': u'0 day, 12:33:52'}"
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"\u00bfDonde esta Oesterheld?\" src=\"http://i111.photobucket.com/albums/n149/mherrero/Varios/aficheOesterheld.jpg\" /></p>", 
+      "description": "![\u00bfDonde esta Oesterheld?](http://i111.photobucket.com/albums/n149/mherrero/Varios/aficheOesterheld.jpg)\n", 
+      "author": "mherrero", 
+      "created": "2010-08-26 20:31:02", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "oesterheld", 
+      "metadata": "{u'uptime': u'0 day, 13:14:55'}"
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h2>Ponga su spill mas a mano en Linux</h2>\n<p>Agregue estas lineas al bashrc:</p>\n<p><code>alias spill=\"~/repositorio/bin/spill.py\"\nexport editor=\"vim\" # o nano, emacs, vi, mcedit, gedit</code></p>\n<p>y disfrute de la sensaci\u00f3n de derramar aceite.</p>", 
+      "description": "Ponga su spill mas a mano en Linux\n----------------------------------\nAgregue estas lineas al bashrc:\n\n`alias spill=\"~/repositorio/bin/spill.py\"\nexport editor=\"vim\" # o nano, emacs, vi, mcedit, gedit`\n\ny disfrute de la sensaci\u00f3n de derramar aceite.\n", 
+      "author": "etnalubma", 
+      "created": "2010-08-27 08:56:38", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Ponga su spill mas a mano en Linux\nAgregue estas lineas al bashrc:\nali", 
+      "slug": "ponga-su-spill-mas-a-mano-en-l", 
+      "tags": "codigo,trucos,spill", 
+      "metadata": "{u'uptime': u'0 day, 0:53:2'}"
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Pronto tendremos videitos embebidos con <strong><a href=\"http://www.tylerlesmann.com/2009/apr/02/python-markdown-extension-video/\">esto</a></strong></p>", 
+      "description": "Pronto tendremos videitos embebidos con **[esto](http://www.tylerlesmann.com/2009/apr/02/python-markdown-extension-video/)**\n", 
+      "author": "etnalubma", 
+      "created": "2010-08-27 09:00:33", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Pronto tendremos videitos embebidos con esto", 
+      "slug": "pronto-tendremos-videitos-embe", 
+      "tags": "codigo,trucos,spill", 
+      "metadata": "{u'uptime': u'0 day, 0:56:54'}"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Buenos datos sobre SEO, es un poco b\u00e1sico pero no deja se ser interesante http://www.seomoz.org/blog/a-comprehensive-intro-to-seo-powerpoint-slide-deck- </p>", 
+      "description": "Buenos datos sobre SEO, es un poco b\u00e1sico pero no deja se ser interesante http://www.seomoz.org/blog/a-comprehensive-intro-to-seo-powerpoint-slide-deck- ", 
+      "author": "rafen", 
+      "created": "2010-08-24 10:02:17", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Buenos datos sobre SEO, es un poco b\u00e1sico pero no deja se ser interesa", 
+      "slug": "buenos-datos-sobre-seo-es-un", 
+      "tags": "seo,", 
+      "metadata": "{u'uptime': u'0 day, 2:20:35'}"
+    }
+  }, 
+  {
+    "pk": 62, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h2>El secdleto de la tlompeta</h2>\n<p><img alt=\"telefonia\" src=\"http://3.bp.blogspot.com/_y2yg9JIjH8k/Szs6-QgMXII/AAAAAAAABzA/SG-Ci7mvE_M/s320/secdleto1.JPG\" /></p>\n<p>Es un corto producido por <a href=\"http://es.wikipedia.org/wiki/Javier_Fesser\">Javier Fresser</a>,\nconocido por dirigir <strong>El Milagro de P. Tinto</strong> y <strong>La gran aventura de Mortadelo y Filemon</strong>.\nNo tiene desperdicio.</p>\n<p>La pueden ver <a href=\"http://video.google.es/videoplay?docid=465464602026455980\">aqu\u00ed</a></p>", 
+      "description": "El secdleto de la tlompeta\n--------------------------\n![telefonia](http://3.bp.blogspot.com/_y2yg9JIjH8k/Szs6-QgMXII/AAAAAAAABzA/SG-Ci7mvE_M/s320/secdleto1.JPG)\n\nEs un corto producido por [Javier Fresser](http://es.wikipedia.org/wiki/Javier_Fesser),\nconocido por dirigir **El Milagro de P. Tinto** y **La gran aventura de Mortadelo y Filemon**.\nNo tiene desperdicio.\n\nLa pueden ver [aqu\u00ed](http://video.google.es/videoplay?docid=465464602026455980)", 
+      "author": "etnalubma", 
+      "created": "2010-09-15 15:25:28", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "El secdleto de la tlompeta\n\nEs un corto producido por Javier Fresser,\n", 
+      "slug": "el-secdleto-de-la-tlompeta-es", 
+      "tags": "video,javier fresser", 
+      "metadata": "{u'uptime': u'0 day, 6:52:32'}"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Dolor sit amet consecteuter nomi</p>", 
+      "description": "Dolor sit amet consecteuter nomi\r\n", 
+      "author": "tutuca", 
+      "created": "2010-09-28 19:44:52", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Dolor sit amet consecteuter nomi", 
+      "slug": "dolor-sit-amet-consecteuter-no", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 1:43:42'}"
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Como usar caracteres (letras) compuestas en linux</p>\n<p>http://www.reddit.com/r/linux/comments/ch61l/</p>\n<p>No sab\u00eda que hab\u00eda tantas, particularmente estaba buscando el de look of disaproval o sea \u0ca0 pero no encontr\u00e9 lo que quer\u00eda.</p>", 
+      "description": "Como usar caracteres (letras) compuestas en linux\n\nhttp://www.reddit.com/r/linux/comments/ch61l/\n\nNo sab\u00eda que hab\u00eda tantas, particularmente estaba buscando el de look of disaproval o sea \u0ca0 pero no encontr\u00e9 lo que quer\u00eda.\n", 
+      "author": "tutuca", 
+      "created": "2010-08-28 17:38:58", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Como usar caracteres (letras) compuestas en linux\nhttp://www.reddit.co", 
+      "slug": "como-usar-caracteres-letras", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 2:17:0'}"
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Este es un gif animado hecho a partir de una animaci\u00f3n hecha con Blender, pierde aceite por todos lados igual que LTMO.\n<img alt=\"\" src=\"http://s111.photobucket.com/albums/n149/mherrero/Varios/LTMO_200.gif\" />\n<img alt=\"\" src=\"http://s111.photobucket.com/albums/n149/mherrero/Varios/LTMO_400.gif\" /></p>", 
+      "description": "Este es un gif animado hecho a partir de una animaci\u00f3n hecha con Blender, pierde aceite por todos lados igual que LTMO.\n![](http://s111.photobucket.com/albums/n149/mherrero/Varios/LTMO_200.gif)\n![](http://s111.photobucket.com/albums/n149/mherrero/Varios/LTMO_400.gif)\n\n", 
+      "author": "mherrero", 
+      "created": "2010-08-28 20:56:37", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Este es un gif animado hecho a partir de una animaci\u00f3n hecha con Blend", 
+      "slug": "este-es-un-gif-animado-hecho-a", 
+      "tags": "gif,animacion,blender", 
+      "metadata": "{u'uptime': u'0 day, 3:15:43'}"
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><a href=\"http://evitalinuxera.blogspot.com/2010/08/san-martin-debian-peron-libertad-para.html\">San Mart\u00edn, Debian, Per\u00f3n. Libertad para el pueblo</a></p>", 
+      "description": "[San Mart\u00edn, Debian, Per\u00f3n. Libertad para el pueblo](http://evitalinuxera.blogspot.com/2010/08/san-martin-debian-peron-libertad-para.html)", 
+      "author": "etnalubma", 
+      "created": "2010-09-03 09:28:05", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "San Mart\u00edn, Debian, Per\u00f3n. Libertad para el pueblo", 
+      "slug": "san-martin-debian-peron-lib", 
+      "tags": "peron,san martin,debian,linux", 
+      "metadata": "{u'uptime': u'0 day, 22:54:29'}"
+    }
+  }, 
+  {
+    "pk": 56, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h2>Historia de un Linuxero que migra a Windows</h2>\n<p>mherrero nos recomend\u00f3 esta interesante historia, que nos introduce en una forma distinta\nde pensar el problema de usar Windows.</p>\n<p><em><a href=\"http://libertadzero.wordpress.com/2010/09/06/historia-de-un-linuxero-que-migra-a-windows/\">ver art\u00edculo</a></em></p>", 
+      "description": "Historia de un Linuxero que migra a Windows\n-------------------------------------------\n\nmherrero nos recomend\u00f3 esta interesante historia, que nos introduce en una forma distinta\nde pensar el problema de usar Windows.\n\n*[ver art\u00edculo](http://libertadzero.wordpress.com/2010/09/06/historia-de-un-linuxero-que-migra-a-windows/)*", 
+      "author": "etnalubma", 
+      "created": "2010-09-06 11:29:02", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Historia de un Linuxero que migra a Windows\nmherrero nos recomend\u00f3 est", 
+      "slug": "historia-de-un-linuxero-que-mi", 
+      "tags": "linux,windows,articulo", 
+      "metadata": "{u'uptime': u'0 day, 21:36:57'}"
+    }
+  }, 
+  {
+    "pk": 59, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><em>Siempre aparece Don Quijote, lastima que uno sea un Sancho Panza !!!!</em>  <a href=\"http://xkcd.com/556/\">Alternative Energy Revolution</a> <img alt=\"Alternative Energy Revolution\" src=\"http://imgs.xkcd.com/comics/alternative_energy_revolution.jpg\" /></p>", 
+      "description": "*Siempre aparece Don Quijote, lastima que uno sea un Sancho Panza !!!!*  [Alternative Energy Revolution](http://xkcd.com/556/) ![Alternative Energy Revolution](http://imgs.xkcd.com/comics/alternative_energy_revolution.jpg)\n", 
+      "author": "mherrero", 
+      "created": "2010-09-08 09:56:41", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Siempre aparece Don Quijote, lastima que uno sea un Sancho Panza !!!! ", 
+      "slug": "siempre-aparece-don-quijote-l", 
+      "tags": "humor", 
+      "metadata": "{u'uptime': u'0 day, 2:25:50'}"
+    }
+  }, 
+  {
+    "pk": 65, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>etnalubma apunt\u00f3 lo sorprendente de los gif animados \u00faltimamente. C\u00f3mo han recuperado valor.</p>\n<p>Me hizo acordar a esta <a href=\"http://www.ted.com/talks/larry_lessig_says_the_law_is_strangling_creativity.html\">charla de Lawrence Lessig</a>. El significado cultural del remix.</p>\n<p>Un groso el vago.</p>", 
+      "description": "etnalubma apunt\u00f3 lo sorprendente de los gif animados \u00faltimamente. C\u00f3mo han recuperado valor.\r\n\r\nMe hizo acordar a esta [charla de Lawrence Lessig](http://www.ted.com/talks/larry_lessig_says_the_law_is_strangling_creativity.html). El significado cultural del remix.\r\n\r\nUn groso el vago.", 
+      "author": "tutuca", 
+      "created": "2010-09-22 23:02:11", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "etnalubma apunt\u00f3 lo sorprendente de los gif animados \u00faltimamente. C\u00f3mo", 
+      "slug": "etnalubma-apunto-lo-sorprenden", 
+      "tags": "charlas,", 
+      "metadata": "{u'uptime': u'0 day, 5:41:8'}"
+    }
+  }, 
+  {
+    "pk": 71, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Burbujas, burbujas por todos lados</p>\n<p><img alt=\"Burbuja\" src=\"http://farm3.static.flickr.com/2494/3673992165_b89e6eedc8_o.jpg\" /></p>\n<p><img alt=\"Burbuja\" src=\"http://farm4.static.flickr.com/3037/3674813550_d8f62e3149_o.jpg\" /></p>", 
+      "description": "Burbujas, burbujas por todos lados\n\n![Burbuja](http://farm3.static.flickr.com/2494/3673992165_b89e6eedc8_o.jpg)\n\n![Burbuja](http://farm4.static.flickr.com/3037/3674813550_d8f62e3149_o.jpg )\n\n\n", 
+      "author": "tutuca", 
+      "created": "2010-09-24 12:37:23", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Burbujas, burbujas por todos lados\n\n", 
+      "slug": "burbujas-burbujas-por-todos-l", 
+      "tags": "decara", 
+      "metadata": "{u'uptime': u'0 day, 6:15:0'}"
+    }
+  }, 
+  {
+    "pk": 75, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h1>zsh Fail:</h1>\n<pre><code>    (ltmo_flask)[tutuca@gatonegro ltmo]\\$ pip install ipython\n    Downloading/unpacking ipython\n    Downloading ipython-0.10.tar.gz (5.8Mb): 5.8Mb downloaded\n    Running setup.py egg_info for package ipython\n    Installing collected packages: ipython\n    Running setup.py install for ipython\n    Installing iptest script to /home/tutuca/venvs/ltmo_flask/bin\n    Installing ipythonx script to /home/tutuca/venvs/ltmo_flask/bin\n    Installing ipcluster script to /home/tutuca/venvs/ltmo_flask/bin\n    Installing ipython script to /home/tutuca/venvs/ltmo_flask/bin\n    Installing pycolor script to /home/tutuca/venvs/ltmo_flask/bin\n    Installing ipcontroller script to /home/tutuca/venvs/ltmo_flask/bin\n    Installing ipengine script to /home/tutuca/venvs/ltmo_flask/bin\n    *Successfully installed ipython*\n    (ltmo_flask)[tutuca@gatonegro ltmo]\\$ ipython\n    Python 2.6.5 (r265:79063, Apr 16 2010, 13:57:41)\n    Type \"copyright\", \"credits\" or \"license\" for more information.\n\n    IPython 0.10 -- An enhanced Interactive Python.\n    ?         -&gt; Introduction and overview of IPython's features.\n    %quickref -&gt; Quick reference.\n    help      -&gt; Python's own help system.\n    object?   -&gt; Details about 'object'. ?object also works, ?? prints more.\n\n    In [1]: from ltmo.models import Leak\n    ---------------------------------------------------------------------------\n    ImportError                               Traceback (most recent call last)\n\n    /home/tutuca/Proyectos/ltmo/&lt;ipython console&gt; in &lt;module&gt;()\n\n    /home/tutuca/Proyectos/ltmo/ltmo/__init__.py in &lt;module&gt;()\n          4 import json\n          5 import settings\n    ----&gt; 6 from flask import Flask\n          7 from flask import request, session, g, redirect, url_for, render_template, flash\n          8 from flaskext.markdown import Markdown\n\n    ImportError: No module named flask\n\n    In [2]: import flask\n    ---------------------------------------------------------------------------\n    ImportError                               Traceback (most recent call last)\n\n    /home/tutuca/Proyectos/ltmo/&lt;ipython console&gt; in &lt;module&gt;()\n\n    ImportError: No module named flask\n\n    In [3]:\n    Do you really want to exit ([y]/n)?\n    (ltmo_flask)[tutuca@gatonegro ltmo]\\$ which ipython\n    /usr/local/bin/ipython\n    (ltmo_flask)[tutuca@gatonegro ltmo]\\$ deactivate\n    [tutuca@gatonegro ltmo]\\$ . ~/bin/ltmo\n    (ltmo_flask)[tutuca@gatonegro ltmo]\\$ iptyhon\n    *zsh: command not found: iptyhon*\n    (ltmo_flask)[tutuca@gatonegro ltmo]\\$\n</code></pre>", 
+      "description": "zsh Fail:\r\n============\r\n\r\n        (ltmo_flask)[tutuca@gatonegro ltmo]\\$ pip install ipython\r\n        Downloading/unpacking ipython\r\n        Downloading ipython-0.10.tar.gz (5.8Mb): 5.8Mb downloaded\r\n        Running setup.py egg_info for package ipython\r\n        Installing collected packages: ipython\r\n        Running setup.py install for ipython\r\n        Installing iptest script to /home/tutuca/venvs/ltmo_flask/bin\r\n        Installing ipythonx script to /home/tutuca/venvs/ltmo_flask/bin\r\n        Installing ipcluster script to /home/tutuca/venvs/ltmo_flask/bin\r\n        Installing ipython script to /home/tutuca/venvs/ltmo_flask/bin\r\n        Installing pycolor script to /home/tutuca/venvs/ltmo_flask/bin\r\n        Installing ipcontroller script to /home/tutuca/venvs/ltmo_flask/bin\r\n        Installing ipengine script to /home/tutuca/venvs/ltmo_flask/bin\r\n        *Successfully installed ipython*\r\n        (ltmo_flask)[tutuca@gatonegro ltmo]\\$ ipython\r\n        Python 2.6.5 (r265:79063, Apr 16 2010, 13:57:41)\r\n        Type \"copyright\", \"credits\" or \"license\" for more information.\r\n\r\n        IPython 0.10 -- An enhanced Interactive Python.\r\n        ?         -> Introduction and overview of IPython's features.\r\n        %quickref -> Quick reference.\r\n        help      -> Python's own help system.\r\n        object?   -> Details about 'object'. ?object also works, ?? prints more.\r\n\r\n        In [1]: from ltmo.models import Leak\r\n        ---------------------------------------------------------------------------\r\n        ImportError                               Traceback (most recent call last)\r\n\r\n        /home/tutuca/Proyectos/ltmo/<ipython console> in <module>()\r\n\r\n        /home/tutuca/Proyectos/ltmo/ltmo/__init__.py in <module>()\r\n              4 import json\r\n              5 import settings\r\n        ----> 6 from flask import Flask\r\n              7 from flask import request, session, g, redirect, url_for, render_template, flash\r\n              8 from flaskext.markdown import Markdown\r\n\r\n        ImportError: No module named flask\r\n\r\n        In [2]: import flask\r\n        ---------------------------------------------------------------------------\r\n        ImportError                               Traceback (most recent call last)\r\n\r\n        /home/tutuca/Proyectos/ltmo/<ipython console> in <module>()\r\n\r\n        ImportError: No module named flask\r\n\r\n        In [3]:\r\n        Do you really want to exit ([y]/n)?\r\n        (ltmo_flask)[tutuca@gatonegro ltmo]\\$ which ipython\r\n        /usr/local/bin/ipython\r\n        (ltmo_flask)[tutuca@gatonegro ltmo]\\$ deactivate\r\n        [tutuca@gatonegro ltmo]\\$ . ~/bin/ltmo\r\n        (ltmo_flask)[tutuca@gatonegro ltmo]\\$ iptyhon\r\n        *zsh: command not found: iptyhon*\r\n        (ltmo_flask)[tutuca@gatonegro ltmo]\\$\r\n\r\n", 
+      "author": "tutuca", 
+      "created": "2010-09-26 11:22:22", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "zsh Fail:\n    (ltmo_flask)[tutuca@gatonegro ltmo]\\$ pip install ipytho", 
+      "slug": "zsh-fail-ltmo_flasktut", 
+      "tags": "python,", 
+      "metadata": "{u'uptime': u'0 day, 3:45:56'}"
+    }
+  }, 
+  {
+    "pk": 87, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Estoy flasheando pedos de colores con un tema que escuch\u00e9 en el disco Litoral de Liliana Herrero.\nSe los dejo ac\u00e1 para que lo escuchen http://dl.dropbox.com/u/163405/Litoral/Track03.mp3 Y derramo un par de ideas:</p>\n<p>Buscando encontr\u00e9 que la canci\u00f3n es de una piba que se llama Ada Prada. No hay mucha data de la mina, hasta donde me da la paciencia para buscar.</p>\n<p>Encontr\u00e9 la letra ac\u00e1 con acordes http://lacuerda.net/tabs/a/ana_prada/tierra_adentro.shtml y un videito de youtube que tiene un audio decente http://www.youtube.com/watch?v=lCO_kB4LqpY</p>\n<p>La versi\u00f3n que est\u00e1 en Litoral tiene arreglos muy parecidos a los originales, sin embargo, donde una es prolija y... bueno, \"la original\", la otra, que es una copia bastante ajustada, explota.</p>\n<p>El original est\u00e1 como m\u00e1s \u00e1spero, Liliana es una cantante vieja y su voz fluye con una soltura que se consigue con los a\u00f1os, Ada como que canta m\u00e1s durita, con unos yeites en los fraseos que me parecen medio gastados. En eso, me parece que alguno menos \"profesional\" por ah\u00ed le saca m\u00e1s expresividad a la misma frase.</p>\n<p>Los invito a escuchar esta canci\u00f3n, hoy o ma\u00f1ana... repetidas veces si es posible.</p>", 
+      "description": "Estoy flasheando pedos de colores con un tema que escuch\u00e9 en el disco Litoral de Liliana Herrero.\r\nSe los dejo ac\u00e1 para que lo escuchen http://dl.dropbox.com/u/163405/Litoral/Track03.mp3 Y derramo un par de ideas:\r\n\r\nBuscando encontr\u00e9 que la canci\u00f3n es de una piba que se llama Ada Prada. No hay mucha data de la mina, hasta donde me da la paciencia para buscar.\r\n\r\nEncontr\u00e9 la letra ac\u00e1 con acordes http://lacuerda.net/tabs/a/ana_prada/tierra_adentro.shtml y un videito de youtube que tiene un audio decente http://www.youtube.com/watch?v=lCO_kB4LqpY\r\n\r\nLa versi\u00f3n que est\u00e1 en Litoral tiene arreglos muy parecidos a los originales, sin embargo, donde una es prolija y... bueno, \"la original\", la otra, que es una copia bastante ajustada, explota.\r\n\r\nEl original est\u00e1 como m\u00e1s \u00e1spero, Liliana es una cantante vieja y su voz fluye con una soltura que se consigue con los a\u00f1os, Ada como que canta m\u00e1s durita, con unos yeites en los fraseos que me parecen medio gastados. En eso, me parece que alguno menos \"profesional\" por ah\u00ed le saca m\u00e1s expresividad a la misma frase.\r\n\r\nLos invito a escuchar esta canci\u00f3n, hoy o ma\u00f1ana... repetidas veces si es posible.\r\n\r\n", 
+      "author": "tutuca", 
+      "created": "2010-10-14 20:52:53", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Estoy flasheando pedos de colores con un tema que escuch\u00e9 en el disco ", 
+      "slug": "estoy-flasheando-pedos-de-colo", 
+      "tags": "m\u00fasica, liliana herrero", 
+      "metadata": "{u'uptime': u'0 day, 7:40:2'}"
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Bureaucrat Conrad, you are technically correct -- the best kind of correct</p>", 
+      "description": "Bureaucrat Conrad, you are technically correct -- the best kind of correct", 
+      "author": "anonymous", 
+      "created": "2010-08-24 13:50:03", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Bureaucrat Conrad, you are technically correct -- the best kind of cor", 
+      "slug": "bureaucrat-conrad-you-are-tec", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 6:8:22'}"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>Reddit me hizo ganar una cerveza hoy</p>\n<pre><code>So what Python framework do you use?\n\n[Pylons](http://pylonshq.com/). You can see our source code if you want. The data is stored in a PostgreSQL database and served by a combination of haproxy and nginx.\n</code></pre>", 
+      "description": "Reddit me hizo ganar una cerveza hoy\n\n    So what Python framework do you use?\n\n    [Pylons](http://pylonshq.com/). You can see our source code if you want. The data is stored in a PostgreSQL database and served by a combination of haproxy and nginx.\n\n\n", 
+      "author": "tutuca", 
+      "created": "2010-08-26 13:22:06", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Reddit me hizo ganar una cerveza hoy\nSo what Python framework do you u", 
+      "slug": "reddit-me-hizo-ganar-una-cerve", 
+      "tags": "giladas", 
+      "metadata": "{u'uptime': u'0 day, 4:17:21'}"
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><strong><a href=\"http://www.tylerlesmann.com/2009/apr/02/python-markdown-extension-video/\">War. What is it good for? Absolutly nothing</a></strong> (War - Edwin Starr)</p>", 
+      "description": "**[War. What is it good for? Absolutly nothing](http://www.tylerlesmann.com/2009/apr/02/python-markdown-extension-video/)** (War - Edwin Starr)\n\n", 
+      "author": "etnalubma", 
+      "created": "2010-08-27 12:33:03", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "War. What is it good for? Absolutly nothing (War - Edwin Starr)", 
+      "slug": "war-what-is-it-good-for-abso", 
+      "tags": "video,edwin", 
+      "metadata": "{u'uptime': u'0 day, 4:29:47'}"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>from django.contrib.syndication.views import Feed\nfrom ltmo.models import Leak</p>\n<p>class LeakFeed(Feed):\n    title = \"Derrames publicados recientemente\"\n    link = \"/\"\n    description = \"Derrames nuevos o actualizados\"\n    description_template = 'feeds/description.html'</p>\n<pre><code>def items(self):\n    return Leak.objects.order_by(\"-created\")[:15]\n\ndef item_title(self, item):\n    return item.title\n\ndef item_description(self, item):\n    return item.description\n</code></pre>", 
+      "description": "from django.contrib.syndication.views import Feed\r\nfrom ltmo.models import Leak\r\n\r\nclass LeakFeed(Feed):\r\n    title = \"Derrames publicados recientemente\"\r\n    link = \"/\"\r\n    description = \"Derrames nuevos o actualizados\"\r\n    description_template = 'feeds/description.html'\r\n\r\n    def items(self):\r\n        return Leak.objects.order_by(\"-created\")[:15]\r\n\r\n    def item_title(self, item):\r\n        return item.title\r\n\r\n    def item_description(self, item):\r\n        return item.description", 
+      "author": "tutuca", 
+      "created": "2010-09-28 20:08:21", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "from django.contrib.syndication.views import Feed\nfrom ltmo.models imp", 
+      "slug": "from-djangocontribsyndicatio", 
+      "tags": "r", 
+      "metadata": "{u'uptime': u'0 day, 2:7:11'}"
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<h2>Como recuperar el aceite perdido</h2>\n<p>Acabo de encontrar un art\u00edculo en <a href=\"http://hackaday.com\">Hack a Day</a> sobre\ncomo recuperar el aceite derramado en el agua de manera no invasiva usando\nrob\u00f3tica y una nanofabrica absorbente de aceite. Esperemos que este tipo\nde enfoques tecnol\u00f3gicos sean cada vez mas frecuentes.</p>\n<p><a href=\"http://hackaday.com/2010/08/29/seaswarm-we-can-clean-up-the-gulf-in-a-month/\">Ver art\u00edculo</a></p>", 
+      "description": "Como recuperar el aceite perdido\n--------------------------------\nAcabo de encontrar un art\u00edculo en [Hack a Day](http://hackaday.com) sobre\ncomo recuperar el aceite derramado en el agua de manera no invasiva usando\nrob\u00f3tica y una nanofabrica absorbente de aceite. Esperemos que este tipo\nde enfoques tecnol\u00f3gicos sean cada vez mas frecuentes.\n\n[Ver art\u00edculo](http://hackaday.com/2010/08/29/seaswarm-we-can-clean-up-the-gulf-in-a-month/)", 
+      "author": "etnalubma", 
+      "created": "2010-08-31 09:48:45", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "Como recuperar el aceite perdido\nAcabo de encontrar un art\u00edculo en Hac", 
+      "slug": "como-recuperar-el-aceite-perdi", 
+      "tags": "tecnologia,articulo", 
+      "metadata": "{u'uptime': u'0 day, 1:39:21'}"
+    }
+  }, 
+  {
+    "pk": 93, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p><img alt=\"me hace sentir... derp\" src=\"http://chzgifs.files.wordpress.com/2011/01/5d3ab05b-1e3a-459f-8321-7fc8a63165ef.gif\" /></p>", 
+      "description": "![me hace sentir... derp](http://chzgifs.files.wordpress.com/2011/01/5d3ab05b-1e3a-459f-8321-7fc8a63165ef.gif)", 
+      "author": "etnalubma", 
+      "created": "2011-01-21 22:05:22", 
+      "changed": "2011-01-21 22:43:04", 
+      "title": "", 
+      "slug": "sin-titulo", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'0 day, 5:39:7'}"
+    }
+  }, 
+  {
+    "pk": 94, 
+    "model": "ltmo.leak", 
+    "fields": {
+      "rendered": "<p>\u00bfQue miras?\n<img alt=\"lama\" src=\"http://chzgifs.files.wordpress.com/2011/01/icwhutudidtherep1.gif\" /></p>", 
+      "description": "\u00bfQue miras?\r\n![lama](http://chzgifs.files.wordpress.com/2011/01/icwhutudidtherep1.gif)\r\n", 
+      "author": "etnalubma", 
+      "created": "2011-01-21 22:14:19", 
+      "changed": "2011-01-21 22:44:44", 
+      "title": "\u00bfQue miras?\n", 
+      "slug": "que-miras", 
+      "tags": "gif", 
+      "metadata": "{u'uptime': u'0 day, 5:48:5'}"
+    }
+  }
+]

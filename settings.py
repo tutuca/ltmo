@@ -81,7 +81,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'south',
     'pagination',
-    'oembed',
     'tagging',
     'banners',
     'ltmo',

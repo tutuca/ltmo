@@ -1,11 +1,9 @@
-{%  load tagging_tags oembed_tags %}
+{%  load tagging_tags %}
         <article>
             {% if object.title %}
             <h1> <a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>    
             {% endif %}
-            {% oembed %}
             {{object.rendered|safe|urlize|truncatewords_html:'150'}}
-            {% endoembed %}
             {% tags_for_object object as tag_list %}
             <details>
                 <a href="/?author={{object.author}}">@{{object.author}}</a>, 
