@@ -1,0 +1,57 @@
+[
+  {
+    "pk": 1, 
+    "model": "banners.banner", 
+    "fields": {
+      "url": "", 
+      "slot": "head", 
+      "code": "<div id=\"banner-header\" class=\"banner\">\r\n    <h3>Publicidad</h3>\r\n    <script type=\"text/javascript\"><!--\r\n        google_ad_client = \"pub-3539830246651089\";\r\n        /* 728x90 listado */\r\n        google_ad_slot = \"4135291841\";\r\n        google_ad_width = 728;\r\n        google_ad_height = 90;\r\n        //-->\r\n    </script>\r\n    <script type=\"text/javascript\"\r\n        src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\r\n    </script>\r\n</div> ", 
+      "clicks": 0, 
+      "views": 0
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "banners.banner", 
+    "fields": {
+      "url": "", 
+      "slot": "content", 
+      "code": "<div id=\"banner-content\" class=\"banner\">\r\n    <script type=\"text/javascript\"><!--\r\n        google_ad_client = \"pub-3539830246651089\";\r\n        /* 468x60, creado 26/08/10 */\r\n        google_ad_slot = \"7764155477\";\r\n        google_ad_width = 468;\r\n        google_ad_height = 60;\r\n        //-->\r\n    </script>\r\n    <script type=\"text/javascript\"\r\n        src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\r\n    </script>\r\n</div>", 
+      "clicks": 0, 
+      "views": 0
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "banners.banner", 
+    "fields": {
+      "url": "", 
+      "slot": "aside", 
+      "code": "<div id=\"banner-aside\" class=\"banner\">\r\n    <script type=\"text/javascript\"><!--\r\n        google_ad_client = \"pub-3539830246651089\";\r\n        /* 300x250, creado 26/08/10 */\r\n        google_ad_slot = \"2985450362\";\r\n        google_ad_width = 300;\r\n        google_ad_height = 250;\r\n        //-->\r\n        </script>\r\n    <script type=\"text/javascript\"\r\n        src=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\r\n    </script>\r\n</div>", 
+      "clicks": 0, 
+      "views": 0
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "banners.banner", 
+    "fields": {
+      "url": "", 
+      "slot": "twitter", 
+      "code": "<div id=\"twitter\" class=\"banner\">\r\n    <script>\r\n        new TWTR.Widget({\r\n            version: 2,\r\n            type: 'profile',\r\n            rpp: 3,\r\n            interval: 6000,\r\n            width: 'auto',\r\n            height: 400,\r\n            theme: {\r\n                shell: {\r\n                    background: '#ffffff',\r\n                    color: '#333333'\r\n                },\r\n                tweets: {\r\n                    background: '#FFCC00',\r\n                    color: '#333333',\r\n                    links: '#000000'\r\n                }\r\n            },\r\n            features: {\r\n                scrollbar: false,\r\n                loop: false,\r\n                live: false,\r\n                hashtags: true,\r\n                timestamp: true,\r\n                avatars: false,\r\n                behavior: 'all'\r\n            }\r\n        }).render().setUser('losingoil').start();            \r\n    </script>\r\n</div>", 
+      "clicks": 0, 
+      "views": 0
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "banners.banner", 
+    "fields": {
+      "url": "", 
+      "slot": "analytics", 
+      "code": "<script type=\"text/javascript\">\r\n    var _gaq = _gaq || [];\r\n        _gaq.push(['_setAccount', 'UA-18147848-1']);\r\n        _gaq.push(['_trackPageview']);\r\n\r\n        (function() {\r\n        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\r\n        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\r\n        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\r\n    })();\r\n</script>", 
+      "clicks": 0, 
+      "views": 0
+    }
+  }
+]
