@@ -25,13 +25,13 @@ class Leak(models.Model):
         return ('leak_detail', [self.id])
         
     def save(self):
-        self.rendered = markdown(self.description, 'codehilite')
+        self.rendered = markdown(self.description, ['codehilite'])
         slug_text = self.title[:30] or u'sin título'
         self.slug = slugify(slug_text)
         super(Leak, self).save()
         
 class LeakAdmin(admin.ModelAdmin):
-    list_display = ('title', 'tags','author', 'created')
+    list_display = ('__unicode__', 'tags','author', 'created')
     list_filter = ('author', 'created')
 
 admin.site.register(Leak, LeakAdmin)

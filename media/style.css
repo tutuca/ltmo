@@ -5,11 +5,18 @@ header, section, footer, article, aside {
     display: block;
     padding: 0 1em;
     margin-bottom: 2em;
+    
 }
 header {
+    width: 97%;
+    padding:0 1.5%;
+    margin: 0;
+    position: fixed;
+    top:0;
+    background:#FFF;
     border-bottom: 1px solid #EEE;
-    padding:0;
-    margin: 0 1em;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 footer {
@@ -20,7 +27,9 @@ footer p{
 }
 
 #main{
-    margin:0 auto;
+    margin:4em auto;
+    max-width: 70em;
+    clear: both;
 }
 
 section {
@@ -37,7 +46,7 @@ details {
 }
 aside {
     text-align: left;
-    width: 25%;
+    width: 24%;
     float: right;
     font-size: 80%;
 }
@@ -175,9 +184,7 @@ h2 {
 } 
 
 .tags {
-    background-image: url("bg-tags.png");
-    background-position: left center;
-    background-repeat: no-repeat;
+    background: url(sprite.png) left -98px no-repeat;
     color: #666666;
     font-family: Arial,sans-serif;
     font-size: 11px;
@@ -194,24 +201,30 @@ h2 {
 .hide {
     display:none;
 }
+
 #new-leak {
     float: right;
-    padding: 1em;
+    padding: 0.5em 1em;
 }
-#new-leak:hover {
-    background:#E2EDFA;
+#new-leak strong{
+    font-size:2em;
+    vertical-align: middle;
+    font-family: Arial;
+    font-weight: normal;
+}
 
-}
-form {
+#leak-form {
     padding: 1em;
     margin: 0 auto;
     width: 70em;
 }
-form section {
-    width: 40em;
+#form-fields{
 }
-form aside {
-    width: 25em;
+#id_description {
+    height:7em;
+}
+.field {
+    clear: left;
 }
 label {
     float:left;
@@ -220,9 +233,9 @@ label {
     margin: 0.5em 1em;
     text-align:right;
 }
-input[type='text'], textarea {
+textarea {
     font-size: 1.5em;
 }
 input[type='submit'] {
-    margin-left: 10em;
+    margin-left: 11em;
 }

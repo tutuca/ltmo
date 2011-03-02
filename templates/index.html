@@ -8,6 +8,7 @@
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
     <link rel="stylesheet" href="/media/style.css" type="text/css" media="screen" />    
+    <link rel="stylesheet" href="/media/code.css" type="text/css" media="screen" />    
     <script src="/media/jquery.js"></script>
     <script src="/media/ui.js"></script>
     <script type="text/javascript" language="javascript">
@@ -35,40 +36,13 @@
 </ul>
 {% endif %}
 <header>
-    <a href="#leak-form" id="new-leak" title="Nunca sobra un poco de aceite">derramá que el aire es gratis</a>
+    <a href="#leak-form" id="new-leak" title="Nunca sobra un poco de aceite"><strong>+</strong> derramá que el aire es gratis</a>
     <h1 id="logo"><a href="http://{{request.get_host}}">Lossing too much oil</a></h1>
     {% include 'leak_form.html' %}
-    <br class="clear"/>
 </header>
 <div id="main">
 {% block main %}
-    <section>
-    {% block content %}
-    {% autopaginate object_list 10 %}
-    {% for object in object_list %}
-        <article>
-        {% if object.title %}
-        <h1> <a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>    
-        {% endif %}
-        {{object.rendered|safe|urlize|truncatewords_html:'150'}}
-        {% tags_for_object object as tag_list %}
-        <details>
-            <a href="/?author={{object.author}}">@{{object.author}}</a>, 
-            {{object.created|date}}, 
-            {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
-            <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>
-            {{object.metadata}}
-            {% if user.is_staff %}<a href="{{object.get_absolute_url}}/flag">!</a>{% endif %}
-        </details>
-        </article>
-        {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
-    {% empty %}<h2>Nadie derramó nada aún</h2>
-    {% endfor %}
-    {% paginate %}
-    {% endblock %}
-
-    </section>
-    <aside>
+     <aside>
         {% if author %}
          <h1 id="author">{% gravatar author.email %} {{author}}, <details>chorrea desde: {{author.date_joined|date}}</details></h1>
         {% endif %}
@@ -85,6 +59,18 @@
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
         {% pop_slot 'aside' %}
     </aside>
+    <section>
+    {% block content %}
+    {% autopaginate object_list 10 %}
+    {% for object in object_list %}
+        {% include 'leak.html'%}
+        {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
+    {% empty %}<h2>Nadie derramó nada aún</h2>
+    {% endfor %}
+    {% paginate %}
+    {% endblock %}
+    </section>
+
     <br class="clear"/>
 {% endblock %}
 </div>
