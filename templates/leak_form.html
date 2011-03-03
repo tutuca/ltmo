@@ -1,18 +1,4 @@
 <form action="{% url leak_new %}" method="post" id="leak-form" class="hide">
-    <aside>
-        <h3>Ayuda de formato</h3>
-
-        <pre>  
-Podés usar un **poco** de [markdown](url).
-![alt](http://ltmo.com.ar/media/trollface.png)
-        </pre>
-        <div class="preview">
-        <p>Podés usar un <strong>poco</strong> de <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a>
-        <p><img alt="alt" src="http://ltmo.com.ar/media/trollface.png" /></p>
-        </div>
-
-    </aside>
-    <section id="form-fields"> 
     <input type="hidden" name="{{form.author.name}}" value="{{user}}" />
     <div class="field" id="field_{{form.title.name}}"> 
         <label for="{{form.title.name}}">Título</label> 
@@ -27,6 +13,17 @@ Podés usar un **poco** de [markdown](url).
         <label for="{{form.tags.name}}">Tags</label> 
         {{form.tags}}
     </div>
-    </section>
-    <div class="clear field"><input name="save" type="submit" value="listo" /></div>
+    <div class="clear submit"><a id="toggle-help" href="#formating-help" class="control">Ayuda de formato</a><input name="save" type="submit" value="listo" /></div>
+    <table id="formating-help">
+        <tbody>
+            <tr><th>tu escribes:</th><th>tu ves:</th></tr>
+            <tr><td>*itálicas*</td><td><em>itálicas</em></td></tr>
+            <tr><td>**negritas**</td><td><b>negritas</b></td></tr>
+            <tr><td>[ltmo!](http://ltmo.com.ar)</td><td><a href="http://ltmo.com.ar">ltmo!</a></td></tr>
+            <tr><td>* item 1<br>* item 2<br></td><td><ul><li>item 1</li><li>item 2</li></ul></td></tr>
+            <tr><td>&gt; texto citado</td><td><blockquote>texto citado</blockquote></td></tr>
+            <tr><td><span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>if 1 * 2 &lt; 3:<br><span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>print "hello, world!"<br></td><td><pre>if 1 * 2 &lt; 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;print "hello, world!"</pre></td>
+            <tr><td>![alt](http://ltmo.com.ar/media/trollface.png)</td><td><img alt="alt" src="http://ltmo.com.ar/media/trollface.png" /></td></tr>
+        </tbody>
+    </table>
 </form>

@@ -15,8 +15,6 @@ header {
     top:0;
     background:#FFF;
     border-bottom: 1px solid #EEE;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
 }
 
 footer {
@@ -185,7 +183,7 @@ h2 {
 } 
 
 .tags {
-    background: url(sprite.png) left -98px no-repeat;
+    background: url(/media/bg-tags.png) left no-repeat;
     color: #666666;
     font-family: Arial,sans-serif;
     font-size: 11px;
@@ -215,17 +213,40 @@ h2 {
 }
 
 #leak-form {
+    position: fixed;
+    top: 53px;
     padding: 1em;
-    margin: 0 auto;
-    width: 70em;
+    margin: 0;
+    width: 50em;
+    background:#EBEBEB;
+    -moz-border-radius: 0 0 15px 15px;
+    border-radius: 0 0 15px 15px;
 }
-#form-fields{
+#toggle-help {
+    float: right;
+    margin:0 2em;
+}
+#formating-help {
+    display:none;
+    width: 100%;
+    margin-top: 1em;
+    font-size: 80%;
+
 }
 #id_description {
     height:7em;
 }
 .field {
     clear: left;
+    padding: 0.25em 0;
+}
+.field  input, 
+.field textarea{
+    border: 1px solid #535353
+}
+.field  input:focus, 
+.field textarea:focus{
+    border: 1px solid #C60;
 }
 label {
     float:left;

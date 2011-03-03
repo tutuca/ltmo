@@ -14,12 +14,9 @@
     <script type="text/javascript" language="javascript">
 
     $(document).ready(function(){
-        $('#new-leak').click(function(){
-            $('#leak-form').toggle('blind');
-            return false;
-        })
         $('.control').click(function(){
-            $('#messages').toggle();
+            target = $(this).attr('href');
+            $(target).toggle('blind');
             return false;
             
         })
@@ -31,15 +28,16 @@
 {% if messages %}
 <ul id="messages">
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}<a class="control" href="#">X</a></li>
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}<a class="control" href="#messages">X</a></li>
     {% endfor %}
 </ul>
 {% endif %}
 <header>
-    <a href="#leak-form" id="new-leak" title="Nunca sobra un poco de aceite"><strong>+</strong> derramá que el aire es gratis</a>
+    <a href="#leak-form" id="new-leak" class="control" title="Nunca sobra un poco de aceite"><strong>+</strong> derramá que el aire es gratis</a>
     <h1 id="logo"><a href="http://{{request.get_host}}">Lossing too much oil</a></h1>
     {% include 'leak_form.html' %}
 </header>
+
 <div id="main">
 {% block main %}
      <aside>
