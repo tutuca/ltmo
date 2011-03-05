@@ -4,7 +4,7 @@
     {% endif %}  
     >
     {% if user.is_anonymous %}
-    <input type="hidden" name="{{form.author.name}}" value="{{request.META.USER}}" />
+    <input type="hidden" name="{{form.author.name}}" value="anon" />
     {% else %}
     <input type="hidden" name="{{form.author.name}}" value="{{user}}" />
     {% endif %}  
