@@ -3,8 +3,13 @@
       class="hide"
     {% endif %}  
     >
-      
+    {% if user.is_anonymous %}
+    <input type="hidden" name="{{form.author.name}}" value="{{request.META.USER}}" />
+    {% else %}
     <input type="hidden" name="{{form.author.name}}" value="{{user}}" />
+    {% endif %}  
+
+
     <div class="field {% if form.title.errors %}error{% endif %}" id="field_{{form.title.name}}" > 
         <label for="{{form.title.name}}">Título</label> 
         {{form.title}}
@@ -18,7 +23,7 @@
         <label for="{{form.tags.name}}">Tags</label> 
         {{form.tags}}
     </div>
-    <div class="clear submit"><a id="toggle-help" href="#formating-help" class="control">Ayuda de formato</a><input name="save" type="submit" value="listo" /></div>
+    <div class="clear submit"><input name="save" type="submit" value="listo" /> <a id="toggle-help" href="#formating-help" class="control">Ayuda de formato</a></div>
     <table id="formating-help">
         <tbody>
             <tr><th>tu escribes:</th><th>tu ves:</th></tr>

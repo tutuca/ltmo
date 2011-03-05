@@ -15,23 +15,32 @@ def index(request):
     tag = request.GET.get('tag', None)
     queryset = Leak.objects.all().order_by('-created')
     form = LeakForm()
+    title = u'Igual que a Scioli, a veces se nos va la mano'
     if author:
         queryset = queryset.filter(author__icontains=author)
         try:
             author = User.objects.get(username__icontains=author)
+            title = u'Derrames de @%s' %author
         except User.DoesNotExist:
             author = None
     if tag:
         queryset = queryset.filter(tags__icontains=tag)
+        title = u'Derrames en %s' %tag
 
     if request.method == 'POST':
         try:
             data = json.loads(request.raw_post_data) 
         except ValueError:
             data = request.POST
+        
         form = LeakForm(data)
+
         if form.is_valid():
             leak = form.save()
+            leak.metadata = json.dumps({
+                'browser':request.META['HTTP_USER_AGENT'].split(' ')[0],
+                'shell':request.META['SHELL'],
+            })
             messages.success(request, 'Ha derramado correctamente chamigo.')
             return HttpResponseRedirect('/')
             
@@ -43,8 +52,10 @@ def index(request):
             'author': author,
             'tag': tag,
             'form': form,
+            'title': title,
         }
     )
+    
 def tags(request):
     queryset = Tag.objects.all()
     tag_name = request.GET.get('tag_name')
