@@ -251,6 +251,7 @@ h2 {
 .field {
     clear: left;
     padding: 0.25em 0;
+    position: relative;
 }
 input, 
 textarea{
@@ -270,10 +271,21 @@ input[type='text']:focus,
 textarea:focus{
     border: 1px solid #0C6;
 }
+.error {
+    background: #FEA;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
 .error input, 
 .error textarea {
-    background: #FEA;
     border: 1px solid #C60;
+}
+.errorlist{
+    position:absolute;
+    right: 3em;
+    list-style:none;
+    margin:0.5em;
+    font-size:80%;
 }
 label {
     float:left;
@@ -306,6 +318,8 @@ input[type='submit']:active {
     margin:4px -2px 0 0;
     
 }
+
+
 .ui-autocomplete {
     list-style: none;
     position:fixed !important;

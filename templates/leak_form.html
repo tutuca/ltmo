@@ -17,20 +17,24 @@
             <tr><td>* item 1<br>* item 2<br></td><td><ul><li>item 1</li><li>item 2</li></ul></td></tr>
             <tr><td>&gt; texto citado</td><td><blockquote>texto citado</blockquote></td></tr>
     </table>
+    <section>
     <div class="field {% if form.title.errors %}error{% endif %}" id="field_{{form.title.name}}" >
         <label for="{{form.title.name}}">Título</label> 
         {{form.title}}
     </div>
 
     <div class="field required {% if form.description.errors %}error{% endif %}" id="field_{{form.description.name}}"> 
-        <label for="{{form.description.name}}">Derrame
-        </label>
+        {{form.description.errors}}
+        <label for="{{form.description.name}}">Derrame</label>
         {{form.description}}
+        
     </div>
         <div class="field required {% if form.tags.errors %}error{% endif %}" id="field_{{form.tags.name}}"> 
+        {{form.tags.errors}}
         <label for="{{form.tags.name}}">Tags</label> 
         {{form.tags}}
     </div>
+    </section>
     <div class="clear submit">
         <input name="save" type="submit" value="listo" /> 
         <a href="#leak-form" class="control">Cerrar</a> 
