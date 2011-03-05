@@ -22,24 +22,31 @@
 
     }( jQuery ));
     $(document).ready(function(){
-
+        var hash = window.location.hash;
+        if (hash){
+            $(window).scrollTop($(hash).offset().top-55)
+        }
+        
 		function split( val ) {
 			return val.split( /,\s*/ );
 		}
 		function extractLast( term ) {
 			return split( term ).pop();
 		}
-        function hidemessages(){
-            $('#messages').toggle('blind');
-        };
-        
+
         $('.control').click(function(){
             target = $(this).attr('href');
-            $(target).toggle('blind');
+            $(target).toggle('blind', 300);
+            if (target === '#leak-form'){
+                window.setTimeout(function(){
+                    $('#id_description').focus();
+                },400)
+
+            }
             return false;
             
         });
-
+  
 		$( "#id_tags" )
 			// don't navigate away from the field on tab when selecting an item
 			.bind( "keydown", function( event ) {
@@ -72,7 +79,9 @@
 					return false;
 				}
 			});
-            window.setTimeout(hidemessages, 1000);
+            window.setTimeout(function(){
+                $('#messages .control').click()
+                }, 1000);
     })
     </script>
 </head>
@@ -93,6 +102,31 @@
 
 <div id="main">
 {% block main %}
+    <section>
+    {% block content %}
+    {% autopaginate object_list 10 %}
+    {% for object in object_list %}
+        <article>
+            {% if object.title %}
+            <h1><a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>    
+            {% endif %}
+            {{object.rendered|safe|truncatewords_html:'150'}}
+            {% tags_for_object object as tag_list %}
+            <details>
+                <a href="/?author={{object.author}}">@{{object.author}}</a>, 
+                {{object.created|date}}, 
+                {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+                <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>
+                {{object.metadata}}
+                {% if user.is_staff %}<a href="{{object.get_absolute_url}}/flag">!</a>{% endif %}
+            </details>
+        </article>
+        {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
+    {% empty %}<h2>Nadie derramó nada aún</h2>
+    {% endfor %}
+    {% paginate %}
+    {% endblock %}
+    </section>
      <aside>
         {% if author %}
          <h1 id="author">{% gravatar author.email %} {{author}}, <details>chorrea desde: {{author.date_joined|date}}</details></h1>
@@ -113,31 +147,7 @@
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
         {% pop_slot 'aside' %}
     </aside>
-    <section>
-    {% block content %}
-    {% autopaginate object_list 10 %}
-    {% for object in object_list %}
-        <article>
-            {% if object.title %}
-            <h1> <a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>    
-            {% endif %}
-            {{object.rendered|safe|truncatewords_html:'150'}}
-            {% tags_for_object object as tag_list %}
-            <details>
-                <a href="/?author={{object.author}}">@{{object.author}}</a>, 
-                {{object.created|date}}, 
-                {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
-                <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>
-                {{object.metadata}}
-                {% if user.is_staff %}<a href="{{object.get_absolute_url}}/flag">!</a>{% endif %}
-            </details>
-        </article>
-        {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
-    {% empty %}<h2>Nadie derramó nada aún</h2>
-    {% endfor %}
-    {% paginate %}
-    {% endblock %}
-    </section>
+    
 
     <br class="clear"/>
 {% endblock %}
@@ -147,11 +157,15 @@
         <p><a href="http://twitter.com/lossingoil">Seguinos en twitter</a> o <a href="mailto://loosingoil@gmail.com">mandanos a trabajar</a>, pero igual revisá el <a href="{{repository.url}}">Código fuente</a> que todavía tenemos {{repository.open_issues}} issues, y de los {{repository.watchers}} culiados que miran el repositorio ninguno nos da una mano</p>
 </footer>
 </div>
-<!-- 
+
+</body>
+    {% pop_slot 'analytics' %}
+    
+    <!-- 
       _______    
      |   __  \
      |  |  |  |
-     |   --   |
+     |   ··   |
      |   __  /
      |  |
  __  |__| __
@@ -161,6 +175,4 @@
     \    /
      \__/
  -->
-</body>
-    {% pop_slot 'analytics' %}
 </html>

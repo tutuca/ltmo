@@ -14,7 +14,6 @@ header {
     position: fixed;
     top:0;
     background:#FFF;
-    border-bottom: 1px solid #EEE;
 }
 
 footer {
@@ -86,6 +85,14 @@ h1 {
     font-weight: normal;
     line-height:1.5em;
 }
+h1 .pilcrow {
+    font-size:70%;
+    display:none;
+    vertical-align: top;
+}
+h1:hover .pilcrow {
+    display:inline;
+}
 h2 {
     font-size:180%;
 }
@@ -99,6 +106,7 @@ h2 {
 }
 #logo {
     margin:0;
+    border-bottom: 1px solid #EEE;
 }
 #banner-header {
     float:right;
@@ -206,10 +214,7 @@ h2 {
     padding:1em 1em 0;
 }
 #leak-form {
-    position: fixed;
-    top: 3em;
     padding: 1em 1em 0.5em;
-    margin: 0;
     background:#EEE;
     -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
@@ -218,17 +223,30 @@ h2 {
 }
 #leak-form .control {
     line-height:2.5em;
+
+}
+.submit {
+    text-align: right;
 }
 #formating-help {
-    display:none;
-    width: 100%;
-    margin-top: 1em;
+    float:right;
+    width: 30%;
     font-size: 80%;
+    border: 1px solid #FFF;
+    border-width:1px 0;
+    border-color: #CCC transparent #FFF;
 
+}
+#formating-help caption {
+    margin: 0 0 1em -2em;
+    text-align: left;
 }
 #formating-help td {
     vertical-align: top;
-    border-bottom: 1px solid #FFF;
+    border: 1px solid #FFF;
+    border-width:1px 0;
+    border-color: #FFF transparent #CCC;
+    padding: 0.25em;
 }
 .field {
     clear: left;
@@ -264,8 +282,12 @@ label {
     margin: 0.5em 1em;
     text-align:right;
 }
+.required label {
+    font-weight:bold;
+    color:#C60;
+}
 input[type='submit'] {
-    float:right;
+    float:left;
     border:1px solid #366E91;
     padding:0.25em 1em;
     margin:0.25em 0;

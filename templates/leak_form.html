@@ -8,37 +8,33 @@
     {% else %}
     <input type="hidden" name="{{form.author.name}}" value="{{user}}" />
     {% endif %}  
-
-
-    <div class="field {% if form.title.errors %}error{% endif %}" id="field_{{form.title.name}}" > 
-        <label for="{{form.title.name}}">Título</label> 
-        {{form.title}}
-    </div>
-
-    <div class="field {% if form.description.errors %}error{% endif %}" id="field_{{form.description.name}}"> 
-        <label for="{{form.description.name}}">Derrame</label>
-        {{form.description}}
-    </div>
-        <div class="field {% if form.tags.errors %}error{% endif %}" id="field_{{form.tags.name}}"> 
-        <label for="{{form.tags.name}}">Tags</label> 
-        {{form.tags}}
-    </div>
-    <div class="clear submit">
-        <input name="save" type="submit" value="listo" /> 
-        <a href="#leak-form" class="control">Me arrepentí</a> - 
-        <a href="#formating-help" class="control">Ayuda de formato</a> 
-
-    </div>
-    <table id="formating-help">
+    <table id="formating-help" cellspacing="0" cellpadding="0">
+    <caption>Podés usar <a href="/help#syntax">markdown</a> y pegar vinculos a imágenes directamente</caption>
         <tbody>
-            <tr><th>tu escribes:</th><th>tu ves:</th></tr>
             <tr><td>*itálicas*</td><td><em>itálicas</em></td></tr>
             <tr><td>**negritas**</td><td><b>negritas</b></td></tr>
             <tr><td>[ltmo!](http://ltmo.com.ar)</td><td><a href="http://ltmo.com.ar">ltmo!</a></td></tr>
             <tr><td>* item 1<br>* item 2<br></td><td><ul><li>item 1</li><li>item 2</li></ul></td></tr>
             <tr><td>&gt; texto citado</td><td><blockquote>texto citado</blockquote></td></tr>
-            <tr><td><span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>if 1 * 2 &lt; 3:<br><span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>print "hello, world!"<br></td><td><pre>if 1 * 2 &lt; 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;print "hello, world!"</pre></td>
-            <tr><td>![alt](http://ltmo.com.ar/media/trollface.png)</td><td><img alt="alt" src="http://ltmo.com.ar/media/trollface.png" /></td></tr>
-        </tbody>
     </table>
+    <div class="field {% if form.title.errors %}error{% endif %}" id="field_{{form.title.name}}" >
+        <label for="{{form.title.name}}">Título</label> 
+        {{form.title}}
+    </div>
+
+    <div class="field required {% if form.description.errors %}error{% endif %}" id="field_{{form.description.name}}"> 
+        <label for="{{form.description.name}}">Derrame
+        </label>
+        {{form.description}}
+    </div>
+        <div class="field required {% if form.tags.errors %}error{% endif %}" id="field_{{form.tags.name}}"> 
+        <label for="{{form.tags.name}}">Tags</label> 
+        {{form.tags}}
+    </div>
+    <div class="clear submit">
+        <input name="save" type="submit" value="listo" /> 
+        <a href="#leak-form" class="control">Cerrar</a> 
+
+    </div>
+
 </form>
