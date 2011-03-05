@@ -23,9 +23,13 @@ urlpatterns = patterns('ltmo.views',
     (r'^leak/$','index',{},'leak_new'),
     (r'^leak/(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
     (r'^tags','tags',{},'tags'),
-)
 
+)
+urlpatterns += patterns('django.views.generic',
+    (r'^help/$', 'simple.direct_to_template', {'template': 'help.html', 'extra_context':{'title':'Ayuuuudaaaa'},}),
+)
 urlpatterns += patterns('',
+
     (r'^admin/', include(admin.site.urls)),
     (r'^feed/$',LeakFeed()),
     (r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /media/*", mimetype="text/plain")),
