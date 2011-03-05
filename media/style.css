@@ -95,7 +95,7 @@ h2 {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 15px 15px 0 0;
     -moz-border-radius: 15px 15px 0 0;
-    -webkit-border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0 0;
 }
 #logo {
     margin:0;
@@ -153,7 +153,7 @@ h2 {
     position:relative;
     padding: 1em;
     border-radius: 0.25em;
-    -webkit-border-radius: 0.25em;
+    border-radius: 0.25em;
     -moz-border-radius: 0.25em;
 }
 .gravatar {
@@ -203,28 +203,21 @@ h2 {
 
 #new-leak {
     float: right;
-    padding: 0.5em 1em;
+    padding:1em 1em 0;
 }
-#new-leak strong{
-    font-size:2em;
-    vertical-align: middle;
-    font-family: Arial;
-    font-weight: normal;
-}
-
 #leak-form {
     position: fixed;
-    top: 53px;
-    padding: 1em;
+    top: 3em;
+    padding: 1em 1em 0.5em;
     margin: 0;
-    width: 50em;
-    background:#EBEBEB;
-    -moz-border-radius: 0 0 15px 15px;
-    border-radius: 0 0 15px 15px;
+    background:#EEE;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    -moz-box-shadow: 2px 2px 3px #999;
+    -webkit-box-shadow: 2px 2px 3px #999;
 }
 #toggle-help {
-    float: right;
-    margin:0 2em;
+    line-height:2.5em;
 }
 #formating-help {
     display:none;
@@ -233,19 +226,35 @@ h2 {
     font-size: 80%;
 
 }
-#id_description {
-    height:7em;
+#formating-help td {
+    vertical-align: top;
+    border-bottom: 1px solid #FFF;
 }
 .field {
     clear: left;
     padding: 0.25em 0;
 }
-.field  input, 
-.field textarea{
-    border: 1px solid #535353
+input, 
+textarea{
+    border: 1px solid #999;
+    font: 1em sans-serif;
+    padding: 0.25em;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
-.field  input:focus, 
-.field textarea:focus{
+textarea {
+    font-size:1.5em;
+    height:5em;
+    width:20em;
+}
+
+input[type='text']:focus, 
+textarea:focus{
+    border: 1px solid #0C6;
+}
+.error input, 
+.error textarea {
+    background: #FEA;
     border: 1px solid #C60;
 }
 label {
@@ -255,9 +264,37 @@ label {
     margin: 0.5em 1em;
     text-align:right;
 }
-textarea {
-    font-size: 1.5em;
-}
 input[type='submit'] {
-    margin-left: 11em;
+    float:right;
+    border:1px solid #366E91;
+    padding:0.25em 1em;
+    margin:0.25em 0;
+    background:#06C;
+    color:#FFF;
+    text-shadow: 1px 1px 0px #333;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+input[type='submit']:hover {
+    background:#0082BA;
+    cursor: pointer;
+    -moz-box-shadow: 1px 1px 2px #999;
+    -webkit-box-shadow: 1px 1px 2px #999;
+}
+.ui-autocomplete {
+    list-style: none;
+    position:fixed !important;
+    background: #FFF;
+    width: 10em;
+    padding:0;
+    margin:0;
+}
+.ui-autocomplete a {
+    display:block;
+    font-size:80%;
+    padding: 0.5em;
+}
+.ui-state-hover {
+    background:#0C6;
+    color:#FFF;
 }

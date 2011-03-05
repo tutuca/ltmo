@@ -3,7 +3,8 @@ from django.utils import simplejson as json
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views.generic import list_detail, simple
-from django.http import HttpResponseNotModified, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
+from tagging.models import Tag
 
 from ltmo.forms import LeakForm
 from ltmo.models import Leak
@@ -23,17 +24,6 @@ def index(request):
     if tag:
         queryset = queryset.filter(tags__icontains=tag)
 
-    return list_detail.object_list(
-        request,
-        queryset,
-        template_name='index.html',
-        extra_context={
-            'author': author,
-            'tag': tag,
-            'form': form,
-        }
-    )
-def leak_new(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.raw_post_data) 
@@ -44,6 +34,26 @@ def leak_new(request):
             leak = form.save()
             messages.success(request, 'Ha derramado correctamente chamigo.')
             return HttpResponseRedirect('/')
+            
+    return list_detail.object_list(
+        request,
+        queryset,
+        template_name='index.html',
+        extra_context={
+            'author': author,
+            'tag': tag,
+            'form': form,
+        }
+    )
+def tags(request):
+    queryset = Tag.objects.all()
+    tag_name = request.GET.get('tag_name')
+    if tag_name:
+        queryset = queryset.filter(name__istartswith=tag_name)
+    return HttpResponse(
+        json.dumps([x.name for x in queryset]), 
+        mimetype="application/json"
+    )
 
 def leak_detail(request, object_id):
     if request.method == 'POST':

@@ -1,15 +1,20 @@
-<form action="{% url leak_new %}" method="post" id="leak-form" class="hide">
+<form id="leak-form" action="{% url leak_new %}" method="post" 
+    {% if not form.errors %}
+      class="hide"
+    {% endif %}  
+    >
+      
     <input type="hidden" name="{{form.author.name}}" value="{{user}}" />
-    <div class="field" id="field_{{form.title.name}}"> 
+    <div class="field {% if form.title.errors %}error{% endif %}" id="field_{{form.title.name}}" > 
         <label for="{{form.title.name}}">Título</label> 
         {{form.title}}
     </div>
 
-    <div class="field" id="field_{{form.description.name}}"> 
+    <div class="field {% if form.description.errors %}error{% endif %}" id="field_{{form.description.name}}"> 
         <label for="{{form.description.name}}">Derrame</label>
         {{form.description}}
     </div>
-        <div class="field" id="field_{{form.tags.name}}"> 
+        <div class="field {% if form.tags.errors %}error{% endif %}" id="field_{{form.tags.name}}"> 
         <label for="{{form.tags.name}}">Tags</label> 
         {{form.tags}}
     </div>

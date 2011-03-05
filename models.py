@@ -14,7 +14,7 @@ class Leak(models.Model):
     author = models.CharField(max_length=20, default='Anonymous')
     created = models.DateTimeField(auto_now_add=True, editable = False)
     changed = models.DateTimeField(auto_now=True, editable = False)
-    tags = TagField(default='random')
+    tags = TagField(default='', null=True, blank=True)
     metadata = models.TextField(default='', null=True, blank=True)
     
     def __unicode__(self):

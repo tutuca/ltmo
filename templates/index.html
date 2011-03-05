@@ -12,14 +12,63 @@
     <script src="/media/jquery.js"></script>
     <script src="/media/ui.js"></script>
     <script type="text/javascript" language="javascript">
+    (function( $ ) {
 
+    $( ".ui-autocomplete-input" ).live( "autocompleteopen", function() {
+        var autocomplete = $( this ).data( "autocomplete" ),
+            menu = autocomplete.menu;
+        menu.activate( $.Event({ type: "mouseenter" }), menu.element.children().first() );
+    });
+
+    }( jQuery ));
     $(document).ready(function(){
+
+		function split( val ) {
+			return val.split( /,\s*/ );
+		}
+		function extractLast( term ) {
+			return split( term ).pop();
+		}
+
         $('.control').click(function(){
             target = $(this).attr('href');
             $(target).toggle('blind');
             return false;
             
-        })
+        });
+
+		$( "#id_tags" )
+			// don't navigate away from the field on tab when selecting an item
+			.bind( "keydown", function( event ) {
+				if ( event.keyCode === $.ui.keyCode.TAB &&
+						$( this ).data( "autocomplete" ).menu.active ) {
+					event.preventDefault();
+				}
+			})
+			.autocomplete({
+				source: function( request, response ) {
+					$.getJSON( "{% url tags %}", {
+						tag_name: extractLast( request.term )
+					}, response );
+				},
+				search: function() {
+					var term = extractLast( this.value );
+					if ( term.length < 2 ) {
+						return false;
+					}
+				},
+				focus: function() {
+					return false;
+				},
+				select: function( event, ui ) {
+					var terms = split( this.value );
+					terms.pop();
+					terms.push( ui.item.value );
+					terms.push( "" );
+					this.value = terms.join( ", " );
+					return false;
+				}
+			});
     })
     </script>
 </head>
@@ -33,7 +82,7 @@
 </ul>
 {% endif %}
 <header>
-    <a href="#leak-form" id="new-leak" class="control" title="Nunca sobra un poco de aceite"><strong>+</strong> derramá que el aire es gratis</a>
+    <a href="#leak-form" id="new-leak" class="control" title="Nunca sobra un poco de aceite"><em>+</em> derramá que el aceite es gratis</a>
     <h1 id="logo"><a href="http://{{request.get_host}}">Lossing too much oil</a></h1>
     {% include 'leak_form.html' %}
 </header>
