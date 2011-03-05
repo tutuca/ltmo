@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-{%  load tagging_tags pagination_tags gravatar banner_tags %}
+{%  load tagging_tags pagination_tags gravatar banner_tags urlparser%}
 <html lang='es'>
 <head>
     <meta charset="utf-8" />
-    <title>ltmo . {% block title %}Igual que a Scioli, a veces se nos va la mano{% endblock %}</title>
+    <title>ltmo . {% block title %}{{title}}{% endblock %}</title>
     <meta name="description" content="LTMO, un sitio para procastinar en todos los niveles que sea imaginable." />
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
@@ -29,7 +29,10 @@
 		function extractLast( term ) {
 			return split( term ).pop();
 		}
-
+        function hidemessages(){
+            $('#messages').toggle('blind');
+        };
+        
         $('.control').click(function(){
             target = $(this).attr('href');
             $(target).toggle('blind');
@@ -69,6 +72,8 @@
 					return false;
 				}
 			});
+
+            window.setTimeout(hidemessages, 1000);
     })
     </script>
 </head>
@@ -93,6 +98,9 @@
         {% if author %}
          <h1 id="author">{% gravatar author.email %} {{author}}, <details>chorrea desde: {{author.date_joined|date}}</details></h1>
         {% endif %}
+        {% if tag %}
+         <h1 id="author">Derrames en {{tag}}, <details>Un total de {{object_list.count}} con esta etiqueta</details></h1>
+        {% endif %}
         <h3>¿Qué es lo que observa?</h3>
         <p>Nunca hay suficiente redundancia para garantizar la continuidad de la información.</p>
         <p>Probablemente sea momento de llegar a una definición de derrame, que definimos por perder-mucho-aceite</p>
@@ -114,7 +122,7 @@
             {% if object.title %}
             <h1> <a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>    
             {% endif %}
-            {{object.rendered|safe|urlize|truncatewords_html:'150'}}
+            {{object.rendered|safe|truncatewords_html:'150'}}
             {% tags_for_object object as tag_list %}
             <details>
                 <a href="/?author={{object.author}}">@{{object.author}}</a>, 

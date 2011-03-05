@@ -4,7 +4,9 @@ from datetime import datetime
 from tagging.fields import TagField
 from django.contrib import admin
 from markdown import markdown
-from django.template.defaultfilters import striptags, slugify
+from django.template.defaultfilters import striptags, slugify, urlize
+from ltmo.templatetags.urlparser import url_to_img
+
 
 class Leak(models.Model):
     slug = models.SlugField(editable=False, blank=True, null=True)
@@ -25,7 +27,7 @@ class Leak(models.Model):
         return ('leak_detail', [self.id])
         
     def save(self):
-        self.rendered = markdown(self.description, ['codehilite'])
+        self.rendered = markdown(urlize(url_to_img(self.description)), ['codehilite'])
         slug_text = self.title[:30] or u'sin título'
         self.slug = slugify(slug_text)
         super(Leak, self).save()
