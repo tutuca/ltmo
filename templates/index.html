@@ -132,7 +132,7 @@
          <h1 id="author">{% gravatar author.email %} {{author}}, <details>chorrea desde: {{author.date_joined|date}}</details></h1>
         {% endif %}
         {% if tag %}
-         <h1 id="author">Derrames en {{tag}}, <details>Un total de {{object_list.count}} con esta etiqueta</details></h1>
+         <h1 id="author">Derrames en {{tag}}, <details>en total hay {{object_list.count}} con esta etiqueta</details></h1>
         {% endif %}
         <h3>¿Qué es lo que observa?</h3>
         <p>Nunca hay suficiente redundancia para garantizar la continuidad de la información.</p>

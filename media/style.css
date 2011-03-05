@@ -33,7 +33,7 @@ footer p{
 section {
     display:block;
     float: left;
-    width: 70%
+    width: 63%
 } 
 
 details {
@@ -44,7 +44,7 @@ details {
 }
 aside {
     text-align: left;
-    width: 24%;
+    width: 29%;
     float: right;
     font-size: 80%;
 }
