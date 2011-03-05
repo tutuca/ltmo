@@ -216,7 +216,7 @@ h2 {
     -moz-box-shadow: 2px 2px 3px #999;
     -webkit-box-shadow: 2px 2px 3px #999;
 }
-#toggle-help {
+#leak-form .control {
     line-height:2.5em;
 }
 #formating-help {
@@ -279,6 +279,10 @@ input[type='submit']:hover {
     cursor: pointer;
     -moz-box-shadow: 1px 1px 2px #999;
     -webkit-box-shadow: 1px 1px 2px #999;
+}
+input[type='submit']:active {
+    margin:4px -2px 0 0;
+    
 }
 .ui-autocomplete {
     list-style: none;
