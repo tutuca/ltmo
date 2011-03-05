@@ -1,8 +1,5 @@
-<form id="leak-form" action="{% url leak_new %}" method="post" 
-    {% if not form.errors %}
-      class="hide"
-    {% endif %}  
-    >
+<form id="leak-form" action="{% url leak_new %}" method="post" {% if not form.errors %}class="hide"{% endif %}>
+    {% csrf_token %}
     {% if user.is_anonymous %}
     <input type="hidden" name="{{form.author.name}}" value="anon" />
     {% else %}
