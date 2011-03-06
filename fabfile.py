@@ -22,7 +22,7 @@ def development():
     env.hosts = ["localhost"]
     env.project_name = BASE_DIR.split('/')[-1:].pop()
     env.deploy_dir = '/opt/sites/%s' %env.project_name
-    env.virtual_env = '/opt/venvs/%s' %env.project_name
+    env.virtual_env = '/venvs/%s' %env.project_name
     env.apache_command = 'apache2ctl restart'
 
 def staging():

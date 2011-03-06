@@ -3,6 +3,5 @@ django
 django-tagging
 markdown
 pygments
-django-markdown2
 django-pagination
 psycopg2

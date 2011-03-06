@@ -3,7 +3,8 @@ from django.utils import simplejson as json
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views.generic import list_detail, simple
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
+from django.shortcuts import redirect
 from tagging.models import Tag
 
 from ltmo.forms import LeakForm
@@ -37,12 +38,8 @@ def index(request):
 
         if form.is_valid():
             leak = form.save()
-            leak.metadata = json.dumps({
-                'browser':request.META['HTTP_USER_AGENT'].split(' ')[0],
-                'shell':request.META['SHELL'],
-            })
             messages.success(request, 'Ha derramado correctamente chamigo.')
-            return HttpResponseRedirect('/')
+            return redirect('index')
             
     return list_detail.object_list(
         request,
