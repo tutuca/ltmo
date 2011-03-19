@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%  load tagging_tags pagination_tags gravatar banner_tags urlparser%}
+{%  load tagging_tags pagination_tags gravatar banner_tags urlparser %}
 <html lang='es'>
 <head>
     <meta charset="utf-8" />
@@ -48,7 +48,19 @@
             return false;
             
         });
-  
+        $('.edit').click(function(){
+            url = $(this).attr('href');
+            $.getJSON(url, function(data){
+                $('#leak-form').attr('action', url);
+                form_fields = $('#leak-form :input');
+                for (x in data) {
+                    $('#id_'+x).val(data[x]);
+                }
+                console.log(data);
+            });
+            $('#leak-form').show('blind', 300);
+            return false;
+        })
 		$( "#id_tags" )
 			// don't navigate away from the field on tab when selecting an item
 			.bind( "keydown", function( event ) {
@@ -120,7 +132,7 @@
                 {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
                 <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>
                 {{object.metadata}}
-                {% if user.is_staff %}<a href="{{object.get_absolute_url}}/flag">!</a>{% endif %}
+                {% if user.is_staff %}<a href="{{object.get_absolute_url}}" class="edit">!</a>{% endif %}
             </details>
         </article>
         {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
@@ -156,7 +168,7 @@
 </div>
 
 <footer>
-        <p><a href="http://twitter.com/lossingoil">Seguinos en twitter</a> o <a href="mailto://loosingoil@gmail.com">mandanos a trabajar</a>, pero igual revisá el <a href="{{repository.url}}">Código fuente</a> que todavía tenemos {{repository.open_issues}} issues, y de los {{repository.watchers}} culiados que miran el repositorio ninguno nos da una mano</p>
+        <p><a href="http://twitter.com/lossingoil">Seguinos en twitter</a> o <a href="mailto://loosingtoomuchoil@gmail.com">mandanos a trabajar</a>, pero igual revisá el <a href="{{repository.url}}">Código fuente</a> que todavía tenemos {{repository.open_issues}} issues, y de los {{repository.watchers}} culiados que miran el repositorio ninguno nos da una mano</p>
 </footer>
 </div>
 

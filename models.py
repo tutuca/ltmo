@@ -14,7 +14,7 @@ class Leak(models.Model):
     title = models.CharField(max_length=126, null=True, blank=True)
     description = models.TextField()
     rendered = models.TextField(null=True, blank=True, editable = False)
-    author = models.CharField(max_length=20, default='Anonymous')
+    author = models.CharField(max_length=20, default='anon')
     created = models.DateTimeField(auto_now_add=True, editable = False)
     changed = models.DateTimeField(auto_now=True, editable = False)
     tags = TagField()

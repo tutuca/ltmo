@@ -17,6 +17,7 @@ def index(request):
     queryset = Leak.objects.all().order_by('-created')
     form = LeakForm()
     title = u'Igual que a Scioli, a veces se nos va la mano'
+
     if author:
         queryset = queryset.filter(author__icontains=author)
         try:
@@ -27,6 +28,7 @@ def index(request):
     if tag:
         queryset = queryset.filter(tags__icontains=tag)
         title = u'Derrames en %s' %tag
+
 
     if request.method == 'POST':
         try:
@@ -53,23 +55,28 @@ def index(request):
         }
     )
     
-def tags(request):
-    queryset = Tag.objects.all()
-    tag_name = request.GET.get('tag_name')
-    if tag_name:
-        queryset = queryset.filter(name__istartswith=tag_name)
-    return HttpResponse(
-        json.dumps([x.name for x in queryset]), 
-        mimetype="application/json"
-    )
-
 def leak_detail(request, object_id):
+    form = LeakForm()
+    if request.is_ajax():
+        leak = Leak.objects.get(id=object_id)
+        return HttpResponse(
+            json.dumps({
+                'title':leak.title,
+                'author':leak.author,
+                'description':leak.description,
+                'tags': leak.tags
+            }),
+            
+            mimetype="application/json"
+        )
+
     if request.method == 'POST':
-        post = json.loads(request.raw_post_data)
-        form = LeakForm(post, instance=Leak.objects.get(id=object_id))
+        form = LeakForm(request.POST, instance=Leak.objects.get(id=object_id))
 
         if form.is_valid():
             leak = form.save()
+            return redirect('index')
+            
         return simple.direct_to_template(
             request,
             'success.json',
@@ -85,4 +92,18 @@ def leak_detail(request, object_id):
         queryset,
         object_id,
         template_name='detail.html',
+        extra_context={
+            'form': form,
+        }
     )
+
+def tags(request):
+    queryset = Tag.objects.all()
+    tag_name = request.GET.get('tag_name')
+    if tag_name:
+        queryset = queryset.filter(name__istartswith=tag_name)
+    return HttpResponse(
+        json.dumps([x.name for x in queryset]), 
+        mimetype="application/json"
+    )
+

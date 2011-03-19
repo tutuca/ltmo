@@ -221,6 +221,9 @@ h2 {
     -moz-box-shadow: 2px 2px 3px #999;
     -webkit-box-shadow: 2px 2px 3px #999;
 }
+#leak-form section{
+    margin-bottom:1em;
+}
 #leak-form .control {
     line-height:2.5em;
 
@@ -289,10 +292,12 @@ textarea:focus{
 }
 label {
     float:left;
-    width: 8em;
-    font-size:80%;
+    width: 6em;
     margin: 0.5em 1em;
     text-align:right;
+}
+.field span {
+    font-size:80%;
 }
 .required label {
     font-weight:bold;
