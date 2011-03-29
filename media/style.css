@@ -83,7 +83,6 @@ h1, h2, h3, h1 a, h2 a, h3 a {
 }
 h1 {
     font-weight: normal;
-    line-height:1.5em;
 }
 h1 .pilcrow {
     font-size:70%;
@@ -211,7 +210,10 @@ h2 {
 
 #new-leak {
     float: right;
-    padding:1em 1em 0;
+    padding:0.5em 1em;
+}
+#new-leak:hover {
+    background: #EEE;
 }
 #leak-form {
     padding: 1em 1em 0.5em;
