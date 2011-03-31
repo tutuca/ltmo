@@ -11,9 +11,7 @@ from ltmo.forms import LeakForm
 from ltmo.models import Leak
 
 
-def index(request):
-    author = request.GET.get('author', None)
-    tag = request.GET.get('tag', None)
+def index(request, tag=None, author=None):
     queryset = Leak.objects.all().order_by('-created')
     form = LeakForm()
     title = u'Igual que a Scioli, a veces se nos va la mano'
@@ -31,6 +29,7 @@ def index(request):
 
 
     if request.method == 'POST':
+
         try:
             data = json.loads(request.raw_post_data) 
         except ValueError:
@@ -39,9 +38,10 @@ def index(request):
         form = LeakForm(data)
 
         if form.is_valid():
+            next = request.POST['next']
             leak = form.save()
             messages.success(request, 'Ha derramado correctamente chamigo.')
-            return redirect('index')
+            return redirect(next)
             
     return list_detail.object_list(
         request,
@@ -71,20 +71,13 @@ def leak_detail(request, object_id):
         )
 
     if request.method == 'POST':
+        next = request.POST['next']
         form = LeakForm(request.POST, instance=Leak.objects.get(id=object_id))
-
         if form.is_valid():
             leak = form.save()
-            return redirect('index')
+            messages.success(request, 'Actualizaste el #%s' %(object_id))
+            return redirect(next)
             
-        return simple.direct_to_template(
-            request,
-            'success.json',
-            mimetype='application/json',
-            extra_context={
-                'form': form,
-            }
-        )
 
     queryset = Leak.objects.all()
     return list_detail.object_detail(

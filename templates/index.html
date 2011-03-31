@@ -110,7 +110,9 @@
 {% endif %}
 <header>
     <a href="#leak-form" id="new-leak" class="control" title="Nunca sobra un poco de aceite"><em>+</em> derramá que el aceite es gratis</a>
-    <h1 id="logo"><a href="http://{{request.get_host}}">Lossing too much oil</a></h1>
+    <h1 id="logo">
+    <a href="http://{{request.get_host}}">/</a>{% if tag %}<a href="/{{tag|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag}}</a>{% endif %}{% if author %}<a href="/~{{author}}">~{{author}}</a>{% endif %}
+    </h1>
     {% include 'leak_form.html' %}
 </header>
 
@@ -127,9 +129,9 @@
             {{object.rendered|safe|truncatewords_html:'150'}}
             {% tags_for_object object as tag_list %}
             <details>
-                <a href="/?author={{object.author}}">@{{object.author}}</a>, 
+                <a href="/~{{object.author}}">~{{object.author}}</a>, 
                 {{object.created|date}}, 
-                {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+                {% for tag in tag_list %}<a href="/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
                 <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>
                 {{object.metadata}}
                 {% if user.is_staff %}<a href="{{object.get_absolute_url}}" class="edit">!</a>{% endif %}
@@ -142,19 +144,14 @@
     {% endblock %}
     </section>
      <aside>
-        {% if author %}
-         <h1 id="author">{% gravatar author.email %} {{author}}, <details>chorrea desde: {{author.date_joined|date}}</details></h1>
-        {% endif %}
-        {% if tag %}
-         <h1 id="author">Derrames en {{tag}}, <details>en total hay {{object_list.count}} con esta etiqueta</details></h1>
-        {% endif %}
+
         <h3>¿Qué es lo que observa?</h3>
         <p>Nunca hay suficiente redundancia para garantizar la continuidad de la información.</p>
         <p>Probablemente sea momento de llegar a una definición de derrame, ¿qué definimos por perder-mucho-aceite?.</p>
         <h3>Nube</h3>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
-        <a href="/?tag={{tag}}" 
+        <a href="/{{tag}}" 
            style="font-size:{{tag.font_size|add:'8'}}pt"
            title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}

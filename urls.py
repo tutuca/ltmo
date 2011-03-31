@@ -21,7 +21,8 @@ sitemaps = {
 urlpatterns = patterns('ltmo.views',
     (r'^$','index',{},'index'),
     (r'^leak/$','index',{},'leak_new'),
-    (r'^leak/(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
+    (r'^(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
+    (r'^~(?P<author>\w+)$','index',{},'list_by_author'),
     (r'^tags','tags',{},'tags'),
 
 )
