@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%  load tagging_tags pagination_tags gravatar banner_tags urlparser %}
+{%  load tagging_tags pagination_tags banner_tags %}
 <html lang='es'>
 <head>
     <meta charset="utf-8" />
@@ -110,8 +110,12 @@
 {% endif %}
 <header>
     <a href="#leak-form" id="new-leak" class="control" title="Nunca sobra un poco de aceite"><em>+</em> derramá que el aceite es gratis</a>
+
     <h1 id="logo">
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a>{% if tag %}<a href="/{{tag|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag}}</a>{% endif %}{% if author %}<a href="~{{author}}">~{{author}}</a>{% endif %}
+    {% block logo %}
+    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a>{% if tag %}<a href="/tag/{{tag|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">tag/{{tag}}</a>{% endif %}{% if author %}<a href="~{{author}}">~{{author}}</a>{% endif %}
+    
+    {% endblock %}
     </h1>
     {% include 'leak_form.html' %}
 </header>
@@ -122,21 +126,8 @@
     {% block content %}
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
-        <article>
-            {% if object.title %}
-            <h1><a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>    
-            {% endif %}
-            {{object.rendered|safe|truncatewords_html:'150'}}
-            {% tags_for_object object as tag_list %}
-            <details>
-                <a href="/~{{object.author}}">~{{object.author}}</a>, 
-                {{object.created|date}}, 
-                {% for tag in tag_list %}<a href="/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
-                <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#</a>
-                {{object.metadata}}
-                {% if user.is_staff %}<a href="{{object.get_absolute_url}}" class="edit">!</a>{% endif %}
-            </details>
-        </article>
+        {% include 'leak.html' %}
+
         {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
     {% empty %}<h2>Nadie derramó nada aún</h2>
     {% endfor %}

@@ -23,10 +23,6 @@ def index(request, tag=None, author=None):
             title = u'Derrames de @%s' %author
         except User.DoesNotExist:
             author = None
-    if tag:
-        queryset = queryset.filter(tags__icontains=tag)
-        title = u'Derrames en %s' %tag
-
 
     if request.method == 'POST':
 
@@ -54,7 +50,25 @@ def index(request, tag=None, author=None):
             'title': title,
         }
     )
+def by_tag(request, tag_name=None):
+    queryset = Tag.objects.all()
+    form = LeakForm()
+    title = 'Derrames por etiqueta'
     
+    if tag_name:
+        queryset = queryset.filter(name=tag_name)
+        title = u'Derrames en %s' %tag_name
+        
+    return list_detail.object_list(
+        request,
+        queryset,
+        template_name='tags.html',
+        extra_context={
+            'form': form,
+            'title': title,
+            'tag_name': tag_name,
+        }
+    )
 def leak_detail(request, object_id):
     form = LeakForm()
     if request.is_ajax():
