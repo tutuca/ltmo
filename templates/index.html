@@ -113,7 +113,7 @@
 
     <h1 id="logo">
     {% block logo %}
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a>{% if tag %}<a href="/tag/{{tag|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">tag/{{tag}}</a>{% endif %}{% if author %}<a href="~{{author}}">~{{author}}</a>{% endif %}
+    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a>{% if author %}<a href="~{{author}}">~{{author}}</a>{% endif %}
     
     {% endblock %}
     </h1>
