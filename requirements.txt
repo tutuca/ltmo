@@ -5,3 +5,5 @@ markdown
 pygments
 django-pagination
 psycopg2
+hg+https://python-markdown-video.googlecode.com/hg/#egg=markdown-video
+git+git://github.com/tutuca/markdown-urlize.git

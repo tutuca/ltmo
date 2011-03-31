@@ -6,9 +6,6 @@ from django.contrib import admin
 from django.template.defaultfilters import striptags, slugify
 from markdown import markdown
 
-from ltmo.templatetags.urlparser import urlparser
-
-
 class Leak(models.Model):
     slug = models.SlugField(editable=False, blank=True, null=True)
     title = models.CharField(max_length=126, null=True, blank=True)
@@ -28,9 +25,8 @@ class Leak(models.Model):
         return ('leak_detail', [self.id])
         
     def save(self):
-        self.rendered = markdown(urlparser(self.description), ['codehilite'])
-        slug_text = self.title[:30] or u'sin título'
-        self.slug = slugify(slug_text)
+        self.rendered = markdown(self.description, ['video', 'codehilite', 'urlize'])
+        self.slug = slugify(self.title[:30] or u'sin título')
         super(Leak, self).save()
         
 class LeakAdmin(admin.ModelAdmin):
