@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load pagination_tags banner_tags tagging_tags %}
+{% block logo %}
+    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="{{ object.absolute_url }}">~{{object}}</a>
+{% endblock %}
+{% block content %}
+
+    <h2><a href="#derrames">{{object.leaks.count}}/</h2>
+    {% autopaginate object_list 10%}
+    {% for object in object_list %}
+        {% include 'leak.html' %}
+        {% if forloop.counter == 4 %}{% pop_slot 'content' %}{% endif %}
+    {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
+    {% endfor %}
+
+    {% paginate %}
+{% endblock %}
