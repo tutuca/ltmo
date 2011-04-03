@@ -50,6 +50,7 @@ PAGINATION_DEFAULT_WINDOW = 2
 FORCE_LOWERCASE_TAGS = True
 
 MIDDLEWARE_CLASSES = (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -79,6 +80,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.markup',
     'django.contrib.messages',
+    'debug_toolbar',
     'south',
     'pagination',
     'tagging',

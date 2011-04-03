@@ -3,7 +3,7 @@
 <html lang='es'>
 <head>
     <meta charset="utf-8" />
-    <title>ltmo . {% block title %}{{title}}{% endblock %}</title>
+    <title>ltmo . {% block title %}Igual que a Scioli, a veces se nos va la mano{% endblock %}</title>
     <link rel="icon" type="image/png" href="/media/favicon.ico" />
 
     <meta name="description" content="LTMO, un sitio para procastinar en todos los niveles que sea imaginable." />
@@ -71,7 +71,7 @@
 			})
 			.autocomplete({
 				source: function( request, response ) {
-					$.getJSON( "{% url tags %}", {
+					$.getJSON( "/tags/", {
 						tag_name: extractLast( request.term )
 					}, response );
 				},
@@ -142,7 +142,7 @@
         <h3>Nube</h3>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
-        <a href="/{{tag}}" 
+        <a href="/tag/{{tag}}" 
            style="font-size:{{tag.font_size|add:'8'}}pt"
            title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}
