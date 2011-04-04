@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from django.conf import settings
 from django.conf.urls.defaults import *
 from django.http import HttpResponse
 from django.contrib.sitemaps import GenericSitemap
@@ -43,12 +42,4 @@ urlpatterns += patterns('',
     (r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /media/*", mimetype="text/plain")),
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', 
         {'sitemaps': sitemaps})
-
 )
-      
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^media/(?P<path>.*)$', 'django.views.static.serve', 
-         {'document_root': settings.MEDIA_ROOT})
-    )
-    
