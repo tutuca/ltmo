@@ -8,7 +8,7 @@
             <details>
                 <a href="/~{{object.author}}">~{{object.author}}</a>, 
                 {{object.created|date}}, 
-                {% for tag in tag_list %}<a href="/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+                {% for tag in tag_list %}<a href="/l/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
                 <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#{{object.pk}}</a>
                 {{object.metadata}}
                 {% if user.is_staff %}<a href="{{object.get_absolute_url}}" class="edit">!</a>{% endif %}

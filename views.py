@@ -107,7 +107,7 @@ def tags(request):
 
     
 def profile_detail(request, username):
-    queryset = Leak.objects.filter(author__icontains=username)
+    queryset = Leak.objects.filter(author__icontains=username).order_by)('-created')
 
     try:
         author = User.objects.get(username__icontains=username)
