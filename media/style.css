@@ -100,8 +100,6 @@ h2 {
     text-align:left;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 15px 15px 0 0;
-    -moz-border-radius: 15px 15px 0 0;
-    border-radius: 15px 15px 0 0;
 }
 #logo {
     margin:0;
@@ -160,8 +158,6 @@ h2 {
     position:relative;
     padding: 1em;
     border-radius: 0.25em;
-    border-radius: 0.25em;
-    -moz-border-radius: 0.25em;
 }
 .gravatar {
     float:left;
@@ -226,10 +222,8 @@ nav a:hover {
 form {
     padding: 1em 1em 0.5em;
     background:#EEE;
-    -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
-    -moz-box-shadow: 2px 2px 3px #999;
-    -webkit-box-shadow: 2px 2px 3px #999;
+    box-shadow: 2px 2px 3px #999;
 }
 #leak-form section{
     margin-bottom:1em;
@@ -271,7 +265,6 @@ textarea{
     border: 1px solid #999;
     font: 1em sans-serif;
     padding: 0.25em;
-    -moz-border-radius: 3px;
     border-radius: 3px;
 }
 textarea {
@@ -286,7 +279,6 @@ textarea:focus{
 }
 .error {
     background: #FEA;
-    -moz-border-radius: 3px;
     border-radius: 3px;
 }
 .error input, 
@@ -321,13 +313,11 @@ input[type='submit'] {
     background:#06C;
     color:#FFF;
     text-shadow: 1px 1px 0px #333;
-    -moz-border-radius:5px;
     border-radius:5px;
 }
 input[type='submit']:hover {
     cursor: pointer;
-    -moz-box-shadow: 1px 1px 2px #999;
-    -webkit-box-shadow: 1px 1px 2px #999;
+    box-shadow: 1px 1px 2px #999;
 }
 input[type='submit']:active {
     margin:4px -2px 0 0;
