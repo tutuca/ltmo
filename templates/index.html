@@ -29,17 +29,23 @@
     {% if form %}
     <a href="#leak-form" id="new-leak" class="control" title="Nunca sobra un poco de aceite">+</a>      
     {% endif %}  
-
     <a href="/help" title="Ayudaaaaaaa">?</a>
+    {% if not user.is_authenticated %}
+    <a href="#login-form" class="control" title="Entrar">~</a>
+    {% else %}
+    <a href="/out" title="Salir">..</a>
+    {% endif %}
     </nav>
     <h1 id="logo">
     {% block logo %}
     <a href="http://{{request.get_host}}" title="Bienvenido">ltmo/</a>
     {% endblock %}
     </h1>
+    {% include 'login.html' %}
     {% if form  %}
     {% include 'leak_form.html' %}
     {%  endif %}
+
 </header>
 
 <div id="main">

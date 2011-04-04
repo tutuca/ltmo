@@ -3,6 +3,7 @@ from django.conf.urls.defaults import *
 from django.http import HttpResponse
 from django.contrib.sitemaps import GenericSitemap
 from django.contrib import admin
+from django.views.generic import TemplateView
 
 from ltmo.feeds import LeakFeed
 from ltmo.models import Leak
@@ -26,10 +27,14 @@ urlpatterns = patterns('ltmo.views',
     (r'^l/(?P<tag_name>\w+)/(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
     (r'^tags/','tags',{},'tags'),
     (r'^~(?P<username>\w+)/$','profile_detail', {}, 'author_detail'),
+    (r'^in/$', 'login', {}, 'login'),
+)
+urlpatterns +=patterns('django.contrib.auth.views',
+    (r'^out/$', 'logout', {'next_page':'/'}, 'logout'),
 
 )
-urlpatterns += patterns('django.views.generic',
-    (r'^help/$', 'simple.direct_to_template', {'template': 'help.html', 'extra_context':{'title':'Ayuuuudaaaa'},}),
+urlpatterns += patterns('',
+    (r'^help/$', TemplateView.as_view(template_name='help.html')),
 )
 urlpatterns += patterns('',
     (r'^admin/', include(admin.site.urls)),

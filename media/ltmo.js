@@ -51,6 +51,18 @@
             $('#new-leak').click();
             return false;
         })
+        $('#login-form').submit(function(){
+            data = $(this).serializeArray();
+            action = $(this).attr('action');
+            $.post(action, data, function(data, st, request){
+                if (st === 'success'){
+                    window.location=data['next'];
+
+                };
+
+            });
+            return false;
+        })
 		$( "#id_tags" )
 			.bind( "keydown", function( event ) {
 			// don't navigate away from the field on tab when selecting an item
