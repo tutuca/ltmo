@@ -41,11 +41,10 @@
     <a href="http://{{request.get_host}}" title="Bienvenido">ltmo/</a>
     {% endblock %}
     </h1>
-    {% include 'login.html' %}
     {% if form  %}
     {% include 'leak_form.html' %}
     {%  endif %}
-
+    {% include 'login.html' %}
 </header>
 
 <div id="main">
