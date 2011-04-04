@@ -218,7 +218,12 @@ nav a{
 nav a:hover {
     background: #EEE;
 }
-#leak-form {
+#login-form {
+    position: absolute;
+    right:10px;
+    width: 32em;
+}
+form {
     padding: 1em 1em 0.5em;
     background:#EEE;
     -moz-border-radius: 0 0 5px 5px;
@@ -295,7 +300,7 @@ textarea:focus{
     margin:0.5em;
     font-size:80%;
 }
-label {
+.field label {
     float:left;
     width: 6em;
     margin: 0.5em 1em;
