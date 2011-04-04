@@ -8,7 +8,7 @@ from markdown import markdown
 
 class Leak(models.Model):
     slug = models.SlugField(editable=False, blank=True, null=True)
-    title = models.CharField(max_length=126, null=True, blank=True)
+    title = models.CharField(max_length=126, default='sin-titulo')
     description = models.TextField()
     rendered = models.TextField(null=True, blank=True, editable = False)
     author = models.SlugField(max_length=20, default='anon')
@@ -22,11 +22,11 @@ class Leak(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('leak_detail', [self.id])
-        
+        return ('leak_detail', [self.tags.split(',')[0], self.id])
+
     def save(self):
         self.rendered = markdown(self.description, ['video', 'codehilite', 'urlize'])
-        self.slug = slugify(self.title[:30] or u'sin título')
+        self.slug = slugify(self.title[:30])
         super(Leak, self).save()
         
 class LeakAdmin(admin.ModelAdmin):

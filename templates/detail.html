@@ -1,7 +1,19 @@
 {% extends 'index.html' %}
-{%  load banner_tags %}
+{%  load banner_tags tagging_tags %}
+{% block logo %}
+    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/l/{{tag|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag}}/</a><a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
+{% endblock %}
 {% block content %}
-        {% include 'leak.html' %}
+            {{object.rendered|safe}}
+            {% tags_for_object object as tag_list %}
+            <details>
+                <a href="/~{{object.author}}">~{{object.author}}</a>, 
+                {{object.created|date}}, 
+                {% for tag in tag_list %}<a href="/l/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+                <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#{{object.pk}}</a>
+                {{object.metadata}}
+                {% if user.is_staff %}<a href="{{object.get_absolute_url}}" class="edit">!</a>{% endif %}
+            </details>
         <div class="pagination">
             {% if object.get_previous_by_changed.get_absolute_url %}
                 <a class="prev" href="{{object.get_previous_by_changed.get_absolute_url}}">< anterior </a>

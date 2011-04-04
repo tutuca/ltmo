@@ -1,11 +1,10 @@
 {% extends 'index.html' %}
 {% load pagination_tags banner_tags tagging_tags %}
 {% block logo %}
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="{{ object.absolute_url }}">~{{object}}</a>
+    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/~{{ author }}">~{{author}}</a> ({{object_list.count}})
 {% endblock %}
 {% block content %}
 
-    <h2><a href="#derrames">{{object.leaks.count}}/</h2>
     {% autopaginate object_list 10%}
     {% for object in object_list %}
         {% include 'leak.html' %}

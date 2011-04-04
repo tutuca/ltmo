@@ -13,91 +13,7 @@
     <link rel="stylesheet" href="/media/code.css" type="text/css" media="screen" />    
     <script src="/media/jquery.js"></script>
     <script src="/media/ui.js"></script>
-    <script type="text/javascript" language="javascript">
-    (function( $ ) {
-
-    $( ".ui-autocomplete-input" ).live( "autocompleteopen", function() {
-        var autocomplete = $( this ).data( "autocomplete" ),
-            menu = autocomplete.menu;
-        menu.activate( $.Event({ type: "mouseenter" }), menu.element.children().first() );
-    });
-
-    }( jQuery ));
-    $(document).ready(function(){
-        var hash = window.location.hash;
-        if (hash){
-            $(window).scrollTop($(hash).offset().top-55)
-        }
-        
-		function split( val ) {
-			return val.split( /,\s*/ );
-		}
-		function extractLast( term ) {
-			return split( term ).pop();
-		}
-
-        $('.control').click(function(){
-            target = $(this).attr('href');
-            $(target).toggle('blind', 300);
-            if (target === '#leak-form'){
-                window.setTimeout(function(){
-                    $('#id_description').focus();
-                },400)
-
-            }
-            return false;
-            
-        });
-        $('.edit').click(function(){
-            url = $(this).attr('href');
-            $.getJSON(url, function(data){
-                $('#leak-form').attr('action', url);
-                form_fields = $('#leak-form :input');
-                for (x in data) {
-                    $('#id_'+x).val(data[x]);
-                }
-                console.log(data);
-            });
-            $('#leak-form').show('blind', 300);
-            return false;
-        })
-		$( "#id_tags" )
-			// don't navigate away from the field on tab when selecting an item
-			.bind( "keydown", function( event ) {
-				if ( event.keyCode === $.ui.keyCode.TAB &&
-						$( this ).data( "autocomplete" ).menu.active ) {
-					event.preventDefault();
-				}
-			})
-			.autocomplete({
-				source: function( request, response ) {
-					$.getJSON( "/tags/", {
-						tag_name: extractLast( request.term )
-					}, response );
-				},
-				search: function() {
-					var term = extractLast( this.value );
-					if ( term.length < 2 ) {
-						return false;
-					}
-				},
-				focus: function() {
-					return false;
-				},
-				select: function( event, ui ) {
-					var terms = split( this.value );
-					terms.pop();
-					terms.push( ui.item.value );
-					terms.push( "" );
-					this.value = terms.join( ", " );
-					return false;
-				}
-			});
-            window.setTimeout(function(){
-                $('#messages .control').click()
-                }, 1000);
-    })
-    </script>
+    <script src="/media/ltmo.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -110,11 +26,9 @@
 {% endif %}
 <header>
     <a href="#leak-form" id="new-leak" class="control" title="Nunca sobra un poco de aceite"><em>+</em> derramá que el aceite es gratis</a>
-
     <h1 id="logo">
     {% block logo %}
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a>{% if author %}<a href="~{{author}}">~{{author}}</a>{% endif %}
-    
+    <a href="http://{{request.get_host}}" title="Bienvenido">ltmo/</a>
     {% endblock %}
     </h1>
     {% include 'leak_form.html' %}
@@ -127,7 +41,6 @@
     {% autopaginate object_list 10 %}
     {% for object in object_list %}
         {% include 'leak.html' %}
-
         {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
     {% empty %}<h2>Nadie derramó nada aún</h2>
     {% endfor %}
@@ -142,7 +55,7 @@
         <h3>Nube</h3>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
-        <a href="/tag/{{tag}}" 
+        <a href="/l/{{tag}}" 
            style="font-size:{{tag.font_size|add:'8'}}pt"
            title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}

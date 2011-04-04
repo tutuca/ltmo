@@ -4,24 +4,24 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views.generic import list_detail, simple
 from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
+
 from tagging.models import Tag
 
 from ltmo.forms import LeakForm
 from ltmo.models import Leak
 
 
-def index(request, tag=None, author=None):
+def index(request, object_id=None):
     queryset = Leak.objects.all().order_by('-created')
     form = LeakForm()
 
     if request.method == 'POST':
-
         try:
             data = json.loads(request.raw_post_data) 
         except ValueError:
             data = request.POST
-        
+                    
         form = LeakForm(data)
 
         if form.is_valid():
@@ -38,24 +38,13 @@ def index(request, tag=None, author=None):
             'form': form,
         }
     )
-def by_tag(request, tag_name=None):
-    queryset = Tag.objects.all()
-    form = LeakForm()
-    title = 'Derrames por etiqueta'
+
+def leak_detail(request, tag_name, object_id):
+    queryset = Leak.objects.all()
+    form = LeakForm(initial={'tags':tag_name})
+    leak = get_object_or_404(Leak, pk=object_id)
     
-    return list_detail.object_list(
-        request,
-        queryset,
-        template_name='tags.html',
-        extra_context={
-            'form': form,
-            'tag_name': tag_name,
-        }
-    )
-def leak_detail(request, object_id):
-    form = LeakForm()
     if request.is_ajax():
-        leak = Leak.objects.get(id=object_id)
         return HttpResponse(
             json.dumps({
                 'title':leak.title,
@@ -69,21 +58,37 @@ def leak_detail(request, object_id):
 
     if request.method == 'POST':
         next = request.POST['next']
-        form = LeakForm(request.POST, instance=Leak.objects.get(id=object_id))
+        form = LeakForm(request.POST, instance=leak)
         if form.is_valid():
             leak = form.save()
             messages.success(request, 'Actualizaste el #%s' %(object_id))
             return redirect(next)
             
-
-    queryset = Leak.objects.all()
     return list_detail.object_detail(
         request,
-        queryset,
-        object_id,
+        queryset.filter(tags__icontains=tag_name),
+        leak.pk,
         template_name='detail.html',
         extra_context={
             'form': form,
+            'tag': tag_name
+        }
+    )
+        
+def by_tag(request, tag_name=None):
+    queryset = Leak.objects.all().order_by('tags')
+    form = LeakForm()
+
+    if tag_name:
+        queryset = queryset.filter(tags__icontains=tag_name)
+
+    return list_detail.object_list(
+        request,
+        queryset,
+        template_name='tags.html',
+        extra_context={
+            'form': form,
+            'tag_name': tag_name,
         }
     )
 
@@ -95,5 +100,27 @@ def tags(request):
     return HttpResponse(
         json.dumps([x.name for x in queryset]), 
         mimetype="application/json"
+    )
+
+
+
+
+    
+def profile_detail(request, username):
+    queryset = Leak.objects.filter(author__icontains=username)
+
+    try:
+        author = User.objects.get(username__icontains=username)
+    except :
+        author = None
+
+    return list_detail.object_list(
+        request,
+        queryset,
+        template_name='profile.html',
+        extra_context={
+            'author':author,
+            'is_me':request.user.username == 'username',
+        }
     )
 

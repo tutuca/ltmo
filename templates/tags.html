@@ -1,17 +1,16 @@
 {% extends 'index.html' %}
 {% load pagination_tags banner_tags tagging_tags %}
 {% block logo %}
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/tag/">tag/</a>{% if tag_name %}<a href="/tag/{{tag_name|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag_name}}</a>{% endif %}
+    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/l/{{tag_name|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag_name|default:'leaks'}}</a> ({{object_list.count}})
 {% endblock %}
 {% block content %}
-
+{% regroup object_list by tags as object_list %}
 {% autopaginate object_list 10 %}
 {% for tag in object_list %}
     {%if not tag_name%}
-    <h2><a href="/tag/{{tag}}">{{tag}}/</h2>
+    <h2><a href="/tag/{{tag.grouper}}">{{tag.grouper}}/</h2>
     {%endif%}
-    {% tagged_objects tag in ltmo.Leak as object_list %}
-    {% for object in object_list|slice:':5' %}
+    {% for object in tag.list|slice:':5' %}
         {% include 'leak.html' %}
         {% if forloop.counter == 4 %}{% pop_slot 'content' %}{% endif %}
     {% endfor %}

@@ -20,11 +20,12 @@ sitemaps = {
 
 urlpatterns = patterns('ltmo.views',
     (r'^$','index',{},'index'),
-    (r'^(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
     (r'^leak/$','index',{},'leak_new'),
-    (r'^tag/$','by_tag',{},'by_tag'),
-    (r'^tag/(?P<tag_name>\w+)$','by_tag',{},'tag'),
+    (r'^l/$','by_tag',{}),
+    (r'^l/(?P<tag_name>\w+)$','by_tag',{},'tag'),
+    (r'^l/(?P<tag_name>\w+)/(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
     (r'^tags/','tags',{},'tags'),
+    (r'^~(?P<username>\w+)/$','profile_detail', {}, 'author_detail'),
 
 )
 urlpatterns += patterns('django.views.generic',
@@ -38,13 +39,6 @@ urlpatterns += patterns('',
         {'sitemaps': sitemaps})
 
 )
-urlpatterns += patterns('',
-#   url(r'^create/$',
-#       views.create_profile,
-#       name='profiles_create_profile'),
-
-   url(r'^~(?P<username>\w+)/$','profiles.views.profile_detail', name='author_detail'),
-   )
       
 if settings.DEBUG:
     urlpatterns += patterns('',
