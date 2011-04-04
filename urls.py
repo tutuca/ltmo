@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf import settings
 from django.conf.urls.defaults import *
 from django.http import HttpResponse
@@ -23,8 +24,8 @@ urlpatterns = patterns('ltmo.views',
     (r'^$','index',{},'index'),
     (r'^leak/$','index',{},'leak_new'),
     (r'^l/$','by_tag',{}),
-    (r'^l/(?P<tag_name>\w+)$','by_tag',{},'tag'),
-    (r'^l/(?P<tag_name>\w+)/(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
+    (r'^l/(?P<tag_name>[\w-]+)$','by_tag',{},'tag'),
+    (r'^l/(?P<tag_name>[\w-]+)/(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
     (r'^tags/','tags',{},'tags'),
     (r'^~(?P<username>\w+)/$','profile_detail', {}, 'author_detail'),
     (r'^in/$', 'login', {}, 'login'),

@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 from django.contrib.syndication.views import Feed
 from ltmo.models import Leak
 
 class LeakFeed(Feed):
-    title = "Derrames publicados recientemente"
+    title = "Recientemente derramado"
     link = "/"
-    description = "Derrames nuevos o actualizados"
+    description = "Cosas publicadas recientemente en el fantastico ltmo"
     description_template = 'feeds/description.html'
 
     def items(self):

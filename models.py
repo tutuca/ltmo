@@ -27,8 +27,12 @@ class Leak(models.Model):
         return ('leak_detail', [parse_tag_input(self.tags)[0], self.id])
 
     def save(self):
-        self.rendered = markdown(self.description, ['video', 'codehilite', 'urlize'])
-        self.slug = slugify(self.title[:30]) or 'sin-titulo'
+        self.rendered = markdown(
+            self.description, 
+            ['video', 'codehilite', 'urlize']
+        )
+        self.tags = ','.join([slugify(x) for x in parse_tag_input(self.tags)])
+        self.slug = '%s-%s' %(slugify(self.title[:30]) or 'sin-titulo', self.pk)
         super(Leak, self).save()
         
 class LeakAdmin(admin.ModelAdmin):
