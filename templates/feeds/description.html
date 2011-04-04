@@ -2,6 +2,6 @@
 {{obj.rendered|safe|truncatewords_html:'150'}}
 {% tags_for_object obj as tag_list %}
 <details><a href="/?author={{object.author}}">{{obj.author}}</a>, 
-{{obj.created|date}}, {% for tag in tag_list %}<a href="/?tag={{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}
+{{obj.created|date}}, {% for tag in tag_list %}<a href="/l/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}
 {{obj.metadata}}
 </details>
