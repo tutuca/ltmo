@@ -1,5 +1,8 @@
 {% extends 'index.html' %}
 {%  load banner_tags tagging_tags %}
+{% block title %}
+{{object.title}}
+{% endblock %}
 {% block logo %}
     <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/l/{{tag|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag}}/</a><a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
 {% endblock %}

@@ -108,7 +108,7 @@ def tags(request):
     
 def profile_detail(request, username):
     queryset = Leak.objects.filter(author__icontains=username).order_by('-created')
-
+    form = LeakForm()
     try:
         author = User.objects.get(username__icontains=username)
     except :
@@ -120,6 +120,7 @@ def profile_detail(request, username):
         template_name='profile.html',
         extra_context={
             'author':author,
+            'form':form,
             'is_me':request.user.username == 'username',
         }
     )

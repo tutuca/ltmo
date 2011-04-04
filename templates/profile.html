@@ -1,5 +1,8 @@
 {% extends 'index.html' %}
 {% load pagination_tags banner_tags tagging_tags %}
+{% block title %}
+{{author}}
+{% endblock %}
 {% block logo %}
     <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/~{{ author }}">~{{author}}</a> ({{object_list.count}})
 {% endblock %}

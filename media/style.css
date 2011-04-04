@@ -208,11 +208,14 @@ h2 {
     display:none;
 }
 
-#new-leak {
+nav {
     float: right;
-    padding:0.5em 1em;
 }
-#new-leak:hover {
+nav a{
+    font-size:2em;
+    padding: 0 0.5em;
+}
+nav a:hover {
     background: #EEE;
 }
 #leak-form {
