@@ -1,8 +1,8 @@
 <form id="leak-form" action="{% url leak_new %}" method="post" {% if not form.errors %}class="hide"{% endif %}>
     {% if not user.is_anonymous %}
     <input type="hidden" name="{{form.author.name}}" value="{{user}}" />
-    <input type="hidden" name="next" value="{{request.path}}" />
     {% endif %}
+    <input type="hidden" name="next" value="{{request.path}}" />
     {% csrf_token %}
     <table id="formating-help" cellspacing="0" cellpadding="0">
     <caption>Podés usar <a href="/help#syntax">markdown</a> y pegar vinculos a imágenes directamente</caption>
@@ -22,7 +22,6 @@
         {{form.description.errors}}
         <label for="{{form.description.name}}">Derrame</label>
         {{form.description}}
-        
     </div>
         <div class="field required {% if form.tags.errors %}error{% endif %}" id="field_{{form.tags.name}}"> 
         {{form.tags.errors}}

@@ -1,0 +1,17 @@
+    <form id="login-form" action="{% url login %}" method="post" {% if not auth_form.errors %}class="hide"{% endif %}>
+        {% csrf_token %}    
+        <input type="hidden" name="next" value="{{request.get_full_path}}"/>
+        <span class="required">
+            <label for="username">usuario</label>
+            <input type="text" name="username" value=""/>
+        </span>
+        <span class="required">
+            <label for="password">pass</label>
+            <input type="password" name="password" value=""/>
+        </span>
+        <div class="clear submit">
+            <input name="save" type="submit" value="listo" /> 
+            <a href="#login-form" class="control">Cerrar</a> 
+
+        </div>
+    </form>

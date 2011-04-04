@@ -2,6 +2,8 @@
 from django.db import models
 from datetime import datetime
 from tagging.fields import TagField
+from tagging.utils import parse_tag_input
+
 from django.contrib import admin
 from django.template.defaultfilters import striptags, slugify
 from markdown import markdown
@@ -22,7 +24,7 @@ class Leak(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('leak_detail', [self.tags.split(',')[0], self.id])
+        return ('leak_detail', [parse_tag_input(self.tags)[0], self.id])
 
     def save(self):
         self.rendered = markdown(self.description, ['video', 'codehilite', 'urlize'])

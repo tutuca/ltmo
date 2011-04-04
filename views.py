@@ -18,17 +18,12 @@ def index(request, object_id=None):
     form = LeakForm()
 
     if request.method == 'POST':
-        try:
-            data = json.loads(request.raw_post_data) 
-        except ValueError:
-            data = request.POST
-                    
-        form = LeakForm(data)
+        next = request.POST['next']
+        form = LeakForm(request.POST)
 
         if form.is_valid():
-            next = request.POST['next']
             leak = form.save()
-            messages.success(request, 'ha derramado correctamente chamigo.')
+            messages.success(request, 'Ha derramado correctamente chamigo.')
             return redirect(next)
             
     return list_detail.object_list(
@@ -62,7 +57,7 @@ def leak_detail(request, tag_name, object_id):
         form = LeakForm(request.POST, instance=leak)
         if form.is_valid():
             leak = form.save()
-            messages.success(request, 'actualizaste el #%s' %(object_id))
+            messages.success(request, 'Actualizaste el #%s' %(object_id))
             return redirect(next)
             
     return list_detail.object_detail(
@@ -103,9 +98,13 @@ def tags(request):
         mimetype="application/json"
     )
 
+
+
+
+    
 def profile_detail(request, username):
     queryset = Leak.objects.filter(author__icontains=username).order_by('-created')
-    form = LeakForm()
+
     try:
         author = User.objects.get(username__icontains=username)
     except :
@@ -117,7 +116,6 @@ def profile_detail(request, username):
         template_name='profile.html',
         extra_context={
             'author':author,
-            'form':form,
             'is_me':request.user.username == 'username',
         }
     )
@@ -133,13 +131,8 @@ def login(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                message = "bienvenido"
                 messages.success(request, 'bienvenido %s' %(user, ))
                 
-            else:
-                messages.warning(request, 'tu cuenta fue deshabilitada')
-        else:
-            messages.error(request, 'nombre de usuario y contraseña incorrectos')
             
         return HttpResponse(
             json.dumps({
