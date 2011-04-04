@@ -97,10 +97,6 @@ def tags(request):
         json.dumps([x.name for x in queryset]), 
         mimetype="application/json"
     )
-
-
-
-
     
 def profile_detail(request, username):
     queryset = Leak.objects.filter(author__icontains=username).order_by('-created')

@@ -72,12 +72,12 @@ a img{
 em {
     font: italic 100% "Georgia-MS", Georgia, serif;
 }
-article img {
+article img, article object {
     display:block;
     margin: 1em auto;
     max-width: 35em;
-}
 
+}
 h1, h2, h3, h1 a, h2 a, h3 a {
     font-weight: normal;
 }
