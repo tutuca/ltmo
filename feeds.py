@@ -12,7 +12,7 @@ class LeakFeed(Feed):
         return Leak.objects.order_by("-created")[:15]
 
     def item_title(self, item):
-        return item.title
+        return item.title or ' '
 
     def item_description(self, item):
         return item.description

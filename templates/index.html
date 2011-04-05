@@ -64,9 +64,11 @@
      <aside>
 
         <h3>¿Qué es lo que observa?</h3>
-        <p>Nunca hay suficiente redundancia para garantizar la continuidad de la información.</p>
-        <p>Probablemente sea momento de llegar a una definición de derrame, ¿qué definimos por perder-mucho-aceite?.</p>
-        <h3>Nube</h3>    
+        <p>Esto funciona muy fácil, hacele click al + de allá arriba y pegá lo que sea. Pero ojo, nada queda almacenado en nuestros servidores, esto es solo una pasarela</p>
+        <p>Tratamos de agrandar el agujero para que más cosas caigan en él.</p>
+
+        
+        <h3>Se ha vertido en estos temas</h3>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
         <a href="/l/{{tag}}" 
@@ -83,7 +85,11 @@
 </div>
 
 <footer>
-        <p><a href="http://twitter.com/lossingoil">Seguinos en twitter</a> o <a href="mailto:loosingtoomuchoil@gmail.com">mandanos a trabajar</a>, pero igual revisá el <a href="http://github.com/tutuca/ltmo">Código fuente</a> que todavía tenemos {{repository.open_issues}} issues, y de los {{repository.watchers}} culiados que miran el repositorio ninguno nos da una mano</p>
+
+        <p>
+        <a href="http://twitter.com/lossingoil">@lossingoil</a> - <a href="mailto:loosingtoomuchoil@gmail.com">loosingtoomuchoil@gmail.com</a> - <a href="http://github.com/tutuca/ltmo">github.com/tutuca/ltmo</a> <br />
+        Las opiniones vertidas en cada artículo son responsabilidad del author
+        </p>
 </footer>
 </div>
 
