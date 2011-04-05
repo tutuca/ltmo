@@ -8,5 +8,6 @@ local_settings.py
 pip-log.txt
 etc/*
 apps/*
+static/admin/*
 
 
