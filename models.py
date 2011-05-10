@@ -24,7 +24,12 @@ class Leak(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('leak_detail', [parse_tag_input(self.tags)[0], self.id])
+        try:
+            tag = parse_tag_input(self.tags)[0]
+        except IndexError:
+            tag = self.tags #XXX: no tiene por qué dar IndexError, corregir los datos
+            
+        return ('leak_detail', [tag, self.id])
 
     def save(self):
         self.rendered = markdown(
