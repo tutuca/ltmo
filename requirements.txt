@@ -1,12 +1,13 @@
-PIL
-django
-django-tagging
-markdown
-pygments
-django-pagination
-psycopg2
-south
-django-debug-toolbar
-git+git://github.com/tutuca/banners.git
-git+git://github.com/tutuca/python-markdown-video.git
-git+git://github.com/tutuca/markdown-urlize.git
+'PIL',
+'django',
+'django-tagging',
+'markdown',
+'pygments',
+'django-pagination',
+'psycopg2',
+'south',
+'django-debug-toolbar',
+'git+git://github.com/tutuca/python-markdown-video.git',
+'git+git://github.com/tutuca/markdown-urlize.git',
+'-e git+git@github.com:Inventta/banners.git#egg=banners',
+'-e git+git@github.com:Inventta/ltmo.git#egg=ltmo'

@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.9'
+version = '0.12'
 
 setup(name='ltmo',
       version=version,
@@ -12,21 +12,18 @@ setup(name='ltmo',
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='Banners, Django',
+      keywords='Blog, Django',
       author='Inventta',
       author_email='maturburu@gmail.com',
       url='http://ltmo.com.ar',
-      license='',
-      packages=find_packages(exclude=['ez_setup']),
       package_data={
         'ltmo' : ['templates/*.html'],
       },
-      namespace_packages=[],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
         'setuptools',
-        'django'
+        'django',
         'PIL',
         'django-tagging',
         'markdown',
@@ -35,11 +32,5 @@ setup(name='ltmo',
         'psycopg2',
         'south',
         'django-debug-toolbar',
-        'python-markdown-video',
-        'markdown-urlize',
-        'banners',
       ],
-      entry_points="""
-      # -*- Entry points: -*-
-      """,
       )
