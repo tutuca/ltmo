@@ -4,9 +4,11 @@
 
 This script is coded so it can make the deployments automagically in the 
 designed servers.
+It also documents the deployment process
 
 USE: fab <hosts>:<username> <action>
 EX: fab staging:admin release
+
 """
 
 import os
@@ -19,22 +21,19 @@ from fabric.api import env, run, local, require, put, sudo, prompt, cd
 BASE_DIR = os.path.dirname(__file__)
 
 def development():
-    env.hosts = ["localhost"]
+    env.user = os.getlogin()
+    env.hosts = ['localhost']
     env.project_name = BASE_DIR.split('/')[-1:].pop()
-    env.deploy_dir = '/opt/sites/%s' %env.project_name
-    env.virtual_env = '/venvs/%s' %env.project_name
-    env.apache_command = 'apache2ctl restart'
-
-def staging():
-    pass
     
-def production(username="mherrero", hosts=["ltmo.com.ar"]):
-    env.user = username
-    env.hosts = hosts
+    env.deploy_dir = '/home/{0}/{1}'.format(env.user, 'venvs/ltmo')
+    env.apache_command = os.path.join(env.deploy_dir, 'apache2/bin/restart')
+    
+def production(username=None, deploy_dir='webapps/ltmo'):
+    env.user = os.getlogin()
+    env.hosts = hosts=['localhost', 'ltmo.com.ar']
     env.project_name = BASE_DIR.split('/')[-1:].pop()
-    env.deploy_dir = '/home/mherrero/webapps/ltmo/src/ltmo'
-    env.virtual_env = '/home/mherrero/webapps/ltmo/venv'
-    env.apache_command = '/home/mherrero/webapps/ltmo/apache2/bin/restart'
+    env.deploy_dir = '/home/{0}/{1}'.format(env.user, 'webapps/ltmo')
+    env.apache_command = os.path.join(env.deploy_dir, 'apache2/bin/restart')
     
 def write_template(file_name, template_name):
     '''
@@ -47,8 +46,22 @@ def write_template(file_name, template_name):
 
     return rendered_file
 
+def deploy(req=None):
+    """ Crea un `virtualenv` e instala los paquetes segun el requirements.txt 
+    provisto usando `pip`."""
+    require('deploy_dir', provided_by=('development', 'production'))
+    put(req, env.deploy_dir)
+    with cd(env.deploy_dir):
+        remote_req=os.path.join(env.cwd, 'requirements.txt')
+        print remote_req
+        print open(remote_req).read()
+        run('virtualenv --no-site-packages .')
+        run('pip install markdown -E .') #XXX: Race condition
+        run('pip install -Ur requirements.txt -E .')
+
 def release(rev='HEAD'):
     """Creates a tarball, uploads it and decompresses it in the rigth path."""
+    #XXX legacy, remover en favor de deploy
     require("hosts", provided_by=[development, staging, production])    
     tar = "%s-%s.tar.gz" % (env.project_name ,datetime.datetime.now().strftime("%Y%m%d%H%M%S"),)
     local("git archive %s| gzip > %s" %(rev,tar))
