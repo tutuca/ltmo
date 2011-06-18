@@ -1,0 +1,6 @@
+recursive-include ltmo/static/*
+recursive-include ltmo/templates/*
+exclude ltmo/local_settings.py
+exclude ./fabfile.py
+
+
