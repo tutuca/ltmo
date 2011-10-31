@@ -21,20 +21,19 @@ sitemaps = {
 
 urlpatterns = patterns('ltmo.views',
     (r'^$','index',{},'index'),
-    (r'^leak/$','index',{},'leak_new'),
+    (r'^edit/$','edit',{},'edit'),
+    (r'^edit/(?P<id>\d+)$','edit',{},'edit'),
     (r'^l/$','by_tag',{}),
-    (r'^l/(?P<tag_name>[\w-]+)$','by_tag',{},'tag'),
-    (r'^l/(?P<tag_name>[\w-]+)/(?P<object_id>\d+)$','leak_detail',{},'leak_detail'),
+    (r'^leak/(?P<tag_name>\D+)$','by_tag',{},'by_tag'),
+    (r'^leak/(?P<id>\d+)$','leak_detail',{},'leak_detail'),
     (r'^tags/','tags',{},'tags'),
     (r'^~(?P<username>\w+)/$','profile_detail', {}, 'author_detail'),
-    (r'^in/$', 'login', {}, 'login'),
+    (r'^register$','register',{},'register'),
 )
-urlpatterns +=patterns('django.contrib.auth.views',
-    (r'^out/$', 'logout', {'next_page':'/'}, 'logout'),
 
-)
-urlpatterns += patterns('',
-    (r'^help/$', TemplateView.as_view(template_name='help.html')),
+urlpatterns += patterns('django.contrib.auth.views',
+    (r'login$', 'login', {'template_name':'login.html'}, 'login'),
+    (r'^logout$', 'logout', {'next_page':'/'}, 'logout'),
 )
 urlpatterns += patterns('',
     (r'^admin/', include(admin.site.urls)),

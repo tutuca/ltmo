@@ -1,73 +1,64 @@
 # -*- coding: utf-8 -*-
+
+
 from django.conf import settings
+from django.core.mail import send_mail
 from django.utils import simplejson as json
 from django.contrib.auth.models import User
-from django.contrib import messages
-from django.views.generic import list_detail, simple
+from django.contrib import messages, auth 
 from django.http import HttpResponse
-from django.shortcuts import redirect, get_object_or_404
-from django.contrib import auth 
+from django.shortcuts import redirect, get_object_or_404, render
 from tagging.models import Tag
 
-from ltmo.forms import LeakForm
+from ltmo.forms import LeakForm, RegisterForm
 from ltmo.models import Leak
 
 
 def index(request, object_id=None):
     queryset = Leak.objects.all().order_by('-created')
-    form = LeakForm()
-
-    if request.method == 'POST':
-        next = request.POST['next']
-        form = LeakForm(request.POST)
-
-        if form.is_valid():
-            leak = form.save()
-            messages.success(request, 'Ha derramado correctamente chamigo.')
-            return redirect(next)
-            
-    return list_detail.object_list(
+    return render(
         request,
-        queryset,
-        template_name='index.html',
-        extra_context={
-            'form': form,
+        'index.html',
+        {
+            'object_list':queryset,
         }
     )
 
-def leak_detail(request, tag_name, object_id):
-    queryset = Leak.objects.all()
-    form = LeakForm(initial={'tags':tag_name})
-    leak = get_object_or_404(Leak, pk=object_id)
-    
-    if request.is_ajax():
-        return HttpResponse(
-            json.dumps({
-                'title':leak.title,
-                'author':leak.author,
-                'description':leak.description,
-                'tags': leak.tags
-            }),
-            
-            mimetype="application/json"
-        )
+def edit(request, id=None):
+    if id:
+        leak = get_object_or_404(Leak, pk=id)
+        form = LeakForm(instance=leak)
+    else:
+        form = LeakForm
 
     if request.method == 'POST':
+        if request.user.is_anonymous():
+            return redirect('login')
         next = request.POST['next']
         form = LeakForm(request.POST, instance=leak)
         if form.is_valid():
             leak = form.save()
-            messages.success(request, 'Actualizaste el #%s' %(object_id))
-            return redirect(next)
+            return redirect(leak.get_absolute_url())
             
-    return list_detail.object_detail(
+    return render(
         request,
-        queryset.filter(tags__icontains=tag_name),
-        leak.pk,
-        template_name='detail.html',
-        extra_context={
+        'leak_form.html',
+        {
             'form': form,
-            'tag': tag_name
+        }
+    )
+
+
+def leak_detail(request, id=None):
+    queryset = Leak.objects.all()
+    leak = get_object_or_404(Leak, pk=id)
+
+    return render(
+        request,
+        'detail.html',
+        {
+            'object_list': queryset,
+            'object': leak,
         }
     )
         
@@ -78,11 +69,11 @@ def by_tag(request, tag_name=None):
     if tag_name:
         queryset = queryset.filter(tags__icontains=tag_name)
 
-    return list_detail.object_list(
+    return render(
         request,
-        queryset,
-        template_name='tags.html',
-        extra_context={
+        'tags.html',
+        {
+            'object_list': queryset,
             'form': form,
             'tag_name': tag_name,
         }
@@ -106,35 +97,35 @@ def profile_detail(request, username):
     except :
         author = None
 
-    return list_detail.object_list(
+    return render(
         request,
-        queryset,
-        template_name='profile.html',
-        extra_context={
+        'profile.html',
+        {
+            'object_list': queryset,
             'author':author,
             'is_me':request.user.username == 'username',
         }
     )
 
-def login(request):
+def register(request,):
+    form = RegisterForm()
     if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid() and not form.data['honeypot']:
+            message = 'nombre: %s . email: %s' %(form.data['username'], form.data['email'])
+            send_mail(
+                'Pedido de cuenta',
+                message,
+                form.data['email'],
+                [x[1] for x in settings.ADMINS]
+            )
+            return redirect('/')
 
-        username = request.POST.get('username', 'None')
-        password = request.POST.get('password', 'None')
-        user = auth.authenticate(username=username, password=password)
-        next = request.POST.get('next')
-        message = ''
-        if user is not None:
-            if user.is_active:
-                auth.login(request, user)
-                messages.success(request, 'bienvenido %s' %(user, ))
-        else:
-           messages.success(request, 'Nombre de usuario o contraseña inválidos')
-        return HttpResponse(
-            json.dumps({
-                'next': next,
-            }),
-            
-            mimetype="application/json"
-        )
+    return render(
+        request, 
+        'register.html',
+        {
+            'form': form,
+        }
+    )
 

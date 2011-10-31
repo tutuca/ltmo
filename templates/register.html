@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block main %}
+    <section>
+    <form action="/register" method="post">
+        {{form.as_p}}        
+        <p><input type="submit" value="registrarse" /></p>
+    </form>
+    </section>
+{% endblock %}

@@ -1,16 +1,16 @@
 {%  load tagging_tags %}
-        <article>
-            {% if object.title %}
-            <h1><a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>
-            {% endif %}
-            {{object.rendered|safe|truncatewords_html:'150'}}
-            {% tags_for_object object as tag_list %}
-            <details>
-                <a href="/~{{object.author}}">~{{object.author}}</a>, 
-                {{object.created|date}}, 
-                {% for tag in tag_list %}<a href="/l/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
-                <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#{{object.pk}}</a>
-                {{object.metadata}}
-                {% if user.is_staff %}<a href="{{object.get_absolute_url}}" class="edit">!</a>{% endif %}
-            </details>
-        </article>
+<article>
+    {% if object.title %}
+    <h1><a href="{{object.get_absolute_url}}">{{object.title}}</a></h1>
+    {% endif %}
+    {{object.rendered|safe|truncatewords_html:'150'}}
+    {% tags_for_object object as tag_list %}
+    <p class="detail">
+        <a href="/~{{object.author}}">~{{object.author}}</a>, 
+        {{object.created|date}}, 
+        {% for tag in tag_list %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+        <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#{{object.pk}}</a>
+        {{object.metadata}}
+        {% if user.is_staff %}<a href="{% url edit object.id %}" >!</a>{% endif %}
+    </p>
+</article>

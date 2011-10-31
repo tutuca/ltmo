@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% load pagination_tags banner_tags tagging_tags %}
 {% block logo %}
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/l/{{tag_name|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag_name|default:'leaks'}}</a> ({{object_list.count}})
+    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/l/{{tag_name|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag_name|default:'leaks'}}</a>
 {% endblock %}
 {% block content %}
 {% regroup object_list by tags as object_list %}

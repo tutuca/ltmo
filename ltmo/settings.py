@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import os
 DEBUG = True
 
@@ -27,7 +28,7 @@ DATABASES = {
 
 TIME_ZONE = 'America/Chicago'
 
-LANGUAGE_CODE = 'gn' # Using Guarani, Of Course
+LANGUAGE_CODE = 'es-AR' # Using Guarani, Of Course
 
 SITE_ID = 1
 
@@ -39,9 +40,13 @@ ROOT_URLCONF = 'ltmo.urls'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+UPLOAD_DIR = os.path.join(MEDIA_ROOT, 'upload')
+
+UPLOAD_URL = 'http://i.ltmo'
+
 MEDIA_URL = '/media/'
 
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
@@ -88,6 +93,10 @@ TEMPLATE_DIRS = (
     'templates',
     os.path.join(BASE_DIR, 'templates')
 )
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
