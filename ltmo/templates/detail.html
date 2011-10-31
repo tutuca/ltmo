@@ -7,9 +7,11 @@
     <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
 {% endblock %}
 {% block content %}
+<article>
             {{object.rendered|safe}}
             {% tags_for_object object as tag_list %}
-            <p class="detail">
+            <div id="detail">
+            <p class"wrapper">   
                 <a href="/~{{object.author}}">~{{object.author}}</a>, 
                 {{object.created|date}}, 
                 {% for tag in tag_list %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
@@ -17,14 +19,18 @@
                 {{object.metadata}}
                 {% if user.is_staff %}<a href="{{object.get_absolute_url}}" class="edit">!</a>{% endif %}
             </p>
-        <div class="pagination">
-            {% if object.get_previous_by_changed.get_absolute_url %}
-                <a class="prev" href="{{object.get_previous_by_changed.get_absolute_url}}">< anterior </a>
+            </div>
+            {% with prev=object.get_previous_by_changed  %}
+            {% if prev.get_absolute_url %}
+                <a class="pager prev" href="{{prev.get_absolute_url}}"><strong>#{{prev.id}}</strong></a>
             {% endif %}
-            {% if object.get_next_by_changed.get_absolute_url %}
-                <a class="next" href="{{object.get_next_by_changed.get_absolute_url}}">siguiente ></a>
+            {% endwith %}
+            {% with next=object.get_next_by_changed  %}
+            {% if next.get_absolute_url %}
+                <a class="pager next" href="{{next.get_absolute_url}}"><strong>#{{next.id}}</strong></a>
             {% endif %}
-        </div>
+            {% endwith %}
     {% pop_slot 'content' %}
+</article>
 {% endblock %}
 

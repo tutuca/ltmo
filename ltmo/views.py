@@ -16,11 +16,13 @@ from ltmo.models import Leak
 
 def index(request, object_id=None):
     queryset = Leak.objects.all().order_by('-created')
+    latest = queryset.latest('created')
     return render(
         request,
-        'index.html',
+        'detail.html',
         {
             'object_list':queryset,
+            'object':latest,
         }
     )
 

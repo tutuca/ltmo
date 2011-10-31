@@ -60,7 +60,7 @@
         <h3>Se ha vertido en estos temas</h3>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
-        <a href="/l/{{tag}}" 
+        <a href="/leak/{{tag}}" 
            style="font-size:{{tag.font_size|add:'8'}}pt"
            title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}
