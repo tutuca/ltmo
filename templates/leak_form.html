@@ -1,7 +1,8 @@
-<form id="leak-form" action="{% url leak_new %}" method="post" {% if not form.errors %}class="hide"{% endif %}>
-    {% if not user.is_anonymous %}
-    <input type="hidden" id="id_{{form.author.name}}" name="{{form.author.name}}" value="{{user}}" />
-    {% endif %}
+{% extends "index.html" %}
+{% block main %}
+<form action="/edit/{{form.instance.id}}" method="post" id="leak-form">
+    
+    <input type="hidden" id="id_{{form.author.name}}" name="{{form.author.name}}" value="{{request.user.pk}}" />
     <input type="hidden" name="next" value="{{request.path}}" />
     {% csrf_token %}
     <table id="formating-help">
@@ -16,7 +17,7 @@
     <section>
     <div class="field {% if form.title.errors %}error{% endif %}" id="field_{{form.title.name}}" >
         <label for="id_{{form.title.name}}">Título</label> 
-        {{form.title}}{% if user.is_anonymous %} por {{form.author}}{% endif %}
+        {{form.title}}
     </div>
     <div class="field required {% if form.description.errors %}error{% endif %}" id="field_{{form.description.name}}"> 
         {{form.description.errors}}
@@ -36,3 +37,4 @@
     </div>
 
 </form>
+{% endblock %}

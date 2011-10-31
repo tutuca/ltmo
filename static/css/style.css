@@ -1,21 +1,29 @@
 body {
     font: 100% sans-serif;
+    padding:0 1em;
 }
 header, section, footer, article, aside {
     display: block;
-    padding: 0 1em;
+    padding: 0;
     margin-bottom: 2em;
     
 }
 header {
-    width: 97%;
-    padding:0 1.5%;
+    width:100%;
+    padding:0;
     margin: 0;
     position: fixed;
     top:0;
+    left: 0;
     background:#FFF;
+    z-index:9999;
+    border-bottom: 1px solid #EEE;
+    box-shadow: 0 1px 1px #999;border-bottom: 1px solid #EEE;
 }
 
+header .wrapper {
+    padding: 0 1em;
+}
 footer {
     clear: both;
     padding: 5em 1em 1em;
@@ -26,17 +34,35 @@ footer p{
 
 #main{
     margin:4em auto;
-    max-width: 70em;
     clear: both;
+}
+#help {
+    padding: 1em;
+    background: white;
+    float:none;
+    position:absolute;
+    top: 4em;
+    right:1em;
+    box-shadow: 0 1px 1px #999;
+    border-radius: 3px;
+    border: 1px solid #EEE;
+    background: #FFF;
+}
+article img, article object {
+    display:block;
+    margin: 1em auto;
+    max-width: 100%;
+
+}
+article {
+    position:relative;
 }
 
 section {
     display:block;
-    float: left;
-    width: 63%
 } 
 
-details {
+.detail {
     text-align: right;
     font-size:80%;
     display:block;
@@ -44,9 +70,11 @@ details {
 }
 aside {
     text-align: left;
-    width: 29%;
-    float: right;
+    width: 20%;
+    position: absolute;
     font-size: 80%;
+    top: 4em;
+    right:1em;
 }
 pre, code {
     font: 110% monospace;
@@ -71,12 +99,6 @@ a img{
 }
 em {
     font: italic 100% "Georgia-MS", Georgia, serif;
-}
-article img, article object {
-    display:block;
-    margin: 1em auto;
-    max-width: 35em;
-
 }
 h1, h2, h3, h1 a, h2 a, h3 a {
     font-weight: normal;
@@ -103,7 +125,7 @@ h2 {
 }
 #logo {
     margin:0;
-    border-bottom: 1px solid #EEE;
+
 }
 #banner-header {
     float:right;
@@ -185,6 +207,7 @@ h2 {
     padding: 1em;
 } 
 
+
 .tags {
     background: url(../img/bg-tags.png) left no-repeat;
     color: #666666;
@@ -199,7 +222,6 @@ h2 {
     white-space: nowrap;
 }
 
-/* forms */
 .hide {
     display:none;
 }
@@ -214,16 +236,17 @@ nav a{
 nav a:hover {
     background: #EEE;
 }
-#login-form {
-    position: absolute;
-    right:10px;
-    width: 32em;
+.session {
+    font-size: 100%;
+}
+.session a:hover {
+    background:transparent;
 }
 form {
-    padding: 1em 1em 0.5em;
-    background:#EEE;
-    border-radius: 0 0 5px 5px;
-    box-shadow: 2px 2px 3px #999;
+
+}
+form p {
+    margin: 0.25em 0 ;
 }
 #leak-form section{
     margin-bottom:1em;
@@ -255,11 +278,12 @@ form {
     border-color: #FFF transparent #CCC;
     padding: 0.25em;
 }
-.field {
+form p {
     clear: left;
     padding: 0.25em 0;
     position: relative;
 }
+
 input, 
 textarea{
     border: 1px solid #999;
@@ -272,18 +296,24 @@ textarea {
     height:5em;
     width:20em;
 }
-
+input[type='email']:focus,
+input[type='password']:focus,
 input[type='text']:focus, 
+input[type='submit']:focus,
 textarea:focus{
     border: 1px solid #0C6;
+    outline:0 !important;
+    box-shadow: 0 0 2px #FC0;
 }
 .error {
     background: #FEA;
     border-radius: 3px;
+
 }
 .error input, 
 .error textarea {
     border: 1px solid #C60;
+    box-shadow: 0 0 2px #F00;
 }
 .errorlist{
     position:absolute;
@@ -292,28 +322,32 @@ textarea:focus{
     margin:0.5em;
     font-size:80%;
 }
-.field label {
+label {
     float:left;
     width: 6em;
     margin: 0.5em 1em;
     text-align:right;
+    font-size:80%;
 }
-.field span {
+form span {
     font-size:80%;
 }
 .required label {
     font-weight:bold;
     color:#C60;
 }
+
 input[type='submit'] {
-    float:left;
-    border:1px solid #366E91;
     padding:0.25em 1em;
     margin:0.25em 0;
     background:#06C;
     color:#FFF;
     text-shadow: 1px 1px 0px #333;
-    border-radius:5px;
+    border-radius:15px;
+    outline:none;
+}
+#leak-form input[type='submit'] {
+    float:left;
 }
 input[type='submit']:hover {
     cursor: pointer;

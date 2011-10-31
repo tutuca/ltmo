@@ -4,19 +4,19 @@
 {{object.title}}
 {% endblock %}
 {% block logo %}
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/l/{{tag|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag}}/</a><a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
+    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
 {% endblock %}
 {% block content %}
             {{object.rendered|safe}}
             {% tags_for_object object as tag_list %}
-            <details>
+            <p class="detail">
                 <a href="/~{{object.author}}">~{{object.author}}</a>, 
                 {{object.created|date}}, 
-                {% for tag in tag_list %}<a href="/l/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+                {% for tag in tag_list %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
                 <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#{{object.pk}}</a>
                 {{object.metadata}}
                 {% if user.is_staff %}<a href="{{object.get_absolute_url}}" class="edit">!</a>{% endif %}
-            </details>
+            </p>
         <div class="pagination">
             {% if object.get_previous_by_changed.get_absolute_url %}
                 <a class="prev" href="{{object.get_previous_by_changed.get_absolute_url}}">< anterior </a>

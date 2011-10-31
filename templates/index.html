@@ -17,7 +17,6 @@
     {% pop_slot 'analytics' %}
 </head>
 <body>
-<div id="wrapper">
 {% if messages %}
 <ul id="messages">
     {% for message in messages %}
@@ -26,28 +25,25 @@
 </ul>
 {% endif %}
 <header>
+<div class="wrapper">
     <nav>
-    {% if form and user.is_authenticated %}
-    <a href="#leak-form" id="new-leak" class="control" title="Nunca sobra un poco de aceite">+</a>      
-    {% endif %}  
-    <a href="/help" title="Ayudaaaaaaa">?</a>
+    <a href="/edit" id="new-leak" title="Nunca sobra un poco de aceite">+</a>      
+    <a href="#help" class="control" title="Ayudaaaaaaa">?</a>
+    <span class="session">
     {% if not user.is_authenticated %}
-    <a href="#login-form" class="control" title="Entrar">~</a>
+    <a href="/login" class="session" >ingresar</a>
     {% else %}
-    <a href="/out" title="Salir">..</a>
+    {{user}} <a class="session" href="/logout">salir</a>
     {% endif %}
+    </span>
     </nav>
     <h1 id="logo">
     {% block logo %}
     <a href="http://{{request.get_host}}" title="Bienvenido">ltmo/</a>
     {% endblock %}
     </h1>
-    {% if form and user.is_authenticated %}
-    {% include 'leak_form.html' %}
-    {% endif %}
-    {% include 'login.html' %}
+</div>
 </header>
-
 <div id="main">
 {% block main %}
     <section>
@@ -61,13 +57,7 @@
     {% paginate %}
     {% endblock %}
     </section>
-     <aside>
-
-        <h3>¿Qué es lo que observa?</h3>
-        <p>Esto funciona muy fácil, hacele click al + de allá arriba y pegá lo que sea. Pero ojo, nada queda almacenado en nuestros servidores, esto es solo una pasarela</p>
-        <p>Tratamos de agrandar el agujero para que más cosas caigan en él.</p>
-
-        
+    <aside id="help" class="hide">
         <h3>Se ha vertido en estos temas</h3>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
@@ -76,21 +66,23 @@
            title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
+
+        <h3>¿Qué es lo que observa?</h3>
+        <p>Esto funciona muy fácil, hacele click al + de allá arriba y pegá lo que sea. Pero ojo, nada queda almacenado en nuestros servidores, esto es solo una pasarela</p>
+        <p>Tratamos de agrandar el agujero para que más cosas caigan en él.</p>
         {% pop_slot 'aside' %}
+        <ul>
+        <li><a href="http://twitter.com/lossingoil">@lossingoil</a> - </li>
+        <li><a href="mailto:loosingtoomuchoil@gmail.com">loosingtoomuchoil@gmail.com</a> -</li>
+        <li><a href="http://github.com/tutuca/ltmo">github.com/tutuca/ltmo</a></li>
+        </ul>
+        <p>Las opiniones vertidas en cada artículo son responsabilidad del author</p>
+
     </aside>
     
 
     <br class="clear"/>
 {% endblock %}
-</div>
-
-<footer>
-
-        <p>
-        <a href="http://twitter.com/lossingoil">@lossingoil</a> - <a href="mailto:loosingtoomuchoil@gmail.com">loosingtoomuchoil@gmail.com</a> - <a href="http://github.com/tutuca/ltmo">github.com/tutuca/ltmo</a> <br />
-        Las opiniones vertidas en cada artículo son responsabilidad del author
-        </p>
-</footer>
 </div>
 
 </body>
