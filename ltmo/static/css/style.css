@@ -1,21 +1,23 @@
 body {
     font: 100% sans-serif;
+    margin:0;
+    padding:0;
 }
 header, section, footer, article, aside {
     display: block;
-    padding: 0 1em;
+    padding: 0;
     margin-bottom: 2em;
     
 }
 header {
-    width: 97%;
-    padding:0 1.5%;
-    margin: 0;
+    width: 100%;
     position: fixed;
     top:0;
     background:#FFF;
 }
+header:after {
 
+}
 footer {
     clear: both;
     padding: 5em 1em 1em;
@@ -25,8 +27,7 @@ footer p{
 }
 
 #main{
-    margin:4em auto;
-    max-width: 70em;
+    margin:4em 1em;
     clear: both;
 }
 
@@ -103,6 +104,7 @@ h2 {
 }
 #logo {
     margin:0;
+    padding: 0 0.5em;
     border-bottom: 1px solid #EEE;
 }
 #banner-header {
@@ -212,7 +214,8 @@ nav a{
     padding: 0 0.5em;
 }
 nav a:hover {
-    background: #EEE;
+    color:#FFF;
+    background: #06C;
 }
 #login-form {
     position: absolute;

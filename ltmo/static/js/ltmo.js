@@ -28,7 +28,7 @@
                     $('#id_description').focus();
                     $('#leak-form').bind( "keydown", function(event) {
 			                if ( event.keyCode === $.ui.keyCode.ESCAPE) {
-				                $('#leak-form').hide('blind', 300)
+				                $('#leak-form').hide('blind', 500)
 				                               .unbind('keydown');
 			                }
 		                });

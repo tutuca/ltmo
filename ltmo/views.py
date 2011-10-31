@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.views.generic import list_detail, simple
 from django.http import HttpResponse
 from django.shortcuts import redirect, get_object_or_404
-
+from django.contrib import auth 
 from tagging.models import Tag
 
 from ltmo.forms import LeakForm
@@ -118,18 +118,18 @@ def profile_detail(request, username):
 
 def login(request):
     if request.method == 'POST':
-        from django.contrib.auth import authenticate, login
+
         username = request.POST.get('username', 'None')
         password = request.POST.get('password', 'None')
-        user = authenticate(username=username, password=password)
+        user = auth.authenticate(username=username, password=password)
         next = request.POST.get('next')
         message = ''
         if user is not None:
             if user.is_active:
-                login(request, user)
+                auth.login(request, user)
                 messages.success(request, 'bienvenido %s' %(user, ))
-                
-            
+        else:
+           messages.success(request, 'Nombre de usuario o contraseña inválidos')
         return HttpResponse(
             json.dumps({
                 'next': next,
