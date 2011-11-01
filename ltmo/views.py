@@ -32,7 +32,7 @@ def edit(request, id=None):
         form = LeakForm(instance=leak)
     else:
         form = LeakForm
-
+        leak = None
     if request.method == 'POST':
         if request.user.is_anonymous():
             return redirect('login')
