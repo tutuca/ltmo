@@ -371,11 +371,10 @@ textarea:focus{
     box-shadow: 0 0 2px #F00;
 }
 .errorlist{
-    position:absolute;
-    right: 3em;
     list-style:none;
     margin:0.5em;
     font-size:80%;
+    padding:0;
 }
 label {
     float:left;
