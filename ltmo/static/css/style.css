@@ -19,7 +19,8 @@ header {
     background:#FFF;
     z-index:9999;
     border-bottom: 1px solid #EEE;
-    box-shadow: 0 1px 1px #999;border-bottom: 1px solid #EEE;
+    box-shadow: 0 1px 3px #999;
+    border-bottom: 1px solid #EEE;
 }
 
 .wrapper {
@@ -51,14 +52,15 @@ footer p{
     border: 1px solid #EEE;
     background: #FFF;
 }
+article {
+    position:relative;
+    margin:3em;
+}
 article img, article object {
     display:block;
     margin: 1em auto;
     max-width: 100%;
 
-}
-article {
-    position:relative;
 }
 
 section {
@@ -79,7 +81,7 @@ section {
     width: 100%;
     padding: 0;
     left: 0;
-    margin: 1em 0;
+    margin: 0;
     text-shadow: 1px 1px 0px white;
     background:rgba(255,255,255,0.5);
 }
@@ -145,6 +147,8 @@ h2 {
 }
 #logo {
     margin:0;
+    background:url(../img/home.png) no-repeat left center;
+    padding-left: 1em;
 }
 #banner-header {
     float:right;
@@ -195,10 +199,8 @@ h2 {
 }
 .banner {
     clear: both;
-    background: #EEE;
     position:relative;
     padding: 1em;
-    border-radius: 0.25em;
 }
 .gravatar {
     float:left;
@@ -222,29 +224,46 @@ h2 {
     top: 0;
     padding: 0;
     height: 100%;
+    width:5em;
 }
 .pager strong {
-    padding: 2em 1.5em;
-    display:block;
-    margin-top: 10em;
+    position: absolute;
+    padding: 0;
+    display: block;
+    margin-top: 0;
+    top: 50%;
+    width: 16px;
+    height: 23px;
+    overflow: hidden;
+    text-indent: -99999px;
+    background: url(../img/arrows.png) no-repeat;
 }
 .pager:hover strong {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 4em;
-    text-shadow: 1px 1px 0.9px #CCC
-
+    color: rgba(0, 102, 204, 1);
 }
 
-.prev:hover, .next:hover {
-
-}
 .prev {
     left: 1em;
 }
+.prev strong {
+    background-position: top left;
+    left:0;
+}
+.prev:hover strong{
+    background-position: bottom left;
+}
 .next { 
     right:1em;
-
 } 
+
+.next strong {
+    background-position: top right;
+    right:0;
+}
+.next:hover strong {
+    background-position: bottom right;
+}
+
 
 
 .tags {
@@ -271,10 +290,6 @@ nav {
 nav a{
     font-size:2em;
     padding: 0 0.5em;
-}
-nav a:hover {
-    color:#FFF;
-    background: #06C;
 }
 .session {
     font-size: 100%;
@@ -378,9 +393,9 @@ form span {
 }
 
 input[type='submit'] {
-    padding:0.25em 1em;
+    padding:0.25em 1em 0.25em 2em;
     margin:0.25em 0;
-    background:#06C;
+    background: #06C url(../img/apply.png) no-repeat 5px center ;
     color:#FFF;
     text-shadow: 1px 1px 0px #333;
     border-radius:15px;
