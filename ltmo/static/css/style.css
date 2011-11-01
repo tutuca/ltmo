@@ -86,7 +86,7 @@ section {
     background:rgba(255,255,255,0.5);
 }
 #detail p {
-    padding: 0 2em;
+    padding: 0 6em;
     margin: 0;
 
 }
@@ -224,7 +224,7 @@ h2 {
     top: 0;
     padding: 0;
     height: 100%;
-    width:5em;
+    width:3em;
 }
 .pager strong {
     position: absolute;
