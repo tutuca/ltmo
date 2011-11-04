@@ -5,10 +5,11 @@ from ltmo.models import Leak
 from django.contrib.auth.models import User
 
 class LeakForm(forms.ModelForm):
-    tags = TagField(required=True)    
+    tags = TagField(required=True)
+    author = forms.CharField(widget=forms.HiddenInput, required=True)
     class Meta:
         model = Leak
-        exclude = ['rendered',]
+        exclude = ['rendered','metadata']
 
 
 from django import forms

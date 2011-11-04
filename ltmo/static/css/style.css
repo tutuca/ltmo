@@ -298,12 +298,9 @@ nav a{
     background:transparent;
 }
 form {
-
+ padding: 1em 2em;
 }
-form p {
-    margin: 0.25em 0 ;
-}
-#leak-form section{
+form section{
     margin-bottom:1em;
 }
 .submit {
@@ -332,11 +329,6 @@ form p {
     border-width:1px 0;
     border-color: #FFF transparent #CCC;
     padding: 0.25em;
-}
-form p {
-    clear: left;
-    padding: 0.25em 0;
-    position: relative;
 }
 
 input, 

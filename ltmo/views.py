@@ -31,7 +31,7 @@ def edit(request, id=None):
         leak = get_object_or_404(Leak, pk=id)
         form = LeakForm(instance=leak)
     else:
-        form = LeakForm
+        form = LeakForm(initial={'author':request.user})
         leak = None
     if request.method == 'POST':
         if request.user.is_anonymous():
