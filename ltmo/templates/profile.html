@@ -4,7 +4,7 @@
 {{author}}
 {% endblock %}
 {% block logo %}
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/~{{ author }}">~{{author}}</a> ({{object_list.count}})
+{{block.super}}<a href="~{{ author }}">~{{author}}</a> ({{object_list.count}})
 {% endblock %}
 {% block content %}
 

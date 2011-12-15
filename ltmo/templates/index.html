@@ -24,24 +24,22 @@
 </ul>
 {% endif %}
 <header>
-<div class="wrapper">
-    <nav>
-    <a href="/new/" id="new-leak" title="Nunca sobra un poco de aceite"><img src="/static/img/add.png" alt="Agregar contenido"  height="22" width="22"/></a>
-    <a href="#help" class="control" title="Ayudaaaaaaa"><img src="/static/img/help.png" /></a>
-    <span class="session">
-    {% if not user.is_authenticated %}
-    <a href="/login" class="session" ><img src="/static/img/login.png" alt="Ingresar" /></a>
-    {% else %}
-    <a href="/logout" class="session" title="{{user}}" ><img src="/static/img/logout.png" alt="Salir" /></a>
-    {% endif %}
-    </span>
-    </nav>
-    <h1 id="logo">
-    {% block logo %}
-    <a href="http://{{request.get_host}}" title="Bienvenido">ltmo/</a>
-    {% endblock %}
-    </h1>
-</div>
+    <div class="wrapper">
+        <nav>
+        <a href="/new/" id="new-leak" title="Nunca sobra un poco de aceite"><img src="/static/img/add.png" alt="Agregar contenido"  height="22" width="22"/></a>
+        <a href="#help" class="control" title="Ayudaaaaaaa"><img src="/static/img/help.png" /></a>
+        <span class="session">
+        {% if not user.is_authenticated %}
+        <a href="/login" class="session" ><img src="/static/img/login.png" alt="Ingresar" /></a>
+        {% else %}
+        <a href="/logout" class="session" title="{{user}}" ><img src="/static/img/logout.png" alt="Salir" /></a>
+        {% endif %}
+        </span>
+        </nav>
+        <h1 id="logo">
+        {% block logo %}<a href="http://{{request.get_host}}" title="Bienvenido">ltmo</a>:/{% endblock %}
+        </h1>
+    </div>
 </header>
 <div id="main">
 {% block main %}

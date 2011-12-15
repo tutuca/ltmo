@@ -3,10 +3,13 @@
 {% block title %}
 {{object.title}}
 {% endblock %}
+{% if object %}
 {% block logo %}
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
+{{block.super}}<a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
 {% endblock %}
+{% endif %}
 {% block content %}
+{% if object %}
 <article>
             {{object.rendered|safe}}
             {% tags_for_object object as tag_list %}
@@ -32,5 +35,11 @@
             {% endwith %}
     {% pop_slot 'content' %}
 </article>
+{% else %}
+<article>
+    <h4>No hay derrames ahún</h4>
+</article>
+{%endif %}
+
 {% endblock %}
 

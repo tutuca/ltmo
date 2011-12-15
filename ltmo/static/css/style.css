@@ -105,7 +105,8 @@ pre, code {
 
 blockquote{
     font: italic 150% "Georgia-MS", Georgia, serif;
-    
+    width: 70%;
+    margin: 1em auto;
 }
 
 a {
@@ -113,7 +114,7 @@ a {
    text-decoration:none;
 }
 a:hover {
-    text-shadow: 1px 1px 1px #CCC, 0 -1px 1px #EBEBEB;
+    text-shadow: 1px 1px 2px #555, 0 1px 0px #EEE;
 }
 
 a img{
@@ -149,6 +150,12 @@ h2 {
     margin:0;
     background:url(../img/home.png) no-repeat left center;
     padding-left: 1em;
+    font-size:1.8em;
+    color: #555;
+
+}
+#logo a {
+    font-size:1.2em;
 }
 #banner-header {
     float:right;
@@ -421,4 +428,9 @@ input[type='submit']:active {
 .ui-state-hover {
     background:#0C6;
     color:#FFF;
+}
+
+#id_description.hover {
+    border:3px solid #900;
+    background: #EEE;
 }

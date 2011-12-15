@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+
+
 from django.conf.urls.defaults import *
 from django.http import HttpResponse
 from django.contrib.sitemaps import GenericSitemap
