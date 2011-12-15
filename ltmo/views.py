@@ -9,14 +9,18 @@ from django.contrib import messages, auth
 from django.http import HttpResponse
 from django.shortcuts import redirect, get_object_or_404, render
 from tagging.models import Tag
-
+from django.contrib.auth.decorators import login_required
 from ltmo.forms import LeakForm, RegisterForm
-from ltmo.models import Leak
-
+from ltmo.models import Leak, Attach
 
 def index(request, object_id=None):
-    queryset = Leak.objects.all().order_by('-created')
-    latest = queryset.latest('created')
+    try:
+        queryset = Leak.objects.all().order_by('-created')
+        latest = queryset.latest('created')
+    
+    except Leak.DoesNotExist, e:
+        queryset = None
+        latest = None
     return render(
         request,
         'detail.html',
@@ -26,7 +30,9 @@ def index(request, object_id=None):
         }
     )
 
+@login_required()
 def edit(request, id=None):
+    AttachFormset = inlineformset_factory(Leak, Attach)
     if id:
         leak = get_object_or_404(Leak, pk=id)
         form = LeakForm(instance=leak)
@@ -34,8 +40,6 @@ def edit(request, id=None):
         form = LeakForm(initial={'author':request.user})
         leak = None
     if request.method == 'POST':
-        if request.user.is_anonymous():
-            return redirect('login')
         next = request.POST['next']
         form = LeakForm(request.POST, instance=leak)
         if form.is_valid():
