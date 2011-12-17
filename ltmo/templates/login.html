@@ -3,7 +3,7 @@
 <a href="http://{{request.get_host}}" title="Bienvenido">ltmo/</a>ingreso y registro
 {% endblock %}
 {% block main %}
-  <form action="/login" method="post" id="login-form">{% csrf_token %}
+  <form action="{% url login %}" method="post" id="login-form">{% csrf_token %}
     <section>
 
     <h2>Inicio de sesión para usuarios</h2>
@@ -14,7 +14,7 @@
     </section>
   </form>
   
-  <form action="/register" method="post" id="register-form">{% csrf_token %}
+  <form action="{% url register %}" method="post" id="register-form">{% csrf_token %}
     <section>
 
     <h2>También podemos abrirte una cuenta</h2>

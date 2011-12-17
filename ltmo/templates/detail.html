@@ -12,16 +12,26 @@
 {% if object %}
 <article>
             {{object.rendered|safe}}
-            {% tags_for_object object as tag_list %}
             <div id="detail">
-            <p class"wrapper">   
-                <a href="/~{{object.author}}">~{{object.author}}</a>, 
-                {{object.created|date}}, 
-                {% for tag in tag_list %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
-                <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#{{object.pk}}</a>
-                {{object.metadata}}
-                {% if user.is_staff %}<a href="/edit/{{object.pk}}">editar</a>{% endif %}
-            </p>
+            <div class"wrapper">   
+                <p id="tagcloud">
+                    {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 min_count=10 distribution=linear %}
+                    {% for tag in cloud %}
+                    <a href="/leak/{{tag}}" 
+                       style="font-size:{{tag.font_size|add:'8'}}pt"
+                       title="{{tag.count}} derrames">{{tag}}</a>
+                    {% endfor %}
+                </p>
+                <p id="metadata">
+                    {% tags_for_object object as tag_list %}
+                    <a href="/~{{object.author}}">~{{object.author}}</a>, 
+                    {{object.created|date}}, 
+                    {% for tag in tag_list %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+                    <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#{{object.pk}}</a>
+                    {{object.metadata}}
+                    {% if user.is_staff %}<a href="/edit/{{object.pk}}">editar</a>{% endif %}
+                </p>
+            </div>
             </div>
             {% with prev=object.get_previous_by_changed  %}
             {% if prev.get_absolute_url %}

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>ltmo . {% block title %}Igual que a Scioli, a veces se nos va la mano{% endblock %}</title>
     <link rel="icon" type="image/png" href="/static/favicon.ico" />
-    <meta name="description" content="LTMO, un sitio para procastinar en todos los niveles que sea imaginable." />
+    <meta name="description" content="LTMO, una especie de sucursal de la British Petroleum.{% block meta-description %}{% endblock %}" />
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css" static="screen" />    
@@ -49,7 +49,10 @@
     {% for object in object_list %}
         {% include 'leak.html' %}
         {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
-    {% empty %}<h2>Nadie derramó nada aún</h2>
+    {% empty %}
+        <article>
+            <h4>No hay derrames ahún</h4>
+        </article>
     {% endfor %}
     {% paginate %}
     {% endblock %}
