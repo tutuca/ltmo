@@ -3,13 +3,12 @@
 <a href="http://{{request.get_host}}" title="Bienvenido">ltmo/</a>ingreso y registro
 {% endblock %}
 {% block main %}
-  <form action="{% url login %}" method="post" id="login-form">{% csrf_token %}
+  <form action="{{ url login }}" method="post" {% if form.errors %}class="error"{% endif %}id="login-form">{% csrf_token %}
     <section>
 
     <h2>Inicio de sesión para usuarios</h2>
     <input type="hidden" name="next" value="{{next|default:'/'}}">
     {{form.as_p}}
-  
     <p class="field"><input type="submit" value="ingresar" /></p>
     </section>
   </form>

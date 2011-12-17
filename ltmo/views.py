@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from ltmo.forms import LeakForm, RegisterForm
 from ltmo.models import Leak
 
-def index(request, object_id=None):
+def index(request):
     try:
         queryset = Leak.objects.all().order_by('-created')
         latest = queryset.latest('created')
