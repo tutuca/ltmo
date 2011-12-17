@@ -18,9 +18,7 @@ header {
     left: 0;
     background:#FFF;
     z-index:9999;
-    border-bottom: 1px solid #EEE;
     box-shadow: 0 1px 3px #999;
-    border-bottom: 1px solid #EEE;
 }
 
 .wrapper {
@@ -75,7 +73,6 @@ section {
 }
 #detail {
     position: fixed;
-    text-align: right;
     font-size:80%;
     bottom:0;
     width: 100%;
@@ -84,11 +81,21 @@ section {
     margin: 0;
     text-shadow: 1px 1px 0px white;
     background:rgba(255,255,255,0.5);
+    box-shadow: 0 -1px 3px #999;
+    overflow:hidden;
 }
 #detail p {
     padding: 0 6em;
     margin: 0;
 
+}
+#metadata {
+    float:right;
+    text-align:right;
+}
+#tagcloud {
+    float:left;
+    text-align:left;
 }
 aside {
     text-align: left;
