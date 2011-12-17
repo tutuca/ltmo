@@ -1,14 +1,14 @@
 {% extends 'index.html' %}
 {% load pagination_tags banner_tags tagging_tags %}
 {% block logo %}
-    <a href="http://{{request.get_host}}" title="Volver a la raiz">ltmo/</a><a href="/l/{{tag_name|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag_name|default:'leaks'}}</a>
+{{block.super}}<a href="/leak/{{tag_name|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag_name|default:'leaks'}}</a>
 {% endblock %}
 {% block content %}
 {% regroup object_list by tags as object_list %}
 {% autopaginate object_list 10 %}
 {% for tag in object_list %}
     {%if not tag_name%}
-    <h2><a href="/tag/{{tag.grouper}}">{{tag.grouper}}/</h2>
+    <h2><a href="/leak/{{tag.grouper}}">{{tag.grouper}}/</h2>
     {%endif%}
     {% for object in tag.list|slice:':5' %}
         {% include 'leak.html' %}

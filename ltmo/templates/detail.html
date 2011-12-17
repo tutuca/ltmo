@@ -1,21 +1,22 @@
 {% extends 'index.html' %}
 {%  load banner_tags tagging_tags %}
+
 {% block title %}
-{{object.title}}
+    {{object.title}}
 {% endblock %}
 {% if object %}
-{% block logo %}
-{{block.super}}<a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
-{% endblock %}
+    {% block logo %}
+    {{block.super}}<a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
+    {% endblock %}
 {% endif %}
 {% block content %}
-{% if object %}
-<article>
-            {{object.rendered|safe}}
-            <div id="detail">
+    {% if object %}
+    <article>
+        {{object.rendered|safe}}
+        <div id="detail">
             <div class"wrapper">   
-                <p id="tagcloud">
-                    {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 min_count=10 distribution=linear %}
+                    <p id="tagcloud">
+                    {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 min_count=8 distribution=log %}
                     {% for tag in cloud %}
                     <a href="/leak/{{tag}}" 
                        style="font-size:{{tag.font_size|add:'8'}}pt"
@@ -34,22 +35,22 @@
             </div>
             </div>
             {% with prev=object.get_previous_by_changed  %}
-            {% if prev.get_absolute_url %}
-                <a class="pager prev" href="{{prev.get_absolute_url}}"><strong>#{{prev.id}}</strong></a>
-            {% endif %}
+                {% if prev.get_absolute_url %}
+                    <a class="pager prev" href="{{prev.get_absolute_url}}"><strong>#{{prev.id}}</strong></a>
+                {% endif %}
             {% endwith %}
             {% with next=object.get_next_by_changed  %}
-            {% if next.get_absolute_url %}
-                <a class="pager next" href="{{next.get_absolute_url}}"><strong>#{{next.id}}</strong></a>
-            {% endif %}
+                {% if next.get_absolute_url %}
+                    <a class="pager next" href="{{next.get_absolute_url}}"><strong>#{{next.id}}</strong></a>
+                {% endif %}
             {% endwith %}
-    {% pop_slot 'content' %}
-</article>
-{% else %}
-<article>
-    <h4>No hay derrames ahún</h4>
-</article>
-{%endif %}
+        {% pop_slot 'content' %}
+    </article>
+    {% else %}
+    <article>
+        <h4>No hay derrames ahún</h4>
+    </article>
+    {%endif %}
 
 {% endblock %}
 

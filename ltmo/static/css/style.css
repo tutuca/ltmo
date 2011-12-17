@@ -312,7 +312,11 @@ nav a{
     background:transparent;
 }
 form {
- padding: 1em 2em;
+    padding: 1em 2em;
+    margin: 0 1em;
+}
+form p {
+    position:relative;
 }
 form section{
     margin-bottom:1em;
@@ -345,6 +349,7 @@ form section{
     padding: 0.25em;
 }
 
+
 input, 
 textarea{
     border: 1px solid #999;
@@ -368,19 +373,28 @@ textarea:focus{
 }
 .error {
     background: #FEA;
-    border-radius: 3px;
+    border-radius: 5px;
 
 }
 .error input, 
 .error textarea {
-    border: 1px solid #C60;
-    box-shadow: 0 0 2px #F00;
+    border: 1px solid #C60!important;
+    box-shadow: 0 0 2px #F00!important;
 }
 .errorlist{
-    list-style:none;
-    margin:0.5em;
-    font-size:80%;
-    padding:0;
+    list-style: none;
+    margin: 0.5em;
+    font-size: 80%;
+    padding: 0;
+    margin: 1em 0;
+    background: white;
+    width: 23em;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 1px 2px 7px #333;
+    z-index: 99999;
+    position: absolute;
+    left: 48%;
 }
 label {
     float:left;
