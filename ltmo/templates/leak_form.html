@@ -1,9 +1,9 @@
 {% extends "index.html" %}
 {% block main %}
 {% if form.instance.id %}
-<form action="/edit/{{form.instance.id}}" method="post" id="leak-form">    
+<form action="/edit/{{form.instance.id}}" method="post" {% if form.errors %}class="error"{% endif %} id="leak-form">
 {% endif %}
-<form action="/new/" method="post" id="leak-form">    
+<form action="/new/" method="post" {% if form.errors %}class="error"{% endif %} id="leak-form">    
     
     <input type="hidden" id="id_{{form.author.name}}" name="{{form.author.name}}" value="{{request.user.pk}}" />
     <input type="hidden" name="next" value="{{request.path}}" />
