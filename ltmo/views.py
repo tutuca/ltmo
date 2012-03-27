@@ -5,35 +5,40 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.utils import simplejson as json
 from django.contrib.auth.models import User
-from django.contrib import messages
+from django.contrib import messages, auth 
 from django.http import HttpResponse
 from django.shortcuts import redirect, get_object_or_404, render
 from tagging.models import Tag
-
+from django.contrib.auth.decorators import login_required
 from ltmo.forms import LeakForm, RegisterForm
 from ltmo.models import Leak
 
-
-def index(request, object_id=None):
-    queryset = Leak.objects.all().order_by('-created')
+def index(request):
+    try:
+        queryset = Leak.objects.all().order_by('-created')
+        latest = queryset.latest('created')
+    
+    except Leak.DoesNotExist, e:
+        queryset = None
+        latest = None
     return render(
         request,
-        'index.html',
+        'detail.html',
         {
             'object_list':queryset,
+            'object':latest,
         }
     )
 
+@login_required()
 def edit(request, id=None):
     if id:
         leak = get_object_or_404(Leak, pk=id)
         form = LeakForm(instance=leak)
     else:
-        form = LeakForm
-
+        form = LeakForm(initial={'author':request.user})
+        leak = None
     if request.method == 'POST':
-        if request.user.is_anonymous():
-            return redirect('login')
         next = request.POST['next']
         form = LeakForm(request.POST, instance=leak)
         if form.is_valid():
@@ -119,7 +124,6 @@ def register(request,):
                 form.data['email'],
                 [x[1] for x in settings.ADMINS]
             )
-            
             return redirect('/')
 
     return render(

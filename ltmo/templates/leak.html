@@ -5,7 +5,8 @@
     {% endif %}
     {{object.rendered|safe|truncatewords_html:'150'}}
     {% tags_for_object object as tag_list %}
-    <p class="detail">
+    <div {% if alone %}id="detail"{%else%}class="detail"{% endif %}>
+    <p class="wrapper">
         <a href="/~{{object.author}}">~{{object.author}}</a>, 
         {{object.created|date}}, 
         {% for tag in tag_list %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
@@ -13,4 +14,5 @@
         {{object.metadata}}
         {% if user.is_staff %}<a href="{% url edit object.id %}" >!</a>{% endif %}
     </p>
+    </div>
 </article>

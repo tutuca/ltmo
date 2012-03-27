@@ -1,6 +1,9 @@
 {% extends "index.html" %}
 {% block main %}
-<form action="/edit/{{form.instance.id}}" method="post" id="leak-form">
+{% if form.instance.id %}
+<form action="/edit/{{form.instance.id}}" method="post" {% if form.errors %}class="error"{% endif %} id="leak-form">
+{% endif %}
+<form action="/new/" method="post" {% if form.errors %}class="error"{% endif %} id="leak-form">    
     
     <input type="hidden" id="id_{{form.author.name}}" name="{{form.author.name}}" value="{{request.user.pk}}" />
     <input type="hidden" name="next" value="{{request.path}}" />
@@ -15,26 +18,12 @@
             <tr><td>&gt; texto citado</td><td><blockquote>texto citado</blockquote></td></tr>
     </table>
     <section>
-    <div class="field {% if form.title.errors %}error{% endif %}" id="field_{{form.title.name}}" >
-        <label for="id_{{form.title.name}}">Título</label> 
-        {{form.title}}
-    </div>
-    <div class="field required {% if form.description.errors %}error{% endif %}" id="field_{{form.description.name}}"> 
-        {{form.description.errors}}
-        <label for="id_{{form.description.name}}">Derrame</label>
-        {{form.description}}
-    </div>
-        <div class="field required {% if form.tags.errors %}error{% endif %}" id="field_{{form.tags.name}}"> 
-        {{form.tags.errors}}
-        <label for="id_{{form.tags.name}}">Tags</label> 
-        {{form.tags}}
-    </div>
-    </section>
-    <div class="clear submit">
+        {{form.as_p}}
+    <p class="clear submit">
         <input name="save" type="submit" value="listo" /> 
         <a href="#leak-form" class="control">Cerrar</a> 
 
-    </div>
+    </p>
 
 </form>
 {% endblock %}

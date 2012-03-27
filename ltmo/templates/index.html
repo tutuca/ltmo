@@ -5,8 +5,7 @@
     <meta charset="utf-8" />
     <title>ltmo . {% block title %}Igual que a Scioli, a veces se nos va la mano{% endblock %}</title>
     <link rel="icon" type="image/png" href="/static/favicon.ico" />
-
-    <meta name="description" content="LTMO, un sitio para procastinar en todos los niveles que sea imaginable." />
+    <meta name="description" content="LTMO, una especie de sucursal de la British Petroleum.{% block meta-description %}{% endblock %}" />
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css" static="screen" />    
@@ -25,24 +24,22 @@
 </ul>
 {% endif %}
 <header>
-<div class="wrapper">
-    <nav>
-    <a href="/edit" id="new-leak" title="Nunca sobra un poco de aceite">+</a>      
-    <a href="#help" class="control" title="Ayudaaaaaaa">?</a>
-    <span class="session">
-    {% if not user.is_authenticated %}
-    <a href="/login" class="session" >ingresar</a>
-    {% else %}
-    {{user}} <a class="session" href="/logout">salir</a>
-    {% endif %}
-    </span>
-    </nav>
-    <h1 id="logo">
-    {% block logo %}
-    <a href="http://{{request.get_host}}" title="Bienvenido">ltmo/</a>
-    {% endblock %}
-    </h1>
-</div>
+    <div class="wrapper">
+        <nav>
+        <a href="/new/" id="new-leak" title="Nunca sobra un poco de aceite"><img src="/static/img/add.png" alt="Agregar contenido"  height="22" width="22"/></a>
+        <a href="#help" class="control" title="Ayudaaaaaaa"><img src="/static/img/help.png" /></a>
+        <span class="session">
+        {% if not user.is_authenticated %}
+        <a href="/login" class="session" ><img src="/static/img/login.png" alt="Ingresar" /></a>
+        {% else %}
+        <a href="/logout" class="session" title="{{user}}" ><img src="/static/img/logout.png" alt="Salir" /></a>
+        {% endif %}
+        </span>
+        </nav>
+        <h1 id="logo">
+        {% block logo %}<a href="http://{{request.get_host}}" title="Bienvenido">ltmo</a>:/{% endblock %}
+        </h1>
+    </div>
 </header>
 <div id="main">
 {% block main %}
@@ -52,7 +49,10 @@
     {% for object in object_list %}
         {% include 'leak.html' %}
         {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
-    {% empty %}<h2>Nadie derramó nada aún</h2>
+    {% empty %}
+        <article>
+            <h4>No hay derrames ahún</h4>
+        </article>
     {% endfor %}
     {% paginate %}
     {% endblock %}
@@ -61,7 +61,7 @@
         <h3>Se ha vertido en estos temas</h3>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
-        <a href="/l/{{tag}}" 
+        <a href="/leak/{{tag}}" 
            style="font-size:{{tag.font_size|add:'8'}}pt"
            title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}

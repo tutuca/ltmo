@@ -95,6 +95,16 @@ h1:hover .pilcrow {
 h2 {
     font-size:180%;
 }
+nav {
+    float: right;
+}
+nav a{
+    font-size:2em;
+    padding: 0 0.5em;
+}
+nav a:hover {
+    background: #EEE;
+}
 #wrapper {
     margin: 0 auto;
     text-align:left;
@@ -204,31 +214,17 @@ h2 {
     display:none;
 }
 
-nav {
-    float: right;
-}
-nav a{
-    font-size:2em;
-    padding: 0 0.5em;
-}
-nav a:hover {
-    background: #EEE;
-}
-#login-form {
-    position: absolute;
-    right:10px;
-    width: 32em;
-}
+
 form {
-    padding: 1em 1em 0.5em;
+    padding: 1em 2em 0.5em;
     background:#EEE;
     border-radius: 0 0 5px 5px;
     box-shadow: 2px 2px 3px #999;
 }
-#leak-form section{
+form section{
     margin-bottom:1em;
 }
-#leak-form .control {
+form .control {
     line-height:2.5em;
 
 }

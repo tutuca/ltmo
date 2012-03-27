@@ -97,6 +97,7 @@ TEMPLATE_DIRS = (
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 
+LOGIN_URL = '/login'
 
 INSTALLED_APPS = (
     'django.contrib.auth',

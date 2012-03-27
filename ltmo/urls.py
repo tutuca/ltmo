@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+
+
 from django.conf.urls.defaults import *
 from django.http import HttpResponse
 from django.contrib.sitemaps import GenericSitemap
@@ -21,7 +23,7 @@ sitemaps = {
 
 urlpatterns = patterns('ltmo.views',
     (r'^$','index',{},'index'),
-    (r'^edit/$','edit',{},'edit'),
+    (r'^new/$','edit',{},'new'),
     (r'^edit/(?P<id>\d+)$','edit',{},'edit'),
     (r'^l/$','by_tag',{}),
     (r'^leak/(?P<tag_name>\D+)$','by_tag',{},'by_tag'),
