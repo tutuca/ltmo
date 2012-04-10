@@ -3,7 +3,7 @@ from django.db import models
 from datetime import datetime
 from tagging.fields import TagField
 from tagging.utils import parse_tag_input
-
+from django.contrib.auth.models import User
 from django.contrib import admin
 from django.template.defaultfilters import striptags, slugify
 from markdown import markdown
@@ -21,6 +21,13 @@ class Leak(models.Model):
     
     def __unicode__(self):
         return self.title or u'sin título'
+
+    def get_user(self):
+        try:
+            user = User.objects.get(username=self.author)
+        except User.DoesNotExist:
+            user = None
+        return user
 
     @models.permalink
     def get_absolute_url(self):

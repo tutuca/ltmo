@@ -13,8 +13,7 @@
     {% if object %}
     <article>
         {{object.rendered|safe}}
-        <div id="detail" itemscope itemtype="http://schema.org/Article">
-
+        <div id="detail">
             <div class="wrapper">   
                 <p id="tagcloud">
                     {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 min_count=8 distribution=log %}
@@ -24,10 +23,10 @@
                        title="{{tag.count}} derrames">{{tag}}</a>
                     {% endfor %}
                 </p>
-                <p id="metadata">
-                    <span class="leak-name" itemprop="name">{{obj.title}}</span>
+                <p id="metadata" itemscope itemtype="http://schema.org/Article">
+                    <span class="hidden-detail" itemprop="name">{{object.title}}</span>
                     {% tags_for_object object as tag_list %}
-                    <a href="/~{{object.author}}" rel="author" itemprop="author">~{{object.author}}</a>, 
+                    <a href="/~{{object.author}}" itemprop="author">~{{object.author}}</a>, 
                     {{object.created|date}}, 
                     {% for tag in tag_list %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
                     <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#{{object.pk}}</a>

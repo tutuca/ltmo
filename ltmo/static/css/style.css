@@ -96,7 +96,6 @@ section {
     text-shadow: 1px 1px 0px white;
     background:rgba(255,255,255,0.5);
     box-shadow: 0 -1px 3px #999;
-    overflow:hidden;
 }
 #detail p {
     padding: 0 6em;
@@ -106,10 +105,12 @@ section {
 #metadata {
     float:right;
     text-align:right;
+
 }
 #tagcloud {
     float:left;
     text-align:left;
+    margin-top: -1em !important;
 }
 aside {
     text-align: left;
@@ -499,4 +500,7 @@ input[type='submit']:active {
 #id_description.hover {
     border:3px solid #900;
     background: #EEE;
+}
+.hidden-detail {
+    display:none !important;
 }
