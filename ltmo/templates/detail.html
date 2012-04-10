@@ -11,9 +11,11 @@
 {% block section_class %}class="leak"{% endblock %}
 {% block content %}
     {% if object %}
-    <article>
+    <article itemscope itemtype="http://schema.org/Article">
+        <div itemprop="description">
         {{object.rendered|safe}}
-        <div id="detail">
+        </div>
+        <div id="detail" >
             <div class="wrapper">   
                 <p id="tagcloud">
                     {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 min_count=8 distribution=log %}
@@ -23,7 +25,7 @@
                        title="{{tag.count}} derrames">{{tag}}</a>
                     {% endfor %}
                 </p>
-                <p id="metadata" itemscope itemtype="http://schema.org/Article">
+                <p id="metadata" >
                     <span itemprop="name">{{object.title}}</span>
                     {% tags_for_object object as tag_list %}
                     <a href="/~{{object.author}}" itemprop="author">~{{object.author}}</a>, 
