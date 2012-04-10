@@ -24,12 +24,12 @@
                     {% endfor %}
                 </p>
                 <p id="metadata" itemscope itemtype="http://schema.org/Article">
-                    <span class="hidden-detail" itemprop="name">{{object.title}}</span>
+                    <span itemprop="name">{{object.title}}</span>
                     {% tags_for_object object as tag_list %}
                     <a href="/~{{object.author}}" itemprop="author">~{{object.author}}</a>, 
                     {{object.created|date}}, 
                     {% for tag in tag_list %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
-                    <a title="permalink" class="permalink" href="{{object.get_absolute_url}}">#{{object.pk}}</a>
+                    <a title="permalink" class="permalink" href="{{object.get_absolute_url}}" itemprop="url">#{{object.pk}}</a>
                     {{object.metadata}}
                     {% if user.is_staff %}<a href="/edit/{{object.pk}}">editar</a>{% endif %}
                 </p>
