@@ -12,7 +12,7 @@
 {% block content %}
     {% if object %}
     <article itemscope itemtype="http://schema.org/Article">
-        <div itemprop="description">
+        <div itemprop="description" content="{{object.description|truncatewords:10}}">
         {{object.rendered|safe}}
         </div>
         <div id="detail" >
