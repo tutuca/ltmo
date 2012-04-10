@@ -8,8 +8,8 @@
     <meta name="description" content="LTMO, una especie de sucursal de la British Petroleum.{% block meta-description %}{% endblock %}" />
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
-    <link rel="stylesheet" href="/static/css/style.css" type="text/css" static="screen" />    
-    <link rel="stylesheet" href="/static/css/code.css" type="text/css" static="screen" />    
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />    
+    <link rel="stylesheet" href="/static/css/code.css" type="text/css" media="screen" />    
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/ui.js"></script>
     <script src="/static/js/ltmo.js"></script>
@@ -46,6 +46,15 @@
     {% endblock %}
     </section>
     <aside id="help" class="hide">
+        <h3>¿Qué es lo que observa?</h3>
+        <p>Esto funciona muy fácil, hacele click al + de allá arriba y pegá lo que sea. Pero ojo, nada queda almacenado en nuestros servidores, esto es solo una pasarela</p>
+        <p>Tratamos de agrandar el agujero para que más cosas caigan en él.</p>
+        {% pop_slot 'aside' %}
+        <ul>
+        <li><a href="http://twitter.com/lossingoil">@lossingoil</a> - </li>
+        <li><a href="mailto:loosingtoomuchoil@gmail.com">loosingtoomuchoil@gmail.com</a> -</li>
+        <li><a href="/feed/">RSS</a></li>
+        </ul>
         <h3>Se ha vertido en estos temas</h3>    
         {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
         {% for tag in cloud %}
@@ -55,15 +64,7 @@
         {% endfor %}
         {% tags_for_model ltmo.Leak as leak_tags with counts %}
 
-        <h3>¿Qué es lo que observa?</h3>
-        <p>Esto funciona muy fácil, hacele click al + de allá arriba y pegá lo que sea. Pero ojo, nada queda almacenado en nuestros servidores, esto es solo una pasarela</p>
-        <p>Tratamos de agrandar el agujero para que más cosas caigan en él.</p>
-        {% pop_slot 'aside' %}
-        <ul>
-        <li><a href="http://twitter.com/lossingoil">@lossingoil</a> - </li>
-        <li><a href="mailto:loosingtoomuchoil@gmail.com">loosingtoomuchoil@gmail.com</a> -</li>
-        <li><a href="http://github.com/tutuca/ltmo">github.com/tutuca/ltmo</a></li>
-        </ul>
+
         <p>Las opiniones vertidas en cada artículo son responsabilidad del author</p>
 
     </aside>
