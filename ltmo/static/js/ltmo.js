@@ -124,8 +124,36 @@ $( ".ui-autocomplete-input" ).live( "autocompleteopen", function() {
         });
     };
 })( jQuery );
+function viewport(){
+    e = window;
+    a = 'inner';
+    if ( !( 'innerWidth' in window ) ){
+        a = 'client';
+        e = document.documentElement || document.body;
+    };
+    return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
+};  
+
 
 $(function(){
+    (function setLayout(){
+        vp = viewport();
+        visible_height = (vp.height-($('header').height() + $('footer').height()));
+        images = $('article img')
+        if (images.length==1){
+            $('article img').each(function(i, img){
+                img.height = visible_height-150;
+            })
+        }
+    })();
+    (function setBackground(){
+        function c(h){return (h<12?h:Math.abs(h-24)).toString(16)};
+        now = new Date();
+        time = now.getHours();
+        bg = '#'+Array(4).join(c(time));
+        $('body').css('background',bg);
+    })();
+    $(window).resize(function(){setLayout()})
     var hash = window.location.hash;
     if (hash){
         $(window).scrollTop($(hash).offset().top-55)
