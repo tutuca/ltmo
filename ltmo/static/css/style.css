@@ -1,10 +1,11 @@
+.wrapper { padding: 0.5em 1em; }
+
 body { font: 100% sans-serif; background: #333; padding: 0; margin: 0; }
 
 header, section, footer, article, aside { display: block; padding: 0; margin-bottom: 2em; }
 
 header { width: 100%; padding: 0; margin: 0; position: fixed; top: 0; left: 0; z-index: 9999; box-shadow: 0 1px 3px #000; }
-
-.wrapper { padding: 0.5em 1em; }
+header .wrapper { padding: 0 1em; }
 
 footer { clear: both; padding: 5em 1em 1em; font-size: 80%; }
 
@@ -12,16 +13,13 @@ footer { clear: both; padding: 5em 1em 1em; font-size: 80%; }
 
 #help { padding: 1em; background: white; width: 25em; float: none; position: absolute; top: 1em; right: 0; box-shadow: 0 1px 1px #000; border-radius: 3px; border: 1px solid #EEE; background: #FFF; }
 
-section { text-align: center; }
-section article { text-align: left; position: relative; margin: 2em auto; width: 90%; color: #DDD; }
-
-section.leak:before { content: ''; display: inline-block; height: 100%; vertical-align: middle; margin-right: -0.25em; /* Adjusts for spacing */ }
-
-section.leak article { display: inline-block; vertical-align: middle; margin: 2em auto 0; }
+section { display: block; text-align: center; }
+section article { text-align: left; position: relative; margin: 2em auto; width: 40em; color: #DDD; }
+section article p { color: #000; text-shadow: 0 1px 1px solid #FFF; }
+section .leak:before { content: ''; display: inline-block; height: 100%; vertical-align: middle; margin-right: -0.25em; /* Adjusts for spacing */ }
+section .leak article { display: inline-block; vertical-align: middle; margin: 2em auto 0; }
 
 article img, article object { display: block; margin: 0.5em auto; max-width: 90%; }
-
-section { display: block; }
 
 .detail { text-align: right; font-size: 80%; display: block; color: #555; }
 
@@ -110,14 +108,11 @@ nav img { vertical-align: middle; }
 
 .session a:hover { background: transparent; }
 
-form { padding: 1em 2em; margin: 0 1em; }
-
+form { padding: 1em 2em; margin: 0 1em; text-align: left; }
 form p { position: relative; }
-
 form section { margin-bottom: 1em; }
 
 .submit { text-align: right; padding: 0 1em; }
-
 .submit a { line-height: 2.5em; }
 
 #formating-help { float: right; width: 30%; font-size: 80%; border: 1px solid #FFF; border-width: 1px 0; border-color: #CCC transparent #FFF; }

@@ -1,4 +1,7 @@
 $fg_color:#06C;;
+.wrapper {
+    padding: 0.5em 1em;
+}
 body {
     font: 100% sans-serif;
     background: #333;
@@ -20,11 +23,11 @@ header {
     left: 0;
     z-index:9999;
     box-shadow: 0 1px 3px #000;
+    .wrapper {
+        padding: 0 1em;
+    }
 }
 
-.wrapper {
-    padding: 0.5em 1em;
-}
 footer {
     clear: both;
     padding: 5em 1em 1em;
@@ -52,37 +55,40 @@ footer p{
     background: #FFF;
 }
 section {
+    display:block;
     text-align:center;
     article {
         text-align: left;
         position:relative;
         margin:2em auto;
-        width:90%;
+        width:40em;
         color: #DDD;
+        p {
+            color: #000;
+            text-shadow: 0 1px 1px solid #FFF;
+        }
     }
-}
-section.leak:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -0.25em; /* Adjusts for spacing */
-}
-section.leak article {
-    display: inline-block;
-    vertical-align: middle;
-    margin:2em auto 0;
-}
+    .leak{
+        &:before {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+          margin-right: -0.25em; /* Adjusts for spacing */
+        }
+        article {
+            display: inline-block;
+            vertical-align: middle;
+            margin:2em auto 0;
+        }
+    }
 
+}
 article img, article object {
     display:block;
     margin: 0.5em auto;
     max-width: 90%;
 }
-
-section {
-    display:block;
-} 
 
 .detail {
     text-align: right;
@@ -334,19 +340,20 @@ nav {
 form {
     padding: 1em 2em;
     margin: 0 1em;
-}
-form p {
-    position:relative;
-}
-form section{
-    margin-bottom:1em;
+    text-align:left;
+    p {
+        position:relative;
+    }
+    section{
+        margin-bottom:1em;
+    }
 }
 .submit {
     text-align: right;
     padding: 0 1em;
-}
-.submit a {
-    line-height:2.5em;
+    a {
+        line-height:2.5em;
+    }
 }
 #formating-help {
     float:right;
