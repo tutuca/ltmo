@@ -346,6 +346,9 @@ form {
     }
     section{
         margin-bottom:1em;
+        width:50%;
+        position:relative;
+        text-align: left;
     }
 }
 .submit {
@@ -421,7 +424,7 @@ textarea:focus{
     box-shadow: 1px 2px 7px #000;
     z-index: 99999;
     position: absolute;
-    left: 48%;
+    right: 0;
 }
 label {
     float:left;
