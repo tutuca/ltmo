@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
 pre > code.highlight { background-color: #fdf6e3; }
 pre > code.highlight .ge { font-style: italic; }
 pre > code.highlight .gs { font-weight: bold; }
@@ -39,7 +40,7 @@ pre > code.highlight .gp { color: #c65d09; font-weight: bold; }
 
 .wrapper { padding: 0.5em 1em; }
 
-body { font: 100% sans-serif; background: #EEE; padding: 0; margin: 0; }
+body { font: 100% "Droid Sans", sans-serif; background: #EEE; padding: 0; margin: 0; }
 
 header, section, footer, article, aside { display: block; padding: 0; margin-bottom: 2em; }
 
@@ -71,7 +72,7 @@ article img, article object { display: block; margin: 0.5em auto; max-width: 90%
 
 aside { text-align: left; width: 20%; position: absolute; font-size: 80%; top: 4em; right: 1em; }
 
-pre, code { font: 110% monospace; white-space: pre-wrap; }
+pre, code { font: 110% "Droid Sans Mono",monospace; white-space: pre-wrap; }
 
 blockquote { font: italic 150% "Georgia-MS", Georgia, serif; width: 70%; margin: 1em auto; }
 

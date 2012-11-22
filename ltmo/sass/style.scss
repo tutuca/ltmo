@@ -1,11 +1,13 @@
 @import "pygments";
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
+
 $fg_color:#06C;
 
 .wrapper {
     padding: 0.5em 1em;
 }
 body {
-    font: 100% sans-serif;
+    font: 100% "Droid Sans", sans-serif;
     background: #EEE;
 
     padding:0;
@@ -132,7 +134,7 @@ aside {
     right:1em;
 }
 pre, code {
-    font: 110% monospace;
+    font: 110% "Droid Sans Mono",monospace;
     white-space: pre-wrap;
 }
 
