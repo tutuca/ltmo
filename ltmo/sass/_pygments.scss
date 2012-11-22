@@ -43,7 +43,7 @@ $output:        $solarized_base0;
 $operator:      $solarized_base00;
 $decorator:     $solarized_base01;
 
-pre > code.highlight {
+.codehilite {
     background-color: $background;
 
     .ge { font-style: italic; } // Generic.Emph
