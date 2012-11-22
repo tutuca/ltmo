@@ -146,7 +146,6 @@ $(function(){
             })
         }
     })();
-
     $(window).resize(function(){setLayout()})
     var hash = window.location.hash;
     if (hash){

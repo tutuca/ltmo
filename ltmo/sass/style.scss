@@ -4,7 +4,8 @@ $fg_color:#06C;;
 }
 body {
     font: 100% sans-serif;
-    background: #333;
+    background: #EEE;
+
     padding:0;
     margin: 0;
 }
@@ -62,7 +63,6 @@ section {
         position:relative;
         margin:2em auto;
         width:40em;
-        color: #DDD;
         p {
             color: #000;
             text-shadow: 0 1px 1px solid #FFF;
