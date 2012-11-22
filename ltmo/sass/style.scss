@@ -105,7 +105,7 @@ article img, article object {
     left: 0;
     margin: 0;
     p {
-        padding: 0 6em;
+        padding: 0 3em;
         margin: 0;
 
     }
@@ -116,7 +116,8 @@ article img, article object {
 
 }
 #tagcloud {
-    float:left;
+    position: absolute;
+    bottom: 0;
     text-align:left;
     margin-top: -1em !important;
 }
@@ -140,13 +141,13 @@ blockquote{
 }
 
 a {
-   color: $fg_color;
-   text-decoration:none;
+    color: $fg_color;
+    text-decoration:none;
     transition: all 0.3s;
-}
-a:hover {
-    text-shadow: 0 1px 2px #000;
-    transition: all 0.3s;
+    :hover {
+        text-shadow: 0 1px 2px #000;
+        transition: all 0.3s;
+    }
 }
 
 a img{

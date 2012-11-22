@@ -146,15 +146,7 @@ $(function(){
             })
         }
     })();
-    (function setBackground(){
-        // saco un color hexadecimal a partir de la hora del día        
-        function c(h){return (h<12?h:Math.abs(h-24)).toString(16)};
 
-        date = new Date();
-        now = date.getHours();
-        bg = '#'+Array(4).join(c(now));
-        $('body').css('background',bg);
-    })();
     $(window).resize(function(){setLayout()})
     var hash = window.location.hash;
     if (hash){

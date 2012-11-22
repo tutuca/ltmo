@@ -24,11 +24,11 @@ article img, article object { display: block; margin: 0.5em auto; max-width: 90%
 .detail { text-align: right; font-size: 80%; display: block; color: #555; }
 
 #detail { position: fixed; font-size: 80%; bottom: 0; width: 100%; padding: 0; left: 0; margin: 0; }
-#detail p { padding: 0 6em; margin: 0; }
+#detail p { padding: 0 3em; margin: 0; }
 
 #metadata { float: right; text-align: right; }
 
-#tagcloud { float: left; text-align: left; margin-top: -1em !important; }
+#tagcloud { position: absolute; bottom: 0; text-align: left; margin-top: -1em !important; }
 
 aside { text-align: left; width: 20%; position: absolute; font-size: 80%; top: 4em; right: 1em; }
 
@@ -37,8 +37,7 @@ pre, code { font: 110% monospace; white-space: pre-wrap; }
 blockquote { font: italic 150% "Georgia-MS", Georgia, serif; width: 70%; margin: 1em auto; }
 
 a { color: #0066cc; text-decoration: none; transition: all 0.3s; }
-
-a:hover { text-shadow: 0 1px 2px #000; transition: all 0.3s; }
+a :hover { text-shadow: 0 1px 2px #000; transition: all 0.3s; }
 
 a img { border: 0; }
 
