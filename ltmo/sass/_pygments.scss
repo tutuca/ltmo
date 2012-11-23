@@ -1,6 +1,4 @@
 @charset "UTF-8";
-// vim: set ts=4 sw=4 et ft=scss tw=79 :
-
 //
 // Color scheme for Pygments
 //
@@ -9,10 +7,10 @@
 @import "solarized";
 
 // Colors
-$base:       $solarized_base01;
-$background: $solarized_base3;
-$highlight_bg: $solarized_base2;
-$background_highlight: $solarized_base2;
+$base:       $solarized_base1;
+$background: $solarized_base03;
+$highlight_bg: $solarized_base02;
+$background_highlight: $solarized_base02;
 
 $royal_blue: #235388;
 $bright_blue: #0e84b5;
@@ -45,7 +43,9 @@ $decorator:     $solarized_base01;
 
 .codehilite {
     background-color: $background;
-
+    padding: 0.5em 2em;
+    margin: 0 -2em;
+    margin-radius: 3px;
     .ge { font-style: italic; } // Generic.Emph
     .gs { font-weight: bold; } // Generic.Strong
 

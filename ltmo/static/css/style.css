@@ -1,8 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
-.codehilite { background-color: #fdf6e3; }
+.codehilite { background-color: #002b36; padding: 0.5em 2em; margin: 0 -2em; margin-radius: 3px; }
 .codehilite .ge { font-style: italic; }
 .codehilite .gs { font-weight: bold; }
-.codehilite .hll { background-color: #eee8d5; }
+.codehilite .hll { background-color: #073642; }
 .codehilite .err { border: 1px solid #dc322f; }
 .codehilite .gr { color: #dc322f; }
 .codehilite .gd { color: #dc322f; }
@@ -12,7 +12,7 @@
 .codehilite .w { color: #93a1a1; }
 .codehilite .nd { color: #586e75; font-weight: bold; }
 .codehilite .cm, .codehilite .c1, .codehilite .c { color: #2aa198; font-style: italic; }
-.codehilite .cs { color: #2aa198; background-color: #eee8d5; }
+.codehilite .cs { color: #2aa198; background-color: #073642; }
 .codehilite .gh, .codehilite .nt { color: #cb4b16; font-weight: bold; }
 .codehilite .nf { color: #d33682; }
 .codehilite .m, .codehilite .mf, .codehilite .mh, .codehilite .mi, .codehilite .mo, .codehilite .il { color: #b58900; }
