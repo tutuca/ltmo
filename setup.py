@@ -24,7 +24,7 @@ setup(
     zip_safe=False,
     entry_points = {
     'console_scripts': [
-        'ltmo_manage = ltmo.manage:manage',
+        'manage = ltmo.manage:do_manage',
     ],
     },
     install_requires=[
