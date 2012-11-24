@@ -39,12 +39,12 @@
             </div>
             {% with prev=object.get_previous_by_changed  %}
                 {% if prev.get_absolute_url %}
-                    <a class="pager prev" href="{{prev.get_absolute_url}}" title="#{{prev.id}}"><strong><</strong></a>
+                    <a class="pager prev" href="{{prev.get_absolute_url}}" title="#{{prev.id}}"><strong>&#59237;</strong></a>
                 {% endif %}
             {% endwith %}
             {% with next=object.get_next_by_changed  %}
                 {% if next.get_absolute_url %}
-                    <a class="pager next" href="{{next.get_absolute_url}}" title="#{{next.id}}"><strong>></strong></a>
+                    <a class="pager next" href="{{next.get_absolute_url}}" title="#{{next.id}}"><strong>&#59238;</strong></a>
                 {% endif %}
             {% endwith %}
         {% pop_slot 'content' %}
