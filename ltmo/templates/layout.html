@@ -25,12 +25,12 @@
 <header>
     <div class="wrapper">
         <nav>
-        <a href="/new/" id="new-leak">&#128167;</a>
-        <a href="#help" class="control" title="Ayudaaaaaaa">&#10067;</a>
+        <a href="/new/" id="new-leak" class="icon-tint"></a>
+        <a href="#help" class="control icon-question-sign" title="Ayudaaaaaaa"></a>
         {% if not user.is_authenticated %}
-        <a href="/login" class="session" title="Entrar">&#59200;</a>
+        <a href="/login" class="session icon-user" title="Entrar" /></a>
         {% else %}
-        <a href="/logout" class="session" title="{{user}}" >&#59201;</a>
+        <a href="/logout" class="session" title="{{user}}" ></a>
         {% endif %}
         </nav>
         <h1 id="logo">{% block logo %}<a href="http://{{request.get_host}}" title="Bienvenido"> ltmo</a>:/{% endblock %}</h1>
