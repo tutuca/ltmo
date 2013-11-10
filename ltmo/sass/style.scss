@@ -102,9 +102,11 @@ section {
 article img, article object {
     display:block;
     margin: 0.5em auto;
-    max-width: 90%;
 }
 
+article object  {
+    max-width: 90%;
+}
 .detail {
     text-align: right;
     font-size:80%;
@@ -162,7 +164,6 @@ a{
     color :$fg_color;
     &:hover {
         text-shadow: 0 -1px 0 #FFF, 0 1px 0 #000; 
-        color:#E0E0EF;
 
     }
 }
@@ -199,7 +200,6 @@ h2 {
 #logo {
     margin:0;
     padding: 0.2em 0;
-
     color: #555;
     font-size: 1.6em;
 }
