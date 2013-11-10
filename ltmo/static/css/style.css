@@ -319,10 +319,11 @@ h2 {
 
 nav {
     float: right;
+    padding:0.5em;
 }
 nav a{
     margin: 0.5em;
-    display: inline-block;
+
     border: 1px solid transparent;
     padding: 0.25em;
 }
