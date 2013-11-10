@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from datetime import datetime
 from tagging.fields import TagField
 from tagging.utils import parse_tag_input
 
 from django.contrib import admin
-from django.template.defaultfilters import striptags, slugify
+from django.template.defaultfilters import slugify
 from markdown import markdown
 
 class Leak(models.Model):
