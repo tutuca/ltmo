@@ -1,5 +1,5 @@
-PIL
-django
+Pillow
+django==1.4.2
 django-tagging
 Markdown
 pygments
@@ -7,7 +7,6 @@ django-pagination
 psycopg2
 south
 django-debug-toolbar
-git+git://github.com/tutuca/python-markdown-video.git
-git+git://github.com/tutuca/markdown-urlize.git
--e git+git@github.com:Inventta/banners.git#egg=banners
--e git+git@github.com:Inventta/ltmo.git#egg=ltmo
+git+git://github.com/tutuca/python-markdown-video.git#egg=python-markdown-video
+git+git://github.com/tutuca/markdown-urlize.git#egg=markdown-urlize
+git+git://github.com/apanruning/banners.git#egg=banners

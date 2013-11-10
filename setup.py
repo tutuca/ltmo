@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
-import os
-
-version = '0.12'
+from setuptools import setup
 
 setup(
     name='ltmo',
-    version=version,
+    version='0.14',
     description="light weight blogging, heavy weight time-wasting",
     # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
@@ -25,18 +22,17 @@ setup(
     entry_points = {
     'console_scripts': [
         'manage = ltmo.manage:do_manage',
-    ],
+        ],
     },
     install_requires=[
-    'setuptools',
-    'django',
-    'PIL',
-    'django-tagging',
-    'markdown',
-    'pygments',
-    'django-pagination',
-    'psycopg2',
-    'south',
-    'django-debug-toolbar',
-    ],
+        'Pillow',
+        'django==1.4.2',
+        'django-tagging',
+        'Markdown',
+        'pygments',
+        'django-pagination',
+        'psycopg2',
+        'south',
+        'django-debug-toolbar',
+        ]
     )
