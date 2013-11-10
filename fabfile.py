@@ -10,11 +10,9 @@ EX: fab staging:admin release
 """
 
 import os
-import sys
-import tempfile
 import datetime
 from string import Template
-from fabric.api import env, run, local, require, put, sudo, prompt, cd
+from fabric.api import env, run, local, require, put
 
 BASE_DIR = os.path.dirname(__file__)
 
