@@ -168,7 +168,7 @@ input[type='email']:focus, input[type='password']:focus, input[type='text']:focu
 
 .errorlist { list-style: none; margin: 0.5em; font-size: 80%; padding: 0; margin: 1em 0; background: white; width: 23em; padding: 1em; border-radius: 5px; box-shadow: 1px 2px 7px #000; z-index: 99999; position: absolute; right: 0; }
 
-label { float: left; width: 10em; margin: 0.5em 1em; text-align: right; font-size: 80%; }
+label { display: block; margin: 0.5em 0 0; font-size: 80%; }
 
 form span { font-size: 80%; }
 
@@ -180,6 +180,8 @@ input[type='submit']:hover { cursor: pointer; box-shadow: 1px 1px 2px #000; }
 input[type='submit']:active { margin: 4px -2px 0 0; }
 
 #leak-form input[type='submit'] { float: left; }
+
+#id_title, #id_description { width: 100%; }
 
 .ui-autocomplete { list-style: none; position: fixed !important; background: #FFF; width: 10em; padding: 0; margin: 0; }
 

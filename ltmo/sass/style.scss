@@ -406,10 +406,8 @@ textarea:focus{
     right: 0;
 }
 label {
-    float:left;
-    width: 10em;
-    margin: 0.5em 1em;
-    text-align:right;
+    display:block;
+    margin: 0.5em 0 0;
     font-size:80%;
 }
 form span {
@@ -433,7 +431,9 @@ input[type='submit'] {
 #leak-form input[type='submit'] {
     float:left;
 }
-
+#id_title, #id_description {
+    width: 100%;
+}
 .ui-autocomplete {
     list-style: none;
     position:fixed !important;
