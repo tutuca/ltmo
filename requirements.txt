@@ -4,6 +4,8 @@ django-tagging
 Markdown
 pygments
 django-pagination
+django-registration
+django-social-auth
 psycopg2
 south
 django-debug-toolbar
