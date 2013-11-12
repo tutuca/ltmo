@@ -138,6 +138,7 @@ h2 { font-size: 180%; }
 .hide { display: none; }
 
 nav { float: right; font-size: 1.5em; padding: 0.25em 0.5em; }
+nav .user { font-size: 0.5em; }
 
 .session { font-size: 100%; }
 
@@ -191,13 +192,15 @@ input[type='submit']:active { margin: 4px -2px 0 0; }
 
 #login-form { float: left; }
 
-#register-form { float: left; width: 40%; }
+#register-form { float: left; width: 40%; padding: 1em; }
+#register-form h3 { text-align: center; }
 
 #id_description.hover { border: 3px solid #900; background: #EEE; }
 
 .hidden-detail { display: none !important; }
 
 .login { display: inline-block; padding: 0.25em 1em; font-weight: bold; border-radius: 3px; color: white; }
+.login:hover { text-shadow: none; }
 
 .login.facebook { background-image: -webkit-linear-gradient(top, #3b5998, #2d4373); background-image: -moz-linear-gradient(top, #3b5998, #2d4373); background-image: -ms-linear-gradient(top, #3b5998, #2d4373); background-image: -o-linear-gradient(top, #3b5998, #2d4373); }
 

@@ -310,6 +310,9 @@ nav {
     float: right;
     font-size:1.5em ;
     padding: 0.25em 0.5em;
+    .user {
+        font-size:0.5em;
+    }
 }
 .session {
     font-size: 100%;
@@ -456,6 +459,10 @@ input[type='submit'] {
 #register-form {
     float:left;
     width: 40%;
+    padding:1em;
+    h3 {
+        text-align: center;
+    }
 }
 #id_description.hover {
     border:3px solid #900;
@@ -470,6 +477,9 @@ input[type='submit'] {
     font-weight: bold;
     border-radius:3px;
     color: white;
+    &:hover  {
+        text-shadow: none;
+    }
 }
 .login.facebook {
     @include gradient(#3B5998)

@@ -5,7 +5,6 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.utils import simplejson as json
 from django.contrib.auth.models import User
-from django.contrib import messages, auth 
 from django.http import HttpResponse
 from django.shortcuts import redirect, get_object_or_404, render
 from tagging.models import Tag
@@ -18,7 +17,7 @@ def index(request):
         queryset = Leak.objects.all().order_by('-created')
         latest = queryset.latest('created')
     
-    except Leak.DoesNotExist, e:
+    except Leak.DoesNotExist:
         queryset = None
         latest = None
     return render(
@@ -39,7 +38,6 @@ def edit(request, id=None):
         form = LeakForm(initial={'author':request.user})
         leak = None
     if request.method == 'POST':
-        next = request.POST['next']
         form = LeakForm(request.POST, instance=leak)
         if form.is_valid():
             leak = form.save()
@@ -94,14 +92,16 @@ def tags(request):
         mimetype="application/json"
     )
     
-def profile_detail(request, username):
-    queryset = Leak.objects.filter(author__icontains=username).order_by('-created')
+def profile_detail(request, username=None):
+    if username:
+        try:
+            author = User.objects.get(username__icontains=username)
+        except :
+            author = None
+    else:
+        author = request.user
 
-    try:
-        author = User.objects.get(username__icontains=username)
-    except :
-        author = None
-
+    queryset = Leak.objects.filter(author__icontains=author.username).order_by('-created')
     return render(
         request,
         'profile.html',
@@ -111,6 +111,7 @@ def profile_detail(request, username):
             'is_me':request.user.username == 'username',
         }
     )
+
 
 def register(request,):
     form = RegisterForm()
