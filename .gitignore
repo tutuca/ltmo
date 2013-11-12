@@ -11,3 +11,4 @@ apps/*
 static/admin/*
 dump/*
 ltmo/.sass-cache/
+ltmo/media
