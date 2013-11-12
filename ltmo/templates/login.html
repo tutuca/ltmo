@@ -4,19 +4,10 @@
 {% endblock %}
 {% block main %}
  
-  <form action="{% url register %}" method="post" id="register-form">{% csrf_token %}
-    <h2>Abre una cuenta</h2>
-    <p>Ingresando tu email te crearemos un usuario y enviaremos la contraseña por email, podés cambiar los datos luego de ingresar</p>
-    <input type="hidden" name="next" value="/">
-    <input type="hidden" name="honeypot" value=""/>
-    <p>
-    <label for="username">Nombre para mostrar: </label><input type="text" name="username" id="username" value=""/>    
-    </p>
-    <p>
-    <label for="email">Email: </label><input type="email" name="email" id="email" value=""/>
-    </p>
-    <p><input type="submit" value="registrarse" /></p>
-  </form>
+  <div id="register-form">
+    <p>Ingresá con tu cuenta de <a class="login facebook" href="{% url socialauth_begin 'facebook' %}">Facebook</a> o <a class="login google" href="{% url socialauth_begin 'google' %}">Google</a></p>
+    <p> No utilizaremos informaci&oacute;n de tu cuenta ni publicaremos en la misma.</p>
+  </div>
 
   <form action="{% url login %}" method="post" {% if form.errors %}class="error"{% endif %}id="login-form">{% csrf_token %}
 
