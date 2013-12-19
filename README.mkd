@@ -27,3 +27,7 @@ Ahora sólo debés sincronizar la base de datos y correr el sitio:
 Todo lo que envíes con spill se manda a ltmo.com.ar ahí vamos a ir agregando cosas a medida que tengamos más tiempo para perder aceite.
 
 No sabemos muy bien de que se trata todo esto pero somos lo que hacemos
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tutuca/ltmo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
