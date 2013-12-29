@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-
+import json
 from django.conf import settings
 from django.core.mail import send_mail
-from django.utils import simplejson as json
 from django.contrib.auth.models import User
 from django.contrib import messages, auth 
 from django.http import HttpResponse
@@ -13,11 +12,11 @@ from django.contrib.auth.decorators import login_required
 from ltmo.forms import LeakForm, RegisterForm
 from ltmo.models import Leak
 
+
 def index(request):
     try:
         queryset = Leak.objects.all().order_by('-created')
         latest = queryset.latest('created')
-    
     except Leak.DoesNotExist, e:
         queryset = None
         latest = None
@@ -36,7 +35,7 @@ def edit(request, id=None):
         leak = get_object_or_404(Leak, pk=id)
         form = LeakForm(instance=leak)
     else:
-        form = LeakForm(initial={'author':request.user})
+        form = LeakForm(initial={'author':request.user.username})
         leak = None
     if request.method == 'POST':
         next = request.POST['next']
@@ -95,12 +94,8 @@ def tags(request):
     )
     
 def profile_detail(request, username):
-    queryset = Leak.objects.filter(author__icontains=username).order_by('-created')
-
-    try:
-        author = User.objects.get(username__icontains=username)
-    except :
-        author = None
+    author = User.objects.get_or_404(User, username=username)
+    queryset = Leak.objects.filter(author__icontains=author).order_by('-created')
 
     return render(
         request,
@@ -108,7 +103,7 @@ def profile_detail(request, username):
         {
             'object_list': queryset,
             'author':author,
-            'is_me':request.user.username == 'username',
+            'is_me':request.user.username == username,
         }
     )
 

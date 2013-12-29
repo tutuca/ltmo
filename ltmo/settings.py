@@ -107,7 +107,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    'django.contrib.markup',
     'django.contrib.messages',
     'debug_toolbar',
     'south',

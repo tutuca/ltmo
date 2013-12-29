@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from django.contrib import admin
 from django.template.defaultfilters import striptags, slugify
 from markdown import markdown
+from markdown_extensions import UrlizeExtension, VideoExtension
+
 
 class Leak(models.Model):
     slug = models.SlugField(editable=False, blank=True, null=True)
@@ -36,7 +38,7 @@ class Leak(models.Model):
     def save(self):
         self.rendered = markdown(
             self.description, 
-            ['video', 'codehilite', 'urlize']
+            [mdx_urlize, mdx_video, 'codehilite']
         )
         self.tags = ','.join([slugify(x) for x in parse_tag_input(self.tags)])
         self.slug = '%s-%s' %(slugify(self.title[:30]) or 'sin-titulo', self.pk)
