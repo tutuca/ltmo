@@ -1,0 +1,52 @@
+$base03:    #010204;
+$base02:    #4D2219;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #AFDE9C;
+$base1:     #E8F7EE;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+$fg_color:  $blue;
+
+@mixin transition ($time) {
+    -moz-transition: all $time;
+    -webkit-transition: all $time;
+    transition: all $time;
+}
+@mixin gradient($color, $direction:top) {
+   background-image: -webkit-linear-gradient($direction, $color, darken($color, 10%)); 
+   background-image: -moz-linear-gradient($direction, $color, darken($color, 10%));
+   background-image: -ms-linear-gradient($direction, $color, darken($color, 10%));
+   background-image: -o-linear-gradient($direction, $color, darken($color, 10%));
+}
+@mixin button($fg:#FFF, $bg:$green, $border:$base1){
+    border: none;
+    border-radius: 0.3em;
+    @include gradient($bg);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 1px rgba(0,0,0,.05);
+    padding: 0.25em 0.5em;
+    font-size:1.2em;
+    text-shadow: 0 1px 1px #333;
+    margin:0 0.3em;
+    color: $fg;
+    &:hover{
+        text-shadow: 0 1px 0 #000;
+        cursor:pointer;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 1px 1px 5px rgba(0,0,0,.5);
+    }
+}
+@mixin raise() {
+    &:hover{
+      box-shadow: 0 0 3px #333;
+      border-radius: 3px;
+      @include transition(0.3s);
+    }
+}

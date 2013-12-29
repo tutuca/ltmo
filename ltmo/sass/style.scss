@@ -1,18 +1,6 @@
-@font-face {
-    font-family: 'Entypo';
-    src: url('../fonts/entypo.eot');
-    src: url('../fonts/entypo.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/entypo.woff') format('woff'),
-         url('../fonts/entypo.ttf') format('truetype'),
-         url('../fonts/entypo.svg#../fonts/entypoRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
 @import "pygments";
+@import "base";
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
-
-$fg_color:#06C;
 
 .wrapper {
     padding: 0.5em 1em;
@@ -102,9 +90,11 @@ section {
 article img, article object {
     display:block;
     margin: 0.5em auto;
-    max-width: 90%;
 }
 
+article object  {
+    max-width: 90%;
+}
 .detail {
     text-align: right;
     font-size:80%;
@@ -162,7 +152,6 @@ a{
     color :$fg_color;
     &:hover {
         text-shadow: 0 -1px 0 #FFF, 0 1px 0 #000; 
-        color:#E0E0EF;
 
     }
 }
@@ -199,7 +188,6 @@ h2 {
 #logo {
     margin:0;
     padding: 0.2em 0;
-
     color: #555;
     font-size: 1.6em;
 }
@@ -277,7 +265,6 @@ h2 {
     padding: 0;
     height: 100%;
     width:3em;
-    font-family: Entypo;
     strong {
         position: absolute;
         padding: 0;
@@ -321,8 +308,11 @@ h2 {
 
 nav {
     float: right;
-    font:2.5em Entypo;
-    padding: 0 0.5em;
+    font-size:1.5em ;
+    padding: 0.25em 0.5em;
+    .user {
+        font-size:0.5em;
+    }
 }
 .session {
     font-size: 100%;
@@ -388,7 +378,6 @@ textarea {
 input[type='email']:focus,
 input[type='password']:focus,
 input[type='text']:focus, 
-input[type='submit']:focus,
 textarea:focus{
     border: 1px solid #0C6;
     outline:0 !important;
@@ -420,10 +409,8 @@ textarea:focus{
     right: 0;
 }
 label {
-    float:left;
-    width: 10em;
-    margin: 0.5em 1em;
-    text-align:right;
+    display:block;
+    margin: 0.5em 0 0;
     font-size:80%;
 }
 form span {
@@ -433,29 +420,22 @@ form span {
     font-weight:bold;
     color:#C60;
 }
-
 input[type='submit'] {
-    padding:0.25em 1em 0.25em 2em;
-    margin:0.25em 0;
-    background: $fg_color url(../img/apply.png) no-repeat 5px center ;
-    color:#FFF;
-    text-shadow: 1px 1px 0px #333;
-    border-radius:15px;
-    outline:none;
+    @include button;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 1px 1px 2px #000;
+    }
+    &:active {
+        margin:4px -2px 0 0;
+    }
 }
 #leak-form input[type='submit'] {
     float:left;
 }
-input[type='submit']:hover {
-    cursor: pointer;
-    box-shadow: 1px 1px 2px #000;
+#id_title, #id_description {
+    width: 100%;
 }
-input[type='submit']:active {
-    margin:4px -2px 0 0;
-    
-}
-
-
 .ui-autocomplete {
     list-style: none;
     position:fixed !important;
@@ -473,11 +453,38 @@ input[type='submit']:active {
     background:#0C6;
     color:#FFF;
 }
-
+#login-form {
+    float:left;
+}
+#register-form {
+    float:left;
+    width: 40%;
+    padding:1em;
+    h3 {
+        text-align: center;
+    }
+}
 #id_description.hover {
     border:3px solid #900;
     background: #EEE;
 }
 .hidden-detail {
     display:none !important;
+}
+.login {
+    display:inline-block;
+    padding: 0.25em 1em ;
+    font-weight: bold;
+    border-radius:3px;
+    color: white;
+    &:hover  {
+        text-shadow: none;
+    }
+}
+.login.facebook {
+    @include gradient(#3B5998)
+
+}
+.login.google {
+    @include gradient(#F90101)
 }

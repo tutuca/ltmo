@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 
+<<<<<<< HEAD
 from django.conf.urls import include, patterns
 from django.http import HttpResponse
 from django.contrib.sitemaps import GenericSitemap
 from django.contrib import admin
-from django.views.generic import TemplateView
 
 from ltmo.feeds import LeakFeed
 from ltmo.models import Leak
@@ -29,6 +29,7 @@ urlpatterns = patterns('ltmo.views',
     (r'^leak/(?P<tag_name>\D+)$','by_tag',{},'by_tag'),
     (r'^leak/(?P<id>\d+)$','leak_detail',{},'leak_detail'),
     (r'^tags/','tags',{},'tags'),
+    (r'^~$', 'profile_detail', {}, 'author'),
     (r'^~(?P<username>\w+)/$','profile_detail', {}, 'author_detail'),
     (r'^register$','register',{},'register'),
 )
@@ -37,6 +38,10 @@ urlpatterns += patterns('django.contrib.auth.views',
     (r'login$', 'login', {'template_name':'login.html'}, 'login'),
     (r'^logout$', 'logout', {'next_page':'/'}, 'logout'),
 )
+
+urlpatterns += patterns('',
+    (r'', include('social_auth.urls')))
+
 urlpatterns += patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^feed/$',LeakFeed()),
