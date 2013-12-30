@@ -140,6 +140,10 @@ INSTALLED_APPS = (
     'banners',
     'ltmo',
 )
+# XXX: Remove this 
+# Modify temporarily the session serializer because the json serializer in
+# Django 1.6 can't serialize openid.yadis.manager.YadisServiceManager objects
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 try:
     from local_settings import *

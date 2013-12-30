@@ -2,7 +2,7 @@ Has pedido una cuenta nueva en {{site.name}}
 
 Siga el siguiente enlace para completar la activación:
 {{site}}
-http://{{ site.domain }}{% url registration_activate activation_key %}
+http://{{ site.domain }}{% url 'registration_activate' activation_key %}
 
 Si no pediste esta cuenta podés ignorar este mensaje. 
 El pedido vencerá en 3 días

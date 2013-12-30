@@ -27,8 +27,8 @@ urlpatterns = patterns('ltmo.views',
     (r'^leak/(?P<tag_name>\D+)$','by_tag',{},'by_tag'),
     (r'^leak/(?P<id>\d+)$','leak_detail',{},'leak_detail'),
     (r'^tags/','tags',{},'tags'),
-    (r'^~$', 'profile_detail', {}, 'author'),
-    (r'^~(?P<username>\w+)/$','profile_detail', {}, 'author_detail'),
+    (r'^~$', 'user_profile', {}, 'author'),
+    (r'^~(?P<username>\w+)/$','user_profile', {}, 'author_detail'),
     (r'^register$','register',{},'register'),
 )
 
