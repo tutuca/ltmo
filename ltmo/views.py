@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-
+import json
 from django.conf import settings
 from django.core.mail import send_mail
-from django.utils import simplejson as json
 from django.contrib.auth.models import User
-from django.contrib import messages, auth 
 from django.http import HttpResponse
 from django.shortcuts import redirect, get_object_or_404, render
 from tagging.models import Tag
@@ -13,12 +11,12 @@ from django.contrib.auth.decorators import login_required
 from ltmo.forms import LeakForm, RegisterForm
 from ltmo.models import Leak
 
+
 def index(request):
     try:
         queryset = Leak.objects.all().order_by('-created')
         latest = queryset.latest('created')
-    
-    except Leak.DoesNotExist, e:
+    except Leak.DoesNotExist:
         queryset = None
         latest = None
     return render(
@@ -36,10 +34,9 @@ def edit(request, id=None):
         leak = get_object_or_404(Leak, pk=id)
         form = LeakForm(instance=leak)
     else:
-        form = LeakForm(initial={'author':request.user})
+        form = LeakForm(initial={'author':request.user.username})
         leak = None
     if request.method == 'POST':
-        next = request.POST['next']
         form = LeakForm(request.POST, instance=leak)
         if form.is_valid():
             leak = form.save()
@@ -94,23 +91,19 @@ def tags(request):
         mimetype="application/json"
     )
     
-def profile_detail(request, username):
-    queryset = Leak.objects.filter(author__icontains=username).order_by('-created')
-
-    try:
-        author = User.objects.get(username__icontains=username)
-    except :
-        author = None
-
+def user_profile(request, username):
+    author = get_object_or_404(User, username=username)
+    queryset = Leak.objects.filter(author=author.username).order_by('-created')
     return render(
         request,
         'profile.html',
         {
             'object_list': queryset,
             'author':author,
-            'is_me':request.user.username == 'username',
+            'is_me':request.user == author,
         }
     )
+
 
 def register(request,):
     form = RegisterForm()

@@ -2,14 +2,16 @@
 {%  load tagging_tags pagination_tags banner_tags %}
 <html lang='es'>
 <head>
+
     <meta charset="utf-8" />
     <title>{% block title %}Igual que a Scioli, a veces se nos va la mano{% endblock %}.ltmo</title>
     <link rel="icon" type="image/png" href="/static/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="LTMO, una especie de sucursal de la British Petroleum.{% block meta-description %}{% endblock %}" />
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />    
-    <link rel="stylesheet" href="/static/css/code.css" type="text/css" media="screen" />
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/ui.js"></script>
     <script src="/static/js/ltmo.js"></script>
@@ -26,17 +28,15 @@
 <header>
     <div class="wrapper">
         <nav>
-        <a href="/new/" id="new-leak">nuevo</a>
-        <a href="#help" class="control" title="Ayudaaaaaaa"><img src="/static/img/help.png" /></a>
+        <a href="/new/" id="new-leak" class="fa fa-tint"></a>
+        <a href="#help" class="control fa fa-question" title="Ayudaaaaaaa"></a>
         {% if not user.is_authenticated %}
-        <a href="/login" class="session" ><img src="/static/img/login.png" alt="Ingresar" /></a>
+        <a href="/login" class="session fa fa-sign-in" title="Entrar" /></a>
         {% else %}
-        <a href="/logout" class="session" title="{{user}}" ><img src="/static/img/logout.png" alt="Salir" /></a>
+        <a href="/logout" class="session fa fa-sign-out" title="{{user}}" ></a>
         {% endif %}
         </nav>
-        <h1 id="logo">
-        {% block logo %}<a href="http://{{request.get_host}}" title="Bienvenido">ltmo</a>:/{% endblock %}
-        </h1>
+        <h1 id="logo">{% block logo %}<a href="http://{{request.get_host}}" title="Bienvenido"> ltmo</a>:/{% endblock %}</h1>
     </div>
 </header>
 <div id="main">

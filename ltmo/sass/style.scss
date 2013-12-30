@@ -1,10 +1,14 @@
-$fg_color:#06C;;
+@import "pygments";
+@import "base";
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
+
 .wrapper {
     padding: 0.5em 1em;
 }
 body {
-    font: 100% sans-serif;
-    background: #333;
+    font: 100% "Droid Sans", sans-serif;
+    background: #EEE;
+
     padding:0;
     margin: 0;
 }
@@ -22,7 +26,7 @@ header {
     top:0;
     left: 0;
     z-index:9999;
-    box-shadow: 0 1px 3px #000;
+    box-shadow: 0 1px 2px #555;
     .wrapper {
         padding: 0 1em;
     }
@@ -62,10 +66,9 @@ section {
         position:relative;
         margin:2em auto;
         width:40em;
-        color: #DDD;
         p {
             color: #000;
-            text-shadow: 0 1px 1px solid #FFF;
+            text-shadow: 0 1px 1px #FFF;
         }
     }
     .leak{
@@ -87,9 +90,11 @@ section {
 article img, article object {
     display:block;
     margin: 0.5em auto;
-    max-width: 90%;
 }
 
+article object  {
+    max-width: 90%;
+}
 .detail {
     text-align: right;
     font-size:80%;
@@ -105,7 +110,7 @@ article img, article object {
     left: 0;
     margin: 0;
     p {
-        padding: 0 6em;
+        padding: 0 3em;
         margin: 0;
 
     }
@@ -116,7 +121,8 @@ article img, article object {
 
 }
 #tagcloud {
-    float:left;
+    position: absolute;
+    bottom: 0;
     text-align:left;
     margin-top: -1em !important;
 }
@@ -129,8 +135,9 @@ aside {
     right:1em;
 }
 pre, code {
-    font: 110% monospace;
+    font: 110% "Droid Sans Mono",monospace;
     white-space: pre-wrap;
+    color:$solarized_base1;
 }
 
 blockquote{
@@ -139,14 +146,14 @@ blockquote{
     margin: 1em auto;
 }
 
-a {
-   color: $fg_color;
-   text-decoration:none;
-    transition: all 0.3s;
-}
-a:hover {
-    text-shadow: 0 1px 2px #000;
-    transition: all 0.3s;
+a{
+    border: 1px solid transparent;
+    text-decoration:none;
+    color :$fg_color;
+    &:hover {
+        text-shadow: 0 -1px 0 #FFF, 0 1px 0 #000; 
+
+    }
 }
 
 a img{
@@ -180,10 +187,9 @@ h2 {
 }
 #logo {
     margin:0;
-    background:url(../img/home.png) no-repeat left center;
-    padding: 0.2em 0 0.2em 2em;
-    font-size:1.3em;
+    padding: 0.2em 0;
     color: #555;
+    font-size: 1.6em;
 }
 #banner-header {
     float:right;
@@ -266,7 +272,6 @@ h2 {
         margin-top: 0;
         top: 50%;
         font-size:2em;
-        font-family: monospace;
         color: #555;
         opacity: 0.5;
         font-size:4em;
@@ -303,33 +308,11 @@ h2 {
 
 nav {
     float: right;
-    padding: 0.5em;
-    a{
-        margin: 0.5em;
-        border: 1px solid transparent;
-        padding: 0.25em;
+    font-size:1.5em ;
+    padding: 0.25em 0.5em;
+    .user {
+        font-size:0.5em;
     }
-
-    img {
-        vertical-align: middle;
-    }
-}
-#new-leak {
-    background: url(../img/add.png) no-repeat;
-    background-position: center right;
-    width: 1em;
-    overflow: hidden;
-    color:transparent;
-    transition: all 0.3s;
-}
-#new-leak:hover {
-    padding: 0.25em 2em 0.25em 0.5em;
-    width: 2.5em;
-    color:$fg_color;
-    border: 1px solid rgba(255, 255, 0, 0.5);
-    border-radius: 25px;
-    box-shadow: inset 1px 1px 2px #CCC, 0 0 5px #FF0;
-    
 }
 .session {
     font-size: 100%;
@@ -346,6 +329,9 @@ form {
     }
     section{
         margin-bottom:1em;
+        width:50%;
+        position:relative;
+        text-align: left;
     }
 }
 .submit {
@@ -392,7 +378,6 @@ textarea {
 input[type='email']:focus,
 input[type='password']:focus,
 input[type='text']:focus, 
-input[type='submit']:focus,
 textarea:focus{
     border: 1px solid #0C6;
     outline:0 !important;
@@ -421,13 +406,11 @@ textarea:focus{
     box-shadow: 1px 2px 7px #000;
     z-index: 99999;
     position: absolute;
-    left: 48%;
+    right: 0;
 }
 label {
-    float:left;
-    width: 6em;
-    margin: 0.5em 1em;
-    text-align:right;
+    display:block;
+    margin: 0.5em 0 0;
     font-size:80%;
 }
 form span {
@@ -437,29 +420,22 @@ form span {
     font-weight:bold;
     color:#C60;
 }
-
 input[type='submit'] {
-    padding:0.25em 1em 0.25em 2em;
-    margin:0.25em 0;
-    background: $fg_color url(../img/apply.png) no-repeat 5px center ;
-    color:#FFF;
-    text-shadow: 1px 1px 0px #333;
-    border-radius:15px;
-    outline:none;
+    @include button;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 1px 1px 2px #000;
+    }
+    &:active {
+        margin:4px -2px 0 0;
+    }
 }
 #leak-form input[type='submit'] {
     float:left;
 }
-input[type='submit']:hover {
-    cursor: pointer;
-    box-shadow: 1px 1px 2px #000;
+#id_title, #id_description {
+    width: 100%;
 }
-input[type='submit']:active {
-    margin:4px -2px 0 0;
-    
-}
-
-
 .ui-autocomplete {
     list-style: none;
     position:fixed !important;
@@ -477,11 +453,38 @@ input[type='submit']:active {
     background:#0C6;
     color:#FFF;
 }
-
+#login-form {
+    float:left;
+}
+#register-form {
+    float:left;
+    width: 40%;
+    padding:1em;
+    h3 {
+        text-align: center;
+    }
+}
 #id_description.hover {
     border:3px solid #900;
     background: #EEE;
 }
 .hidden-detail {
     display:none !important;
+}
+.login {
+    display:inline-block;
+    padding: 0.25em 1em ;
+    font-weight: bold;
+    border-radius:3px;
+    color: white;
+    &:hover  {
+        text-shadow: none;
+    }
+}
+.login.facebook {
+    @include gradient(#3B5998)
+
+}
+.login.google {
+    @include gradient(#F90101)
 }

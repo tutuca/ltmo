@@ -9,6 +9,6 @@ pip-log.txt
 etc/*
 apps/*
 static/admin/*
-
-
 dump/*
+ltmo/.sass-cache/
+ltmo/media

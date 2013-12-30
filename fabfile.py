@@ -10,11 +10,9 @@ EX: fab staging:admin release
 """
 
 import os
-import sys
-import tempfile
 import datetime
 from string import Template
-from fabric.api import env, run, local, require, put, sudo, prompt, cd
+from fabric.api import env, run, local, require, put
 
 BASE_DIR = os.path.dirname(__file__)
 
@@ -33,7 +31,7 @@ def production(username="mherrero", hosts=["ltmo.com.ar"]):
     env.hosts = hosts
     env.project_name = BASE_DIR.split('/')[-1:].pop()
     env.deploy_dir = '/home/mherrero/webapps/ltmo/src/ltmo'
-    env.virtual_env = '/home/mherrero/webapps/ltmo/venv'
+    env.virtual_env = '/home/mherrero/webapps/ltmo'
     env.apache_command = '/home/mherrero/webapps/ltmo/apache2/bin/restart'
     
 def write_template(file_name, template_name):
