@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
-<<<<<<< HEAD
 from django.conf.urls import include, patterns
 from django.http import HttpResponse
 from django.contrib.sitemaps import GenericSitemap

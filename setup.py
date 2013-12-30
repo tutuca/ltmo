@@ -19,8 +19,8 @@ setup(
     },
     include_package_data=True,
     zip_safe=False,
+    py_modules = ["ltmo.mdx_urlize", "ltmo.mdx_video"],
     entry_points = {
-<<<<<<< HEAD
         'console_scripts': [
             'manage = ltmo.manage:do_manage',
         ],
@@ -30,6 +30,7 @@ setup(
         'Pillow',
         'django-tagging',
         'django-pagination',
+        'django-registration',
         'django-social-auth',
         'django-debug-toolbar',
         'markdown',
@@ -37,21 +38,4 @@ setup(
         'south',
         #'psycopg2',
         ],
-=======
-    'console_scripts': [
-        'manage = ltmo.manage:do_manage',
-        ],
-    },
-    install_requires=[
-        'Pillow',
-        'django==1.4.2',
-        'django-tagging',
-        'Markdown',
-        'pygments',
-        'django-pagination',
-        'psycopg2',
-        'south',
-        'django-debug-toolbar',
-        ]
->>>>>>> unstable
     )

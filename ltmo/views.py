@@ -91,7 +91,6 @@ def tags(request):
         mimetype="application/json"
     )
     
-<<<<<<< HEAD
 def profile_detail(request, username):
     author = User.objects.get_or_404(User, username=username)
     queryset = Leak.objects.filter(author=author.username).order_by('-created')
