@@ -14,13 +14,13 @@ Test Metacafe
 
 >>> s = "http://www.metacafe.com/watch/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room/"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://www.metacafe.com/fplayer/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room.swf" height="423" type="application/x-shockwave-flash" width="498"><param name="movie" value="http://www.metacafe.com/fplayer/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room.swf" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.metacafe.com/fplayer/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room.swf" height="423" type="application/x-shockwave-flash" width="498"><param name="movie" value="http://www.metacafe.com/fplayer/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room.swf"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 
 Test Metacafe with arguments
 
 >>> markdown.markdown(s, ['video(metacafe_width=500,metacafe_height=425)'])
-u'<p><object data="http://www.metacafe.com/fplayer/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room.swf" height="425" type="application/x-shockwave-flash" width="500"><param name="movie" value="http://www.metacafe.com/fplayer/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room.swf" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.metacafe.com/fplayer/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room.swf" height="425" type="application/x-shockwave-flash" width="500"><param name="movie" value="http://www.metacafe.com/fplayer/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room.swf"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 
 Test Link To Metacafe
@@ -34,7 +34,7 @@ Test Markdown Escaping
 
 >>> s = "\\http://www.metacafe.com/watch/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room/"
 >>> markdown.markdown(s, ['video'])
-u'<p>http://www.metacafe.com/watch/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room/</p>'
+u'<p>\\\\http://www.metacafe.com/watch/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room/</p>'
 >>> s = "`http://www.metacafe.com/watch/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room/`"
 >>> markdown.markdown(s, ['video'])
 u'<p><code>http://www.metacafe.com/watch/yt-tZMsrrQCnx8/pycon_2008_django_sprint_room/</code></p>'
@@ -44,13 +44,13 @@ Test Youtube
 
 >>> s = "http://www.youtube.com/watch?v=u1mA-0w8XPo&hd=1&fs=1&feature=PlayList&p=34C6046F7FEACFD3&playnext=1&playnext_from=PL&index=1"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://www.youtube.com/v/u1mA-0w8XPo&amp;hd=1&amp;fs=1&amp;feature=PlayList&amp;p=34C6046F7FEACFD3&amp;playnext=1&amp;playnext_from=PL&amp;index=1" height="344" type="application/x-shockwave-flash" width="425"><param name="movie" value="http://www.youtube.com/v/u1mA-0w8XPo&amp;hd=1&amp;fs=1&amp;feature=PlayList&amp;p=34C6046F7FEACFD3&amp;playnext=1&amp;playnext_from=PL&amp;index=1" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.youtube.com/v/u1mA-0w8XPo&amp;hd=1&amp;fs=1&amp;feature=PlayList&amp;p=34C6046F7FEACFD3&amp;playnext=1&amp;playnext_from=PL&amp;index=1" height="344" type="application/x-shockwave-flash" width="425"><param name="movie" value="http://www.youtube.com/v/u1mA-0w8XPo&amp;hd=1&amp;fs=1&amp;feature=PlayList&amp;p=34C6046F7FEACFD3&amp;playnext=1&amp;playnext_from=PL&amp;index=1"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 
 Test Youtube with argument
 
 >>> markdown.markdown(s, ['video(youtube_width=200,youtube_height=100)'])
-u'<p><object data="http://www.youtube.com/v/u1mA-0w8XPo&amp;hd=1&amp;fs=1&amp;feature=PlayList&amp;p=34C6046F7FEACFD3&amp;playnext=1&amp;playnext_from=PL&amp;index=1" height="100" type="application/x-shockwave-flash" width="200"><param name="movie" value="http://www.youtube.com/v/u1mA-0w8XPo&amp;hd=1&amp;fs=1&amp;feature=PlayList&amp;p=34C6046F7FEACFD3&amp;playnext=1&amp;playnext_from=PL&amp;index=1" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.youtube.com/v/u1mA-0w8XPo&amp;hd=1&amp;fs=1&amp;feature=PlayList&amp;p=34C6046F7FEACFD3&amp;playnext=1&amp;playnext_from=PL&amp;index=1" height="100" type="application/x-shockwave-flash" width="200"><param name="movie" value="http://www.youtube.com/v/u1mA-0w8XPo&amp;hd=1&amp;fs=1&amp;feature=PlayList&amp;p=34C6046F7FEACFD3&amp;playnext=1&amp;playnext_from=PL&amp;index=1"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 
 Test Youtube Link
@@ -71,70 +71,71 @@ Test Dailymotion
 
 >>> s = "http://www.dailymotion.com/relevance/search/ut2004/video/x3kv65_ut2004-ownage_videogames"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://www.dailymotion.com/swf/x3kv65_ut2004-ownage_videogames" height="405" type="application/x-shockwave-flash" width="480"><param name="movie" value="http://www.dailymotion.com/swf/x3kv65_ut2004-ownage_videogames" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.dailymotion.com/swf/x3kv65_ut2004-ownage_videogames" height="405" type="application/x-shockwave-flash" width="480"><param name="movie" value="http://www.dailymotion.com/swf/x3kv65_ut2004-ownage_videogames"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 
 Test Dailymotion again (Dailymotion and their crazy URLs)
 
 >>> s = "http://www.dailymotion.com/us/video/x8qak3_iron-man-vs-bruce-lee_fun"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://www.dailymotion.com/swf/x8qak3_iron-man-vs-bruce-lee_fun" height="405" type="application/x-shockwave-flash" width="480"><param name="movie" value="http://www.dailymotion.com/swf/x8qak3_iron-man-vs-bruce-lee_fun" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.dailymotion.com/swf/x8qak3_iron-man-vs-bruce-lee_fun" height="405" type="application/x-shockwave-flash" width="480"><param name="movie" value="http://www.dailymotion.com/swf/x8qak3_iron-man-vs-bruce-lee_fun"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 
 Test Yahoo! Video
 
 >>> s = "http://video.yahoo.com/watch/1981791/4769603"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.40" height="322" type="application/x-shockwave-flash" width="512"><param name="movie" value="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.40" /><param name="allowFullScreen" value="true" /><param name="flashVars" value="id=4769603&amp;vid=1981791" /></object></p>'
+u'<p><object data="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.40" height="322" type="application/x-shockwave-flash" width="512"><param name="movie" value="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.40"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param><param name="flashVars" value="id=4769603&amp;vid=1981791"></param></object></p>'
 
 
 Test Veoh Video
 
 >>> s = "http://www.veoh.com/search/videos/q/mario#watch%3De129555XxCZanYD"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://www.veoh.com/videodetails2.swf?permalinkId=e129555XxCZanYD" height="341" type="application/x-shockwave-flash" width="410"><param name="movie" value="http://www.veoh.com/videodetails2.swf?permalinkId=e129555XxCZanYD" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.veoh.com/videodetails2.swf?permalinkId=e129555XxCZanYD" height="341" type="application/x-shockwave-flash" width="410"><param name="movie" value="http://www.veoh.com/videodetails2.swf?permalinkId=e129555XxCZanYD"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 
 Test Veoh Video Again (More fun URLs)
 
 >>> s = "http://www.veoh.com/group/BigCatRescuers#watch%3Dv16771056hFtSBYEr"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://www.veoh.com/videodetails2.swf?permalinkId=v16771056hFtSBYEr" height="341" type="application/x-shockwave-flash" width="410"><param name="movie" value="http://www.veoh.com/videodetails2.swf?permalinkId=v16771056hFtSBYEr" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.veoh.com/videodetails2.swf?permalinkId=v16771056hFtSBYEr" height="341" type="application/x-shockwave-flash" width="410"><param name="movie" value="http://www.veoh.com/videodetails2.swf?permalinkId=v16771056hFtSBYEr"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 
 Test Veoh Video Yet Again (Even more fun URLs)
 
 >>> s = "http://www.veoh.com/browse/videos/category/anime/watch/v181645607JyXPWcQ"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://www.veoh.com/videodetails2.swf?permalinkId=v181645607JyXPWcQ" height="341" type="application/x-shockwave-flash" width="410"><param name="movie" value="http://www.veoh.com/videodetails2.swf?permalinkId=v181645607JyXPWcQ" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.veoh.com/videodetails2.swf?permalinkId=v181645607JyXPWcQ" height="341" type="application/x-shockwave-flash" width="410"><param name="movie" value="http://www.veoh.com/videodetails2.swf?permalinkId=v181645607JyXPWcQ"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 
 Test Vimeo Video
 
 >>> s = "http://www.vimeo.com/1496152"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://vimeo.com/moogaloop.swf?clip_id=1496152&amp;amp;server=vimeo.com" height="321" type="application/x-shockwave-flash" width="400"><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=1496152&amp;amp;server=vimeo.com" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://vimeo.com/moogaloop.swf?clip_id=1496152&amp;amp;server=vimeo.com" height="321" type="application/x-shockwave-flash" width="400"><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=1496152&amp;amp;server=vimeo.com"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 Test Vimeo Video with some GET values
 
 >>> s = "http://vimeo.com/1496152?test=test"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://vimeo.com/moogaloop.swf?clip_id=1496152&amp;amp;server=vimeo.com" height="321" type="application/x-shockwave-flash" width="400"><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=1496152&amp;amp;server=vimeo.com" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://vimeo.com/moogaloop.swf?clip_id=1496152&amp;amp;server=vimeo.com" height="321" type="application/x-shockwave-flash" width="400"><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=1496152&amp;amp;server=vimeo.com"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 Test Blip.tv
 
 >>> s = "http://blip.tv/file/get/Pycon-PlenarySprintIntro563.flv"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://blip.tv/scripts/flash/showplayer.swf?file=http://blip.tv/file/get/Pycon-PlenarySprintIntro563.flv" height="300" type="application/x-shockwave-flash" width="480"><param name="movie" value="http://blip.tv/scripts/flash/showplayer.swf?file=http://blip.tv/file/get/Pycon-PlenarySprintIntro563.flv" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://blip.tv/scripts/flash/showplayer.swf?file=http://blip.tv/file/get/Pycon-PlenarySprintIntro563.flv" height="300" type="application/x-shockwave-flash" width="480"><param name="movie" value="http://blip.tv/scripts/flash/showplayer.swf?file=http://blip.tv/file/get/Pycon-PlenarySprintIntro563.flv"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 
 Test Gametrailers
 
 >>> s = "http://www.gametrailers.com/video/console-comparison-borderlands/58079"
 >>> markdown.markdown(s, ['video'])
-u'<p><object data="http://www.gametrailers.com/remote_wrap.php?mid=58079" height="392" type="application/x-shockwave-flash" width="480"><param name="movie" value="http://www.gametrailers.com/remote_wrap.php?mid=58079" /><param name="allowFullScreen" value="true" /></object></p>'
+u'<p><object data="http://www.gametrailers.com/remote_wrap.php?mid=58079" height="392" type="application/x-shockwave-flash" width="480"><param name="movie" value="http://www.gametrailers.com/remote_wrap.php?mid=58079"></param><param name="wmode" value="opaque"></param><param name="allowFullScreen" value="true"></param></object></p>'
 """
 
 import markdown
+from markdown.util import etree
 
 version = "0.1.6"
 
@@ -238,7 +239,7 @@ class Yahoo(markdown.inlinepatterns.Pattern):
         width = self.ext.config['yahoo_width'][0]
         height = self.ext.config['yahoo_height'][0]
         obj = flash_object(url, width, height)
-        param = markdown.etree.Element('param')
+        param = etree.Element('param')
         param.set('name', 'flashVars')
         param.set('value', "id=%s&vid=%s" % (m.group('yahooid'),
                 m.group('yahoovid')))
@@ -253,24 +254,24 @@ class Youtube(markdown.inlinepatterns.Pattern):
         return flash_object(url, width, height)
 
 def flash_object(url, width, height):
-        obj = markdown.etree.Element('object')
+        obj = etree.Element('object')
         obj.set('type', 'application/x-shockwave-flash')
         obj.set('width', width)
         obj.set('height', height)
         obj.set('data', url)
-        param = markdown.etree.Element('param')
+        param = etree.Element('param')
         param.set('name', 'movie')
         param.set('value', url)
         obj.append(param)
-        param = markdown.etree.Element('param')
+        param = etree.Element('param')
         param.set('name', 'wmode')
         param.set('value', 'opaque')
         obj.append(param)
-        param = markdown.etree.Element('param')
+        param = etree.Element('param')
         param.set('name', 'allowFullScreen')
         param.set('value', 'true')
         obj.append(param)
-        #param = markdown.etree.Element('param')
+        #param = etree.Element('param')
         #param.set('name', 'allowScriptAccess')
         #param.set('value', 'sameDomain')
         #obj.append(param)
