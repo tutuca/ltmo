@@ -57,3 +57,42 @@ $fg_color:  $blue;
       @include transition(0.3s);
     }
 }
+
+@mixin tooltip($size:5px, $background:$red, $border-color:transparent, $offset: 1px){
+
+    list-style: none;
+    font-size: 80%;
+    margin: 0;
+    background: $background;
+    padding: 2px 4px;
+    border-radius: 5px;
+    color: #FFF;
+    text-shadow: 0 1px 0 #000;
+    z-index: 99999;
+    position: absolute;
+    left: 8em;
+    border: $offset solid $border-color;
+    &:after, &:before {
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-right-color: $background;
+        border-width: $size;
+        margin-top: -$size;
+    }
+    &:before {
+        border-color: rgba(194, 225, 245, 0);
+        border-right-color: $border-color;
+        border-width: $size + 2px;
+        margin-top: -$size - 2px;
+    }
+}
