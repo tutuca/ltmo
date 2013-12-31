@@ -36,6 +36,7 @@ def edit(request, id=None):
     else:
         form = LeakForm(initial={'author':request.user.username})
         leak = None
+
     if request.method == 'POST':
         form = LeakForm(request.POST, instance=leak)
         if form.is_valid():
@@ -91,8 +92,11 @@ def tags(request):
         mimetype="application/json"
     )
     
-def user_profile(request, username):
-    author = get_object_or_404(User, username=username)
+def user_profile(request, username=None):
+    if username is not None:
+        author = get_object_or_404(User, username=username)
+    else :
+        author = request.user
     queryset = Leak.objects.filter(author=author.username).order_by('-created')
     return render(
         request,

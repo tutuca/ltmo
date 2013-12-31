@@ -28,19 +28,26 @@ $fg_color:  $blue;
    background-image: -o-linear-gradient($direction, $color, darken($color, 10%));
 }
 @mixin button($fg:#FFF, $bg:$green, $border:$base1){
-    border: none;
-    border-radius: 0.3em;
     @include gradient($bg);
+    @include transition(0.3s);
+    border: none;
+    border-radius: 5px;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 1px rgba(0,0,0,.05);
-    padding: 0.25em 0.5em;
+    padding: 2px 6px;
     font-size:1.2em;
     text-shadow: 0 1px 1px #333;
     margin:0 0.3em;
     color: $fg;
+    
+    &:active {
+        @include transition(0.1s);        
+        @include gradient($bg, 'bottom');
+    }
     &:hover{
+        @include transition(0.4s);
         text-shadow: 0 1px 0 #000;
-        cursor:pointer;
-        box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), 1px 1px 5px rgba(0,0,0,.5);
+        cursor:pointer!important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,0.2), -1px 1px 3px rgba(0,0,0,.5);
     }
 }
 @mixin raise() {
