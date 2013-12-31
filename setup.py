@@ -19,7 +19,6 @@ setup(
     },
     include_package_data=True,
     zip_safe=False,
-    py_modules = ["ltmo.mdx_urlize", "ltmo.mdx_video"],
     entry_points = {
         'console_scripts': [
             'manage = ltmo.manage:do_manage',
