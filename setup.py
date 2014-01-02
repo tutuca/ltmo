@@ -35,6 +35,7 @@ setup(
         'markdown',
         'pygments',
         'south',
+        'banners'
         #'psycopg2',
         ],
     )
