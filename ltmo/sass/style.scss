@@ -25,6 +25,7 @@ header {
     padding:0;
     margin: 0;
     position: fixed;
+    @include gradient(rgba(255,255,255,0.7));
     top:0;
     left: 0;
     z-index:9999;
@@ -264,19 +265,23 @@ h2 {
     padding: 0;
     height: 100%;
     width:3em;
+    outline: 0;
     strong {
-        position: absolute;
-        padding: 0;
+        @include transition(0.3s);
+        position: fixed;
         display: block;
+        padding:2px 5px;
         margin-top: 0;
         top: 50%;
         font-size:2em;
-        color: #555;
-        opacity: 0.5;
+        color: rgba(100,100,100, 0.5);
         font-size:4em;
     }
     &:hover strong {
-        color: rgba(0, 102, 204, 1);
+        @include transition(0.1s);
+        font-size:8em;
+        margin-top:-0.25em;
+        color: $green;
     }
 
 }
@@ -382,31 +387,15 @@ textarea:focus{
     outline:0 !important;
     box-shadow: 0 0 2px #FC0;
 }
-.error {
-    background: #FEA;
-    border-radius: 5px;
-
-}
 .error input, 
 .error textarea {
     border: 1px solid #C60!important;
     box-shadow: 0 0 2px #F00!important;
 }
 .errorlist{
-    list-style: none;
-    margin: 0.5em;
-    font-size: 80%;
-    padding: 0;
-    margin: 1em 0;
-    background: white;
-    width: 23em;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 1px 2px 7px #000;
-    z-index: 99999;
-    position: absolute;
-    right: 0;
+    @include tooltip();
 }
+
 label {
     display:block;
     margin: 0.5em 0 0;
@@ -421,13 +410,6 @@ form span {
 }
 input[type='submit'] {
     @include button;
-    &:hover {
-        cursor: pointer;
-        box-shadow: 1px 1px 2px #000;
-    }
-    &:active {
-        margin:4px -2px 0 0;
-    }
 }
 #leak-form input[type='submit'] {
     float:left;

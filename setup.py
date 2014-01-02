@@ -7,32 +7,34 @@ setup(
     description="light weight blogging, heavy weight time-wasting",
     # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-    "Programming Language :: Python",
-    "Topic :: Software Development :: Libraries :: Python Modules",
+        "Programming Language :: Python",
+        "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     keywords='Blog, Django',
     author='Inventta',
     author_email='maturburu@gmail.com',
     url='http://ltmo.com.ar',
     package_data={
-    'ltmo' : ['templates/*.html'],
+        'ltmo' : ['templates/*.html'],
     },
     include_package_data=True,
     zip_safe=False,
     entry_points = {
-    'console_scripts': [
-        'manage = ltmo.manage:do_manage',
+        'console_scripts': [
+            'manage = ltmo.manage:do_manage',
         ],
     },
     install_requires=[
+        'django',
         'Pillow',
-        'django==1.4.2',
         'django-tagging',
-        'Markdown',
-        'pygments',
         'django-pagination',
-        'psycopg2',
-        'south',
+        'django-registration',
+        'django-social-auth',
         'django-debug-toolbar',
-        ]
+        'markdown',
+        'pygments',
+        'south',
+        #'psycopg2',
+        ],
     )

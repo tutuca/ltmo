@@ -46,7 +46,7 @@ a [class^="icon-"], a [class*=" icon-"] { display: inline-block; }
 li [class^="icon-"], li [class*=" icon-"], .nav li [class^="icon-"], .nav li [class*=" icon-"] { display: inline-block; width: 1.25em; text-align: center; }
 li [class^="icon-"].icon-large, li [class*=" icon-"].icon-large, .nav li [class^="icon-"].icon-large, .nav li [class*=" icon-"].icon-large { /* increased font size for icon-large */ width: 1.5625em; }
 
-ul.icons { list-style-type: none; text-indent: -.75em; }
+ul.icons { list-style-type: none; text-indent: -0.75em; }
 ul.icons li [class^="icon-"], ul.icons li [class*=" icon-"] { width: .75em; }
 
 .icon-muted { color: #eeeeee; }

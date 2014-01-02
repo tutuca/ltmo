@@ -7,6 +7,8 @@ from django.contrib import admin
 from django.template.defaultfilters import slugify
 from markdown import markdown
 
+
+
 class Leak(models.Model):
     slug = models.SlugField(editable=False, blank=True, null=True)
     title = models.CharField(max_length=126, blank=True, null=True)
@@ -32,14 +34,14 @@ class Leak(models.Model):
     def get_absolute_url(self):
         return ('leak_detail', [self.id])
 
-    def save(self):
+    def save(self, *args, **kwargs):
         self.rendered = markdown(
             self.description, 
-            ['video', 'codehilite', 'urlize']
+            ['ltmo.mdx_urlize', 'ltmo.mdx_video', 'codehilite']
         )
         self.tags = ','.join([slugify(x) for x in parse_tag_input(self.tags)])
         self.slug = '%s-%s' %(slugify(self.title[:30]) or 'sin-titulo', self.pk)
-        super(Leak, self).save()
+        super(Leak, self).save(*args, **kwargs)
         
 class LeakAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'tags','author', 'created')
