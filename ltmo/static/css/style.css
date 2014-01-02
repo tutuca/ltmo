@@ -38,13 +38,15 @@
 .codehilite .sx { color: #c65d09; }
 .codehilite .gp { color: #c65d09; font-weight: bold; }
 
+* { position: relative; box-sizing: content-box; }
+
 .wrapper { padding: 0.5em 1em; }
 
 body { font: 100% "Droid Sans", sans-serif; background: #EEE; padding: 0; margin: 0; }
 
 header, section, footer, article, aside { display: block; padding: 0; margin-bottom: 2em; }
 
-header { width: 100%; padding: 0; margin: 0; position: fixed; top: 0; left: 0; z-index: 9999; box-shadow: 0 1px 2px #555; }
+header { width: 100%; padding: 0; margin: 0; position: fixed; top: 0; left: 0; z-index: 9999; box-shadow: 0 1px 2px #555; background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); }
 header .wrapper { padding: 0 1em; }
 
 footer { clear: both; padding: 5em 1em 1em; font-size: 80%; }
@@ -79,7 +81,7 @@ pre, code { font: 110% "Droid Sans Mono",monospace; white-space: pre-wrap; color
 blockquote { font: italic 150% "Georgia-MS", Georgia, serif; width: 70%; margin: 1em auto; }
 
 a { border: 1px solid transparent; text-decoration: none; color: #268bd2; }
-a:hover { text-shadow: 0 -1px 0 #FFF, 0 1px 0 #000; }
+a:hover { text-shadow: 0 -1px 0 #FFF, 0 1px 1px #000; }
 
 a img { border: 0; }
 

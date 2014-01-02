@@ -1,14 +1,16 @@
 @import "pygments";
 @import "base";
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
-
+* {
+    position: relative;
+    box-sizing: content-box;
+}
 .wrapper {
     padding: 0.5em 1em;
 }
 body {
     font: 100% "Droid Sans", sans-serif;
     background: #EEE;
-
     padding:0;
     margin: 0;
 }
@@ -27,6 +29,7 @@ header {
     left: 0;
     z-index:9999;
     box-shadow: 0 1px 2px #555;
+    @include gradient(rgba(255,255,255,.7));
     .wrapper {
         padding: 0 1em;
     }
@@ -37,9 +40,6 @@ footer {
     padding: 5em 1em 1em;
     font-size: 80%;
 }
-footer p{ 
-}
-
 #main{
     margin:4em 0 0;
     clear: both;
@@ -151,8 +151,7 @@ a{
     text-decoration:none;
     color :$fg_color;
     &:hover {
-        text-shadow: 0 -1px 0 #FFF, 0 1px 0 #000; 
-
+        text-shadow: 0 -1px 0 #FFF, 0 1px 1px #000; 
     }
 }
 
