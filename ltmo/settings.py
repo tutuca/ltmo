@@ -19,12 +19,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'ltmo.db'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'TEST_NAME': os.path.join(BASE_DIR, 'test_ltmo.db'),
     }
 }
+
+SOUTH_TESTS_MIGRATE = False
 
 TIME_ZONE = 'America/Chicago'
 
