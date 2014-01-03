@@ -47,15 +47,14 @@
                     <a class="pager next" href="{{next.get_absolute_url}}" title="#{{next.id}} - {{next.title}}"><strong class="fa fa-angle-right"></strong></a>
                 {% endif %}
             {% endwith %}
-        <div id="banner-content" class="slot">
-            {% pop_slot 'content' %}
-        </div>
     </article>
     {% else %}
     <article>
         <h4>No hay derrames ahún</h4>
     </article>
     {%endif %}
-
+    <div id="banner-content" class="slot">
+        {% pop_slot 'content' %}
+    </div>
 {% endblock %}
 

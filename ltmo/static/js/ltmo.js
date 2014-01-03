@@ -16,14 +16,17 @@ function viewport(){
 };  
 function setLayout(){
     vp = viewport();
-    padding = $('header').height() * 3;
+    padding = $('header').height() * 7;
     visible_height = vp.height - padding;
     visible_width = $('#main article').width();
     main_img = $('article img')[0];
+    old_img_width = $('article img')[0].width;
     if (main_img) {
-        image_width = (visible_width / main_img.width * visible_height) - padding;
-        main_img.height = visible_height;
-        main_img.width = image_width ;
+        new_img_width = (visible_width / old_img_width * visible_height) - padding;
+        if (visible_height > main_img.height) {
+                main_img.height = visible_height;
+                main_img.width = new_img_width ;
+        }
         width_delta = (visible_width - main_img.width)/2;
         $(main_img).css('margin-left', width_delta);
     }
@@ -61,18 +64,6 @@ $(function(){
         return false;
         
     });
-    $('.edit').click(function(){
-        url = $(this).attr('href');
-        $.getJSON(url, function(data){
-            $('#leak-form').attr('action', url);
-            form_fields = $('#leak-form :input');
-            for (x in data) {
-                $('#id_'+x).val(data[x]);
-            }
-        });
-        $('#new-leak').click();
-        return false;
-    })
 	$( "#id_tags" )
 		.bind( "keydown", function( event ) {
 		// don't navigate away from the field on tab when selecting an item

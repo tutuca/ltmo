@@ -38,9 +38,9 @@
 .codehilite .sx { color: #c65d09; }
 .codehilite .gp { color: #c65d09; font-weight: bold; }
 
-* { position: relative; box-sizing: content-box; }
+* { box-sizing: content-box; }
 
-.wrapper { padding: 0.5em 1em; }
+.wrapper { padding: 0.5em 1em; overflow: overlay; }
 
 body { font: 100% "Droid Sans", sans-serif; background: #EEE; padding: 0; margin: 0; }
 
@@ -65,7 +65,7 @@ article img, article object { display: block; margin: 0.5em auto; }
 
 article object { max-width: 90%; }
 
-.slot { padding: 1em; text-align: center; background: #999; }
+.slot { text-align: center; }
 
 .detail { text-align: right; font-size: 80%; display: block; color: #555; }
 
@@ -105,7 +105,7 @@ h2 { font-size: 180%; }
 
 #banner-header { float: right; margin: 0.5em 0; }
 
-#banner-content { text-align: center; width: 730px; margin: 1em 0; }
+#banner-content { text-align: center; width: 730px; margin: 0 auto; }
 
 #banner-aside { margin-top: 15px; }
 
