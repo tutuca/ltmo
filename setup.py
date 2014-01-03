@@ -36,8 +36,10 @@ setup(
         'django-registration',
         'django-social-auth',
         'django-debug-toolbar',
-        'banners',
-
+        'markdown',
+        'pygments',
+        'south',
+        'banners'
         #'psycopg2',
         ],
     )

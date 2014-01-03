@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from django.conf.urls import include, patterns
+from django.conf.urls import patterns, include
+from django.conf import settings
 from django.http import HttpResponse
 from django.contrib.sitemaps import GenericSitemap
 from django.contrib import admin
@@ -47,3 +48,10 @@ urlpatterns += patterns('',
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', 
         {'sitemaps': sitemaps})
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.UPLOAD_DIR,
+        }),
+   )
