@@ -1,6 +1,6 @@
 @import "pygments";
 @import "base";
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
+//@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
 
 .wrapper {
     padding: 0.5em 1em;
@@ -95,6 +95,11 @@ article img, article object {
 
 article object  {
     max-width: 90%;
+}
+.slot {
+    padding: 1em;
+    text-align: center;
+    background: #999;
 }
 .detail {
     text-align: right;
@@ -198,6 +203,9 @@ h2 {
 }
 #banner-content {
     text-align:center;
+    width: 730px;
+    margin: 1em 0;
+
 }
 #banner-aside {
     margin-top:15px;

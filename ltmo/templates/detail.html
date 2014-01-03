@@ -47,7 +47,9 @@
                     <a class="pager next" href="{{next.get_absolute_url}}" title="#{{next.id}} - {{next.title}}"><strong class="fa fa-angle-right"></strong></a>
                 {% endif %}
             {% endwith %}
-        {% pop_slot 'content' %}
+        <div id="banner-content" class="slot">
+            {% pop_slot 'content' %}
+        </div>
     </article>
     {% else %}
     <article>

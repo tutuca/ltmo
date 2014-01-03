@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='ltmo',
@@ -14,6 +14,7 @@ setup(
     author='Inventta',
     author_email='maturburu@gmail.com',
     url='http://ltmo.com.ar',
+    packages=find_packages(exclude=['tests*']),
     package_data={
         'ltmo' : ['templates/*.html'],
     },
@@ -27,14 +28,16 @@ setup(
     install_requires=[
         'django',
         'Pillow',
+        'markdown',
+        'pygments',
+        'south',
         'django-tagging',
         'django-pagination',
         'django-registration',
         'django-social-auth',
         'django-debug-toolbar',
-        'markdown',
-        'pygments',
-        'south',
+        'banners',
+
         #'psycopg2',
         ],
     )
