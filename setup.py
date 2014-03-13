@@ -16,11 +16,11 @@ setup(
     url='http://ltmo.com.ar',
     packages=find_packages(exclude=['tests*']),
     package_data={
-        'ltmo' : ['templates/*.html'],
+        'ltmo': ['templates/*.html'],
     },
     include_package_data=True,
     zip_safe=False,
-    entry_points = {
+    entry_points={
         'console_scripts': [
             'manage = ltmo.manage:do_manage',
         ],
@@ -41,5 +41,5 @@ setup(
         'south',
         'banners'
         #'psycopg2',
-        ],
-    )
+    ]
+)
