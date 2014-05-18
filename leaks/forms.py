@@ -1,7 +1,7 @@
 from django import forms
 from tagging.forms import TagField
 
-from ltmo.models import Leak
+from leaks.models import Leak
 from django.contrib.auth.models import User
 
 class LeakForm(forms.ModelForm):

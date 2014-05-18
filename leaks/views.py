@@ -8,8 +8,8 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, get_object_or_404, render
 from tagging.models import Tag
 from django.contrib.auth.decorators import login_required
-from ltmo.forms import LeakForm, RegisterForm
-from ltmo.models import Leak
+from leaks.forms import LeakForm, RegisterForm
+from leaks.models import Leak
 
 
 def index(request):
