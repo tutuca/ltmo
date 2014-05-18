@@ -25,6 +25,8 @@ DATABASES = {
 
 SOUTH_TESTS_MIGRATE = False
 
+ALLOWED_HOSTS = []
+
 TIME_ZONE = 'America/Chicago'
 
 LANGUAGE_CODE = 'es-AR' # Using Guarani, Of Course
@@ -137,7 +139,7 @@ INSTALLED_APPS = (
     'pagination',
     'tagging',
     'banners',
-    'ltmo',
+    'leaks',
 )
 # XXX: Remove this 
 # Modify temporarily the session serializer because the json serializer in

@@ -6,8 +6,8 @@ from django.http import HttpResponse
 from django.contrib.sitemaps import GenericSitemap
 from django.contrib import admin
 
-from ltmo.feeds import LeakFeed
-from ltmo.models import Leak
+from leaks.feeds import LeakFeed
+from leaks.models import Leak
 
 admin.autodiscover()
 
@@ -20,7 +20,7 @@ sitemaps = {
     'leaks': GenericSitemap(info_dict, priority=0.6),
 }
 
-urlpatterns = patterns('ltmo.views',
+urlpatterns = patterns('leaks.views',
     (r'^$','index',{},'index'),
     (r'^new/$','edit',{},'new'),
     (r'^edit/(?P<id>\d+)$','edit',{},'edit'),

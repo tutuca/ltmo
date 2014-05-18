@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+
 from setuptools import setup, find_packages
 
 setup(
@@ -22,13 +25,13 @@ setup(
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'manage = ltmo.manage:do_manage',
+            'ltmo = ltmo.manage:do_manage',
         ],
     },
     install_requires=[
         'django',
-        'Pillow',
-        'markdown',
+        # 'Pillow',
+        'Markdown',
         'pygments',
         'south',
         'django-tagging',
@@ -36,9 +39,6 @@ setup(
         'django-registration',
         'django-social-auth',
         'django-debug-toolbar',
-        'markdown',
-        'pygments',
-        'south',
         'banners'
         #'psycopg2',
     ]
