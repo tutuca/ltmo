@@ -19,7 +19,7 @@ class Leak(models.Model):
     changed = models.DateTimeField(auto_now=True, editable = False)
     tags = TagField()
     metadata = models.TextField(default='', null=True, blank=True)
-    
+
     def __unicode__(self):
         return self.title or u'sin título'
 
@@ -36,13 +36,13 @@ class Leak(models.Model):
 
     def save(self, *args, **kwargs):
         self.rendered = markdown(
-            self.description, 
+            self.description,
             ['ltmo.mdx_urlize', 'ltmo.mdx_video', 'codehilite']
         )
         self.tags = ','.join([slugify(x) for x in parse_tag_input(self.tags)])
         self.slug = '%s-%s' %(slugify(self.title[:30]) or 'sin-titulo', self.pk)
         super(Leak, self).save(*args, **kwargs)
-        
+
 class LeakAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'tags','author', 'created')
     list_filter = ('author', 'created')

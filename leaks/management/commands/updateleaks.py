@@ -6,10 +6,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for leak in Leak.objects.all():
-            
+
             try:
                 leak.save()
             except Exception as e:
                 self.stdout.write(e.message+'\n')
             else:
-                self.stdout.write('Saving leak %s \n' %leak.id)    
+                self.stdout.write('Saving leak %s \n' %leak.id)

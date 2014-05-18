@@ -42,7 +42,7 @@ def edit(request, id=None):
         if form.is_valid():
             leak = form.save()
             return redirect(leak.get_absolute_url())
-            
+
     return render(
         request,
         'leak_form.html',
@@ -64,7 +64,7 @@ def leak_detail(request, id=None):
             'object': leak,
         }
     )
-        
+
 def by_tag(request, tag_name=None):
     queryset = Leak.objects.all().order_by('tags')
     form = LeakForm()
@@ -88,10 +88,10 @@ def tags(request):
     if tag_name:
         queryset = queryset.filter(name__istartswith=tag_name)
     return HttpResponse(
-        json.dumps([x.name for x in queryset]), 
+        json.dumps([x.name for x in queryset]),
         mimetype="application/json"
     )
-    
+
 def user_profile(request, username=None):
     if username is not None:
         author = get_object_or_404(User, username=username)
@@ -124,10 +124,9 @@ def register(request,):
             return redirect('/')
 
     return render(
-        request, 
+        request,
         'register.html',
         {
             'form': form,
         }
     )
-

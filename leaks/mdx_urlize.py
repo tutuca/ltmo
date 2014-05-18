@@ -68,19 +68,19 @@ def process_image(image_url):
     if not os.path.exists(image_path):
         from ipdb import set_trace; set_trace()
         urllib.urlretrieve(image_url, image_path)
-            
+
     return '/'.join((settings.UPLOAD_URL, image_name))
 
 class UrlizePattern(markdown.inlinepatterns.Pattern):
     """ Return a link Element given an autolink (`http://example/com`). """
     def handleMatch(self, m):
         url = m.group(2)
-        
+
         if url.startswith('<'):
             url = url[1:-1]
-            
+
         text = url
-        
+
         if not url.split('://')[0] in ('http','https','ftp'):
             if '@' in url and not '/' in url:
                 url = 'mailto:' + url
