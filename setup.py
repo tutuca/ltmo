@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name='ltmo',
@@ -17,9 +17,9 @@ setup(
     author='Inventta',
     author_email='maturburu@gmail.com',
     url='http://ltmo.com.ar',
-    packages=find_packages(exclude=['tests*']),
+    packages=['ltmo', 'leaks'],
     package_data={
-        'ltmo': ['templates/*.html'],
+        'ltmo': ['templates/*.html', 'static/*.*'],
     },
     include_package_data=True,
     zip_safe=False,
@@ -34,7 +34,8 @@ setup(
         'Markdown',
         'pygments',
         'south',
-        'django-tagging',
+        'django-taggit',
+        'django-taggit-templatetags'
         'django-pagination',
         'django-registration',
         'django-social-auth',

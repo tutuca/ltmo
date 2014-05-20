@@ -1,12 +1,13 @@
 Pillow
-django==1.4.9
-django-tagging
+django
+django-taggit
+django-taggit-templatetags
 Markdown
 pygments
 django-pagination
 django-registration
 django-social-auth
+django-debug-toolbar
 psycopg2
 south
-django-debug-toolbar
 banners

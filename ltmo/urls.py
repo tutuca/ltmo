@@ -39,7 +39,8 @@ urlpatterns += patterns('django.contrib.auth.views',
 )
 
 urlpatterns += patterns('',
-    (r'', include('social_auth.urls')))
+    url('', include('social.apps.django_app.urls', namespace='social'))
+)
 
 urlpatterns += patterns('',
     (r'^admin/', include(admin.site.urls)),

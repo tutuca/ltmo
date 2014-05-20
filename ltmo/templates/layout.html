@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%  load tagging_tags pagination_tags banner_tags %}
+{%  load taggit_extras pagination_tags banner_tags %}
 <html lang='es'>
 <head>
 
@@ -56,15 +56,12 @@
         <li><a href="/feed/">RSS</a></li>
         </ul>
         <h3>Se ha vertido en estos temas</h3>    
-        {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
+        {% get_tagclout as cloud for 'leaks.Leak' %}
         {% for tag in cloud %}
         <a href="/leak/{{tag}}" 
            style="font-size:{{tag.font_size|add:'8'}}pt"
            title="{{tag.count}} derrames">{{tag}}</a>
         {% endfor %}
-        {% tags_for_model ltmo.Leak as leak_tags with counts %}
-
-
         <p>Las opiniones vertidas en cada artículo son responsabilidad del author</p>
 
     </aside>

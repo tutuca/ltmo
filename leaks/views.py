@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect, get_object_or_404, render
-from tagging.models import Tag
+from taggit.models import Tag
 from django.contrib.auth.decorators import login_required
 from leaks.forms import LeakForm, RegisterForm
 from leaks.models import Leak

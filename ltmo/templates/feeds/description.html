@@ -1,9 +1,7 @@
-{%  load tagging_tags %}
-    {% tags_for_object obj as tag_list %}
     <p>
         <a href="/~{{obj.author}}">~{{obj.author}}</a>, 
         {{obj.created|date}}, 
-        {% for tag in tag_list %}<a href="/l/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+        {% for tag in object.tags %}<a href="/l/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}
         <a title="permalink" class="permalink" href="{{obj.get_absolute_url}}">#{{obj.pk}}</a>
         {{obj.metadata}}
     </p>
