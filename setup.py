@@ -30,15 +30,15 @@ setup(
     },
     install_requires=[
         'django',
-        # 'Pillow',
+        'Pillow',
         'Markdown',
         'pygments',
         'south',
         'django-taggit',
-        'django-taggit-templatetags'
+        'django-taggit-templatetags',
         'django-endless-pagination',
         'django-registration',
-        'django-social-auth',
+        'python-social-auth',
         'django-debug-toolbar',
         'banners'
         #'psycopg2',

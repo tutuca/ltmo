@@ -41,7 +41,7 @@ u'<p>del.icio.us</p>'
 import markdown
 import urllib
 import os
-from StringIO import StringIO
+from io import StringIO
 from hashlib import sha1
 from PIL import Image
 from django.conf import settings
@@ -58,8 +58,6 @@ URLIZE_RE = '(%s)' % '|'.join([
 ])
 
 def process_image(image_url):
-
-
     file_type = guess_type(image_url)
     ext = file_type[0].split('/')[1]
     image_name = '.'.join((sha1(image_url).hexdigest()[:6], ext))
@@ -101,9 +99,11 @@ class UrlizeExtension(markdown.Extension):
 
     def extendMarkdown(self, md, md_globals):
         """ Replace autolink with UrlizePattern """
+        md.registerExtension(self)
         md.inlinePatterns['urlize'] = UrlizePattern(URLIZE_RE, md)
 
 def makeExtension(configs=None):
+    if configs is None: configs = {}
     return UrlizeExtension(configs=configs)
 
 if __name__ == "__main__":

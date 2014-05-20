@@ -171,6 +171,7 @@ class VideoExtension(markdown.Extension):
         md.inlinePatterns.add(name, pattern, "<reference")
 
     def extendMarkdown(self, md, md_globals):
+        md.registerExtension(self)
         self.add_inline(md, 'bliptv', Bliptv,
             r'([^(]|^)http://(\w+\.|)blip.tv/file/get/(?P<bliptvfile>\S+.flv)')
         self.add_inline(md, 'dailymotion', Dailymotion,
@@ -278,6 +279,7 @@ def flash_object(url, width, height):
         return obj
 
 def makeExtension(configs=None) :
+    if configs is None: configs = {}
     return VideoExtension(configs=configs)
 
 if __name__ == "__main__":

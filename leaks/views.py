@@ -32,16 +32,14 @@ def index(request):
 def edit(request, id=None):
     if id:
         leak = get_object_or_404(Leak, pk=id)
-        form = LeakForm(instance=leak)
+        form = LeakForm(request.POST or None, instance=leak)
     else:
-        form = LeakForm(initial={'author':request.user.username})
         leak = None
-
-    if request.method == 'POST':
-        form = LeakForm(request.POST, instance=leak)
-        if form.is_valid():
-            leak = form.save()
-            return redirect(leak.get_absolute_url())
+        form = LeakForm(request.POST or None, initial={'author':request.user})
+ 
+    if form.is_valid():
+        leak = form.save()
+        return redirect(leak.get_absolute_url())
             
     return render(
         request,
@@ -70,7 +68,7 @@ def by_tag(request, tag_name=None):
     form = LeakForm()
 
     if tag_name:
-        queryset = queryset.filter(tags__icontains=tag_name)
+        queryset = queryset.filter(tags__name__contains=tag_name)
 
     return render(
         request,
