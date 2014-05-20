@@ -108,6 +108,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.messages',
     'social.apps.django_app.default',
+    'ltmo',
     'registration',
     'debug_toolbar',
     'south',
