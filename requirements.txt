@@ -4,7 +4,7 @@ django-taggit
 django-taggit-templatetags
 Markdown
 pygments
-django-pagination
+django-endless-pagination
 django-registration
 django-social-auth
 django-debug-toolbar

@@ -75,6 +75,7 @@ FORCE_LOWERCASE_TAGS = True
 
 AUTHENTICATION_BACKENDS = (
     'social.backends.google.GoogleOpenId',
+    'social.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -84,7 +85,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'pagination.middleware.PaginationMiddleware',
 )
 
 TEMPLATE_LOADERS = (
@@ -128,7 +128,7 @@ INSTALLED_APPS = (
     'registration',
     'debug_toolbar',
     'south',
-    'pagination',
+    'endless_pagination',
     'taggit',
     'taggit_templatetags',
     'banners',
