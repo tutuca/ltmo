@@ -65,18 +65,6 @@ STATICFILES_FINDERS = (
 
 AUTH_PROFILE_MODULE = 'auth.User'
 LOGIN_REDIRECT_URL = '/~'
-REGISTRATION_BACKEND = 'registration.backends.default.DefaultBackend'
-SOCIAL_AUTH_CREATE_USERS          = True
-SOCIAL_AUTH_FORCE_RANDOM_USERNAME = False
-LOGIN_ERROR_URL                   = '/login/error/'
-SOCIAL_AUTH_ERROR_KEY             = 'socialauth_error'
-SOCIAL_AUTH_ENABLED_BACKENDS=('facebook', 'google')
-SOCIAL_AUTH_COMPLETE_URL_NAME='socialauth_complete'
-SOCIAL_AUTH_ASSOCIATE_URL_NAME='associate_complete'
-SOCIAL_AUTH_DEFAULT_USERNAME= lambda u: slugify(u)
-SOCIAL_AUTH_EXTRA_DATA=False
-SOCIAL_AUTH_CHANGE_SIGNAL_ONLY=True
-SOCIAL_AUTH_ASSOCIATE_BY_MAIL=True
 
 ACCOUNT_ACTIVATION_DAYS = 2
 SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
@@ -86,8 +74,7 @@ PAGINATION_DEFAULT_WINDOW = 2
 FORCE_LOWERCASE_TAGS = True
 
 AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.facebook.FacebookBackend',
-    'social_auth.backends.google.GoogleBackend',
+    'social.backends.google.GoogleOpenId',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -106,9 +93,10 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
     'django.core.context_processors.request',
     'django.contrib.auth.context_processors.auth',
-    'social_auth.context_processors.social_auth_backends',
     'django.contrib.messages.context_processors.messages',
 )
 
@@ -116,6 +104,10 @@ TEMPLATE_DIRS = (
     'templates',
     os.path.join(BASE_DIR, 'templates')
 )
+
+SOUTH_MIGRATION_MODULES = {
+    'taggit': 'taggit.south_migrations',
+}
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
@@ -132,19 +124,16 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django.contrib.messages',
+    'social.apps.django_app.default',
     'registration',
-    'social_auth',
     'debug_toolbar',
     'south',
     'pagination',
-    'tagging',
+    'taggit',
+    'taggit_templatetags',
     'banners',
     'leaks',
 )
-# XXX: Remove this 
-# Modify temporarily the session serializer because the json serializer in
-# Django 1.6 can't serialize openid.yadis.manager.YadisServiceManager objects
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 try:
     from local_settings import *

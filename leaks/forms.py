@@ -1,21 +1,17 @@
 from django import forms
-from tagging.forms import TagField
-
-from leaks.models import Leak
 from django.contrib.auth.models import User
+from leaks.models import Leak
+
 
 class LeakForm(forms.ModelForm):
-    tags = TagField(required=True)
     author = forms.CharField(widget=forms.HiddenInput, required=True)
     class Meta:
         model = Leak
         exclude = ['rendered','metadata']
 
 
-from django import forms
-
 class RegisterForm(forms.Form):
-    
+    #XXX: Should not be here.    
     honeypot = forms.CharField(widget=forms.HiddenInput, required=False)
     username = forms.SlugField()
     email = forms.EmailField()

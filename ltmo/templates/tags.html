@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-{% load pagination_tags banner_tags tagging_tags %}
+{% load pagination_tags banner_tags taggit_extras %}
 {% block logo %}
 {{block.super}}<a href="/leak/{{tag_name|slugify}}" title="Hay {{object_list.count}} derrames con esta etiqueta">{{tag_name|default:'leaks'}}</a>
 {% endblock %}

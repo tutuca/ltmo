@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from tagging.fields import TagField
-from tagging.utils import parse_tag_input
+from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 from django.contrib import admin
 from django.template.defaultfilters import slugify
@@ -17,7 +16,7 @@ class Leak(models.Model):
     author = models.SlugField(max_length=20, default='anon')
     created = models.DateTimeField(auto_now_add=True, editable = False)
     changed = models.DateTimeField(auto_now=True, editable = False)
-    tags = TagField()
+    tags = TaggableManager()
     metadata = models.TextField(default='', null=True, blank=True)
     
     def __unicode__(self):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib.syndication.views import Feed
-from ltmo.models import Leak
+from leaks.models import Leak
 
 class LeakFeed(Feed):
     title = "Recientemente derramado"

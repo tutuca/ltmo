@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-{%  load banner_tags tagging_tags %}
+{%  load banner_tags taggit_extras %}
 {% block title %}
     {{object.title}}
 {% endblock %}
@@ -18,7 +18,7 @@
         <div id="detail" >
             <div class="wrapper">   
                 <p id="tagcloud">
-                    {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 min_count=8 distribution=log %}
+                    {% get_tagcloud as cloud for 'ltmo.Leak' %}
                     {% for tag in cloud %}
                     <a href="/leak/{{tag}}" 
                        style="font-size:{{tag.font_size|add:'8'}}pt"
@@ -27,10 +27,9 @@
                 </p>
                 <p id="metadata" >
                     <span itemprop="name">{{object.title}}</span>
-                    {% tags_for_object object as tag_list %}
                     <a href="/~{{object.author}}" itemprop="author">~{{object.author}}</a>, 
                     {{object.created|date}}, 
-                    {% for tag in tag_list %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
+                    {% for tag in object.tags %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}           
                     <a title="permalink" class="permalink" href="{{object.get_absolute_url}}" itemprop="url">#{{object.pk}}</a>
                     {{object.metadata}}
                     {% if user.is_staff %}<a href="/edit/{{object.pk}}">editar</a>{% endif %}
