@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-{% load pagination_tags banner_tags %}
+{% load endless banner_tags %}
 {% block title %}
 {{author}}
 {% endblock %}
@@ -9,7 +9,7 @@
 {% block content %}
     <article itemscope itemtype="http://schema.org/Article">
         <div>
-        {% autopaginate object_list 10%}
+        {% paginate object_list %}
         {% for object in object_list %}
             {% include 'leak.html' %}
             {% if forloop.counter == 4 %}{% pop_slot 'content' %}{% endif %}
@@ -19,7 +19,7 @@
             <p>Sirvete de <a href="/new/">crear un nuevo derrame</a></p>
         {% endfor %}
 
-        {% paginate %}
+        {% show_pages %}
         </div>
     </article>
 {% endblock %}

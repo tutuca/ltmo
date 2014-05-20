@@ -36,7 +36,7 @@ setup(
         'south',
         'django-taggit',
         'django-taggit-templatetags'
-        'django-pagination',
+        'django-endless-pagination',
         'django-registration',
         'django-social-auth',
         'django-debug-toolbar',

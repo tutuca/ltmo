@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%  load taggit_extras pagination_tags banner_tags %}
+{%  load taggit_extras banner_tags %}
 <html lang='es'>
 <head>
 
@@ -56,7 +56,7 @@
         <li><a href="/feed/">RSS</a></li>
         </ul>
         <h3>Se ha vertido en estos temas</h3>    
-        {% get_tagclout as cloud for 'leaks.Leak' %}
+        {% get_tagcloud as cloud for 'leaks.Leak' %}
         {% for tag in cloud %}
         <a href="/leak/{{tag}}" 
            style="font-size:{{tag.font_size|add:'8'}}pt"
