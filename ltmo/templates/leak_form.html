@@ -4,9 +4,8 @@
 <form action="/edit/{{form.instance.id}}" method="post" {% if form.errors %}class="error"{% endif %} id="leak-form">
 {% endif %}
 <form action="/new/" method="post" {% if form.errors %}class="error"{% endif %} id="leak-form">    
-    
-    <input type="hidden" id="id_{{form.author.name}}" name="{{form.author.name}}" value="{{request.user.pk}}" />
-    <input type="hidden" name="next" value="{{request.path}}" />
+        <input type="hidden" name="next" value="{{request.path}}" />
+        {{form.author}}
     {% csrf_token %}
     <table id="formating-help">
     <caption>Podés usar <a href="/help#syntax">markdown</a> y pegar vinculos a imágenes directamente</caption>

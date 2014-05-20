@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+
 DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
@@ -26,53 +27,35 @@ DATABASES = {
 SOUTH_TESTS_MIGRATE = False
 
 ALLOWED_HOSTS = []
-
 TIME_ZONE = 'America/Chicago'
 
-LANGUAGE_CODE = 'es-AR' # Using Guarani, Of Course
-
+SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 SITE_ID = 1
 
+LANGUAGE_CODE = 'es-AR' # Using Guarani, Of Course
 USE_I18N = True
-
 USE_L10N = True
 
 ROOT_URLCONF = 'ltmo.urls'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-UPLOAD_DIR = os.path.join(MEDIA_ROOT, 'upload')
-
-UPLOAD_URL = 'http://i.ltmo'
-
-MEDIA_URL = '/media/'
-
-ADMIN_MEDIA_PREFIX = '/static/admin/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+UPLOAD_DIR = os.path.join(MEDIA_ROOT, 'upload')
+UPLOAD_URL = 'http://i.ltmo'
+MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
-
-# Additional locations of static files
-STATICFILES_DIRS = (
-)
-
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
-
 AUTH_PROFILE_MODULE = 'auth.User'
 LOGIN_REDIRECT_URL = '/~'
-
 ACCOUNT_ACTIVATION_DAYS = 2
-SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 
 PAGINATION_DEFAULT_WINDOW = 2
-
 FORCE_LOWERCASE_TAGS = True
-
 AUTHENTICATION_BACKENDS = (
     'social.backends.google.GoogleOpenId',
     'social.backends.facebook.FacebookOAuth2',
@@ -134,7 +117,8 @@ INSTALLED_APPS = (
     'banners',
     'leaks',
 )
-
+TAGGIT_TAGCLOUD_MIN = 1.0
+TAGGIT_TAGCLOUD_MAX = 0.6
 try:
     from local_settings import *
 except ImportError:

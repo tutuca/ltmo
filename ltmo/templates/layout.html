@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%  load taggit_extras banner_tags %}
+{% load banner_tags %}
 <html lang='es'>
 <head>
 
@@ -47,7 +47,7 @@
     </section>
     <aside id="help" class="hide">
         <h3>¿Qué es lo que observa?</h3>
-        <p>Esto funciona muy fácil, hacele click al + de allá arriba y pegá lo que sea. Pero ojo, nada queda almacenado en nuestros servidores, esto es solo una pasarela</p>
+        <p>Esto funciona muy fácil, hacele click al + de allá arriba y pegá lo que sea.</p>
         <p>Tratamos de agrandar el agujero para que más cosas caigan en él.</p>
         {% pop_slot 'aside' %}
         <ul>
@@ -55,13 +55,8 @@
         <li><a href="mailto:loosingtoomuchoil@gmail.com">loosingtoomuchoil@gmail.com</a> -</li>
         <li><a href="/feed/">RSS</a></li>
         </ul>
-        <h3>Se ha vertido en estos temas</h3>    
-        {% get_tagcloud as cloud for 'leaks.Leak' %}
-        {% for tag in cloud %}
-        <a href="/leak/{{tag}}" 
-           style="font-size:{{tag.font_size|add:'8'}}pt"
-           title="{{tag.count}} derrames">{{tag}}</a>
-        {% endfor %}
+        <h3>Se ha vertido en estos temas</h3>
+
         <p>Las opiniones vertidas en cada artículo son responsabilidad del author</p>
 
     </aside>
