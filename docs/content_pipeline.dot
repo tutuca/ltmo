@@ -1,0 +1,4 @@
+digraph G {
+    fuente -> mimetype -> texto -> markdown -> procesar_urls -> agregar_adjunto -> vista_previa -> content;
+              mimetype -> archivo -> agregar_adjunto -> vista_previa;
+}
