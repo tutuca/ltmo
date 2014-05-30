@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
+@charset "UTF-8";
 .codehilite { background-color: #002b36; padding: 0.5em 2em; margin: 0 -2em; border-radius: 3px; }
 .codehilite .ge { font-style: italic; }
 .codehilite .gs { font-weight: bold; }
@@ -42,22 +42,22 @@
 
 .wrapper { padding: 0.5em 1em; overflow: overlay; }
 
-body { font: 100% "Droid Sans", sans-serif; background: #EEE; padding: 0; margin: 0; }
+body { font: 100% "Trebuchet MS", sans-serif; background: #EEE; padding: 0; margin: 0; }
 
 header, section, footer, article, aside { display: block; padding: 0; margin-bottom: 2em; }
 
-header { width: 100%; padding: 0; margin: 0; position: fixed; background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); top: 0; left: 0; z-index: 9999; box-shadow: 0 1px 2px #555555; background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); }
+header { width: 100%; padding: 0; margin: 0; position: fixed; background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); top: 0; left: 0; z-index: 9999; box-shadow: 0 1px 2px #555; background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(230, 230, 230, 0.7)); }
 header .wrapper { padding: 0 1em; }
 
 footer { clear: both; padding: 5em 1em 1em; font-size: 80%; }
 
 #main { margin: 4em 0 0; clear: both; position: relative; }
 
-#help { padding: 1em; background: white; width: 25em; float: none; position: absolute; top: 1em; right: 0; box-shadow: 0 1px 1px black; border-radius: 3px; border: 1px solid #eeeeee; background: #FFF; }
+#help { padding: 1em; background: white; width: 25em; float: none; position: absolute; top: 1em; right: 0; box-shadow: 0 1px 1px #000; border-radius: 3px; border: 1px solid #EEE; background: #FFF; }
 
 section { display: block; text-align: center; }
 section article { text-align: left; position: relative; margin: 2em auto; width: 40em; }
-section article p { color: #000; text-shadow: 0 1px 1px white; }
+section article p { color: #000; text-shadow: 0 1px 1px #FFF; }
 section .leak:before { content: ''; display: inline-block; height: 100%; vertical-align: middle; margin-right: -0.25em; /* Adjusts for spacing */ }
 section .leak article { display: inline-block; vertical-align: middle; margin: 2em auto 0; }
 
@@ -78,12 +78,8 @@ article object { max-width: 90%; }
 
 aside { text-align: left; width: 20%; position: absolute; font-size: 80%; top: 4em; right: 1em; }
 
-pre, code { font: 110% "Droid Sans Mono", monospace; white-space: pre-wrap; color: #93a1a1; }
-
-blockquote { font: italic 150% "Georgia-MS", Georgia, serif; width: 70%; margin: 1em auto; }
-
 a { border: 1px solid transparent; text-decoration: none; color: #268bd2; }
-a:hover { text-shadow: 0 -1px 0 white, 0 1px 1px black; }
+a:hover { text-shadow: 0 -1px 0 #FFF, 0 1px 1px #000; }
 
 a img { border: 0; }
 
@@ -91,13 +87,18 @@ em { font: italic 100% "Georgia-MS", Georgia, serif; }
 
 h1, h2, h3, h1 a, h2 a, h3 a { font-weight: normal; }
 
-h1 { font-weight: normal; }
+h1 { font-weight: normal; font-size: 200%; }
 
 h1 .pilcrow { font-size: 70%; display: none; vertical-align: top; }
 
 h1:hover .pilcrow { display: inline; }
 
 h2 { font-size: 180%; }
+
+pre, code { font: 110% "Droid Sans Mono",monospace; white-space: pre-wrap; color: #93a1a1; }
+
+blockquote { margin: 1em -2em; font: italic 150% "Georgia-MS", Georgia, serif; }
+blockquote * { color: #859900 !important; }
 
 #wrapper { margin: 0 auto; text-align: left; background: rgba(255, 255, 255, 0.8); border-radius: 15px 15px 0 0; }
 
@@ -113,7 +114,7 @@ h2 { font-size: 180%; }
 
 #author details { font-size: 13px; margin: -1.5em 0; text-align: left; }
 
-#messages { text-align: left; background: #FE9; border: 1px solid #ffcc00; font-size: 80%; margin: 0; padding: 0 1em; position: fixed; left: 0; top: 0; width: 100%; z-index: 100; list-style: none; }
+#messages { text-align: left; background: #FE9; border: 1px solid #FC0; font-size: 80%; margin: 0; padding: 0 1em; position: fixed; left: 0; top: 0; width: 100%; z-index: 100; list-style: none; }
 
 #messages li { padding: 0.25em 2em; position: relative; }
 
@@ -125,7 +126,7 @@ h2 { font-size: 180%; }
 
 .gravatar { float: left; margin-right: 0.5em; }
 
-.caption { margin: 0; padding: 1em; border-color: transparent transparent #eeeeee; border-style: solid; border-width: 0 0 1px; }
+.caption { margin: 0; padding: 1em; border-color: transparent transparent #EEEEEE; border-style: solid; border-width: 0 0 1px; }
 
 .clear { display: block; clear: both; }
 
@@ -144,6 +145,8 @@ h2 { font-size: 180%; }
 nav { float: right; font-size: 1.5em; padding: 0.25em 0.5em; }
 nav .user { font-size: 0.5em; }
 
+#new-leak { color: #FFF; border: 1px solid #859900; border-radius: 25px; padding: 5px 10px; margin: -2px; background: #859900; }
+
 .session { font-size: 100%; }
 
 .session a:hover { background: transparent; }
@@ -155,21 +158,21 @@ form section { margin-bottom: 1em; width: 50%; position: relative; text-align: l
 .submit { text-align: right; padding: 0 1em; }
 .submit a { line-height: 2.5em; }
 
-#formating-help { float: right; width: 30%; font-size: 80%; border: 1px solid white; border-width: 1px 0; border-color: #cccccc transparent white; }
+#formating-help { float: right; width: 30%; font-size: 80%; border: 1px solid #FFF; border-width: 1px 0; border-color: #CCC transparent #FFF; }
 
 #formating-help caption { margin: 0 0 1em -2em; text-align: left; }
 
-#formating-help td { vertical-align: top; border: 1px solid white; border-width: 1px 0; border-color: white transparent #cccccc; padding: 0.25em; }
+#formating-help td { vertical-align: top; border: 1px solid #FFF; border-width: 1px 0; border-color: #FFF transparent #CCC; padding: 0.25em; }
 
-input, textarea { border: 1px solid black; font: 1em sans-serif; padding: 0.25em; border-radius: 3px; }
+input, textarea { border: 1px solid #000; font: 1em sans-serif; padding: 0.25em; border-radius: 3px; }
 
 textarea { font-size: 1.5em; height: 5em; width: 20em; }
 
-input[type='email']:focus, input[type='password']:focus, input[type='text']:focus, textarea:focus { border: 1px solid #00cc66; outline: 0 !important; box-shadow: 0 0 2px #ffcc00; }
+input[type='email']:focus, input[type='password']:focus, input[type='text']:focus, textarea:focus { border: 1px solid #0C6; outline: 0 !important; box-shadow: 0 0 2px #FC0; }
 
 .error input, .error textarea { border: 1px solid #cc6600 !important; box-shadow: 0 0 2px red !important; }
 
-.errorlist { list-style: none; font-size: 80%; margin: 0; background: #dc322f; padding: 2px 4px; border-radius: 5px; color: #FFF; text-shadow: 0 1px 0 black; z-index: 99999; position: absolute; left: 8em; border: 1px solid transparent; }
+.errorlist { list-style: none; font-size: 80%; margin: 0; background: #dc322f; padding: 2px 4px; border-radius: 5px; color: #FFF; text-shadow: 0 1px 0 #000; z-index: 99999; position: absolute; left: 8em; border: 1px solid transparent; }
 .errorlist:after, .errorlist:before { right: 100%; top: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
 .errorlist:after { border-color: rgba(136, 183, 213, 0); border-right-color: #dc322f; border-width: 5px; margin-top: -5px; }
 .errorlist:before { border-color: rgba(194, 225, 245, 0); border-right-color: transparent; border-width: 7px; margin-top: -7px; }
@@ -180,9 +183,9 @@ form span { font-size: 80%; }
 
 .required label { font-weight: bold; color: #C60; }
 
-input[type='submit'] { background-image: -webkit-linear-gradient(top, #859900, #596600); background-image: -moz-linear-gradient(top, #859900, #596600); background-image: -ms-linear-gradient(top, #859900, #596600); background-image: -o-linear-gradient(top, #859900, #596600); -moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; border: none; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 1px rgba(0, 0, 0, 0.05); padding: 2px 6px; font-size: 1.2em; text-shadow: 0 1px 1px #333333; margin: 0 0.3em; color: white; }
+input[type='submit'] { background-image: -webkit-linear-gradient(top, #859900, #596600); background-image: -moz-linear-gradient(top, #859900, #596600); background-image: -ms-linear-gradient(top, #859900, #596600); background-image: -o-linear-gradient(top, #859900, #596600); -moz-transition: all 0.3s; -webkit-transition: all 0.3s; transition: all 0.3s; border: none; border-radius: 5px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 1px rgba(0, 0, 0, 0.05); padding: 2px 6px; font-size: 1.2em; text-shadow: 0 1px 1px #333; margin: 0 0.3em; color: white; }
 input[type='submit']:active { -moz-transition: all 0.1s; -webkit-transition: all 0.1s; transition: all 0.1s; background-image: -webkit-linear-gradient("bottom", #859900, #596600); background-image: -moz-linear-gradient("bottom", #859900, #596600); background-image: -ms-linear-gradient("bottom", #859900, #596600); background-image: -o-linear-gradient("bottom", #859900, #596600); }
-input[type='submit']:hover { -moz-transition: all 0.4s; -webkit-transition: all 0.4s; transition: all 0.4s; text-shadow: 0 1px 0 black; cursor: pointer!important; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), -1px 1px 3px rgba(0, 0, 0, 0.5); }
+input[type='submit']:hover { -moz-transition: all 0.4s; -webkit-transition: all 0.4s; transition: all 0.4s; text-shadow: 0 1px 0 #000; cursor: pointer !important; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), -1px 1px 3px rgba(0, 0, 0, 0.5); }
 
 #leak-form input[type='submit'] { float: left; }
 
@@ -199,7 +202,7 @@ input[type='submit']:hover { -moz-transition: all 0.4s; -webkit-transition: all 
 #register-form { float: left; width: 40%; padding: 1em; }
 #register-form h3 { text-align: center; }
 
-#id_description.hover { border: 3px solid #990000; background: #EEE; }
+#id_description.hover { border: 3px solid #900; background: #EEE; }
 
 .hidden-detail { display: none !important; }
 

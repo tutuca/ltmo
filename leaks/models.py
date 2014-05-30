@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
+import asyncio
+
 from django.db import models
 from taggit.managers import TaggableManager
 from taggit.utils import parse_tags
 from django.contrib.auth.models import User
 from django.contrib import admin
+from django.dispatch import receiver
 from django.template.defaultfilters import slugify
 from markdown import markdown
-from leaks.mdx_urlize import makeExtension as make_urlize
-from leaks.mdx_video import makeExtension as make_video
+from leaks.pipeline import start
 
 
 class Leak(models.Model):
@@ -36,15 +38,28 @@ class Leak(models.Model):
         return ('leak_detail', [self.id])
 
     def save(self, *args, **kwargs):
-        self.rendered = markdown(
-            self.description, 
-            [make_urlize(), make_video(), 'codehilite']
-        )
+
         self.slug = '%s-%s' %(slugify(self.title[:30]) or 'sin-titulo', self.pk)
         super(Leak, self).save(*args, **kwargs)
-        
+
+
+class Attachment(models.Model):
+    attachment_file = models.FileField(upload_to='leak_attachments')
+    leak = models.ForeignKey('leaks.Leak')
+
+    def preview(self):
+        pass
+
+
 class LeakAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'tags','author', 'created')
     list_filter = ('author', 'created')
 
 admin.site.register(Leak, LeakAdmin)
+
+
+@receiver(models.signals.post_save, sender=Leak)
+def leak_post_processing(sender, **kwargs):
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(start(sender))
+    loop.close()

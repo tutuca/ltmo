@@ -1,6 +1,5 @@
 @import "pygments";
 @import "base";
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
 * {
     box-sizing: content-box;
 }
@@ -9,7 +8,7 @@
     overflow:overlay;
 }
 body {
-    font: 100% "Droid Sans", sans-serif;
+    font: 100% "Trebuchet MS", sans-serif;
     background: #EEE;
     padding:0;
     margin: 0;
@@ -138,18 +137,6 @@ aside {
     top: 4em;
     right:1em;
 }
-pre, code {
-    font: 110% "Droid Sans Mono",monospace;
-    white-space: pre-wrap;
-    color:$solarized_base1;
-}
-
-blockquote{
-    font: italic 150% "Georgia-MS", Georgia, serif;
-    width: 70%;
-    margin: 1em auto;
-}
-
 a{
     border: 1px solid transparent;
     text-decoration:none;
@@ -158,7 +145,6 @@ a{
         text-shadow: 0 -1px 0 #FFF, 0 1px 1px #000; 
     }
 }
-
 a img{
     border: 0;
 }
@@ -170,6 +156,7 @@ h1, h2, h3, h1 a, h2 a, h3 a {
 }
 h1 {
     font-weight: normal;
+    font-size: 200%;
 }
 h1 .pilcrow {
     font-size:70%;
@@ -181,6 +168,20 @@ h1:hover .pilcrow {
 }
 h2 {
     font-size:180%;
+}
+pre, code {
+    font: 110% "Droid Sans Mono",monospace;
+    white-space: pre-wrap;
+    color:$solarized_base1;
+}
+
+blockquote{
+    margin: 1em -2em;
+    font: italic 150% "Georgia-MS", Georgia, serif;
+    * {
+        color: $green !important;
+    }
+    
 }
 #wrapper {
     margin: 0 auto;
@@ -323,6 +324,14 @@ nav {
     .user {
         font-size:0.5em;
     }
+}
+#new-leak {
+    color: #FFF;
+    border: 1px solid $green;
+    border-radius: 25px;
+    padding: 5px 10px;
+    margin: -2px;
+    background: $green;
 }
 .session {
     font-size: 100%;

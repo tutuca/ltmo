@@ -64,7 +64,6 @@ def process_image(image_url):
     image_path = os.path.join(settings.UPLOAD_DIR, image_name)
 
     if not os.path.exists(image_path):
-        from ipdb import set_trace; set_trace()
         urllib.urlretrieve(image_url, image_path)
             
     return '/'.join((settings.UPLOAD_URL, image_name))
@@ -84,14 +83,10 @@ class UrlizePattern(markdown.inlinepatterns.Pattern):
                 url = 'mailto:' + url
             else:
                 url = 'http://' + url
-        mime_type = guess_type(url)
-        if mime_type[0] and 'image' in mime_type[0]:
-            el = etree.Element("img")
-            el.set('src', process_image(url))
-        else:
-            el = etree.Element("a")
-            el.set('href', url)
-            el.text = AtomicString(text)
+                
+        el = etree.Element("a")
+        el.set('href', url)
+        el.text = AtomicString(text)
         return el
 
 class UrlizeExtension(markdown.Extension):

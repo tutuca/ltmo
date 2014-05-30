@@ -1,4 +1,9 @@
 digraph G {
-    fuente -> mimetype -> texto -> markdown -> procesar_urls -> agregar_adjunto -> vista_previa -> content;
-              mimetype -> archivo -> agregar_adjunto -> vista_previa;
+    fuente -> mimetype -> texto -> urlize  -> video -> codehilite -> agregar_adjunto -> vista_previa -> content;
+              mimetype -> archivo -> agregar_adjunto ;
+    
+    subgraph cluster_markdown {
+        label=markdown;
+        urlize - video - codehilite; 
+    } 
 }
