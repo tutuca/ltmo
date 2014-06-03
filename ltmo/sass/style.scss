@@ -10,7 +10,7 @@
 }
 body {
     font: 100% "Droid Sans", sans-serif;
-    background: #EEE;
+    background: #FFF;
     padding:0;
     margin: 0;
 }
@@ -25,14 +25,17 @@ header {
     padding:0;
     margin: 0;
     position: fixed;
-    @include gradient(rgba(255,255,255,0.7));
+    background: $fg_color;
+    color: #FFF;
     top:0;
     left: 0;
     z-index:9999;
     box-shadow: 0 1px 2px #555;
-    @include gradient(rgba(255,255,255,.7));
+    a {
+        color: #FFF;
+    }
     .wrapper {
-        padding: 0 1em;
+        padding: 0.3em 1em;
     }
 }
 
@@ -151,11 +154,10 @@ blockquote{
 }
 
 a{
-    border: 1px solid transparent;
     text-decoration:none;
     color :$fg_color;
     &:hover {
-        text-shadow: 0 -1px 0 #FFF, 0 1px 1px #000; 
+        text-shadow: 0 1px 1px #000; 
     }
 }
 
@@ -297,21 +299,40 @@ h2 {
 .next { 
     right:1em;
 } 
-
 .tags {
-    background: url(../img/bg-tags.png) left no-repeat;
-    color: #666666;
-    font-family: Arial,sans-serif;
-    font-size: 11px;
-    line-height: 32px;
-    margin: 2px 2px 2px 0;
-    overflow: visible;
-    padding: 4px 4px 4px 16px;
+    background: $fg_color;
+    border-radius: 3px 0 0 3px;
+    color: #FFF;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 20px 0 23px;
+    position: relative;
+    margin: 0 10px 10px 0;
     text-decoration: none;
-    min-width:30px;
-    white-space: nowrap;
+    -webkit-transition: color 0.2s;
 }
-
+.tags::before {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 6px;
+    left: 9px;
+    position: absolute;
+    width: 6px;
+    top: 9px;
+}
+.tags::after {
+    background: #fff;
+    border-bottom: 11px solid transparent;
+    border-left: 9px solid $fg_color;
+    border-top: 11px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 .hide {
     display:none;
 }
@@ -319,9 +340,13 @@ h2 {
 nav {
     float: right;
     font-size:1.5em ;
-    padding: 0.25em 0.5em;
+    padding: 0.3em 1em;
     .user {
         font-size:0.5em;
+    }
+    a {
+        display: inline-block;
+        padding: 0 0.3em;
     }
 }
 .session {
