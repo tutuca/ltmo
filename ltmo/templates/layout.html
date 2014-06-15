@@ -18,6 +18,7 @@
     {% pop_slot 'analytics' %}
 </head>
 <body>
+<div id="non-footer">
 {% if messages %}
 <ul id="messages">
     {% for message in messages %}
@@ -65,7 +66,16 @@
     <br class="clear"/>
 {% endblock %}
 </div>
-
+</div>
+<footer>
+<div class="wrapper">
+    <ul>
+        <li><a href="http://ltmo.com.ar">Copyright 2006</a></li>
+        <li><a href="http://github.com/tutuca/ltmo">code</a></li>
+        <li><a href="mailto://losingoil@gmail.com">email</a></li>
+    </ul>
+</div>
+</footer>
 </body>
 
     

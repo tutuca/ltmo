@@ -4,6 +4,21 @@
 * {
     box-sizing: content-box;
 }
+html, body {
+    height:100%;
+}
+
+#non-footer {
+    min-height:100%;
+    margin-bottom:-64px;
+    &:after {
+      content: "";
+      display: block;
+    }
+}
+#non-footer:after, footer {
+    height:64px;
+}
 .wrapper {
     padding: 0.5em 1em;
     overflow:overlay;
@@ -20,29 +35,42 @@ header, section, footer, article, aside {
     margin-bottom: 2em;
     
 }
-header {
+header, footer {
     width:100%;
     padding:0;
     margin: 0;
-    position: fixed;
+
     background: $fg_color;
     color: #FFF;
-    top:0;
-    left: 0;
     z-index:9999;
     box-shadow: 0 1px 2px #555;
     a {
         color: #FFF;
+        &:hover {
+            color: $red;
+        }
     }
     .wrapper {
         padding: 0.3em 1em;
     }
 }
-
+header {
+    position: fixed;
+    top:0;
+    left: 0;
+}
 footer {
     clear: both;
-    padding: 5em 1em 1em;
+    padding: 1em 1em 5em;
     font-size: 80%;
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            display: inline-block;
+            padding: 1em 2em;
+        }
+    }
 }
 #main{
     margin:4em 0 0;
@@ -157,7 +185,7 @@ a{
     text-decoration:none;
     color :$fg_color;
     &:hover {
-        text-shadow: 0 1px 1px #000; 
+        text-shadow: inset 1px 0 0 #FFF, 0 1px 1px #000; 
     }
 }
 
