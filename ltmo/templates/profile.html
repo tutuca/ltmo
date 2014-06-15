@@ -4,7 +4,7 @@
 {{author}}
 {% endblock %}
 {% block logo %}
-{{block.super}}<a href="~{{ author }}">~{{author}}</a> ({{object_list.count}})
+{{block.super}}<a href="/~{{ author }}">~{{author}}</a> ({{object_list.count}})
 {% endblock %}
 {% block content %}
     <article itemscope itemtype="http://schema.org/Article">
