@@ -32,7 +32,7 @@ TIME_ZONE = 'America/Chicago'
 SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 SITE_ID = 1
 
-LANGUAGE_CODE = 'es-AR' # Using Guarani, Of Course
+LANGUAGE_CODE = 'es-AR'  # Using Guarani, Of Course
 USE_I18N = True
 USE_L10N = True
 
@@ -48,7 +48,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 AUTH_PROFILE_MODULE = 'auth.User'
 LOGIN_REDIRECT_URL = '/~'
@@ -68,6 +68,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'ltmo.middleware.profile_middleware.ProfileMiddleware'
 )
 
 TEMPLATE_LOADERS = (
@@ -120,6 +122,37 @@ INSTALLED_APPS = (
 )
 TAGGIT_TAGCLOUD_MIN = 1.0
 TAGGIT_TAGCLOUD_MAX = 0.6
+LOGGING = {
+    'version': 1,
+    'formatters': {
+        'verbose': {
+            'format': '''%(levelname)s %(asctime)s %(module)s %(duration)s %(sql)s %(params)s %(message)s'''
+        },
+    },
+    'handlers': {
+        'error_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'errors.log',
+            'formatter': 'verbose'
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        # 'django.request': {
+        #     'handlers': ['error_file'],
+        #     'level': 'INFO',
+        #     'propagate': False,
+        # },
+        'django.db.backends': {
+            'handlers': ['console'],
+        }
+    }
+}
 try:
     from local_settings import *
 except ImportError:
