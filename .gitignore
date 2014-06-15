@@ -4,6 +4,7 @@
 *.tar.gz
 *.log
 *egg-info
+fabfile.py
 local_settings.py
 pip-log.txt
 etc/*
