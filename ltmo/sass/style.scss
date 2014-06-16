@@ -428,7 +428,7 @@ form {
 
 input, 
 textarea{
-    border: 1px solid #000;
+    border: 1px solid #999;
     font: 1em sans-serif;
     padding: 0.25em;
     border-radius: 3px;
@@ -442,9 +442,9 @@ input[type='email']:focus,
 input[type='password']:focus,
 input[type='text']:focus, 
 textarea:focus{
-    border: 1px solid #0C6;
+    border: 1px solid $green;
     outline:0 !important;
-    box-shadow: 0 0 2px #FC0;
+    box-shadow: 0 0 2px $green;
 }
 .error input, 
 .error textarea {

@@ -37,7 +37,7 @@ class ProfileMiddleware(object):
     """
     @staticmethod
     def profile_enabled(req):
-        return (settings.DEBUG or req.user.is_superuser) and 'prof' in req
+        return (settings.DEBUG or req.user.is_superuser) and 'prof' in req.GET
 
     def process_request(self, request):
         if self.profile_enabled(request):
@@ -116,11 +116,11 @@ class ProfileMiddleware(object):
 
             sys.stdout = old_stdout
             stats_str = out.getvalue()
-
+            response.content = str(response.content)
             if response and response.content and stats_str:
-                response.content = "<pre>" + stats_str + "</pre>"
+                response.content = "<pre>" + stats_str.read() + "</pre>"
 
-            response.content = "\n".join(response.content.split("\n")[:40])
+            response.content = u"\n".join(str(response.content).split("\n")[:40])
 
             response.content += self.summary_for_files(stats_str)
 
