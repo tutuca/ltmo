@@ -9,8 +9,6 @@ from django.contrib import admin
 from leaks.feeds import LeakFeed
 from leaks.models import Leak
 
-admin.autodiscover()
-
 info_dict = {
     'queryset': Leak.objects.all(),
     'date_field': 'created',

@@ -2,7 +2,6 @@
 from django.db import models
 from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
-from django.contrib import admin
 from django.template.defaultfilters import slugify
 from markdown import markdown
 from leaks.mdx_urlize import makeExtension as make_urlize
@@ -41,10 +40,3 @@ class Leak(models.Model):
         )
         self.slug = '%s-%s' % (slugify(self.title[:30]) or 'sin-titulo', self.pk)
         super(Leak, self).save(*args, **kwargs)
-
-
-class LeakAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'tags', 'author', 'created')
-    list_filter = ('author', 'created')
-
-admin.site.register(Leak, LeakAdmin)

@@ -3,47 +3,12 @@
 Inspired by Django's urlize function.
 
 Positive examples:
-
->>> import markdown
->>> md = markdown.Markdown(extensions=['urlize'])
-
->>> md.convert('http://example.com/')
-u'<p><a href="http://example.com/">http://example.com/</a></p>'
-
->>> md.convert('go to http://example.com')
-u'<p>go to <a href="http://example.com">http://example.com</a></p>'
-
->>> md.convert('example.com')
-u'<p><a href="http://example.com">example.com</a></p>'
-
->>> md.convert('example.net')
-u'<p><a href="http://example.net">example.net</a></p>'
-
->>> md.convert('www.example.us')
-u'<p><a href="http://www.example.us">www.example.us</a></p>'
-
->>> md.convert('(www.example.us/path/?name=val)')
-u'<p>(<a href="http://www.example.us/path/?name=val">www.example.us/path/?name=val</a>)</p>'
-
->>> md.convert('go to <http://example.com> now!')
-u'<p>go to <a href="http://example.com">http://example.com</a> now!</p>'
-
->>> md.convert('http://example.com/abc.png')
-u'<img src="http://example.com/abc.png" />'
-
-Negative examples:
-
->>> md.convert('del.icio.us')
-u'<p>del.icio.us</p>'
-
 """
 
 import markdown
 import urllib
 import os
-from io import StringIO
 from hashlib import sha1
-from PIL import Image
 from django.conf import settings
 
 from markdown.util import etree, AtomicString
@@ -105,7 +70,3 @@ class UrlizeExtension(markdown.Extension):
 def makeExtension(configs=None):
     if configs is None: configs = {}
     return UrlizeExtension(configs=configs)
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
