@@ -19,8 +19,10 @@ etc/*
 apps/*
 cloth/lib/*
 static/
+
+static/admin/*
+static/media/
 node_modules/
 
 dump/
 
-ltmo/media
