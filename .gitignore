@@ -1,5 +1,9 @@
+local_settings.py
+pip-log.txt
+
 *.pyc
 __pycache__
+
 *~
 *.db
 *.tar.gz
@@ -8,14 +12,16 @@ __pycache__
 *.bz2
 *.sqlite3
 *egg-info
-local_settings.py
-pip-log.txt
+.sass-cache/
+.idea/
+
 etc/*
 apps/*
+
 static/admin/*
 static/media/
+node_modules/
 
-.idea/
 dump/
-ltmo/.sass-cache/
+
 ltmo/media
