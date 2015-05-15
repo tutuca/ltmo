@@ -12,7 +12,7 @@
         if (hash){
             $(window).scrollTop($(hash).offset().top-55)
         }
-        
+
 		function split( val ) {
 			return val.split( /,\s*/ );
 		}
@@ -37,7 +37,7 @@
 
             }
             return false;
-            
+
         });
         $('.edit').click(function(){
             url = $(this).attr('href');
@@ -99,4 +99,3 @@
                 $('#messages .control').click()
                 }, 1000);
     })
-

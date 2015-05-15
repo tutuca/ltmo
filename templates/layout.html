@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-{% load banner_tags %}
+{% load banner_tags%}
+
 <html lang='es'>
 <head>
 
@@ -10,11 +11,9 @@
     <meta name="description" content="LTMO, una especie de sucursal de la British Petroleum.{% block meta-description %}{% endblock %}" />
     <meta name="google-site-verification" content="GzD0PcJhPHGZ1BcTySo8BLEqEQNObvIqqMXSjqVeh4w" />
     <link title="LTMO - Derrames publicados recientemente" href="/feed/" type="application/rss+xml" rel="alternate">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />    
-    <script src="/static/js/jquery.js"></script>
-    <script src="/static/js/ui.js"></script>
-    <script src="/static/js/ltmo.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+    <script src="/static/js/lib.js"></script>
+    <script src="/static/js/main.js"></script>
     {% pop_slot 'analytics' %}
 </head>
 <body>
@@ -34,6 +33,7 @@
             {% if not user.is_authenticated %}
             <a href="/login" class="session fa fa-sign-in" title="Entrar" /></a>
             {% else %}
+            <a class="profile" href="{{user.get_profile.get_absolute_url}}">{{user.first_name|default_if_none:user.username}}</a>
             <a href="/logout" class="session fa fa-sign-out" title="{{user}}" ></a>
             {% endif %}
         </nav>
@@ -61,7 +61,7 @@
         <p>Las opiniones vertidas en cada artículo son responsabilidad del author</p>
 
     </aside>
-    
+
 
     <br class="clear"/>
 {% endblock %}
@@ -70,7 +70,7 @@
 <footer>
 <div class="wrapper">
     <ul>
-        <li><a href="http://ltmo.com.ar">Copyright 2006</a></li>
+        <li><a href="http://ltmo.com.ar">Copyright 2006 - 2015</a></li>
         <li><a href="http://github.com/tutuca/ltmo">code</a></li>
         <li><a href="mailto://losingoil@gmail.com">email</a></li>
     </ul>
@@ -78,9 +78,9 @@
 </footer>
 </body>
 
-    
-<!-- 
-      _______    
+
+<!--
+      _______
      |   __  \
      |  |  |  |
      |   ··   |

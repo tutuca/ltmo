@@ -6,7 +6,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
-BASE_DIR = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 ADMINS = (
     ('etnalubma', 'francisco.herrero@gmail.com'),
@@ -19,12 +19,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'ltmo.db'),
-        'TEST_NAME': os.path.join(BASE_DIR, 'test_ltmo.db'),
+        'NAME': os.path.join(BASE_DIR, 'ltmo.sqlite3'),
+        'TEST_NAME': os.path.join(BASE_DIR, 'test_ltmo.db.sqlite3'),
     }
 }
-
-SOUTH_TESTS_MIGRATE = False
 
 ALLOWED_HOSTS = []
 TIME_ZONE = 'America/Chicago'
@@ -64,10 +62,13 @@ AUTHENTICATION_BACKENDS = (
 
 MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 TEMPLATE_LOADERS = (
@@ -108,15 +109,13 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.messages',
     'social.apps.django_app.default',
-    'ltmo',
     'registration',
     'debug_toolbar',
-    'south',
     'endless_pagination',
     'taggit',
     'taggit_templatetags',
-    'banners',
-    'leaks',
+    'banners.apps.BannersAppConfig',
+    'leaks.apps.LeakAppConfig',
 )
 TAGGIT_TAGCLOUD_MIN = 1.0
 TAGGIT_TAGCLOUD_MAX = 0.6

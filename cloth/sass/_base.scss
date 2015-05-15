@@ -22,7 +22,7 @@ $fg_color:  #0a4201;
     transition: all $time;
 }
 @mixin gradient($color, $direction:top) {
-   background-image: -webkit-linear-gradient($direction, $color, darken($color, 10%)); 
+   background-image: -webkit-linear-gradient($direction, $color, darken($color, 10%));
    background-image: -moz-linear-gradient($direction, $color, darken($color, 10%));
    background-image: -ms-linear-gradient($direction, $color, darken($color, 10%));
    background-image: -o-linear-gradient($direction, $color, darken($color, 10%));
@@ -38,9 +38,9 @@ $fg_color:  #0a4201;
     text-shadow: 0 1px 1px #333;
     margin:0 0.3em;
     color: $fg;
-    
+
     &:active {
-        @include transition(0.1s);        
+        @include transition(0.1s);
         @include gradient($bg, 'bottom');
     }
     &:hover{

@@ -3,18 +3,25 @@
 
 
 from setuptools import setup
+from pip.req import parse_requirements
+
+
+requirements = parse_requirements('requirements.txt')
 
 setup(
     name='ltmo',
     version='0.14',
     description="light weight blogging, heavy weight time-wasting",
-    # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+    # http://www.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Framework :: Django",
+        "Intended Audience :: Developers",
+        "License :: Public Domain",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     keywords='Blog, Django',
-    author='Inventta',
+    author='Matias Iturburu, Fran Herrero',
     author_email='maturburu@gmail.com',
     url='http://ltmo.com.ar',
     packages=['ltmo', 'leaks'],
@@ -25,22 +32,8 @@ setup(
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'ltmo = ltmo.manage:do_manage',
+            'manage = ltmo.manage:do_manage',
         ],
     },
-    install_requires=[
-        'django',
-        'Pillow',
-        'Markdown',
-        'pygments',
-        'south',
-        'django-taggit',
-        'django-taggit-templatetags',
-        'django-endless-pagination',
-        'django-registration',
-        'python-social-auth',
-        'django-debug-toolbar',
-        'banners'
-        #'psycopg2',
-    ]
+    install_requires=[str(r.req) for r in requirements]
 )

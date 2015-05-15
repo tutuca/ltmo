@@ -5,7 +5,7 @@ header, section, footer, article, aside {
     display: block;
     padding: 0 1em;
     margin-bottom: 2em;
-    
+
 }
 header {
     width: 97%;
@@ -21,7 +21,7 @@ footer {
     padding: 5em 1em 1em;
     font-size: 80%;
 }
-footer p{ 
+footer p{
 }
 
 #main{
@@ -34,7 +34,7 @@ section {
     display:block;
     float: left;
     width: 63%
-} 
+}
 
 details {
     text-align: right;
@@ -55,7 +55,7 @@ pre, code {
 
 blockquote{
     font: italic 150% "Georgia-MS", Georgia, serif;
-    
+
 }
 
 a {
@@ -160,7 +160,7 @@ nav a:hover {
     position: absolute;
     bottom: 5em;
     right: 10em;
-    
+
 }
 .banner {
     clear: both;
@@ -190,10 +190,10 @@ nav a:hover {
     float:left;
     padding: 1em;
 }
-.next { 
+.next {
     float:right;
     padding: 1em;
-} 
+}
 
 .tags {
     background: url(/media/bg-tags.png) left no-repeat;
@@ -256,7 +256,7 @@ form .control {
     padding: 0.25em 0;
     position: relative;
 }
-input, 
+input,
 textarea{
     border: 1px solid #999;
     font: 1em sans-serif;
@@ -269,7 +269,7 @@ textarea {
     width:20em;
 }
 
-input[type='text']:focus, 
+input[type='text']:focus,
 textarea:focus{
     border: 1px solid #0C6;
 }
@@ -277,7 +277,7 @@ textarea:focus{
     background: #FEA;
     border-radius: 3px;
 }
-.error input, 
+.error input,
 .error textarea {
     border: 1px solid #C60;
 }
@@ -317,7 +317,7 @@ input[type='submit']:hover {
 }
 input[type='submit']:active {
     margin:4px -2px 0 0;
-    
+
 }
 
 

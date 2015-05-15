@@ -3,7 +3,7 @@
 {% if form.instance.id %}
 <form action="/edit/{{form.instance.id}}" method="post" {% if form.errors %}class="error"{% endif %} id="leak-form">
 {% endif %}
-<form action="/new/" method="post" {% if form.errors %}class="error"{% endif %} id="leak-form">    
+<form action="/new/" method="post" {% if form.errors %}class="error"{% endif %} id="leak-form">
         <input type="hidden" name="next" value="{{request.path}}" />
         {{form.author}}
     {% csrf_token %}
@@ -19,8 +19,8 @@
     <section>
         {{form.as_p}}
     <p class="clear submit">
-        <input name="save" type="submit" value="listo" /> 
-        <a href="#leak-form" class="control">Cerrar</a> 
+        <input name="save" type="submit" value="listo" />
+        <a href="#leak-form" class="control">Cerrar</a>
 
     </p>
 

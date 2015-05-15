@@ -1,6 +1,6 @@
 {% if form.errors %}
 "form":[
     "errors": [{% for error in form.errors %}"{{error|safe}}", {%empty%}"No errors"{% endfor %}],
-{% for field in form %}{"{{field}}":[{% for error in field.errors %}"{{error|safe}}", {%empty%}"No errors"{% endfor %}}{% endfor %}        
+{% for field in form %}{"{{field}}":[{% for error in field.errors %}"{{error|safe}}", {%empty%}"No errors"{% endfor %}}{% endfor %}
 ]{% else %}
 {"messages":"No hubo errores, no hubo excesos, son todos asesinos los milicos del proceso", "object_id":"{{object_id}}"}{% endif %}

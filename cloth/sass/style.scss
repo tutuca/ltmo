@@ -33,7 +33,7 @@ header, section, footer, article, aside {
     display: block;
     padding: 0;
     margin-bottom: 2em;
-    
+
 }
 header, footer {
     width:100%;
@@ -272,7 +272,7 @@ h2 {
     position: absolute;
     bottom: 5em;
     right: 10em;
-    
+
 }
 .banner {
     clear: both;
@@ -324,9 +324,9 @@ h2 {
 .prev {
     left: 1em;
 }
-.next { 
+.next {
     right:1em;
-} 
+}
 .tags {
     background: $fg_color;
     border-radius: 3px 0 0 3px;
@@ -416,7 +416,7 @@ form {
 }
 
 
-input, 
+input,
 textarea{
     border: 1px solid #000;
     font: 1em sans-serif;
@@ -430,13 +430,13 @@ textarea {
 }
 input[type='email']:focus,
 input[type='password']:focus,
-input[type='text']:focus, 
+input[type='text']:focus,
 textarea:focus{
     border: 1px solid #0C6;
     outline:0 !important;
     box-shadow: 0 0 2px #FC0;
 }
-.error input, 
+.error input,
 .error textarea {
     border: 1px solid #C60!important;
     box-shadow: 0 0 2px #F00!important;
