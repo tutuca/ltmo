@@ -1,7 +1,6 @@
 var $ = require('jquery');
 
-require('jquery-ui/blind');
-require('jquery-ui/autocomplete');
+require('jquery-ui');
 
 var viewport = function () {
     'use strict';

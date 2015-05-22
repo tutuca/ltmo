@@ -1,0 +1,48 @@
+{
+  "name": "ltmo",
+  "version": "0.14.0",
+  "description": "Un sitio para los amigos.",
+  "main": "cloth/js/main.js",
+  "directories": {
+    "doc": "docs",
+    "src": "cloth/js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tutuca/ltmo.git"
+  },
+  "dependencies": {
+    "jquery": "*",
+    "jquery-ui": "*",
+    "fontawesome": "*"
+  },
+  "devDependencies": {
+    "node-sass": "*",
+    "browserify": "*",
+    "hbsfy": "*",
+    "karma": "*",
+    "uglify-js": "*",
+    "browserify-zlib": "*",
+    "ansi-regex": "*",
+    "amdefine": "*",
+    "grunt": "*",
+    "grunt-browserify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-sass": "*"
+  },
+  "keywords": [
+    "sitio",
+    "leak",
+    "oil",
+    "ltmo"
+  ],
+  "author": "tutuca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tutuca/ltmo/issues"
+  }
+}
