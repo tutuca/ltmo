@@ -21,12 +21,15 @@
  *  Work: Lead Product Designer @ http://kyruus.com
  */
 
-$fontAwesomePath:   "" !default;
+$fontAwesomePath:   "../fonts" !default;
 $borderColor:       #eee;
 $iconMuted:         #eee;
 @mixin border-radius($radius) { -webkit-border-radius: $radius; -moz-border-radius: $radius; border-radius: $radius; }
 
+sadas
 
+
+sadsa dasd a
 @font-face {
   font-family: 'FontAwesome';
   src: url('#{$fontAwesomePath}/fontawesome-webfont.eot?v=3.0.1');

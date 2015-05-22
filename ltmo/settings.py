@@ -37,7 +37,7 @@ USE_L10N = True
 ROOT_URLCONF = 'ltmo.urls'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 UPLOAD_DIR = os.path.join(MEDIA_ROOT, 'upload')
 UPLOAD_URL = 'http://i.ltmo'
 MEDIA_URL = '/media/'
@@ -48,6 +48,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+STATICFILES_DIRS = ('', os.path.join(BASE_DIR, 'static'))
 AUTH_PROFILE_MODULE = 'auth.User'
 LOGIN_REDIRECT_URL = '/~'
 ACCOUNT_ACTIVATION_DAYS = 2
@@ -88,10 +89,6 @@ TEMPLATE_DIRS = (
     'templates',
     os.path.join(BASE_DIR, 'templates')
 )
-
-SOUTH_MIGRATION_MODULES = {
-    'taggit': 'taggit.south_migrations',
-}
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
