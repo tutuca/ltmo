@@ -1,6 +1,6 @@
 {
   "name": "ltmo",
-  "version": "0.14.0",
+  "version": "0.3.1",
   "description": "Un sitio para los amigos.",
   "main": "cloth/js/main.js",
   "directories": {
@@ -15,22 +15,16 @@
     "url": "https://github.com/tutuca/ltmo.git"
   },
   "dependencies": {
-    "jquery": "*",
-    "jquery-ui": "*",
-    "fontawesome": "*"
+    "grunt-cli": "*"
   },
   "devDependencies": {
     "node-sass": "*",
-    "browserify": "*",
-    "hbsfy": "*",
-    "karma": "*",
-    "uglify-js": "*",
-    "browserify-zlib": "*",
-    "ansi-regex": "*",
-    "amdefine": "*",
+    "bower": "*",
     "grunt": "*",
-    "grunt-browserify": "*",
+
     "grunt-contrib-watch": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "*",
     "grunt-contrib-uglify": "*",
     "grunt-sass": "*"
   },

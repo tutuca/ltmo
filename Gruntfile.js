@@ -1,55 +1,109 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     'use strict';
-    grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-browserify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        browserify: {
-            all: {
-                src: ['cloth/js/main.js'],
-                dest: 'static/js/app.js'
-            }
-        },
-        uglify: {
-            all: {
-                options: {
-                    sourceMap: true
-                },
-                files: {
-                    'static/js/app.min.js': ['static/js/app.js']
-                }
-            }
-        },
         sass: {
             options: {
-                includePaths: ['cloth/sass'],
-                sourceComments: 'none'
+                includePaths: [
+                    './cloth/lib/bootstrap-sass-official/assets/stylesheets',
+                    './cloth/lib/font-awesome/scss/'
+                ]
             },
             dist: {
                 options: {
-                    outputStyle: 'expanded'
+                    outputStyle: 'compressed'
                 },
                 files: {
-                    'static/css/styles.css': 'cloth/sass/styles.scss'
+                    './static/css/style.css': './cloth/sass/style.scss'
+                }
+            }
+        },
+        copy: {
+            main: {
+                files: [
+                    {
+                        flatten: true,
+                        cwd: './cloth/lib/font-awesome/fonts/',
+                        src: ['*.ttf', '*.eot', '*.svg', '*.woff', '*.woff2'],
+                        dest: './static/fonts/',
+                        expand: true
+                    },
+                    {
+                        flatten: true,
+                        cwd: './cloth/img/',
+                        src: ['*.png', '*.jpg', '*.gif'],
+                        dest: './static/img/',
+                        expand: true
+                    }
+                ]
+            }
+        },
+        concat: {
+            options: {
+                separator: ';'
+            },
+            lib: {
+                src: [
+                    './cloth/lib/jquery/dist/jquery.js',
+                    './cloth/lib/jquery-ui/jquery-ui.js'
+                ],
+                dest: './static/js/lib.js'
+            },
+            main: {
+                src: [
+                    './cloth/js/main.js'
+                ],
+                dest: './static/js/main.js'
+            }
+        },
+        uglify: {
+            options: {
+                mangle: true,
+                sourceMap: true
+            },
+            lib: {
+                files: {
+                    './static/js/lib.min.js': './static/js/lib.js'
+                }
+            },
+            main: {
+                files: {
+                    './static/js/main.min.js': './static/js/main.js'
                 }
             }
         },
         watch: {
-            js: {
-                files: ['cloth/js/*.js', 'cloth/js/**/*.js'],
-                tasks: ['browserify', 'uglify']
+            scss: {
+                files: [
+                    './cloth/sass/*.scss'
+                ],
+                tasks: ['sass']
             },
-            sass: {
-                files: ['cloth/scss/*.scss',
-                        'cloth/scss/**/*.scss'],
-                tasks: ['sass:dist  ']
+            js: {
+                files: [
+                    './cloth/js/*.js'
+                ],
+                tasks: ['copy:main']
+            },
+            config: {
+                files: [
+                    'Gruntfile.js',
+                    'bower.json',
+                    'package.json'
+                ],
+                tasks: ['copy', 'concat', 'sass']
             }
         }
     });
+    // Plugin loading
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-sass');
 
-    grunt.registerTask('build', ['sass', 'browserify', 'uglify']);
-    grunt.registerTask('default', ['build','watch']);
+    // Task definition
+    grunt.registerTask('build', ['copy', 'sass', 'concat', 'uglify']);
+    grunt.registerTask('default', ['build', 'watch']);
+
 };
