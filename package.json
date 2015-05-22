@@ -1,6 +1,6 @@
 {
   "name": "ltmo",
-  "version": "0.10",
+  "version": "0.10.0",
   "description": "Un sitio para los amigos.",
   "main": "cloth/js/main.js",
   "directories": {
@@ -14,19 +14,21 @@
     "type": "git",
     "url": "https://github.com/tutuca/ltmo.git"
   },
+  "scripts": {
+    "start": "webpack-dev-server --hot --progress --colors",
+    "build": "webpack --progress --colors"
+  },
   "dependencies": {
-    "grunt-cli": "*"
+    "backbone": "*",
+    "react": "*"
   },
   "devDependencies": {
-    "node-sass": "*",
-    "bower": "*",
-    "grunt": "*",
+    "webpack": "*",
+    "react-hot-loader": "*",
+    "webpack-dev-server": "*",
+    "babel-loader": "*",
+    "jshint": "*"
 
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-copy": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-sass": "*"
   },
   "keywords": [
     "sitio",
