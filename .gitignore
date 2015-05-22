@@ -17,11 +17,8 @@ __pycache__
 
 etc/*
 apps/*
-
-static/admin/*
-static/css/*
-static/js/*
-static/media/
+cloth/lib/*
+static/
 node_modules/
 
 dump/

@@ -1,0 +1,9 @@
+    {
+  "name": "ltmo",
+  "version": "0.3.1",
+  "dependencies": {
+    "jquery": "*",
+    "bootstrap-sass-official": "*",
+    "font-awesome": "*"
+  }
+}
