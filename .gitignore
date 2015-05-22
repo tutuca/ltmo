@@ -19,6 +19,8 @@ etc/*
 apps/*
 
 static/admin/*
+static/css/*
+static/js/*
 static/media/
 node_modules/
 
