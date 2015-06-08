@@ -24,7 +24,7 @@ module.exports = function (grunt) {
                     {
                         flatten: true,
                         cwd: './cloth/lib/font-awesome/fonts/',
-                        src: ['*.ttf', '*.eot', '*.svg', '*.woff'],
+                        src: ['*.ttf', '*.eot', '*.svg', '*.woff', '*.woff2'],
                         dest: './static/fonts/',
                         expand: true
                     },
@@ -44,15 +44,14 @@ module.exports = function (grunt) {
             },
             lib: {
                 src: [
-                    './cloth/lib/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js',
                     './cloth/lib/jquery/dist/jquery.js',
-                    './cloth/lib/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js'
+                    './cloth/lib/jquery-ui/jquery-ui.js'
                 ],
                 dest: './static/js/lib.js'
             },
             main: {
                 src: [
-                    'assets/js/scripts.js'
+                    './cloth/js/main.js'
                 ],
                 dest: './static/js/main.js'
             }
@@ -76,15 +75,15 @@ module.exports = function (grunt) {
         watch: {
             scss: {
                 files: [
-                    'assets/scss/*.scss'
+                    './cloth/sass/*.scss'
                 ],
                 tasks: ['sass']
             },
             js: {
                 files: [
-                    'assets/js/*.js'
+                    './cloth/js/*.js'
                 ],
-                tasks: ['copy:main', 'concat:main']
+                tasks: ['copy:main']
             },
             config: {
                 files: [

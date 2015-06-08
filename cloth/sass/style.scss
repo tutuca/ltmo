@@ -1,7 +1,6 @@
 @import "pygments";
 @import "base";
 
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
 * {
     box-sizing: content-box;
 }
@@ -25,7 +24,7 @@ html, body {
     overflow:overlay;
 }
 body {
-    font: 100% "Droid Sans", sans-serif;
+    font: 100% "Helvetica", "Trebuchet MS", "Verdana", sans-serif;
     background: #FFF;
     padding:0;
     margin: 0;
@@ -34,7 +33,7 @@ header, section, footer, article, aside {
     display: block;
     padding: 0;
     margin-bottom: 2em;
-    
+
 }
 header, footer {
     width:100%;
@@ -186,7 +185,7 @@ a{
     text-decoration:none;
     color :$fg_color;
     &:hover {
-        text-shadow: inset 1px 0 0 #FFF, 0 1px 1px #000; 
+        text-shadow: inset 1px 0 0 #FFF, 0 1px 1px #000;
     }
 }
 
@@ -273,7 +272,7 @@ h2 {
     position: absolute;
     bottom: 5em;
     right: 10em;
-    
+
 }
 .banner {
     clear: both;
@@ -325,9 +324,9 @@ h2 {
 .prev {
     left: 1em;
 }
-.next { 
+.next {
     right:1em;
-} 
+}
 .tags {
     background: $fg_color;
     border-radius: 3px 0 0 3px;
@@ -417,7 +416,7 @@ form {
 }
 
 
-input, 
+input,
 textarea{
     border: 1px solid #000;
     font: 1em sans-serif;
@@ -431,13 +430,13 @@ textarea {
 }
 input[type='email']:focus,
 input[type='password']:focus,
-input[type='text']:focus, 
+input[type='text']:focus,
 textarea:focus{
     border: 1px solid #0C6;
     outline:0 !important;
     box-shadow: 0 0 2px #FC0;
 }
-.error input, 
+.error input,
 .error textarea {
     border: 1px solid #C60!important;
     box-shadow: 0 0 2px #F00!important;
@@ -516,6 +515,6 @@ input[type='submit'] {
     @include gradient(#3B5998)
 
 }
-.login.google {
+.login.google-oauth2 {
     @include gradient(#F90101)
 }
