@@ -56,8 +56,8 @@ ACCOUNT_ACTIVATION_DAYS = 2
 PAGINATION_DEFAULT_WINDOW = 2
 FORCE_LOWERCASE_TAGS = True
 AUTHENTICATION_BACKENDS = (
-    'social.backends.google.GoogleOpenId',
     'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -116,6 +116,8 @@ INSTALLED_APPS = (
 )
 TAGGIT_TAGCLOUD_MIN = 1.0
 TAGGIT_TAGCLOUD_MAX = 0.6
+SOCIAL_AUTH_CLEAN_USERNAMES = False
+
 try:
     from local_settings import *
 except ImportError:
