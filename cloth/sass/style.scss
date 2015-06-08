@@ -1,7 +1,6 @@
 @import "pygments";
 @import "base";
 
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
 * {
     box-sizing: content-box;
 }
@@ -25,7 +24,7 @@ html, body {
     overflow:overlay;
 }
 body {
-    font: 100% "Droid Sans", sans-serif;
+    font: 100% "Helvetica", "Trebuchet MS", "Verdana", sans-serif;
     background: #FFF;
     padding:0;
     margin: 0;
@@ -516,6 +515,6 @@ input[type='submit'] {
     @include gradient(#3B5998)
 
 }
-.login.google {
+.login.google-oauth2 {
     @include gradient(#F90101)
 }

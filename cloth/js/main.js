@@ -1,6 +1,3 @@
-var $ = require('jquery');
-require('jquery-ui');
-
 function viewport() {
     'use strict';
     var e = window,
