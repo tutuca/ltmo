@@ -3,9 +3,15 @@
 {{block.super}}ingreso y registro
 {% endblock %}
 {% block main %}
- 
+
   <div id="register-form">
-    <h2>Ingresá con tu cuenta de </h2><h3> <a class="login facebook" href="{% url 'social:begin' 'facebook' %}">Facebook</a> o <a class="login google" href="{% url 'social:begin' 'google' %}">Google</a></h3>
+    <h2>Ingresá con tu cuenta de </h2>
+    <h3>
+        {% for backend in backends.backends %}
+        <a class="login {{backend}}" href="{% url 'social:begin' backend %}">{{backend}}</a>
+        {% endfor %}
+    </h3>
+
 
     <p> No utilizaremos informaci&oacute;n de tu cuenta ni publicaremos en la misma.</p>
   </div>
