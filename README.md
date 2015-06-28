@@ -10,7 +10,7 @@ Este repositorio contiene tanto el código del sitio.
 El sitio está hecho en [django](http://djangoproject.com) y tiene muy pocas dependencias, la mejor manera de tener una instancia corriendo es con pip
 
         $ pip install -r requirements.txt -E ltmo_venv
-        
+
 Si no tenés pip y virtualenv (por qué no???):
 
         $ sudo easy_install pip
@@ -30,4 +30,3 @@ No sabemos muy bien de que se trata todo esto pero somos lo que hacemos
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tutuca/ltmo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
