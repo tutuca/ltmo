@@ -10,7 +10,7 @@ requirements = parse_requirements('requirements.txt')
 
 setup(
     name='ltmo',
-    version='0.3.1',
+    version='0.10',
     description="light weight blogging, heavy weight time-wasting",
     # http://www.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
