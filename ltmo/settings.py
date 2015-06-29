@@ -106,6 +106,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.messages',
     'social.apps.django_app.default',
+    'rest_framework',
     'registration',
     'debug_toolbar',
     'endless_pagination',
@@ -119,6 +120,6 @@ TAGGIT_TAGCLOUD_MAX = 0.6
 SOCIAL_AUTH_CLEAN_USERNAMES = False
 
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
