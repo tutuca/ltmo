@@ -8,6 +8,11 @@ from django.contrib import admin
 
 from leaks.feeds import LeakFeed
 from leaks.models import Leak
+from leaks.views import LeakViewset
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('leak', LeakViewset)
 
 info_dict = {
     'queryset': Leak.objects.all(),
@@ -18,17 +23,18 @@ sitemaps = {
     'leaks': GenericSitemap(info_dict, priority=0.6),
 }
 
-urlpatterns = patterns('leaks.views',
-    (r'^$','index',{},'index'),
-    (r'^new/$','edit',{},'new'),
-    (r'^edit/(?P<id>\d+)$','edit',{},'edit'),
-    (r'^l/$','by_tag',{}),
-    (r'^leak/(?P<tag_name>\D+)$','by_tag',{},'by_tag'),
-    (r'^leak/(?P<id>\d+)$','leak_detail',{},'leak_detail'),
-    (r'^tags/','tags',{},'tags'),
+urlpatterns = patterns(
+    'leaks.views',
+    (r'^$', 'index', {}, 'index'),
+    (r'^new/$', 'edit', {}, 'new'),
+    (r'^edit/(?P<id>\d+)$', 'edit', {}, 'edit'),
+    (r'^l/$', 'by_tag', {}),
+    (r'^leak/(?P<tag_name>\D+)$', 'by_tag', {}, 'by_tag'),
+    (r'^leak/(?P<id>\d+)$', 'leak_detail', {}, 'leak_detail'),
+    (r'^tags/', 'tags', {}, 'tags'),
     (r'^~$', 'user_profile', {}, 'author'),
-    (r'^~(?P<username>\w+)/$','user_profile', {}, 'author_detail'),
-    (r'^register$','register',{},'register'),
+    (r'^~(?P<username>[\w@\.]+)/$', 'user_profile', {}, 'author_detail'),
+    (r'^register$', 'register', {}, 'register'),
 )
 
 urlpatterns += patterns('django.contrib.auth.views',
@@ -46,6 +52,12 @@ urlpatterns += patterns('',
     (r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /media/*", mimetype="text/plain")),
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', 
         {'sitemaps': sitemaps})
+)
+
+urlpatterns += patterns('',
+    url(r'^api/', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls',
+        namespace='rest_framework'))
 )
 
 if settings.DEBUG:

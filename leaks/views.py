@@ -6,11 +6,13 @@ from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect, get_object_or_404, render
-from taggit.models import Tag
 from django.contrib.auth.decorators import login_required
-from leaks.forms import LeakForm, RegisterForm
-from leaks.models import Leak
-
+from taggit.models import Tag
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from .forms import LeakForm, RegisterForm
+from .models import Leak
+from .serializers import LeakSerializer
 
 def index(request):
     try:
@@ -128,3 +130,9 @@ def register(request,):
             'form': form,
         }
     )
+
+class LeakViewset(viewsets.ModelViewSet):
+    queryset = Leak.objects.all()
+    serializer_class = LeakSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+    paginate_by = 100
