@@ -1,28 +1,45 @@
 ¿Qué es lo que observa?
 =============
-Nunca hay suficiente redundancia para garantizar la continuidad de la información.
-
-Este es un experimento, una herramienta para evitar perder cosas que en algún momento nos resultaron interesantes.
-Hay un [script de linea de comandos](http://github.com/etnalubma/spill) con el que envías cosas a algo que se parece a un blog y está hosteado en http://ltmo.com.ar/
 
 Este repositorio contiene tanto el código del sitio.
 
-El sitio está hecho en [django](http://djangoproject.com) y tiene muy pocas dependencias, la mejor manera de tener una instancia corriendo es con pip
+Asumimos una máquina en algún linux corriendo alguna versión reciente de python.
+Debería andar en cualquier lado que python sea instalable.
 
-        $ pip install -r requirements.txt -E ltmo_venv
+El sitio está hecho en [django](http://djangoproject.com) y tiene muy pocas dependencias, la mejor manera de tener una instancia corriendo es:
 
-Si no tenés pip y virtualenv (por qué no???):
+### para desarrollo:
 
-        $ sudo easy_install pip
-        $ sudo easy_install virtualenv
+    $ virtualenv ltmo
+    $ source ltmo/bin/activate
+    (ltmo)$ cd /path/to/clone
+    (ltmo)$ pip install -r requirements.txt
+    (ltmo)$ python setup.py develop
+    (ltmo)$ ltmo migrate
+    (ltmo)$ ltmo runserver
 
-Ahora sólo debés sincronizar la base de datos y correr el sitio:
+Una instancia queda corriendo en http://localhost:8000.
 
-        $ ./manage.py syncdb
-        $ ./manage.py runserver
+### frontend
 
-¿Y qué pasa con el resto?
----------------
+Usamos un toolchain que consta de [npm](http://npm.io), [grunt](http://grunt.io), [bower](http://bower.io). Se instala más o menos así:
+
+    $ cd /path/to/clone
+    $ npm install  # descarga dependencias de desarrollo.
+    $ bower install  # descarga bibliotecas para el cliente.
+    $ grunt  # observa cambios en una serie de archivos y ejecuta acciones.
+
+Esto resulta en una carpeta `static` en la raíz de tu copia local.
+
+### para producción:
+
+    $ pip install ltmo  # sudo si es necesario.
+
+Vea [[notas de instalación|Deployment]] para saber como instalarlo en un servidor en particular.
+
+
+
+## ¿Y qué pasa con el resto?
 
 Todo lo que envíes con spill se manda a ltmo.com.ar ahí vamos a ir agregando cosas a medida que tengamos más tiempo para perder aceite.
 
