@@ -5,8 +5,12 @@
 from setuptools import setup
 from pip.req import parse_requirements
 
+try:
+    requirements = parse_requirements('requirements.txt')
+except TypeError:
+    # travis complains about the former
+    requirements = parse_requirements('requirements.txt', session=False)
 
-requirements = parse_requirements('requirements.txt')
 
 setup(
     name='ltmo',
