@@ -15,14 +15,20 @@
     "url": "https://github.com/tutuca/ltmo.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --progress --colors",
-    "build": "webpack --progress --colors"
+    "build-sass": "node-sass cloth/style.scss static/main.css -I node_modules",
+    "watch-js": "nodemon -e js -w cloth/js -x 'npm run build-js'",
+    "watch-sass": "nodemon -e scss -w cloth/sass -x 'npm run build-sass'",
+    "start-server": "webpack-dev-server --hot --progress --colors",
+    "start": "node start-server & node watch-sass",
+    "build": "node build-sass & webpack --progress --colors"
   },
   "dependencies": {
-    "backbone": "*",
-    "react": "*"
+    "jquery": "*",
+    "jquery-ui": "*"
   },
   "devDependencies": {
+    "nodemon": "*",
+    "node-  sass": "*",
     "webpack": "*",
     "react-hot-loader": "*",
     "webpack-dev-server": "*",
