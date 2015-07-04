@@ -6,17 +6,21 @@ module.exports = {
     ],
     output: {
         path: __dirname + '/static',
-        filename: "bundle.js"
+        filename: "app.js"
     },
     module: {
         loaders: [
             { test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-            { test: /\.css$/, loader: "style!css" }
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel'},
         ]
     },
     plugins: [
       new webpack.NoErrorsPlugin()
-    ]
-
+    ],
+    devServer: {
+        contentBase: "./static",
+        noInfo: true,
+        hot: true,
+        inline: true
+    }
 };
