@@ -15,19 +15,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Leak',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
-                ('slug', models.SlugField(blank=True, editable=False, null=True)),
-                ('title', models.CharField(blank=True, null=True, max_length=126)),
+                ('id', models.AutoField(auto_created=True, primary_key=True, verbose_name='ID', serialize=False)),
+                ('slug', models.SlugField(blank=True, null=True, editable=False)),
+                ('title', models.CharField(blank=True, max_length=126, null=True)),
                 ('description', models.TextField()),
                 ('rendered', models.TextField(blank=True, null=True, editable=False)),
                 ('author', models.CharField(max_length=20, default='anon')),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('changed', models.DateTimeField(auto_now=True)),
-                ('metadata', models.TextField(blank=True, null=True, default='')),
-                ('tags', taggit.managers.TaggableManager(through='taggit.TaggedItem', to='taggit.Tag', help_text='A comma-separated list of tags.', verbose_name='Tags')),
+                ('metadata', models.TextField(blank=True, default='', null=True)),
+                ('tags', taggit.managers.TaggableManager(help_text='A comma-separated list of tags.', verbose_name='Tags', to='taggit.Tag', through='taggit.TaggedItem')),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
     ]
