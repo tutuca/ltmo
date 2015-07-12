@@ -1,22 +1,6 @@
-@import "font-awesome";
-$base03:    #010204;
-$base02:    #4D2219;
-$base01:    #586e75;
-$base00:    #657b83;
-$base0:     #AFDE9C;
-$base1:     #E8F7EE;
-$base2:     #eee8d5;
-$base3:     #fdf6e3;
-$yellow:    #b58900;
-$orange:    #cb4b16;
-$red:       #dc322f;
-$magenta:   #d33682;
-$violet:    #6c71c4;
-$blue:      #268bd2;
-$cyan:      #2aa198;
-$green:     #859900;
-$fg_color:  #0a4201;
-
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'pygments';
 @mixin transition ($time) {
     -moz-transition: all $time;
     -webkit-transition: all $time;

@@ -41,12 +41,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 UPLOAD_DIR = os.path.join(MEDIA_ROOT, 'upload')
 UPLOAD_URL = 'http://i.ltmo'
 MEDIA_URL = '/media/'
-STATIC_URL = '/static/'
+STATIC_URL = 'http://localhost:8080/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 STATICFILES_DIRS = ('', os.path.join(BASE_DIR, 'static'))
 AUTH_PROFILE_MODULE = 'auth.User'

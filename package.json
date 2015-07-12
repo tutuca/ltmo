@@ -1,33 +1,39 @@
 {
   "name": "ltmo",
-  "version": "0.10",
+  "version": "0.10.0",
   "description": "Un sitio para los amigos.",
   "main": "cloth/js/main.js",
   "directories": {
     "doc": "docs",
     "src": "cloth/js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tutuca/ltmo.git"
   },
   "dependencies": {
-    "grunt-cli": "*"
+    "jquery": "*",
+    "underscore": "*",
+    "bootstrap": "*",
+    "backbone": "*",
+    "react": "*",
+    "bootstrap-sass": "*",
+    "font-awesome": "*"
   },
   "devDependencies": {
-    "node-sass": "*",
-    "bower": "*",
     "grunt": "*",
-
+    "babel-core": "*",
+    "node-sass": "*",
+    "webpack": "*",
+    "babel-loader": "*",
+    "react-hot-loader": "*",
+    "webpack-dev-server": "*",
     "grunt-contrib-watch": "*",
-    "grunt-contrib-concat": "*",
+    "grunt-sass": "*",
     "grunt-contrib-copy": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-sass": "*"
-  },
+    "grunt-webpack": "*",
+    "grunt-contrib-concat": "*"
+  }, 
   "keywords": [
     "sitio",
     "leak",
