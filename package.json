@@ -7,35 +7,33 @@
     "doc": "docs",
     "src": "cloth/js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tutuca/ltmo.git"
   },
-  "scripts": {
-    "build-sass": "node-sass cloth/style.scss static/main.css -I node_modules",
-    "watch-js": "nodemon -e js -w cloth/js -x 'npm run build-js'",
-    "watch-sass": "nodemon -e scss -w cloth/sass -x 'npm run build-sass'",
-    "start-server": "webpack-dev-server --hot --progress --colors",
-    "start": "node start-server & node watch-sass",
-    "build": "node build-sass & webpack --progress --colors"
-  },
   "dependencies": {
     "jquery": "*",
-    "jquery-ui": "*"
+    "underscore": "*",
+    "bootstrap": "*",
+    "backbone": "*",
+    "react": "*",
+    "bootstrap-sass": "*",
+    "font-awesome": "*"
   },
   "devDependencies": {
-    "nodemon": "*",
-    "node-  sass": "*",
+    "grunt": "*",
+    "babel-core": "*",
+    "node-sass": "*",
     "webpack": "*",
+    "babel-loader": "*",
     "react-hot-loader": "*",
     "webpack-dev-server": "*",
-    "babel-loader": "*",
-    "jshint": "*"
-
-  },
+    "grunt-contrib-watch": "*",
+    "grunt-sass": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-webpack": "*",
+    "grunt-contrib-concat": "*"
+  }, 
   "keywords": [
     "sitio",
     "leak",
