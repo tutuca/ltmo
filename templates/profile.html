@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% load endless banner_tags %}
+{% block title %}
+{{author}}
+{% endblock %}
+{% block logo %}
+{{block.super}}<a href="/~{{ author }}">~{{author}}</a> ({{object_list.count}})
+{% endblock %}
+{% block content %}
+    <article itemscope itemtype="http://schema.org/Article">
+        <div>
+        {% paginate object_list %}
+        {% for object in object_list %}
+            {% include 'leak.html' %}
+            {% if forloop.counter == 4 %}{% pop_slot 'content' %}{% endif %}
+        {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
+        {%empty%}
+            <h1>Parece que no hay nada aquí</h1>
+            <p>Sirvete de <a href="/new/">crear un nuevo derrame</a></p>
+        {% endfor %}
+
+        {% show_pages %}
+        </div>
+    </article>
+{% endblock %}

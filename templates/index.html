@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% paginate object_list 10 %}
+    {% for object in object_list %}
+        {% include 'leak.html' %}
+        {% if forloop.counter == 5 %}{% pop_slot 'content' %}{% endif %}
+    {% empty %}
+        <article>
+            <h4>No hay derrames ahún</h4>
+        </article>
+    {% endfor %}
+    {% show_pages %}
+{% endblock %}

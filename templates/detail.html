@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{%  load banner_tags %}
+{% block title %}
+    {{object.title}}
+{% endblock %}
+{% if object %}
+    {% block logo %}
+    {{block.super}}<a href="{{object.get_absolute_url}}">{{object.title|default:'sin-titulo'}}</a>
+    {% endblock %}
+{% endif %}
+{% block section_class %}class="leak"{% endblock %}
+{% block content %}
+    {% if object %}
+    <article itemscope itemtype="http://schema.org/Article">
+        <div itemprop="description" content="{{object.description|truncatewords:10}}">
+        {{object.rendered|safe}}
+        </div>
+        <div id="detail" >
+            <div class="wrapper">
+                <p id="metadata" >
+                    <span itemprop="name">{{object.title}}</span>
+                    <a href="/~{{object.author}}" itemprop="author">~{{object.author}}</a>,
+                    {{object.created|date}},
+                    {% for tag in object.tags.all %}<a href="/leak/{{tag|slugify}}" class="tags">{{tag}}</a>, {%endfor%}
+                    <a title="permalink" class="permalink" href="{{object.get_absolute_url}}" itemprop="url">#{{object.pk}}</a>
+                    {{object.metadata}}
+                    {% if user.is_staff %}<a href="/edit/{{object.pk}}">editar</a>{% endif %}
+                </p>
+            </div>
+            </div>
+            {% with prev=object.get_previous_by_changed  %}
+                {% if prev.get_absolute_url %}
+                    <a class="pager prev " href="{{prev.get_absolute_url}}" title="#{{prev.id}} - {{prev.title}}"><strong class="fa fa-angle-left" /></strong></a>
+                {% endif %}
+            {% endwith %}
+            {% with next=object.get_next_by_changed  %}
+                {% if next.get_absolute_url %}
+                    <a class="pager next" href="{{next.get_absolute_url}}" title="#{{next.id}} - {{next.title}}"><strong class="fa fa-angle-right"></strong></a>
+                {% endif %}
+            {% endwith %}
+    </article>
+    {% else %}
+    <article>
+        <h4>No hay derrames ahún</h4>
+    </article>
+    {%endif %}
+    <div id="banner-content" class="slot">
+        {% pop_slot 'content' %}
+    </div>
+{% endblock %}

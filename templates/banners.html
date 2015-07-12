@@ -1,0 +1,95 @@
+{% load macros %}
+{% macro head %}
+<div id="banner-header" class="banner">
+    <h3>Publicidad</h3>
+    <script type="text/javascript"><!--
+        google_ad_client = "pub-3539830246651089";
+        /* 728x90 listado */
+        google_ad_slot = "4135291841";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+    </script>
+    <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</div>
+{% endmacro %}
+{% macro content %}
+<div id="banner-content" class="banner">
+    <script type="text/javascript"><!--
+        google_ad_client = "pub-3539830246651089";
+        /* 468x60, creado 26/08/10 */
+        google_ad_slot = "7764155477";
+        google_ad_width = 468;
+        google_ad_height = 60;
+        //-->
+    </script>
+    <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</div>
+{% endmacro %}
+{% macro aside %}
+<div id="banner-aside" class="banner">
+    <script type="text/javascript"><!--
+        google_ad_client = "pub-3539830246651089";
+        /* 300x250, creado 26/08/10 */
+        google_ad_slot = "2985450362";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+    <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</div>
+{% endmacro %}
+
+{% macro twitter %}
+<div id="twitter" class="banner">
+    <script>
+        new TWTR.Widget({
+            version: 2,
+            type: 'profile',
+            rpp: 3,
+            interval: 6000,
+            width: 'auto',
+            height: 400,
+            theme: {
+                shell: {
+                    background: '#ffffff',
+                    color: '#333333'
+                },
+                tweets: {
+                    background: '#FFCC00',
+                    color: '#333333',
+                    links: '#000000'
+                }
+            },
+            features: {
+                scrollbar: false,
+                loop: false,
+                live: false,
+                hashtags: true,
+                timestamp: true,
+                avatars: false,
+                behavior: 'all'
+            }
+        }).render().setUser('losingoil').start();
+    </script>
+</div>
+{% endmacro %}
+{% macro google_analytics %}
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18147848-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+{% endmacro %}

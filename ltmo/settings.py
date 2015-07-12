@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import os
+
 DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
-BASE_DIR = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 ADMINS = (
     ('etnalubma', 'francisco.herrero@gmail.com'),
@@ -18,84 +19,54 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'ltmo.db'),
-        'TEST_NAME': os.path.join(BASE_DIR, 'test_ltmo.db'),
+        'NAME': os.path.join(BASE_DIR, 'ltmo.sqlite3'),
+        'TEST_NAME': os.path.join(BASE_DIR, 'test_ltmo.db.sqlite3'),
     }
 }
 
-SOUTH_TESTS_MIGRATE = False
-
+ALLOWED_HOSTS = []
 TIME_ZONE = 'America/Chicago'
 
-LANGUAGE_CODE = 'es-AR' # Using Guarani, Of Course
-
+SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 SITE_ID = 1
 
+LANGUAGE_CODE = 'es-AR' # Using Guarani, Of Course
 USE_I18N = True
-
 USE_L10N = True
 
 ROOT_URLCONF = 'ltmo.urls'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 UPLOAD_DIR = os.path.join(MEDIA_ROOT, 'upload')
-
 UPLOAD_URL = 'http://i.ltmo'
-
 MEDIA_URL = '/media/'
-
+STATIC_URL = 'http://localhost:8080/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-STATIC_URL = '/static/'
-
-# Additional locations of static files
-STATICFILES_DIRS = (
-)
-
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
-
+STATICFILES_DIRS = ('', os.path.join(BASE_DIR, 'static'))
 AUTH_PROFILE_MODULE = 'auth.User'
 LOGIN_REDIRECT_URL = '/~'
-REGISTRATION_BACKEND = 'registration.backends.default.DefaultBackend'
-SOCIAL_AUTH_CREATE_USERS          = True
-SOCIAL_AUTH_FORCE_RANDOM_USERNAME = False
-LOGIN_ERROR_URL                   = '/login/error/'
-SOCIAL_AUTH_ERROR_KEY             = 'socialauth_error'
-SOCIAL_AUTH_ENABLED_BACKENDS=('facebook', 'google')
-SOCIAL_AUTH_COMPLETE_URL_NAME='socialauth_complete'
-SOCIAL_AUTH_ASSOCIATE_URL_NAME='associate_complete'
-SOCIAL_AUTH_DEFAULT_USERNAME= lambda u: slugify(u)
-SOCIAL_AUTH_EXTRA_DATA=False
-SOCIAL_AUTH_CHANGE_SIGNAL_ONLY=True
-SOCIAL_AUTH_ASSOCIATE_BY_MAIL=True
-
 ACCOUNT_ACTIVATION_DAYS = 2
-SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
 
 PAGINATION_DEFAULT_WINDOW = 2
-
 FORCE_LOWERCASE_TAGS = True
-
 AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.facebook.FacebookBackend',
-    'social_auth.backends.google.GoogleBackend',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
 MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'pagination.middleware.PaginationMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 TEMPLATE_LOADERS = (
@@ -104,9 +75,10 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
     'django.core.context_processors.request',
     'django.contrib.auth.context_processors.auth',
-    'social_auth.context_processors.social_auth_backends',
     'django.contrib.messages.context_processors.messages',
 )
 
@@ -130,21 +102,21 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django.contrib.messages',
+    'social.apps.django_app.default',
+    'rest_framework',
     'registration',
-    'social_auth',
     'debug_toolbar',
-    'south',
-    'pagination',
-    'tagging',
-    'banners',
-    'ltmo',
+    'endless_pagination',
+    'taggit',
+    'taggit_templatetags',
+    'banners.apps.BannersAppConfig',
+    'leaks.apps.LeakAppConfig',
 )
-# XXX: Remove this 
-# Modify temporarily the session serializer because the json serializer in
-# Django 1.6 can't serialize openid.yadis.manager.YadisServiceManager objects
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+TAGGIT_TAGCLOUD_MIN = 1.0
+TAGGIT_TAGCLOUD_MAX = 0.6
+SOCIAL_AUTH_CLEAN_USERNAMES = False
 
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
