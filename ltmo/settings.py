@@ -6,7 +6,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 ADMINS = (
     ('etnalubma', 'francisco.herrero@gmail.com'),
@@ -20,7 +21,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'ltmo.sqlite3'),
-        'TEST_NAME': os.path.join(BASE_DIR, 'test_ltmo.db.sqlite3'),
     }
 }
 
@@ -28,24 +28,22 @@ ALLOWED_HOSTS = []
 TIME_ZONE = 'America/Chicago'
 
 SECRET_KEY = '7$57#ttr-tzqr*dt$l7vac0xt&1+i=gi^-y8bnsba$i%ci^nrd'
-SITE_ID = 1
 
 LANGUAGE_CODE = 'es-AR' # Using Guarani, Of Course
 USE_I18N = True
 USE_L10N = True
 
-ROOT_URLCONF = 'ltmo.urls'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 UPLOAD_DIR = os.path.join(MEDIA_ROOT, 'upload')
+
 UPLOAD_URL = 'http://i.ltmo'
+
 MEDIA_URL = '/media/'
-STATIC_URL = 'http://localhost:8080/'
-ADMIN_MEDIA_PREFIX = '/static/admin/'
-STATICFILES_FINDERS = (
-)
-STATICFILES_DIRS = ('', os.path.join(BASE_DIR, 'static'))
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staic')
+
 AUTH_PROFILE_MODULE = 'auth.User'
 LOGIN_REDIRECT_URL = '/~'
 ACCOUNT_ACTIVATION_DAYS = 2
@@ -69,23 +67,42 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'social.apps.django_app.context_processors.backends',
-    'social.apps.django_app.context_processors.login_redirect',
-    'django.core.context_processors.request',
-    'django.contrib.auth.context_processors.auth',
-    'django.contrib.messages.context_processors.messages',
-)
+ROOT_URLCONF = 'ltmo.urls'
 
-TEMPLATE_DIRS = (
-    'templates',
-    os.path.join(BASE_DIR, 'templates')
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            'templates',
+            os.path.join(BASE_DIR, 'templates')
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
+
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = 'ltmo.wsgi.application'
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
@@ -94,14 +111,13 @@ LOGIN_URL = '/login'
 LOGOUT_URL = '/logout'
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
     'django.contrib.admin',
+    'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.staticfiles',
-    'django.contrib.sitemaps',
+    'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'social.apps.django_app.default',
     'rest_framework',
     'registration',
