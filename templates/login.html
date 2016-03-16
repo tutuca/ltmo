@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block logo %}
+{{block.super}}ingreso y registro
+{% endblock %}
+{% block main %}
+
+  <div id="register-form">
+    <h2>Ingresá con tu cuenta de </h2>
+    <h3>
+        {% for backend in backends.backends %}
+        <a class="login {{backend}}" href="{% url 'social:begin' backend %}">{{backend}}</a>
+        {% endfor %}
+    </h3>
+
+
+    <p> No utilizaremos informaci&oacute;n de tu cuenta ni publicaremos en la misma.</p>
+  </div>
+
+  <form action="{% url 'login' %}" method="post" {% if form.errors %}class="error"{% endif %}id="login-form">{% csrf_token %}
+
+    <h2>Inicio de sesión para usuarios</h2>
+    <input type="hidden" name="next" value="{{next|default:'/'}}">
+    {{form.as_p}}
+    <p class="field"><input type="submit" value="ingresar" /></p>
+  </form>
+  <div style="clear:both"></div>
+{% endblock %}

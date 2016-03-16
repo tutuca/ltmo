@@ -1,22 +1,36 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
+
+
+from setuptools import setup
+from pip.req import parse_requirements
+
+try:
+    requirements = parse_requirements('requirements.txt')
+except TypeError:
+    # travis complains about the former
+    requirements = parse_requirements('requirements.txt', session=False)
+
 
 setup(
     name='ltmo',
-    version='0.14',
+    version='0.10',
     description="light weight blogging, heavy weight time-wasting",
-    # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+    # http://www.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Framework :: Django",
+        "Intended Audience :: Developers",
+        "License :: Public Domain",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     keywords='Blog, Django',
-    author='Inventta',
+    author='Matias Iturburu, Fran Herrero',
     author_email='maturburu@gmail.com',
     url='http://ltmo.com.ar',
-    packages=find_packages(exclude=['tests*']),
+    packages=['ltmo', 'leaks'],
     package_data={
-        'ltmo': ['templates/*.html'],
+        'ltmo': ['templates/*.html', 'static/*.*'],
     },
     include_package_data=True,
     zip_safe=False,
@@ -25,21 +39,5 @@ setup(
             'manage = ltmo.manage:do_manage',
         ],
     },
-    install_requires=[
-        'django',
-        'Pillow',
-        'markdown',
-        'pygments',
-        'south',
-        'django-tagging',
-        'django-pagination',
-        'django-registration',
-        'django-social-auth',
-        'django-debug-toolbar',
-        'markdown',
-        'pygments',
-        'south',
-        'banners'
-        #'psycopg2',
-    ]
+    install_requires=[str(r.req) for r in requirements]
 )
