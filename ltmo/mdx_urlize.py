@@ -65,8 +65,7 @@ def process_image(image_url):
     image_name = '.'.join((sha1(image_url).hexdigest()[:6], ext))
     image_path = os.path.join(settings.UPLOAD_DIR, image_name)
 
-    if not os.path.exists(image_path):
-        from ipdb import set_trace; set_trace()
+    if not os.path.isfile(image_path):
         urllib.urlretrieve(image_url, image_path)
             
     return '/'.join((settings.UPLOAD_URL, image_name))

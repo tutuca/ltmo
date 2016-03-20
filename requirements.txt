@@ -9,4 +9,8 @@ django-social-auth
 psycopg2
 south
 django-debug-toolbar
-banners
+#git+git://github.com/tutuca/python-markdown-video.git
+#git+git://github.com/tutuca/markdown-urlize.git
+git+git@github.com:Inventta/banners.git#egg=banners
+-e git+git@github.com:Inventta/ltmo.git#egg=ltmo
+

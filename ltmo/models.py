@@ -47,4 +47,4 @@ class LeakAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'tags','author', 'created')
     list_filter = ('author', 'created')
 
-admin.site.register(Leak, LeakAdmin)
+#admin.site.register(Leak, LeakAdmin)

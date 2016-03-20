@@ -20,8 +20,8 @@ function setLayout(){
     visible_height = vp.height - padding;
     visible_width = $('#main article').width();
     main_img = $('article img')[0];
+    old_img_width = $('article img')[0].width;
     if (main_img) {
-        old_img_width = $('article img')[0].width;
         new_img_width = (visible_width / old_img_width * visible_height) - padding;
         if (visible_height > main_img.height) {
                 main_img.height = visible_height;
