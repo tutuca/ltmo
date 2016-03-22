@@ -8,33 +8,6 @@
     padding: 0.5em 1em;
     overflow:overlay;
 }
-body {
-    font: 100% "Droid Sans", sans-serif;
-    background: #EEE;
-    padding:0;
-    margin: 0;
-}
-header, section, footer, article, aside {
-    display: block;
-    padding: 0;
-    margin-bottom: 2em;
-    
-}
-header {
-    width:100%;
-    padding:0;
-    margin: 0;
-    position: fixed;
-    @include gradient(rgba(255,255,255,0.7));
-    top:0;
-    left: 0;
-    z-index:9999;
-    box-shadow: 0 1px 2px #555;
-    @include gradient(rgba(255,255,255,.7));
-    .wrapper {
-        padding: 0 1em;
-    }
-}
 
 footer {
     clear: both;
@@ -138,61 +111,12 @@ aside {
     top: 4em;
     right:1em;
 }
-pre, code {
-    font: 110% "Droid Sans Mono",monospace;
-    white-space: pre-wrap;
-    color:$solarized_base1;
-}
 
-blockquote{
-    font: italic 150% "Georgia-MS", Georgia, serif;
-    width: 70%;
-    margin: 1em auto;
-}
-
-a{
-    border: 1px solid transparent;
-    text-decoration:none;
-    color :$fg_color;
-    &:hover {
-        text-shadow: 0 -1px 0 #FFF, 0 1px 1px #000; 
-    }
-}
-
-a img{
-    border: 0;
-}
-em {
-    font: italic 100% "Georgia-MS", Georgia, serif;
-}
-h1, h2, h3, h1 a, h2 a, h3 a {
-    font-weight: normal;
-}
-h1 {
-    font-weight: normal;
-}
-h1 .pilcrow {
-    font-size:70%;
-    display:none;
-    vertical-align: top;
-}
-h1:hover .pilcrow {
-    display:inline;
-}
-h2 {
-    font-size:180%;
-}
 #wrapper {
     margin: 0 auto;
     text-align:left;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 15px 15px 0 0;
-}
-#logo {
-    margin:0;
-    padding: 0.2em 0;
-    color: #555;
-    font-size: 1.6em;
 }
 #banner-header {
     float:right;
@@ -314,15 +238,6 @@ h2 {
 
 .hide {
     display:none;
-}
-
-nav {
-    float: right;
-    font-size:1.5em ;
-    padding: 0.25em 0.5em;
-    .user {
-        font-size:0.5em;
-    }
 }
 .session {
     font-size: 100%;

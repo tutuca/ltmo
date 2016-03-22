@@ -18,57 +18,74 @@
 <body>
 {% if messages %}
 <ul id="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}<a class="control" href="#messages">X</a></li>
-    {% endfor %}
+  {% for message in messages %}
+  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}<a class="control" href="#messages">X</a></li>
+  {% endfor %}
 </ul>
 {% endif %}
-<header>
-    <div class="wrapper">
-        <nav>
-        <a href="/new/" id="new-leak" class="fa fa-tint"></a>
-        <a href="#help" class="control fa fa-question" title="Ayudaaaaaaa"></a>
-        {% if not user.is_authenticated %}
-        <a href="/login" class="session fa fa-sign-in" title="Entrar" /></a>
-        {% else %}
-        <a href="/logout" class="session fa fa-sign-out" title="{{user}}" ></a>
-        {% endif %}
-        </nav>
-        <h1 id="logo">{% block logo %}<a href="http://{{request.get_host}}" title="Bienvenido"> ltmo</a>:/{% endblock %}</h1>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <h1 id="logo" class="navbar-brand"><a href="http://{{request.get_host}}" title="Bienvenido"> ltmo</a>:/{% block logo %}{% endblock %}</h1>
     </div>
-</header>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/new/" id="new-leak" class="fa fa-tint"></a>
+        </li>
+        <li>
+          <a href="#help" class="control fa fa-question" title="Ayudaaaaaaa"></a> 
+        </li>
+        <li>
+          {% if not user.is_authenticated %}
+          <a href="/login" class="session fa fa-sign-in" title="Entrar" /></a>
+          {% else %}
+          <a href="/logout" class="session fa fa-sign-out" title="{{user}}" ></a>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </div>       
+</nav>
+
 <div id="main">
 {% block main %}
-    <section {% block section_class %}{% endblock %}>
-    {% block content %}
-    {% endblock %}
-    </section>
-    <aside id="help" class="hide">
-        <h3>¿Qué es lo que observa?</h3>
-        <p>Esto funciona muy fácil, hacele click al + de allá arriba y pegá lo que sea. Pero ojo, nada queda almacenado en nuestros servidores, esto es solo una pasarela</p>
-        <p>Tratamos de agrandar el agujero para que más cosas caigan en él.</p>
-        {% pop_slot 'aside' %}
-        <ul>
-        <li><a href="http://twitter.com/lossingoil">@lossingoil</a> - </li>
-        <li><a href="mailto:loosingtoomuchoil@gmail.com">loosingtoomuchoil@gmail.com</a> -</li>
-        <li><a href="/feed/">RSS</a></li>
-        </ul>
-        <h3>Se ha vertido en estos temas</h3>    
-        {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
-        {% for tag in cloud %}
-        <a href="/leak/{{tag}}" 
-           style="font-size:{{tag.font_size|add:'8'}}pt"
-           title="{{tag.count}} derrames">{{tag}}</a>
-        {% endfor %}
-        {% tags_for_model ltmo.Leak as leak_tags with counts %}
+  <section {% block section_class %}{% endblock %}>
+  {% block content %}
+  {% endblock %}
+  </section>
+  <aside id="help" class="hide">
+    <h3>¿Qué es lo que observa?</h3>
+    <p>Esto funciona muy fácil, hacele click al + de allá arriba y pegá lo que sea. Pero ojo, nada queda almacenado en nuestros servidores, esto es solo una pasarela</p>
+    <p>Tratamos de agrandar el agujero para que más cosas caigan en él.</p>
+    {% pop_slot 'aside' %}
+    <ul>
+    <li><a href="http://twitter.com/lossingoil">@lossingoil</a> - </li>
+    <li><a href="mailto:loosingtoomuchoil@gmail.com">loosingtoomuchoil@gmail.com</a> -</li>
+    <li><a href="/feed/">RSS</a></li>
+    </ul>
+    <h3>Se ha vertido en estos temas</h3>    
+    {% tag_cloud_for_model ltmo.Leak as cloud with steps=20 distribution=linear %}
+    {% for tag in cloud %}
+    <a href="/leak/{{tag}}" 
+       style="font-size:{{tag.font_size|add:'8'}}pt"
+       title="{{tag.count}} derrames">{{tag}}</a>
+    {% endfor %}
+    {% tags_for_model ltmo.Leak as leak_tags with counts %}
 
 
-        <p>Las opiniones vertidas en cada artículo son responsabilidad del author</p>
+    <p>Las opiniones vertidas en cada artículo son responsabilidad del author</p>
 
-    </aside>
-    
+  </aside>
+  
 
-    <br class="clear"/>
+  <br class="clear"/>
 {% endblock %}
 </div>
 
