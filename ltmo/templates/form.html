@@ -1,0 +1,17 @@
+{% load add_class %}
+{% if form.non_field_errors %}
+<div class="alert alert-danger">{{ form.non_field_errors|join:"<br \>" }}</div>
+{% endif %}
+
+{% for field in form %}
+<div class="form-group {% if field.errors %}has-error{% endif %}">
+  {{ field.label_tag|add_class:"control-label" }}
+  {% if field.help_text %}
+  <span class="help-block">{{ field.help_text }}</span>
+  {% endif %}
+  {% if field.errors %}
+  <span class="help-block">{{ field.errors|join:"<br \>" }}</span>
+  {% endif %}
+  {{ field|add_class:"form-control input-block-level" }}
+</div>
+{% endfor %}
