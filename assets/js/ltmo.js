@@ -54,7 +54,7 @@ $(function () {
     }
 
     $('.control').click(function(){
-        target = $(this).attr('href');
+        var target = $(this).attr('href');
         $(target).toggle('blind', 300);
         if (target === '#leak-form'){
             window.setTimeout(function(){

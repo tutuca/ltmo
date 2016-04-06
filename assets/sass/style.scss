@@ -15,7 +15,7 @@ footer {
     font-size: 80%;
 }
 #main{
-    margin:4em 0 0;
+    margin-top:4em;
     clear: both;
     position: relative;
 }
@@ -245,27 +245,6 @@ aside {
 .session a:hover {
     background:transparent;
 }
-form {
-    padding: 1em 2em;
-    margin: 0 1em;
-    text-align:left;
-    p {
-        position:relative;
-    }
-    section{
-        margin-bottom:1em;
-        width:50%;
-        position:relative;
-        text-align: left;
-    }
-}
-.submit {
-    text-align: right;
-    padding: 0 1em;
-    a {
-        line-height:2.5em;
-    }
-}
 #formating-help {
     float:right;
     width: 30%;
@@ -285,52 +264,6 @@ form {
     border-width:1px 0;
     border-color: #FFF transparent #CCC;
     padding: 0.25em;
-}
-
-
-input, 
-textarea{
-    border: 1px solid #000;
-    font: 1em sans-serif;
-    padding: 0.25em;
-    border-radius: 3px;
-}
-textarea {
-    font-size:1.5em;
-    height:5em;
-    width:20em;
-}
-input[type='email']:focus,
-input[type='password']:focus,
-input[type='text']:focus, 
-textarea:focus{
-    border: 1px solid #0C6;
-    outline:0 !important;
-    box-shadow: 0 0 2px #FC0;
-}
-.error input, 
-.error textarea {
-    border: 1px solid #C60!important;
-    box-shadow: 0 0 2px #F00!important;
-}
-.errorlist{
-    @include tooltip();
-}
-
-label {
-    display:block;
-    margin: 0.5em 0 0;
-    font-size:80%;
-}
-form span {
-    font-size:80%;
-}
-.required label {
-    font-weight:bold;
-    color:#C60;
-}
-input[type='submit'] {
-    @include button;
 }
 #leak-form input[type='submit'] {
     float:left;
@@ -355,17 +288,6 @@ input[type='submit'] {
     background:#0C6;
     color:#FFF;
 }
-#login-form {
-    float:left;
-}
-#register-form {
-    float:left;
-    width: 40%;
-    padding:1em;
-    h3 {
-        text-align: center;
-    }
-}
 #id_description.hover {
     border:3px solid #900;
     background: #EEE;
@@ -373,14 +295,19 @@ input[type='submit'] {
 .hidden-detail {
     display:none !important;
 }
+input {
+    max-width: 100%;
+} 
 .login {
     display:inline-block;
     padding: 0.25em 1em ;
     font-weight: bold;
     border-radius:3px;
-    color: white;
+    color: #DEDEDE;
     &:hover  {
         text-shadow: none;
+        color: #FFF;
+        text-decoration: none;
     }
 }
 .login.facebook {

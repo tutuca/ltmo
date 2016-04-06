@@ -32,7 +32,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       </button>
-      <h1 id="logo" class="navbar-brand"><a href="http://{{request.get_host}}" title="Bienvenido"> ltmo</a>:/{% block logo %}{% endblock %}</h1>
+      <div id="logo" class="navbar-brand"><a href="http://{{request.get_host}}" title="Bienvenido"> ltmo</a>:/{% block logo %}{% endblock %}</div>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -54,7 +54,8 @@
   </div>       
 </nav>
 
-<div id="main">
+<div id="main" class="container">
+<div class="row">
 {% block main %}
   <section {% block section_class %}{% endblock %}>
   {% block content %}
@@ -87,6 +88,7 @@
 
   <br class="clear"/>
 {% endblock %}
+</div>
 </div>
 
 </body>
