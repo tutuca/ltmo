@@ -62,8 +62,8 @@ STATICFILES_FINDERS = (
 AUTH_PROFILE_MODULE = 'auth.User'
 
 AUTHENTICATION_BACKENDS = (
-    'social.backends.facebook.FacebookBackend',
-    'social.backends.google.GoogleBackend',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
