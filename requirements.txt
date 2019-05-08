@@ -1,5 +1,5 @@
 Pillow
-django==1.4.9
+django
 django-tagging
 Markdown
 pygments
