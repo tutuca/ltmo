@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib import admin
 from django.template.defaultfilters import slugify
 from markdown import markdown
-
+from django.urls import reverse
 
 
 class Leak(models.Model):
@@ -30,9 +30,8 @@ class Leak(models.Model):
             user = None
         return user
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('leak_detail', [self.id])
+        return reverse('leak_detail', [self.id])
 
     def save(self, *args, **kwargs):
         self.rendered = markdown(

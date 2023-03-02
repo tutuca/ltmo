@@ -27,10 +27,10 @@
     "watch": "vite build -w"
   },
   "dependencies": {
-    "jquery": "*",
-    "jquery-ui": "*",
     "bootstrap-sass": "*",
-    "font-awesome": "*"
+    "font-awesome": "*",
+    "jquery": "*",
+    "jquery-ui": "*"
   },
   "devDependencies": {
     "glob": "^8.0.3",

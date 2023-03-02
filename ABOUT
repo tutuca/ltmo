@@ -1,8 +1,13 @@
 # ¿Qué es lo que observa?
 
-Nunca hay suficiente redundancia para garantizar la continuidad de la información.
+    /     \                           
+    vvvvvvv  /|__/|                   
+       I   /O,O   |
+       I /_____   |      /|/|
+      J|/^ ^ ^ \  |    /00  |    _//|
+       |^ ^ ^ ^ |W|   |/^^\ |   /oo |
+        \m___m__|_|    \m_m_|   \mm_|
 
-Este es un experimento, una herramienta para evitar perder cosas que en algún momento nos resultaron interesantes.
-Hay un [script de linea de comandos](http://github.com/tutuca/ltmo/raw/master/bin/spill.py) que te deja entrar un mensaje y enviarlo a esta web.
 
-El código es libre y se explica solo. Así que no preguntes por ayuda o explicaciones, nosotros tampoco sabemos de que se trata
+Las cucarachas lograron con exito su plan, echando a los pestilentes sangre caliente de sus cajas de cemento.
+Ahora el hombre es una especie errante en el espacio, un vagabundo en las estrellas.

@@ -11,10 +11,9 @@ dependencies = [
   "django-tagging",
   "Markdown",
   "pygments",
-  "django-pagination",
-  "django-registration",
-  "django-social-auth",
-  "psycopg2",
+  "django-allauth",
+  "django-vite",
+  "psycopg2-binary",
   "django-debug-toolbar"
 ]
 
@@ -22,6 +21,13 @@ classifiers=[
     "Programming Language :: Python",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+
+[tool.setuptools]
+packages = [
+  "banners",
+  "ltmo"
+]
+
 
 [project.optional-dependencies]
 dev = [
