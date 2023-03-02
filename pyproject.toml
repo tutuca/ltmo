@@ -1,0 +1,78 @@
+[project]
+description = "Un sitio para los amigos"
+name = "ltmo"
+readme = "README.md"
+version = "0.14"
+
+authors = [{name = "tutuca", email = "maturburu@gmail.com"}]
+dependencies = [
+  "Pillow",
+  "django",
+  "django-tagging",
+  "Markdown",
+  "pygments",
+  "django-pagination",
+  "django-registration",
+  "django-social-auth",
+  "psycopg2",
+  "django-debug-toolbar"
+]
+
+classifiers=[
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "cookiecutter",
+  "coverage",
+  "flake8",
+  "flake8-pyproject",
+  "ipdb",
+  "pre-commit",
+  "pytest",
+  "pytest-django",
+
+]
+doc = [
+  "mkdocs",
+  "mkdocs-material",
+  "mkdocs-material-extensions",
+  "mkdocs-autolinks-plugin",
+  "mkdocs-pdf-export-plugin",
+]
+
+[project.urls]
+documentation = "https://bigpear.gitlab.io/ltmo/"
+homepage = "https://bigpear.com.ar/ltmo"
+repository = "https://gitlab.com/bigpear/ltmo"
+
+[project.scripts]
+ltmo = "ltmo.manage:main"
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.isort]
+known_first_party = [
+  "ltmo",
+  "banners",
+]
+
+[tool.black]
+line-length = 102
+target-version = ['py38', 'py39', 'py310']
+
+[tool.flake8]
+ignore = ["W503", "E203", "F403", "F405"]
+exclude = ['**/migrations/**']
+max-complexity = 7
+max-line-length = 102
+statistics = true
+
+[tool.pytest]
+DJANGO_SETTINGS_MODULE = "ltmo.settings"
+python_files = "tests.py test_*.py *_tests.py"

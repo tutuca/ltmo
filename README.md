@@ -9,12 +9,7 @@ Este repositorio contiene tanto el código del sitio.
 
 El sitio está hecho en [django](http://djangoproject.com) y tiene muy pocas dependencias, la mejor manera de tener una instancia corriendo es con pip
 
-        $ pip install -r requirements.txt -E ltmo_venv
-        
-Si no tenés pip y virtualenv (por qué no???):
-
-        $ sudo easy_install pip
-        $ sudo easy_install virtualenv
+        $ pip install -e .
 
 Ahora sólo debés sincronizar la base de datos y correr el sitio:
 
@@ -26,8 +21,5 @@ Ahora sólo debés sincronizar la base de datos y correr el sitio:
 
 Todo lo que envíes con spill se manda a ltmo.com.ar ahí vamos a ir agregando cosas a medida que tengamos más tiempo para perder aceite.
 
-No sabemos muy bien de que se trata todo esto pero somos lo que hacemos
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tutuca/ltmo/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+No sabemos muy bien de que se trata todo esto pero somos lo que hacemos.
 
